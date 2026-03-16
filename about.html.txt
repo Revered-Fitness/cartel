@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About - Revered Fitness</title>
+  <style>
+    body { background:#111; color:white; font-family:Arial; margin:0; text-align:center; }
+    nav { background:black; padding:15px; }
+    nav a { color:white; margin:0 20px; text-decoration:none; font-weight:bold; }
+    nav a:hover { color:red; }
+    section { padding:60px 20px; max-width:800px; margin:auto; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="clothing.html">Clothing</a>
+  <a href="about.html">About</a>
+</nav>
+
+<section>
+  <h1>About Revered Fitness</h1>
+  <p>
+    I have years of experience in strength sports, developing discipline,
+    technique and real-world training knowledge.
+  </p>
+  <p>
+    My mission is to help new people step into the gym with confidence,
+    remove intimidation, and build both physical and mental strength.
+  </p>
+  <p>
+    Revered Fitness is built on respect, hard work and transformation.
+  </p>
+</section>
+
+</body>
+</html>
+

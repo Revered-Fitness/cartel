@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clothing - Revered Fitness</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      background:#0f0f0f;
+      color:white;
+      font-family:Arial;
+      margin:0;
+      text-align:center;
+    }
+
+    nav {
+      background:black;
+      padding:15px;
+    }
+
+    nav a {
+      color:white;
+      margin:10px 15px;
+      text-decoration:none;
+      font-weight:bold;
+      display:inline-block;
+    }
+
+    nav a:hover {
+      color:#e10600;
+    }
+
+    section {
+      padding:60px 20px;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .product-img {
+      width:100%;
+      max-width:400px;
+      border-radius:15px;
+      box-shadow:0 0 25px rgba(225,6,0,0.4);
+      margin-top:20px;
+    }
+
+    @media (max-width:600px){
+      nav a { display:block; margin:10px 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="clothing.html">Clothing</a>
+  <a href="about.html">About</a>
+</nav>
+
+<section>
+  <h1>Revered Fitness Apparel</h1>
+  <p>Premium Performance Wear.</p>
+
+  <img src="shirt.jpg" alt="Revered Fitness Shirt" class="product-img">
+
+  <p>High quality training apparel designed for strength and style.</p>
+</section>
+
+</body>
+</html>
