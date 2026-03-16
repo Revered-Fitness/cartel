@@ -1,65 +1,143 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Services - Revered Fitness</title>
-  <style>
-    body { background:#111; color:white; font-family:Arial; margin:0; text-align:center; }
-    nav { background:black; padding:15px; }
-    nav a { color:white; margin:0 20px; text-decoration:none; font-weight:bold; }
-    nav a:hover { color:red; }
-    section { padding:60px 20px; }
+<title>Services - Revered Fitness</title>
 
-    .service {
-      background:#1c1c1c;
-      margin:20px auto;
-      padding:30px;
-      max-width:500px;
-      border-radius:10px;
-      box-shadow:0 0 15px rgba(255,0,0,0.3);
-    }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .price {
-      color:red;
-      font-size:22px;
-      font-weight:bold;
-    }
-  </style>
+<style>
+
+body{
+background:#0f0f0f;
+color:white;
+font-family:Arial, sans-serif;
+margin:0;
+text-align:center;
+}
+
+nav{
+background:black;
+padding:15px;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#e10600;
+}
+
+section{
+padding:60px 20px;
+max-width:1000px;
+margin:auto;
+}
+
+.services-container{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+}
+
+.service{
+background:#1c1c1c;
+padding:30px;
+width:280px;
+border-radius:12px;
+box-shadow:0 0 18px rgba(225,6,0,0.3);
+}
+
+.service h2{
+margin-top:0;
+}
+
+.price{
+color:#e10600;
+font-size:22px;
+font-weight:bold;
+margin-top:10px;
+}
+
+footer{
+background:black;
+padding:20px;
+margin-top:40px;
+}
+
+/* MOBILE STYLING */
+
+@media (max-width:700px){
+
+nav a{
+display:block;
+margin:10px 0;
+}
+
+.services-container{
+flex-direction:column;
+align-items:center;
+}
+
+.service{
+width:90%;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="clothing.html">Clothing</a>
-  <a href="about.html">About</a>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="clothing.html">Clothing</a>
+<a href="about.html">About</a>
 </nav>
 
 <section>
-  <h1>Our Services</h1>
 
-  <div class="service">
-    <h2>1-on-1 Personal Training</h2>
-    <p class="price">£20 per session</p>
-  </div>
+<h1>Our Services</h1>
 
-  <div class="service">
-    <h2>Zoom Training Sessions</h2>
-    <p class="price">£15 per session</p>
-  </div>
+<div class="services-container">
 
-  <div class="service">
-    <h2>Custom Nutrition Plan</h2>
-    <p class="price">£30</p>
-  </div>
+<div class="service">
+<h2>1-on-1 Personal Training</h2>
+<p>In-person coaching focused on strength, form and progress.</p>
+<p class="price">£20 per session</p>
+</div>
 
-  <div class="service">
-    <h2>12 Week Online Transformation Program</h2>
-    <p class="price">£220</p>
-  </div>
+<div class="service">
+<h2>Zoom Training Sessions</h2>
+<p>Train from anywhere with guided online sessions.</p>
+<p class="price">£15 per session</p>
+</div>
+
+<div class="service">
+<h2>Custom Nutrition Plan</h2>
+<p>Personalised plan built around your goals and lifestyle.</p>
+<p class="price">£30</p>
+</div>
+
+<div class="service">
+<h2>12 Week Online Transformation</h2>
+<p>Complete coaching program including training and nutrition.</p>
+<p class="price">£220</p>
+</div>
+
+</div>
 
 </section>
 
+<footer>
+© 2026 Revered Fitness
+</footer>
+
 </body>
 </html>
-
-
