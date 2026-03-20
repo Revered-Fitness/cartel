@@ -43,12 +43,10 @@ width:1px;
 background:rgba(255,255,255,0.25);
 }
 
-/* remove last divider */
 nav a:last-child::after{
 display:none;
 }
 
-/* premium hover effect */
 nav a:hover{
 color:#ffffff;
 text-shadow:0 0 6px rgba(225,6,0,0.6);
@@ -125,19 +123,28 @@ font-size:14px;
 margin-top:40px;
 }
 
-/* MOBILE PREMIUM VERSION */
+/* MOBILE: 2 COLUMN NAV */
 @media (max-width:600px){
+
+nav{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
 nav a{
 display:block;
-margin:10px 0;
-padding:10px 0;
+margin:0;
+padding:12px 0;
 border-bottom:1px solid rgba(255,255,255,0.15);
 }
 
+/* remove desktop divider */
 nav a::after{
 display:none;
 }
 
+/* clean grid look */
 nav a:last-child{
 border-bottom:none;
 }
