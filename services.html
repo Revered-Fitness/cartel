@@ -31,7 +31,6 @@ nav a{
   transition:all 0.3s ease;
 }
 
-/* subtle vertical divider */
 nav a::after{
   content:"";
   position:absolute;
@@ -52,7 +51,6 @@ nav a:hover{
   text-shadow:0 0 6px rgba(225,6,0,0.6);
 }
 
-/* underline animation */
 nav a::before{
   content:"";
   position:absolute;
@@ -92,7 +90,7 @@ section{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:30px; /* increased gap for easier scrolling */
+  gap:30px;
   position:relative;
   z-index:1;
 }
@@ -100,7 +98,7 @@ section{
 /* Individual service card */
 .service{
   background:#1c1c1c;
-  padding:30px 20px; /* slightly larger padding for touch targets */
+  padding:30px 20px;
   width:280px;
   border-radius:12px;
   box-shadow:0 0 18px rgba(225,6,0,0.3);
@@ -132,7 +130,7 @@ section{
 .btn{
   display:inline-block;
   margin-top:20px;
-  padding:12px 20px; /* larger button for easier tapping */
+  padding:12px 20px;
   background:#e10600;
   color:white;
   text-decoration:none;
@@ -159,9 +157,15 @@ section{
   100% { text-shadow: 0 0 2px #00ff4c; }
 }
 
+/* Desktop: 8-week and 12-week side by side */
+.service-group{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+}
+
 /* Mobile optimization */
 @media (max-width:700px){
-  /* Top nav becomes grid */
   nav{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -180,28 +184,35 @@ section{
     border-bottom:none;
   }
 
-  /* Stack all services vertically for easy scroll */
   .services-container{
     flex-direction:column;
     align-items:center;
-    gap:25px; /* slightly smaller gap for mobile scrolling */
+    gap:25px;
   }
-
   .service{
     width:90%;
     margin-bottom:25px;
-    padding:28px 20px; /* touch-friendly padding */
+    padding:28px 20px;
   }
 
-  /* Force 8-week and 12-week packages to stack */
+  /* Horizontal scroll for 8-week and 12-week packages */
   .service-group{
-    display:flex;
-    flex-direction:column; /* stack vertically on mobile */
-    gap:20px;
+    flex-direction:row;
+    overflow-x:auto;
+    gap:15px;
+    padding-bottom:10px;
+  }
+  .service-group .service{
+    flex:0 0 80%; /* make cards wide but allow side scroll */
   }
 
-  .service-group .service{
-    width:100%; /* full width on mobile */
+  /* Hide scrollbar in most browsers */
+  .service-group::-webkit-scrollbar{
+    display:none;
+  }
+  .service-group{
+    -ms-overflow-style:none;
+    scrollbar-width:none;
   }
 }
 
