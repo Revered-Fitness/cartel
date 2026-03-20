@@ -16,120 +16,25 @@ text-align:center;
 
 nav{
 background:black;
-padding:15px;
+padding:18px 10px;
 }
 
+/* PREMIUM NAV LINKS */
 nav a{
-color:white;
-margin:0 20px;
+color:#f5f5f5;
+margin:0 18px;
 text-decoration:none;
-font-weight:bold;
+font-weight:600;
+letter-spacing:1px;
+padding:6px 14px;
+position:relative;
+transition:all 0.3s ease;
 }
 
-nav a:hover{
-color:#e10600;
-}
-
-.hero{
-padding:60px 20px 30px 20px;
-}
-
-.hero h1{
-font-size:38px;
-letter-spacing:2px;
-}
-
-.content{
-max-width:800px;
-margin:40px auto;
-padding:40px;
-background:#1a1a1a;
-border-radius:12px;
-box-shadow:0 0 25px rgba(225,6,0,0.25);
-line-height:1.7;
-font-size:18px;
-}
-
-.highlight{
-color:#e10600;
-font-weight:bold;
-}
-
-footer{
-background:black;
-padding:20px;
-margin-top:50px;
-font-size:14px;
-}
-
-@media (max-width:600px){
-
-nav a{
-display:block;
-margin:10px 0;
-}
-
-.hero h1{
-font-size:28px;
-}
-
-.content{
-margin:20px;
-padding:25px;
-font-size:16px;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="clothing.html">Clothing</a>
-<a href="about.html">About</a>
-</nav>
-
-<div class="hero">
-
-<h1>About Revered Fitness</h1>
-
-</div>
-
-<div class="content">
-
-<p>
-Revered Fitness was built through a passion for 
-<span class="highlight">strength sports</span>, discipline, 
-and years of real training experience.
-</p>
-
-<p>
-Through training and developing strength over time, I gained 
-first-hand knowledge of what it takes to build not only a stronger 
-body, but a stronger mindset.
-</p>
-
-<p>
-My mission with <span class="highlight">Revered Fitness</span> is to help 
-new people step into the gym with confidence, remove the intimidation 
-many beginners feel, and guide them towards real progress.
-</p>
-
-<p>
-This brand is built on three principles:
-<br><br>
-<strong>Strength • Discipline • Respect</strong>
-</p>
-
-</div>
-
-<footer>
-© 2026 Revered Fitness
-</footer>
-
-</body>
-</html>
+/* subtle vertical divider */
+nav a::after{
+content:"";
+position:absolute;
+right:-10px;
+top:50%;
+transform:translat
