@@ -123,7 +123,7 @@ font-size:14px;
 margin-top:40px;
 }
 
-/* MOBILE: 2 COLUMN NAV */
+/* MOBILE: 2 COLUMN NAV (FIXED) */
 @media (max-width:600px){
 
 nav{
@@ -144,8 +144,8 @@ nav a::after{
 display:none;
 }
 
-/* clean grid look */
-nav a:last-child{
+/* remove border from last row (2 items) */
+nav a:nth-last-child(-n+2){
 border-bottom:none;
 }
 
