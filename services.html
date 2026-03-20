@@ -14,7 +14,7 @@ body{
   text-align:center;
 }
 
-/* NAVIGATION RESTORED TO ORIGINAL STYLE */
+/* NAVIGATION */
 nav{
   background:black;
   padding:18px 10px;
@@ -68,13 +68,14 @@ nav a:hover::before{
   width:60%;
 }
 
+/* FOOTER */
 footer{
   background:black;
   padding:20px;
   margin-top:40px;
 }
 
-/* Hero Services Section */
+/* HERO SECTION */
 section{
   padding:60px 20px;
   max-width:1200px;
@@ -85,7 +86,7 @@ section{
   overflow:hidden;
 }
 
-/* Services container */
+/* SERVICES CONTAINER */
 .services-container{
   display:flex;
   flex-wrap:wrap;
@@ -95,7 +96,7 @@ section{
   z-index:1;
 }
 
-/* Individual service card */
+/* SERVICE CARD */
 .service{
   background:#1c1c1c;
   padding:30px 20px;
@@ -107,18 +108,17 @@ section{
   position:relative;
 }
 
-/* Hover effect */
 .service:hover{
   transform: translateY(-8px);
   box-shadow:0 0 28px rgba(225,6,0,0.5);
 }
 
-/* Headings & price */
 .service h2{
   margin-top:0;
   font-size:20px;
   color:white;
 }
+
 .price{
   color:#e10600;
   font-size:20px;
@@ -126,24 +126,27 @@ section{
   margin-top:12px;
 }
 
-/* Buttons */
+/* BUTTONS */
 .btn{
   display:inline-block;
   margin-top:20px;
-  padding:12px 20px;
+  padding:14px 20px;
   background:#e10600;
   color:white;
   text-decoration:none;
   border-radius:6px;
   font-weight:600;
   transition:all 0.3s;
+  width:100%;
+  text-align:center;
+  box-sizing:border-box;
 }
 .btn:hover{
   background:#ff2a2a;
   transform:translateY(-2px);
 }
 
-/* Best Value animation */
+/* BEST VALUE ANIMATION */
 .best-value{
   color:#00ff4c;
   font-weight:bold;
@@ -157,15 +160,15 @@ section{
   100% { text-shadow: 0 0 2px #00ff4c; }
 }
 
-/* Desktop: 8-week and 12-week side by side */
+/* 8-WEEK & 12-WEEK GROUP (DESKTOP) */
 .service-group{
   display:flex;
   gap:20px;
   justify-content:center;
 }
 
-/* Mobile optimization */
-@media (max-width:700px){
+/* MOBILE OPTIMIZATION */
+@media (max-width:768px){
   nav{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -184,39 +187,31 @@ section{
     border-bottom:none;
   }
 
+  /* Stack all service cards vertically for easier scroll */
   .services-container{
     flex-direction:column;
     align-items:center;
     gap:25px;
   }
+
   .service{
     width:90%;
     margin-bottom:25px;
     padding:28px 20px;
   }
 
-  /* Horizontal scroll for 8-week and 12-week packages */
+  /* Stack 8-week and 12-week plans vertically on mobile */
   .service-group{
-    flex-direction:row;
-    overflow-x:auto;
-    gap:15px;
-    padding-bottom:10px;
+    flex-direction:column;
+    gap:20px;
+    width:100%;
   }
   .service-group .service{
-    flex:0 0 80%; /* make cards wide but allow side scroll */
-  }
-
-  /* Hide scrollbar in most browsers */
-  .service-group::-webkit-scrollbar{
-    display:none;
-  }
-  .service-group{
-    -ms-overflow-style:none;
-    scrollbar-width:none;
+    width:100%;
   }
 }
 
-/* Subtle background graphics */
+/* BACKGROUND TEXTURES */
 section::before{
   content:"";
   position:absolute;
