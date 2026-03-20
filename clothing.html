@@ -76,12 +76,22 @@
       margin:auto;
     }
 
+    /* Container for product images */
+    .products-container {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:20px;
+      margin-top:20px;
+    }
+
     .product-img {
       width:100%;
-      max-width:400px;
+      max-width:300px;  /* uniform width */
+      height:300px;     /* uniform height */
+      object-fit:cover; /* maintains aspect ratio without distortion */
       border-radius:15px;
       box-shadow:0 0 25px rgba(225,6,0,0.4);
-      margin-top:20px;
     }
 
     /* MOBILE: 2 COLUMN NAV */
@@ -109,6 +119,11 @@
       nav a:nth-last-child(-n+2){
         border-bottom:none;
       }
+
+      .product-img {
+        max-width:45%; /* two per row on mobile */
+        height:200px;
+      }
     }
 
   </style>
@@ -126,9 +141,10 @@
   <h1>Revered Fitness Apparel</h1>
   <p>Premium Performance Wear.</p>
 
-  <img src="shirt.jpg" alt="Revered Fitness Shirt" class="product-img">
-
-  <img src="hoodie.jpg" class="product-img">
+  <div class="products-container">
+    <img src="shirt.jpg" alt="Revered Fitness Shirt" class="product-img">
+    <img src="hoodie.jpg" alt="Revered Fitness Hoodie" class="product-img">
+  </div>
   
   <p>High quality training apparel designed for strength and style.</p>
 </section>
