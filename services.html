@@ -17,18 +17,58 @@ text-align:center;
 
 nav{
 background:black;
-padding:15px;
+padding:18px 10px;
 }
 
+/* PREMIUM NAV LINKS */
 nav a{
-color:white;
-margin:0 15px;
+color:#f5f5f5;
+margin:0 18px;
 text-decoration:none;
-font-weight:bold;
+font-weight:600;
+letter-spacing:1px;
+padding:6px 14px;
+position:relative;
+transition:all 0.3s ease;
+}
+
+/* subtle vertical divider */
+nav a::after{
+content:"";
+position:absolute;
+right:-10px;
+top:50%;
+transform:translateY(-50%);
+height:18px;
+width:1px;
+background:rgba(255,255,255,0.25);
+}
+
+nav a:last-child::after{
+display:none;
 }
 
 nav a:hover{
-color:#e10600;
+color:#ffffff;
+text-shadow:0 0 6px rgba(225,6,0,0.6);
+}
+
+/* underline animation */
+nav a::before{
+content:"";
+position:absolute;
+bottom:-6px;
+left:50%;
+transform:translateX(-50%);
+width:0%;
+height:2px;
+background:#e10600;
+transition:width 0.3s ease;
+border-radius:2px;
+}
+
+nav a:hover::before{
+width:60%;
 }
 
 section{
@@ -70,74 +110,31 @@ margin-top:40px;
 }
 
 /* MOBILE STYLING */
-
 @media (max-width:700px){
+
+/* 2 COLUMN NAV */
+nav{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
 
 nav a{
 display:block;
-margin:10px 0;
+margin:0;
+padding:12px 0;
+border-bottom:1px solid rgba(255,255,255,0.15);
+}
+
+/* remove desktop divider */
+nav a::after{
+display:none;
+}
+
+/* remove bottom border from last row */
+nav a:nth-last-child(-n+2){
+border-bottom:none;
 }
 
 .services-container{
-flex-direction:column;
-align-items:center;
-}
-
-.service{
-width:90%;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<nav>
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="clothing.html">Clothing</a>
-<a href="about.html">About</a>
-</nav>
-
-<section>
-
-<h1>Our Services</h1>
-
-<div class="services-container">
-
-<div class="service">
-<h2>1-on-1 Personal Training</h2>
-<p>In-person coaching focused on strength, form and progress.</p>
-<p class="price">£20 per session</p>
-</div>
-
-<div class="service">
-<h2>Zoom Training Sessions</h2>
-<p>Train from anywhere with guided online sessions.</p>
-<p class="price">£15 per session</p>
-</div>
-
-<div class="service">
-<h2>Custom Nutrition Plan</h2>
-<p>Personalised plan built around your goals and lifestyle.</p>
-<p class="price">£30</p>
-</div>
-
-<div class="service">
-<h2>12 Week Online Transformation</h2>
-<p>Complete coaching program including training and nutrition.</p>
-<p class="price">£220</p>
-</div>
-
-</div>
-
-</section>
-
-<footer>
-© 2026 Revered Fitness
-</footer>
-
-</body>
-</html>
+flex
