@@ -37,4 +37,158 @@ content:"";
 position:absolute;
 right:-10px;
 top:50%;
-transform:translat
+transform:translateY(-50%);
+height:18px;
+width:1px;
+background:rgba(255,255,255,0.25);
+}
+
+nav a:last-child::after{
+display:none;
+}
+
+nav a:hover{
+color:#ffffff;
+text-shadow:0 0 6px rgba(225,6,0,0.6);
+}
+
+/* underline animation */
+nav a::before{
+content:"";
+position:absolute;
+bottom:-6px;
+left:50%;
+transform:translateX(-50%);
+width:0%;
+height:2px;
+background:#e10600;
+transition:width 0.3s ease;
+border-radius:2px;
+}
+
+nav a:hover::before{
+width:60%;
+}
+
+.hero{
+padding:60px 20px 30px 20px;
+}
+
+.hero h1{
+font-size:38px;
+letter-spacing:2px;
+}
+
+.content{
+max-width:800px;
+margin:40px auto;
+padding:40px;
+background:#1a1a1a;
+border-radius:12px;
+box-shadow:0 0 25px rgba(225,6,0,0.25);
+line-height:1.7;
+font-size:18px;
+}
+
+.highlight{
+color:#e10600;
+font-weight:bold;
+}
+
+footer{
+background:black;
+padding:20px;
+margin-top:50px;
+font-size:14px;
+}
+
+/* MOBILE: 2 COLUMN NAV */
+@media (max-width:600px){
+
+nav{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+nav a{
+display:block;
+margin:0;
+padding:12px 0;
+border-bottom:1px solid rgba(255,255,255,0.15);
+}
+
+/* remove desktop divider */
+nav a::after{
+display:none;
+}
+
+/* remove bottom border from last row */
+nav a:nth-last-child(-n+2){
+border-bottom:none;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.content{
+margin:20px;
+padding:25px;
+font-size:16px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="clothing.html">Clothing</a>
+<a href="about.html">About</a>
+</nav>
+
+<div class="hero">
+
+<h1>About Revered Fitness</h1>
+
+</div>
+
+<div class="content">
+
+<p>
+Revered Fitness was built through a passion for 
+<span class="highlight">strength sports</span>, discipline, 
+and years of real training experience.
+</p>
+
+<p>
+Through training and developing strength over time, I gained 
+first-hand knowledge of what it takes to build not only a stronger 
+body, but a stronger mindset.
+</p>
+
+<p>
+My mission with <span class="highlight">Revered Fitness</span> is to help 
+new people step into the gym with confidence, remove the intimidation 
+many beginners feel, and guide them towards real progress.
+</p>
+
+<p>
+This brand is built on three principles:
+<br><br>
+<strong>Strength • Discipline • Respect</strong>
+</p>
+
+</div>
+
+<footer>
+© 2026 Revered Fitness
+</footer>
+
+</body>
+</html>
