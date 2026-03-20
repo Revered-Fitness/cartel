@@ -106,6 +106,7 @@ section{
   text-align:left;
   transition: transform 0.3s, box-shadow 0.3s;
   position:relative;
+  flex-shrink:0;
 }
 
 .service:hover{
@@ -160,6 +161,13 @@ section{
   100% { text-shadow: 0 0 2px #00ff4c; }
 }
 
+/* 8-WEEK & 12-WEEK GROUP (DESKTOP SIDE BY SIDE) */
+.service-group{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+}
+
 /* MOBILE OPTIMIZATION */
 @media (max-width:768px){
   nav{
@@ -180,27 +188,31 @@ section{
     border-bottom:none;
   }
 
-  /* Stack all service cards vertically for mobile */
+  /* ALL SERVICES HORIZONTAL SCROLL */
   .services-container{
-    flex-direction:column;
-    align-items:center;
-    gap:25px;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    padding-bottom:20px;
+    -webkit-overflow-scrolling: touch;
+    gap:15px;
+  }
+  .services-container::-webkit-scrollbar{
+    display:none;
   }
 
   .service{
-    width:90%;
-    margin-bottom:25px;
-    padding:28px 20px;
+    width:80%; /* slightly narrower for mobile */
+    flex:0 0 auto;
+    margin-bottom:0;
   }
 
-  /* Ensure 8-week and 12-week boxes same width as others */
   .service-group{
-    flex-direction:column;
-    gap:20px;
-    width:100%;
+    flex-direction:row;
+    gap:15px;
+    width:auto;
   }
   .service-group .service{
-    width:100%;
+    width:80%;
   }
 }
 
@@ -274,7 +286,7 @@ Personalized coaching, nutrition guidance, and support to help you get stronger,
 <a href="index.html#contact" class="btn">Get Your Plan</a>
 </div>
 
-<!-- 8-week and 12-week programs -->
+<!-- 8-week and 12-week programs side by side on desktop -->
 <div class="service-group">
 
   <!-- 8-Week Online Transformation -->
