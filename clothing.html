@@ -31,4 +31,107 @@
       display:inline-block;
     }
 
-    /* subtle vertica*
+    /* subtle vertical divider */
+    nav a::after{
+      content:"";
+      position:absolute;
+      right:-10px;
+      top:50%;
+      transform:translateY(-50%);
+      height:18px;
+      width:1px;
+      background:rgba(255,255,255,0.25);
+    }
+
+    nav a:last-child::after{
+      display:none;
+    }
+
+    nav a:hover{
+      color:#ffffff;
+      text-shadow:0 0 6px rgba(225,6,0,0.6);
+    }
+
+    /* underline animation */
+    nav a::before{
+      content:"";
+      position:absolute;
+      bottom:-6px;
+      left:50%;
+      transform:translateX(-50%);
+      width:0%;
+      height:2px;
+      background:#e10600;
+      transition:width 0.3s ease;
+      border-radius:2px;
+    }
+
+    nav a:hover::before{
+      width:60%;
+    }
+
+    section {
+      padding:60px 20px;
+      max-width:1000px;
+      margin:auto;
+    }
+
+    .product-img {
+      width:100%;
+      max-width:400px;
+      border-radius:15px;
+      box-shadow:0 0 25px rgba(225,6,0,0.4);
+      margin-top:20px;
+    }
+
+    /* MOBILE: 2 COLUMN NAV */
+    @media (max-width:600px){
+
+      nav{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+      }
+
+      nav a{
+        display:block;
+        margin:0;
+        padding:12px 0;
+        border-bottom:1px solid rgba(255,255,255,0.15);
+      }
+
+      /* remove desktop divider */
+      nav a::after{
+        display:none;
+      }
+
+      /* remove bottom border from last row */
+      nav a:nth-last-child(-n+2){
+        border-bottom:none;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="clothing.html">Clothing</a>
+  <a href="about.html">About</a>
+</nav>
+
+<section>
+  <h1>Revered Fitness Apparel</h1>
+  <p>Premium Performance Wear.</p>
+
+  <img src="shirt.jpg" alt="Revered Fitness Shirt" class="product-img">
+
+  <img src="hoodie.jpg" class="product-img">
+  
+  <p>High quality training apparel designed for strength and style.</p>
+</section>
+
+</body>
+</html>
