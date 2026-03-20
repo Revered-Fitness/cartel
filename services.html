@@ -14,6 +14,7 @@ body{
   text-align:center;
 }
 
+/* NAVIGATION RESTORED TO ORIGINAL STYLE */
 nav{
   background:black;
   padding:18px 10px;
@@ -30,6 +31,7 @@ nav a{
   transition:all 0.3s ease;
 }
 
+/* subtle vertical divider */
 nav a::after{
   content:"";
   position:absolute;
@@ -50,6 +52,7 @@ nav a:hover{
   text-shadow:0 0 6px rgba(225,6,0,0.6);
 }
 
+/* underline animation */
 nav a::before{
   content:"";
   position:absolute;
@@ -158,6 +161,26 @@ section{
 
 /* Mobile optimization */
 @media (max-width:700px){
+  /* Top nav becomes grid */
+  nav{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+  nav a{
+    display:block;
+    margin:0;
+    padding:12px 0;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+  }
+  nav a::after{
+    display:none;
+  }
+  nav a:nth-last-child(-n+2){
+    border-bottom:none;
+  }
+
+  /* Stack other services vertically */
   .services-container{
     flex-direction:column;
     align-items:center;
@@ -166,8 +189,19 @@ section{
     width:90%;
     margin-bottom:20px;
   }
-}
 
+  /* 8-week and 12-week packages side-by-side */
+  .service-group{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    gap:20px;
+  }
+  .service-group .service{
+    width:45%;
+  }
+}
+  
 /* Subtle background graphics */
 section::before{
   content:"";
@@ -238,27 +272,32 @@ Personalized coaching, nutrition guidance, and support to help you get stronger,
 <a href="index.html#contact" class="btn">Get Your Plan</a>
 </div>
 
-<!-- 8-Week Online Transformation -->
-<div class="service">
-<h2>8-Week Online Transformation</h2>
-<p>Intensive 8-week program for fast, measurable results.<br>
-✅ Focused coaching & goal tracking<br>
-✅ Nutrition guidance<br>
-✅ App support & messaging for accountability</p>
-<p class="price">£160</p>
-<a href="index.html#contact" class="btn">Start Now</a>
-</div>
+<!-- 8-week and 12-week grouped -->
+<div class="service-group">
 
-<!-- 12-Week Online Transformation -->
-<div class="service">
-<h2>12-Week Online Transformation <span class="best-value">– Best Value!</span></h2>
-<p>Comprehensive 12-week program to transform your fitness.<br>
-✅ Dynamic coaching & goal tracking<br>
-✅ Regular progress reviews<br>
-✅ Nutrition guidance + app support<br>
-✅ 24/7 messaging for motivation</p>
-<p class="price">£220</p>
-<a href="index.html#contact" class="btn">Start Now</a>
+  <!-- 8-Week Online Transformation -->
+  <div class="service">
+  <h2>8-Week Online Transformation</h2>
+  <p>Intensive 8-week program for fast, measurable results.<br>
+  ✅ Focused coaching & goal tracking<br>
+  ✅ Nutrition guidance<br>
+  ✅ App support & messaging for accountability</p>
+  <p class="price">£160</p>
+  <a href="index.html#contact" class="btn">Start Now</a>
+  </div>
+
+  <!-- 12-Week Online Transformation -->
+  <div class="service">
+  <h2>12-Week Online Transformation <span class="best-value">– Best Value!</span></h2>
+  <p>Comprehensive 12-week program to transform your fitness.<br>
+  ✅ Dynamic coaching & goal tracking<br>
+  ✅ Regular progress reviews<br>
+  ✅ Nutrition guidance + app support<br>
+  ✅ 24/7 messaging for motivation</p>
+  <p class="price">£220</p>
+  <a href="index.html#contact" class="btn">Start Now</a>
+  </div>
+
 </div>
 
 </div>
