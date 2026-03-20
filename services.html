@@ -196,6 +196,7 @@ section{
     -webkit-overflow-scrolling: touch;
     gap:15px;
   }
+
   .services-container::-webkit-scrollbar{
     display:none;
   }
@@ -206,11 +207,14 @@ section{
     margin-bottom:0;
   }
 
+  /* 8- and 12-week boxes slight left shift */
   .service-group{
     flex-direction:row;
     gap:15px;
     width:auto;
+    margin-left:-6px; /* move group 2mm left */
   }
+
   .service-group .service{
     width:80%;
   }
