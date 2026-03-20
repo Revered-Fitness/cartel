@@ -106,7 +106,6 @@ section{
   text-align:left;
   transition: transform 0.3s, box-shadow 0.3s;
   position:relative;
-  flex-shrink:0;
 }
 
 .service:hover{
@@ -188,35 +187,27 @@ section{
     border-bottom:none;
   }
 
-  /* ALL SERVICES HORIZONTAL SCROLL */
+  /* STACK ALL SERVICE BOXES VERTICALLY */
   .services-container{
-    flex-wrap:nowrap;
-    overflow-x:auto;
-    padding-bottom:20px;
-    -webkit-overflow-scrolling: touch;
-    gap:15px;
-  }
-
-  .services-container::-webkit-scrollbar{
-    display:none;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
   }
 
   .service{
-    width:80%; /* slightly narrower for mobile */
-    flex:0 0 auto;
+    width:90%;
     margin-bottom:0;
   }
 
-  /* 8- and 12-week boxes slight left shift */
   .service-group{
-    flex-direction:row;
-    gap:15px;
-    width:auto;
-    margin-left:-6px; /* move group 2mm left */
+    flex-direction:column; /* stack 8- & 12-week boxes */
+    gap:20px;
+    width:100%;
+    margin-left:0; /* no shift needed */
   }
 
   .service-group .service{
-    width:80%;
+    width:90%;
   }
 }
 
