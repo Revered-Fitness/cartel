@@ -100,7 +100,7 @@ section{
 .service{
   background:#1c1c1c;
   padding:30px 20px;
-  width:280px;
+  width:280px; /* all boxes same width */
   border-radius:12px;
   box-shadow:0 0 18px rgba(225,6,0,0.3);
   text-align:left;
@@ -160,13 +160,6 @@ section{
   100% { text-shadow: 0 0 2px #00ff4c; }
 }
 
-/* 8-WEEK & 12-WEEK GROUP (DESKTOP) */
-.service-group{
-  display:flex;
-  gap:20px;
-  justify-content:center;
-}
-
 /* MOBILE OPTIMIZATION */
 @media (max-width:768px){
   nav{
@@ -187,7 +180,7 @@ section{
     border-bottom:none;
   }
 
-  /* Stack all service cards vertically for easy scrolling */
+  /* Stack all service cards vertically for mobile */
   .services-container{
     flex-direction:column;
     align-items:center;
@@ -200,14 +193,14 @@ section{
     padding:28px 20px;
   }
 
-  /* 8-week and 12-week: stacked but narrower */
+  /* Ensure 8-week and 12-week boxes same width as others */
   .service-group{
     flex-direction:column;
     gap:20px;
     width:100%;
   }
   .service-group .service{
-    width:95%; /* slightly narrower for better fit on small phones */
+    width:100%;
   }
 }
 
@@ -281,7 +274,7 @@ Personalized coaching, nutrition guidance, and support to help you get stronger,
 <a href="index.html#contact" class="btn">Get Your Plan</a>
 </div>
 
-<!-- 8-week and 12-week grouped -->
+<!-- 8-week and 12-week programs -->
 <div class="service-group">
 
   <!-- 8-Week Online Transformation -->
