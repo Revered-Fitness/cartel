@@ -78,13 +78,13 @@ header {
   max-width:1200px;
   width:100%;
   padding:0 20px;
-  gap:40px;
+  gap:50px;
 }
 
-/* HERO IMAGE */
+/* HERO IMAGE SHRUNK */
 .hero-container img.hero-img {
-  width:50%;
-  max-width:500px;
+  width:45%; /* reduced from 50% to 45% */
+  max-width:450px;
   border-radius:12px;
   box-shadow:0 8px 25px rgba(0,0,0,0.5);
   object-fit:cover;
@@ -92,7 +92,7 @@ header {
 
 /* HERO TEXT STACKED */
 .hero-text {
-  width:45%;
+  width:50%; /* increased slightly to fill space left by smaller image */
   display:flex;
   flex-direction:column;
   align-items:flex-start;
@@ -249,7 +249,7 @@ footer {
 
 <header>
   <div class="hero-container">
-    <!-- Hero image -->
+    <!-- Hero image slightly smaller -->
     <img src="moving.jpg" alt="Hero Image" class="hero-img">
     <div class="hero-text">
       <img src="logo.png" alt="Revered Fitness Logo" class="logo">
