@@ -22,7 +22,7 @@ body {
 
 a { text-decoration:none; }
 
-/* --- NAVIGATION --- */
+/* --- NAVIGATION (matching About/Events) --- */
 nav {
   background:rgba(0,0,0,0.95);
   backdrop-filter:blur(10px);
@@ -58,7 +58,6 @@ nav a::before {
   transition:0.3s;
 }
 
-/* Active link */
 nav a.active {
   color:#e10600;
 }
@@ -67,15 +66,20 @@ nav a.active::before {
   width:60%;
 }
 
-nav a:hover { color:#e10600; }
-nav a:hover::before { width:60%; }
+nav a:hover {
+  color:#e10600;
+}
+
+nav a:hover::before {
+  width:60%;
+}
 
 /* --- HERO --- */
 header {
   display:flex;
   justify-content:center;
   align-items:center;
-  padding-top:80px; /* space from nav */
+  padding-top:80px; /* space from fixed nav */
   flex:1;
 }
 
@@ -83,7 +87,7 @@ header {
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:15px;
+  gap:15px; /* reduced spacing between image and text */
   flex-wrap:wrap;
   max-width:1200px;
   width:100%;
@@ -107,7 +111,7 @@ header {
 }
 
 .logo {
-  width:220px;
+  width:220px; /* larger logo */
   margin-bottom:20px;
 }
 
@@ -123,6 +127,7 @@ header {
   margin-bottom:20px;
 }
 
+/* BUTTON */
 .btn {
   background:#e10600;
   padding:14px 30px;
@@ -130,8 +135,14 @@ header {
   font-weight:700;
   color:#fff;
   display:inline-block;
+  transition:0.3s;
 }
 
+.btn:hover {
+  background:#ff2a2a;
+}
+
+/* FOOTER */
 footer {
   background:#000;
   padding:20px;
