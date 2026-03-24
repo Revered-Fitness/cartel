@@ -163,14 +163,16 @@ header {
   gap:50px;
 }
 
-/* Transformation image */
+/* Transformation image with reduced height */
 #transformation img {
   width:45%;
   max-width:500px;
+  max-height:400px; /* reduced height by ~20% */
   border-radius:12px;
   box-shadow:0 8px 25px rgba(225,6,0,0.6);
   cursor:pointer;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  object-fit:cover;
 }
 
 #transformation img:hover {
@@ -184,7 +186,7 @@ header {
   min-width:300px;
   display:flex;
   flex-direction:column;
-  justify-content:center; /* vertically align text with image */
+  justify-content:center;
 }
 
 .transformation-text h2 {
