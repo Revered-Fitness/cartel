@@ -22,7 +22,7 @@ body {
 
 a { text-decoration:none; }
 
-/* --- NAVIGATION (matching About/Events) --- */
+/* --- NAVIGATION --- */
 nav {
   background:rgba(0,0,0,0.95);
   backdrop-filter:blur(10px);
@@ -37,13 +37,37 @@ nav {
 
 nav a {
   color:#f5f5f5;
-  margin:0 25px;
+  margin:0 18px; /* smaller margin to make dividers visible */
   font-weight:700;
   letter-spacing:1.5px;
-  padding:6px 12px;
+  padding:6px 14px;
   position:relative;
   transition:0.3s;
   font-family:'Poppins', sans-serif;
+}
+
+/* Vertical divider after each link */
+nav a::after {
+  content:"";
+  position:absolute;
+  right:-10px;
+  top:50%;
+  transform:translateY(-50%);
+  height:18px;
+  width:1px;
+  background:rgba(255,255,255,0.25);
+}
+
+nav a:last-child::after {
+  display:none;
+}
+
+nav a.active {
+  color:#e10600;
+}
+
+nav a.active::before {
+  width:60%;
 }
 
 nav a::before {
@@ -56,14 +80,6 @@ nav a::before {
   height:2px;
   background:#e10600;
   transition:0.3s;
-}
-
-nav a.active {
-  color:#e10600;
-}
-
-nav a.active::before {
-  width:60%;
 }
 
 nav a:hover {
@@ -87,7 +103,7 @@ header {
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:15px; /* reduced spacing between image and text */
+  gap:15px;
   flex-wrap:wrap;
   max-width:1200px;
   width:100%;
@@ -194,6 +210,28 @@ footer {
   }
   .hero-text p {
     font-size:0.95rem;
+  }
+
+  /* Mobile: remove dividers, stack nav links */
+  nav {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  nav a {
+    display:block;
+    margin:0;
+    padding:12px 0;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+  }
+
+  nav a::after {
+    display:none;
+  }
+
+  nav a:nth-last-child(-n+2) {
+    border-bottom:none;
   }
 }
 </style>
