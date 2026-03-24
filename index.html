@@ -1,66 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Revered Fitness</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title>Revered Fitness</title>
 <style>
 /* --- BASE STYLING --- */
-body{
+body {
   margin:0;
   font-family: 'Poppins', Arial, sans-serif;
   background:#0f0f0f;
-  color:white;
-  text-align:center;
+  color:#fff;
   line-height:1.6;
 }
 
-nav{
+a {
+  text-decoration:none;
+}
+
+/* --- NAVIGATION --- */
+nav {
   background:rgba(0,0,0,0.85);
-  padding:18px 10px;
-  backdrop-filter: blur(10px);
+  backdrop-filter:blur(10px);
   position:sticky;
   top:0;
   z-index:100;
   display:flex;
   justify-content:center;
+  padding:15px 10px;
 }
 
-nav a{
+nav a {
   color:#f5f5f5;
   margin:0 18px;
-  text-decoration:none;
   font-weight:600;
   letter-spacing:1px;
-  padding:6px 14px;
+  padding:6px 12px;
   position:relative;
   transition:all 0.3s ease;
 }
 
-nav a::after{
+nav a::before {
   content:"";
   position:absolute;
-  right:-10px;
-  top:50%;
-  transform:translateY(-50%);
-  height:18px;
-  width:1px;
-  background:rgba(255,255,255,0.25);
-}
-
-nav a:last-child::after{
-  display:none;
-}
-
-nav a:hover{
-  color:#e10600;
-  text-shadow:0 0 8px rgba(225,6,0,0.6);
-}
-
-nav a::before{
-  content:"";
-  position:absolute;
-  bottom:-6px;
+  bottom:-4px;
   left:50%;
   transform:translateX(-50%);
   width:0%;
@@ -70,207 +53,194 @@ nav a::before{
   border-radius:2px;
 }
 
-nav a:hover::before{
+nav a:hover {
+  color:#e10600;
+}
+
+nav a:hover::before {
   width:60%;
 }
 
 /* --- HERO SECTION --- */
-header{
+header {
   position:relative;
-  height:90vh;
-  background:url('hero.jpg') center/cover no-repeat;
+  width:100%;
+  min-height:80vh;
   display:flex;
-  flex-direction:column;
   justify-content:center;
   align-items:center;
-  color:white;
-  text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+  flex-direction:column;
+  text-align:center;
+  background-color:#000;
 }
 
-header::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.5);
+header img.hero-img {
+  width:100%;
+  height:auto;
+  max-height:80vh;
+  object-fit:contain;
 }
 
-header img{
-  width:160px;
-  position:relative;
-  z-index:1;
-}
-
-header h1{
-  font-size:48px;
+header h1 {
+  font-size:3rem;
   letter-spacing:3px;
-  margin:15px 0;
-  z-index:1;
+  margin:20px 0 10px;
 }
 
-header .tagline{
+header .tagline {
   color:#ddd;
-  font-size:20px;
-  z-index:1;
+  font-size:1.2rem;
+  margin-bottom:20px;
 }
 
-header .btn{
-  position:relative;
-  z-index:1;
-  margin-top:30px;
-  padding:14px 32px;
-  font-size:18px;
-  border-radius:8px;
-  transition:all 0.3s ease;
-  box-shadow:0 5px 15px rgba(225,6,0,0.5);
+header .btn {
+  background:#e10600;
+  padding:12px 28px;
+  border-radius:6px;
+  font-weight:bold;
+  color:#fff;
+  transition:0.3s;
 }
 
-header .btn:hover{
+header .btn:hover {
   background:#a00000;
   transform:translateY(-3px);
 }
 
 /* --- SECTIONS --- */
-section{
+section {
   padding:60px 20px;
-  max-width:900px;
-  margin:auto;
-  backdrop-filter: blur(8px);
+  max-width:1000px;
+  margin:0 auto;
 }
 
-section h2{
-  font-size:32px;
-  margin-bottom:20px;
+section h2 {
+  font-size:2rem;
   color:#e10600;
-  letter-spacing:1px;
+  margin-bottom:15px;
+  text-align:center;
 }
 
-section p{
-  font-size:18px;
+section p {
+  font-size:1.1rem;
   color:#ccc;
+  text-align:center;
+  max-width:800px;
+  margin:0 auto 30px;
 }
 
 /* IMAGE GRID */
-.image-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+.image-grid {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
   gap:20px;
-  margin-top:30px;
 }
 
-.image-grid div{
+.image-grid div {
+  flex:1 1 300px;
   display:flex;
   flex-direction:column;
   align-items:center;
 }
 
-.image-grid img{
+.image-grid img {
   width:100%;
   border-radius:15px;
   box-shadow:0 8px 20px rgba(225,6,0,0.5);
   transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.image-grid img:hover{
+.image-grid img:hover {
   transform:scale(1.05);
   box-shadow:0 12px 25px rgba(225,6,0,0.8);
 }
 
-.image-grid p{
+.image-grid p {
   color:#aaa;
-  font-size:14px;
-  margin-top:6px;
+  margin-top:8px;
+  font-size:0.9rem;
 }
 
-/* SELF TRANSFORMATION SECTION */
-#transformation{
+/* --- TRANSFORMATION SECTION --- */
+#transformation {
   position:relative;
-  background:url('transform.jpg') center/cover no-repeat;
-  background-size:cover;
-  height:500px;
+  width:100%;
   display:flex;
   justify-content:center;
   align-items:center;
-  color:white;
-  text-shadow: 0 2px 15px rgba(0,0,0,0.7);
-  margin-bottom:40px;
+  flex-direction:column;
+  text-align:center;
+  margin:40px 0;
 }
 
-#transformation::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.5);
+#transformation img {
+  width:90%;
+  max-width:700px;
+  border-radius:15px;
+  box-shadow:0 8px 25px rgba(225,6,0,0.6);
 }
 
-#transformation h2{
-  font-size:36px;
-  z-index:1;
-}
-
-#transformation p{
-  font-size:20px;
-  z-index:1;
-  color:#ddd;
-}
-
-/* CONTACT BOX */
-.contact-box{
+/* --- CONTACT --- */
+.contact-box {
   background:rgba(26,26,26,0.9);
   padding:35px;
   border-radius:15px;
   box-shadow:0 0 25px rgba(225,6,0,0.5);
+  max-width:600px;
+  margin:0 auto;
 }
 
-.contact-box p{
+.contact-box p {
   margin:12px 0;
 }
 
-footer{
-  background:black;
-  padding:20px;
-  font-size:14px;
-  margin-top:40px;
-  letter-spacing:0.5px;
+.contact-box a.btn {
+  display:inline-block;
+  margin-top:15px;
 }
 
-/* --- MOBILE --- */
-@media(max-width:600px){
-  nav{
+/* --- FOOTER --- */
+footer {
+  background:#000;
+  padding:20px;
+  font-size:0.9rem;
+  letter-spacing:0.5px;
+  text-align:center;
+  margin-top:40px;
+}
+
+/* --- RESPONSIVE --- */
+@media(max-width:768px) {
+  header h1 {
+    font-size:2rem;
+  }
+  header .tagline {
+    font-size:1rem;
+  }
+}
+
+@media(max-width:500px) {
+  .image-grid {
     flex-direction:column;
-  }
-  header h1{
-    font-size:32px;
-  }
-  header .tagline{
-    font-size:16px;
-  }
-  header .btn{
-    font-size:16px;
-  }
-  #transformation h2{
-    font-size:28px;
-  }
-  #transformation p{
-    font-size:16px;
   }
 }
 </style>
 </head>
-
 <body>
 
 <nav>
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="clothing.html">Clothing</a>
-  <a href="about.html">About</a>
+  <a href="#">Home</a>
+  <a href="#">Services</a>
+  <a href="#">Clothing</a>
+  <a href="#">About</a>
 </nav>
 
 <header>
-  <img src="logo.png" alt="Revered Fitness Logo">
+  <img src="hero.jpg" alt="Hero Image" class="hero-img">
   <h1>REVERED FITNESS</h1>
   <p class="tagline">Strength • Discipline • Respect</p>
-  <a class="btn" href="#contact">Start Your Journey</a>
+  <a href="#contact" class="btn">Start Your Journey</a>
 </header>
 
 <section>
@@ -279,7 +249,6 @@ footer{
     Helping beginners step into the gym, build strength, 
     and develop lifelong discipline through professional coaching.
   </p>
-
   <div class="image-grid">
     <div>
       <img src="selfie.jpg" alt="Trainer Selfie">
@@ -293,10 +262,9 @@ footer{
 </section>
 
 <section id="transformation">
-  <div>
-    <h2>My Transformation</h2>
-    <p>A personal journey from dedication to results</p>
-  </div>
+  <h2>My Transformation</h2>
+  <img src="transform.jpg" alt="Self Transformation Photo">
+  <p>A personal journey from dedication to results</p>
 </section>
 
 <section id="contact">
