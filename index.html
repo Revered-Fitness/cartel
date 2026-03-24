@@ -62,12 +62,12 @@ nav a:hover::before { width:60%; }
 header {
   position:relative;
   width:100%;
-  min-height:80vh;
+  min-height:60vh; /* SHRINKED HERO HEIGHT */
   display:flex;
   justify-content:center;
   align-items:center;
   overflow:hidden;
-  padding:100px 20px 40px 20px; /* top padding for fixed nav */
+  padding:80px 20px 20px 20px; /* top padding adjusted for fixed nav */
   z-index:1;
 }
 
@@ -131,12 +131,12 @@ header {
 }
 
 .hero-text img.logo {
-  width:220px;
+  width:260px; /* INCREASED LOGO SIZE */
   margin-bottom:20px;
 }
 
 .hero-text h1 {
-  font-size:3.2rem;
+  font-size:3rem;
   letter-spacing:3px;
   margin-bottom:15px;
   font-family:'Poppins', sans-serif;
@@ -274,7 +274,7 @@ footer {
 @media(max-width:500px){
   .hero-text h1 { font-size:2rem; }
   .hero-text p { font-size:1rem; }
-  .hero-text img.logo { width:180px; }
+  .hero-text img.logo { width:220px; }
 }
 </style>
 </head>
@@ -314,7 +314,6 @@ footer {
   <h2>Contact</h2>
   <div class="contact-box">
     <p><strong>Email</strong><br>j.p.blackburn@hotmail.co.uk</p>
-    <p><strong>Mobile</strong><br>07576588552</p>
     <a class="btn" href="https://instagram.com/Revered_fitness_pt" target="_blank">Instagram</a>
   </div>
 </section>
