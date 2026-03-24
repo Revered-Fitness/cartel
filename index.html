@@ -58,7 +58,7 @@ nav a::before {
 nav a:hover { color:#e10600; }
 nav a:hover::before { width:60%; }
 
-/* --- HERO SECTION (REDUCED HEIGHT) --- */
+/* --- HERO SECTION --- */
 header {
   position:relative;
   width:100%;
@@ -81,12 +81,13 @@ header {
   gap:50px;
 }
 
-/* HERO IMAGE SHRUNK 25% */
+/* HERO IMAGE SHRINKED 25% */
 .hero-container img.hero-img {
   width:50%;
   max-width:500px;
   height:auto;
-  max-height:60%; /* shrink height by 25% */
+  transform: scale(0.75); /* reduces height by 25% */
+  transform-origin: top left;
   border-radius:12px;
   box-shadow:0 8px 25px rgba(0,0,0,0.5);
   object-fit:cover;
@@ -101,12 +102,12 @@ header {
   justify-content:center;
 }
 
-/* Logo SHRUNK 25% */
+/* Logo SHRINKED 25% */
 .hero-text img.logo {
-  width:75%;
-  max-width:fit-content;
+  width:75%; 
   margin-bottom:15px;
-  max-height:75%; /* shrink height by 25% */
+  transform: scale(0.75); /* reduces height by 25% */
+  transform-origin: top left;
   object-fit:contain;
 }
 
@@ -228,8 +229,8 @@ footer {
     text-align:center;
   }
   .hero-text { width:100%; align-items:center; justify-content:center; }
-  .hero-text img.logo { margin-bottom:15px; width:75%; max-height:none; }
-  .hero-container img.hero-img { width:80%; margin-bottom:20px; max-height:none; }
+  .hero-text img.logo { margin-bottom:15px; width:75%; transform: scale(0.75); }
+  .hero-container img.hero-img { width:80%; margin-bottom:20px; transform: scale(0.75); }
   #transformation { flex-direction:column; }
   #transformation img, .transformation-text { width:80%; }
 }
@@ -237,7 +238,8 @@ footer {
 @media(max-width:500px){
   .hero-text h1 { font-size:2rem; }
   .hero-text p { font-size:1rem; }
-  .hero-text img.logo { width:100%; max-width:210px; max-height:none; }
+  .hero-text img.logo { width:100%; max-width:210px; transform: scale(0.75); }
+  .hero-container img.hero-img { width:100%; max-width:none; transform: scale(0.75); }
 }
 </style>
 </head>
