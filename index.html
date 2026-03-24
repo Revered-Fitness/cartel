@@ -181,6 +181,38 @@ section p{
   margin-top:6px;
 }
 
+/* SELF TRANSFORMATION SECTION */
+#transformation{
+  position:relative;
+  background:url('transform.jpg') center/cover no-repeat;
+  background-size:cover;
+  height:500px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+  margin-bottom:40px;
+}
+
+#transformation::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+}
+
+#transformation h2{
+  font-size:36px;
+  z-index:1;
+}
+
+#transformation p{
+  font-size:20px;
+  z-index:1;
+  color:#ddd;
+}
+
 /* CONTACT BOX */
 .contact-box{
   background:rgba(26,26,26,0.9);
@@ -213,6 +245,12 @@ footer{
     font-size:16px;
   }
   header .btn{
+    font-size:16px;
+  }
+  #transformation h2{
+    font-size:28px;
+  }
+  #transformation p{
     font-size:16px;
   }
 }
@@ -251,6 +289,13 @@ footer{
       <img src="moving.jpg" alt="Client Exercising in Gym">
       <p>Client in action</p>
     </div>
+  </div>
+</section>
+
+<section id="transformation">
+  <div>
+    <h2>My Transformation</h2>
+    <p>A personal journey from dedication to results</p>
   </div>
 </section>
 
