@@ -72,7 +72,7 @@ header {
 
 .hero-container {
   display:flex;
-  align-items:center;
+  align-items:center; /* vertical alignment for logo and text */
   justify-content:space-between;
   max-width:1200px;
   width:100%;
@@ -80,9 +80,9 @@ header {
   gap:40px;
 }
 
-/* HERO IMAGE - CENTERED LOGO */
+/* HERO IMAGE */
 .hero-container img.hero-img {
-  width:60%; 
+  width:60%;
   max-width:600px;
   height:auto;
   border-radius:12px;
@@ -90,22 +90,22 @@ header {
   object-fit:cover;
 }
 
-/* HERO TEXT ON RIGHT */
+/* HERO TEXT STACKED */
 .hero-text {
   width:35%;
   display:flex;
   flex-direction:column;
-  justify-content:center; /* center vertically relative to image */
+  justify-content:center; /* vertically center logo with text */
   align-items:flex-start;
   height:100%;
 }
 
-/* Logo centered vertically on left of hero text */
+/* Logo aligned vertically with hero text */
 .hero-text img.logo {
   width:75%;
-  margin-bottom:20px;
-  align-self:center;
+  margin-bottom:15px;
   object-fit:contain;
+  align-self:flex-start; /* keep left aligned with text */
 }
 
 /* Text group (heading, tagline, button) */
@@ -113,21 +113,22 @@ header {
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  height:60%; /* equal spacing */
+  height:auto;
+  gap:10px; /* small spacing between heading, tagline, button */
 }
 
 /* Heading */
 .hero-text h1 {
-  font-size:2.2rem; /* increased slightly */
+  font-size:2.2rem;
   letter-spacing:2px;
-  margin-bottom:12px;
+  margin-bottom:0;
 }
 
 /* Tagline */
 .hero-text p {
-  font-size:1.1rem; /* increased slightly */
-  margin-bottom:15px;
+  font-size:1.1rem;
   color:#ddd;
+  margin:0;
 }
 
 /* BUTTON */
@@ -135,7 +136,7 @@ header {
   display:inline-block;
   background:#e10600;
   color:#fff;
-  padding:12px 28px; /* slightly larger */
+  padding:12px 28px;
   border-radius:8px;
   font-weight:bold;
   text-transform:uppercase;
@@ -233,7 +234,7 @@ footer {
   }
   .hero-text { width:100%; align-items:center; justify-content:center; }
   .hero-text img.logo { margin-bottom:15px; width:75%; }
-  .hero-text .text-group { height:auto; }
+  .hero-text .text-group { height:auto; gap:8px; }
   .hero-container img.hero-img { width:80%; margin-bottom:20px; }
   #transformation { flex-direction:column; }
   #transformation img, .transformation-text { width:80%; }
