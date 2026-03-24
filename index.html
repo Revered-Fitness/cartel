@@ -66,23 +66,25 @@ header {
   justify-content:center;
   align-items:center;
   overflow:hidden;
-  padding-top:20px;
+  padding-top:15px; /* reduced */
   margin-top:0;
 }
 
 .hero-container {
   display:flex;
-  align-items:center; /* vertical alignment with image */
+  align-items:center; /* vertical alignment */
   justify-content:space-between;
   max-width:1200px;
   width:100%;
   padding:0 20px;
-  gap:40px;
+  gap:30px; /* reduced spacing */
+  transform: scale(0.75); /* scale down hero section 25% */
+  transform-origin: top left;
 }
 
 /* HERO IMAGE */
 .hero-container img.hero-img {
-  width:65%; /* increased 15% */
+  width:65%; /* width still increased */
   max-width:650px;
   height:auto;
   border-radius:12px;
@@ -95,15 +97,15 @@ header {
   width:45%;
   display:flex;
   flex-direction:column;
-  justify-content:center; /* center vertically with image */
+  justify-content:center;
   align-items:flex-start;
   height:100%;
 }
 
-/* Logo aligned with hero text */
+/* Logo */
 .hero-text img.logo {
   width:75%;
-  margin-bottom:15px;
+  margin-bottom:10px;
   object-fit:contain;
 }
 
@@ -118,18 +120,15 @@ header {
 
 /* Heading */
 .hero-text h1 {
-  font-size:2.5rem;
-  letter-spacing:2px;
-  margin-bottom:10px;
-  font-family:'Poppins', sans-serif;
+  font-size:1.875rem; /* reduced 25% from 2.5rem */
+  letter-spacing:1.5px;
+  margin-bottom:7px;
 }
 
 /* Tagline */
 .hero-text p {
-  color:#ddd;
-  font-size:1rem;
-  margin-bottom:15px;
-  font-family:'Roboto', sans-serif;
+  font-size:0.75rem; /* reduced 25% from 1rem */
+  margin-bottom:11px;
 }
 
 /* BUTTON */
@@ -137,20 +136,20 @@ header {
   display:inline-block;
   background:#e10600;
   color:#fff;
-  padding:10px 24px;
-  border-radius:8px;
+  padding:7px 18px; /* reduced */
+  border-radius:6px;
   font-weight:bold;
   text-transform:uppercase;
   letter-spacing:1px;
-  box-shadow:0 5px 15px rgba(225,6,0,0.4);
+  box-shadow:0 4px 12px rgba(225,6,0,0.4);
   transition: all 0.3s ease;
   font-family:'Poppins', sans-serif;
 }
 
 .btn:hover {
   background:#a00000;
-  box-shadow:0 8px 25px rgba(225,6,0,0.7);
-  transform:translateY(-3px);
+  box-shadow:0 6px 20px rgba(225,6,0,0.7);
+  transform:translateY(-2px);
 }
 
 /* --- TRANSFORMATION SECTION --- */
@@ -232,6 +231,7 @@ footer {
     flex-direction:column;
     text-align:center;
     align-items:center;
+    transform: scale(1); /* remove scale for mobile */
   }
   .hero-text { width:100%; align-items:center; justify-content:center; }
   .hero-text img.logo { margin-bottom:15px; width:75%; }
@@ -241,9 +241,9 @@ footer {
 }
 
 @media(max-width:500px){
-  .hero-text h1 { font-size:1.8rem; }
-  .hero-text p { font-size:0.9rem; }
-  .hero-text img.logo { width:100%; max-width:210px; }
+  .hero-text h1 { font-size:1.4rem; }
+  .hero-text p { font-size:0.7rem; }
+  .hero-text img.logo { width:100%; max-width:160px; }
   .hero-container img.hero-img { width:100%; max-width:none; }
 }
 </style>
@@ -260,7 +260,7 @@ footer {
 
 <header>
   <div class="hero-container">
-    <img src="moving.jpg" alt="Hero Image" class="hero-img"> <!-- New moving.jpg -->
+    <img src="moving.jpg" alt="Hero Image" class="hero-img">
     <div class="hero-text">
       <img src="logo.png" alt="Revered Fitness Logo" class="logo">
       <div class="text-group">
