@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Revered Fitness</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* --- BASE STYLING --- */
 body {
   margin:0;
-  font-family: 'Poppins', Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   background:#0f0f0f;
   color:#fff;
   line-height:1.6;
@@ -16,19 +17,6 @@ body {
 }
 
 a { text-decoration:none; }
-
-/* --- LOGO ABOVE NAV --- */
-.logo-container {
-  display:flex;
-  justify-content:center;
-  padding:20px 0 0 0;
-}
-
-.logo-container img {
-  width:150px;
-  height:auto;
-  display:block;
-}
 
 /* --- NAVIGATION --- */
 nav {
@@ -50,6 +38,7 @@ nav a {
   padding:6px 12px;
   position:relative;
   transition:all 0.3s ease;
+  font-family:'Poppins', sans-serif;
 }
 
 nav a::before {
@@ -111,18 +100,28 @@ header {
   width:50%;
   text-align:left;
   z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+.hero-text img.logo {
+  width:180px;
+  margin-bottom:20px;
 }
 
 .hero-text h1 {
   font-size:3rem;
   letter-spacing:3px;
   margin-bottom:15px;
+  font-family:'Poppins', sans-serif;
 }
 
 .hero-text p {
   color:#ddd;
   font-size:1.2rem;
   margin-bottom:25px;
+  font-family:'Roboto', sans-serif;
 }
 
 /* --- PREMIUM BUTTON --- */
@@ -138,6 +137,7 @@ header {
   box-shadow:0 5px 15px rgba(225,6,0,0.4);
   transition: all 0.3s ease;
   animation: pulse-glow 2.5s infinite alternate;
+  font-family:'Poppins', sans-serif;
 }
 
 .btn:hover {
@@ -167,6 +167,7 @@ section h2 {
   font-size:2rem;
   color:#e10600;
   margin-bottom:15px;
+  font-family:'Poppins', sans-serif;
 }
 
 section p {
@@ -174,6 +175,7 @@ section p {
   color:#ccc;
   max-width:450px;
   line-height:1.5;
+  font-family:'Roboto', sans-serif;
 }
 
 .section-img {
@@ -257,23 +259,34 @@ footer {
 @media(max-width:992px){
   .hero-container {
     flex-direction:column;
+    align-items:center;
   }
-  .hero-text { text-align:center; width:100%; margin-top:20px; }
+  .hero-text { text-align:center; width:100%; margin-top:20px; align-items:center; }
+  .hero-text img.logo { margin-bottom:15px; }
   .hero-container img.hero-img { width:80%; }
 }
 
 @media(max-width:500px){
   .hero-text h1 { font-size:2rem; }
   .hero-text p { font-size:1rem; }
-  .logo-container img { width:120px; }
+  .hero-text img.logo { width:140px; }
 }
 </style>
 </head>
 <body>
 
-<div class="logo-container">
-  <img src="logo.png" alt="Revered Fitness Logo">
-</div>
+<header>
+  <div class="hero-container">
+    <img src="moving.jpg" alt="Hero Image" class="hero-img" id="hero-image">
+    <div class="hero-overlay" id="hero-overlay"></div>
+    <div class="hero-text">
+      <img src="logo.png" alt="Revered Fitness Logo" class="logo">
+      <h1>REVERED FITNESS</h1>
+      <p>Strength • Discipline • Respect</p>
+      <a href="#contact" class="btn">Start Your Journey</a>
+    </div>
+  </div>
+</header>
 
 <nav>
   <a href="#">Home</a>
@@ -281,18 +294,6 @@ footer {
   <a href="#">Clothing</a>
   <a href="#">About</a>
 </nav>
-
-<header>
-  <div class="hero-container">
-    <img src="moving.jpg" alt="Hero Image" class="hero-img" id="hero-image">
-    <div class="hero-overlay" id="hero-overlay"></div>
-    <div class="hero-text">
-      <h1>REVERED FITNESS</h1>
-      <p>Strength • Discipline • Respect</p>
-      <a href="#contact" class="btn">Start Your Journey</a>
-    </div>
-  </div>
-</header>
 
 <section id="transformation">
   <h2>My Transformation</h2>
@@ -314,7 +315,7 @@ footer {
 </footer>
 
 <script>
-// Shrink nav if needed (no logo inside nav now)
+// Parallax & overlay scroll
 window.addEventListener('scroll', function() {
   const hero = document.getElementById('hero-image');
   hero.style.transform = `translateY(${window.scrollY * 0.2}px)`;
@@ -323,7 +324,6 @@ window.addEventListener('scroll', function() {
   overlay.style.transform = `translateY(${window.scrollY * 0.1}px)`;
 
   document.querySelectorAll('.section-img').forEach(img => {
-    const rect = img.getBoundingClientRect();
     const offset = window.scrollY - img.offsetTop + window.innerHeight;
     img.style.transform = `translateY(${Math.min(offset * 0.05, 50)}px)`;
   });
@@ -338,7 +338,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Staggered scroll animation
+// Section image animation
 const images = document.querySelectorAll('.section-img');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
