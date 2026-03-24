@@ -69,16 +69,20 @@ header {
   display:flex;
   justify-content:center;
   align-items:center;
-  flex-direction:column;
   text-align:center;
-  background-color:#000;
+  background:url('hero.jpg') center/cover no-repeat;
 }
 
-header img.hero-img {
-  width:100%;
-  height:auto;
-  max-height:80vh;
-  object-fit:contain;
+header::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+}
+
+header .hero-content {
+  position:relative;
+  z-index:1;
 }
 
 header h1 {
@@ -109,90 +113,78 @@ header .btn:hover {
 
 /* --- SECTIONS --- */
 section {
-  padding:60px 20px;
-  max-width:1000px;
+  padding:80px 20px;
+  max-width:1100px;
   margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:40px;
+}
+
+section:nth-child(even) {
+  flex-direction:row-reverse;
 }
 
 section h2 {
-  font-size:2rem;
+  font-size:2.5rem;
   color:#e10600;
-  margin-bottom:15px;
-  text-align:center;
+  margin-bottom:20px;
 }
 
 section p {
   font-size:1.1rem;
   color:#ccc;
-  text-align:center;
-  max-width:800px;
-  margin:0 auto 30px;
+  max-width:500px;
+  line-height:1.5;
 }
 
-/* IMAGE GRID */
-.image-grid {
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:20px;
-}
-
-.image-grid div {
-  flex:1 1 300px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
-
-.image-grid img {
-  width:100%;
+/* IMAGE STYLING */
+.section-img {
+  flex:1 1 400px;
   border-radius:15px;
-  box-shadow:0 8px 20px rgba(225,6,0,0.5);
+  box-shadow:0 10px 30px rgba(225,6,0,0.5);
+  max-width:100%;
+  height:auto;
   transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.image-grid img:hover {
-  transform:scale(1.05);
-  box-shadow:0 12px 25px rgba(225,6,0,0.8);
+.section-img:hover {
+  transform:scale(1.03);
+  box-shadow:0 12px 35px rgba(225,6,0,0.7);
 }
 
-.image-grid p {
-  color:#aaa;
-  margin-top:8px;
-  font-size:0.9rem;
-}
-
-/* --- TRANSFORMATION SECTION --- */
+/* TRANSFORMATION SECTION */
 #transformation {
-  position:relative;
-  width:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
   text-align:center;
-  margin:40px 0;
+  flex-direction:column;
 }
 
 #transformation img {
   width:90%;
   max-width:700px;
   border-radius:15px;
-  box-shadow:0 8px 25px rgba(225,6,0,0.6);
+  box-shadow:0 10px 30px rgba(225,6,0,0.6);
+  margin-bottom:15px;
 }
 
-/* --- CONTACT --- */
+/* CONTACT SECTION */
+#contact {
+  flex-direction:column;
+  text-align:center;
+}
+
 .contact-box {
   background:rgba(26,26,26,0.9);
-  padding:35px;
+  padding:40px;
   border-radius:15px;
-  box-shadow:0 0 25px rgba(225,6,0,0.5);
+  box-shadow:0 0 30px rgba(225,6,0,0.5);
   max-width:600px;
   margin:0 auto;
 }
 
 .contact-box p {
-  margin:12px 0;
+  margin:15px 0;
 }
 
 .contact-box a.btn {
@@ -200,10 +192,10 @@ section p {
   margin-top:15px;
 }
 
-/* --- FOOTER --- */
+/* FOOTER */
 footer {
   background:#000;
-  padding:20px;
+  padding:25px;
   font-size:0.9rem;
   letter-spacing:0.5px;
   text-align:center;
@@ -211,7 +203,13 @@ footer {
 }
 
 /* --- RESPONSIVE --- */
-@media(max-width:768px) {
+@media(max-width:900px){
+  section {
+    flex-direction:column;
+  }
+  section:nth-child(even) {
+    flex-direction:column;
+  }
   header h1 {
     font-size:2rem;
   }
@@ -220,11 +218,6 @@ footer {
   }
 }
 
-@media(max-width:500px) {
-  .image-grid {
-    flex-direction:column;
-  }
-}
 </style>
 </head>
 <body>
@@ -237,34 +230,33 @@ footer {
 </nav>
 
 <header>
-  <img src="hero.jpg" alt="Hero Image" class="hero-img">
-  <h1>REVERED FITNESS</h1>
-  <p class="tagline">Strength • Discipline • Respect</p>
-  <a href="#contact" class="btn">Start Your Journey</a>
+  <div class="hero-content">
+    <h1>REVERED FITNESS</h1>
+    <p class="tagline">Strength • Discipline • Respect</p>
+    <a href="#contact" class="btn">Start Your Journey</a>
+  </div>
 </header>
 
 <section>
-  <h2>Our Mission</h2>
-  <p>
-    Helping beginners step into the gym, build strength, 
-    and develop lifelong discipline through professional coaching.
-  </p>
-  <div class="image-grid">
-    <div>
-      <img src="selfie.jpg" alt="Trainer Selfie">
-      <p>Meet your trainer</p>
-    </div>
-    <div>
-      <img src="moving.jpg" alt="Client Exercising in Gym">
-      <p>Client in action</p>
-    </div>
+  <img src="selfie.jpg" alt="Trainer Selfie" class="section-img">
+  <div>
+    <h2>Meet Your Trainer</h2>
+    <p>Our expert coach will guide you every step of the way, helping beginners build strength and confidence.</p>
+  </div>
+</section>
+
+<section>
+  <img src="moving.jpg" alt="Client Exercising" class="section-img">
+  <div>
+    <h2>Clients in Action</h2>
+    <p>See our clients pushing their limits and achieving results, motivating you to start your own journey.</p>
   </div>
 </section>
 
 <section id="transformation">
   <h2>My Transformation</h2>
   <img src="transform.jpg" alt="Self Transformation Photo">
-  <p>A personal journey from dedication to results</p>
+  <p>A personal journey from dedication to results, showing the power of consistency and hard work.</p>
 </section>
 
 <section id="contact">
