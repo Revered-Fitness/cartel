@@ -227,6 +227,39 @@ section::before{
   pointer-events:none;
   z-index:0;
 }
+
+/* MODAL STYLES */
+#questionnaireModal{
+  display:none; 
+  position:fixed; 
+  top:0; left:0; width:100%; height:100%; 
+  background:rgba(0,0,0,0.85); 
+  justify-content:center; 
+  align-items:center; 
+  z-index:999;
+  transition: opacity 0.3s;
+  opacity:0;
+}
+
+#questionnaireModal form{
+  background:#1c1c1c; 
+  padding:30px; 
+  border-radius:12px; 
+  color:white;
+  width:90%;
+  max-width:500px;
+  position:relative;
+}
+
+#questionnaireModal #closeModal{
+  position:absolute; 
+  top:10px; 
+  right:15px; 
+  font-size:24px; 
+  cursor:pointer; 
+  color:white;
+}
+
 </style>
 </head>
 
@@ -253,7 +286,7 @@ Personalized coaching, nutrition guidance, and support to help you get stronger,
 <h2>1-on-1 Personal Training</h2>
 <p>Hands-on coaching to build strength, perfect form, and achieve real results. Each session is tailored to your goals, with expert guidance and motivation.</p>
 <p class="price">£20/session</p>
-<a href="index.html#contact" class="btn">Book Now</a>
+<a href="#" class="btn service-btn" data-service="personal_training">Book Now</a>
 </div>
 
 <!-- Zoom Training Sessions -->
@@ -264,7 +297,7 @@ Personalized coaching, nutrition guidance, and support to help you get stronger,
 ✅ Real-time guidance & actionable strategies<br>
 ✅ Convenient, effective, and flexible</p>
 <p class="price">£15/session</p>
-<a href="index.html#contact" class="btn">Book Now</a>
+<a href="#" class="btn service-btn" data-service="zoom_training">Book Now</a>
 </div>
 
 <!-- Custom Nutrition Plan -->
@@ -275,7 +308,7 @@ Personalized coaching, nutrition guidance, and support to help you get stronger,
 ✅ Boost results & progress<br>
 ✅ Clear, actionable guidance</p>
 <p class="price">£30</p>
-<a href="index.html#contact" class="btn">Get Your Plan</a>
+<a href="#" class="btn service-btn" data-service="nutrition_plan">Get Your Plan</a>
 </div>
 
 <!-- 8-week and 12-week programs side by side on desktop -->
@@ -289,7 +322,7 @@ Personalized coaching, nutrition guidance, and support to help you get stronger,
   ✅ Nutrition guidance<br>
   ✅ App support & messaging for accountability</p>
   <p class="price">£160</p>
-  <a href="index.html#contact" class="btn">Start Now</a>
+  <a href="#" class="btn service-btn" data-service="8_week_program">Start Now</a>
   </div>
 
   <!-- 12-Week Online Transformation -->
@@ -301,7 +334,7 @@ Personalized coaching, nutrition guidance, and support to help you get stronger,
   ✅ Nutrition guidance + app support<br>
   ✅ 24/7 messaging for motivation</p>
   <p class="price">£220</p>
-  <a href="index.html#contact" class="btn">Start Now</a>
+  <a href="#" class="btn service-btn" data-service="12_week_program">Start Now</a>
   </div>
 
 </div>
@@ -310,9 +343,100 @@ Personalized coaching, nutrition guidance, and support to help you get stronger,
 
 </section>
 
+<!-- MODAL -->
+<div id="questionnaireModal">
+  <form id="questionnaireForm" action="https://formspree.io/f/mqegzpvk" method="POST">
+    <span id="closeModal">&times;</span>
+    <h2>Personal Training Questionnaire</h2>
+
+    <input type="hidden" name="service" id="serviceInput">
+
+    <label>Full Name:<br><input type="text" name="name" required style="width:100%; padding:8px; margin:6px 0;"></label>
+    <label>Email:<br><input type="email" name="email" required style="width:100%; padding:8px; margin:6px 0;"></label>
+    <label>Any injuries or medical conditions?<br><textarea name="health_issues" style="width:100%; padding:8px; margin:6px 0;"></textarea></label>
+    <label>Main Fitness Goal:<br>
+      <select name="goal" required style="width:100%; padding:8px; margin:6px 0;">
+        <option value="weight_loss">Weight Loss</option>
+        <option value="muscle_gain">Muscle Gain</option>
+        <option value="endurance">Increase Endurance</option>
+        <option value="general_health">General Health</option>
+      </select>
+    </label>
+    <label>Days per week you can train:<br><input type="number" name="days_per_week" min="1" max="7" required style="width:100%; padding:8px; margin:6px 0;"></label>
+    <label>Preferred workout time:<br>
+      <select name="workout_time" style="width:100%; padding:8px; margin:6px 0;">
+        <option value="morning">Morning</option>
+        <option value="afternoon">Afternoon</option>
+        <option value="evening">Evening</option>
+      </select>
+    </label>
+
+    <button type="submit" style="background:#e10600; color:white; padding:12px 20px; border:none; border-radius:6px; margin-top:10px; width:100%;">Submit & Pay</button>
+  </form>
+</div>
+
 <footer>
 © 2026 Revered Fitness
 </footer>
+
+<script>
+const stripeLinks = {
+  personal_training: "https://buy.stripe.com/bJefZhg4Pc0j5Cn34jgEg04",
+  zoom_training: "https://buy.stripe.com/bJefZhbOz7K33uffR5gEg03",
+  nutrition_plan: "https://buy.stripe.com/5kQ6oHcSD5BV6Gr20fgEg02",
+  "8_week_program": "https://buy.stripe.com/7sYeVddWH0hBaWHcETgEg01",
+  "12_week_program": "https://buy.stripe.com/14A14n4m7c0je8TbAPgEg00"
+};
+
+const modal = document.getElementById('questionnaireModal');
+const closeModal = document.getElementById('closeModal');
+const form = document.getElementById('questionnaireForm');
+
+// Show modal
+document.querySelectorAll('.service-btn').forEach(button=>{
+  button.addEventListener('click', function(e){
+    e.preventDefault();
+    document.getElementById('serviceInput').value = this.dataset.service;
+    modal.style.display = 'flex';
+    setTimeout(()=>modal.style.opacity='1',10);
+  });
+});
+
+// Close modal
+closeModal.addEventListener('click', ()=>{
+  modal.style.opacity='0';
+  setTimeout(()=>modal.style.display='none',300);
+});
+
+// Click outside form closes modal
+modal.addEventListener('click',(e)=>{
+  if(e.target===modal){
+    modal.style.opacity='0';
+    setTimeout(()=>modal.style.display='none',300);
+  }
+});
+
+// Formspree submit + Stripe redirect
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  const formData = new FormData(form);
+  fetch(form.action,{
+    method: form.method,
+    body: formData,
+    headers:{'Accept':'application/json'}
+  }).then(response=>{
+    const service = formData.get('service');
+    if(stripeLinks[service]){
+      window.location.href = stripeLinks[service];
+    }else{
+      alert("Service not found!");
+    }
+  }).catch(error=>{
+    alert("Error submitting form.");
+    console.error(error);
+  });
+});
+</script>
 
 </body>
 </html>
