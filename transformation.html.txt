@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Transformation - Revered Fitness</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* --- BASE STYLING --- */
+body {
+  margin:0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background:#0f0f0f;
+  color:#fff;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+a { text-decoration:none; }
+
+/* --- NAVIGATION --- */
+nav{
+  background:black;
+  padding:18px 10px;
+  display:flex;
+  justify-content:center;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+}
+
+nav a{
+  color:#f5f5f5;
+  margin:0 18px;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:1px;
+  padding:6px 14px;
+  position:relative;
+  transition:all 0.3s ease;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  right:-10px;
+  top:50%;
+  transform:translateY(-50%);
+  height:18px;
+  width:1px;
+  background:rgba(255,255,255,0.25);
+}
+
+nav a:last-child::after{
+  display:none;
+}
+
+nav a:hover{
+  color:#ffffff;
+  text-shadow:0 0 6px rgba(225,6,0,0.6);
+}
+
+nav a::before{
+  content:"";
+  position:absolute;
+  bottom:-6px;
+  left:50%;
+  transform:translateX(-50%);
+  width:0%;
+  height:2px;
+  background:#e10600;
+  transition:width 0.3s ease;
+  border-radius:2px;
+}
+
+nav a:hover::before{
+  width:60%;
+}
+
+/* --- TRANSFORMATION SECTION --- */
+#transformation {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  padding:120px 20px 60px 20px;
+  gap:50px;
+}
+
+#transformation img {
+  width:45%;
+  max-width:500px;
+  border-radius:12px;
+  box-shadow:0 8px 25px rgba(225,6,0,0.6);
+}
+
+.transformation-text {
+  flex:1;
+  min-width:300px;
+}
+
+.transformation-text h2 {
+  color:#e10600;
+  margin-bottom:20px;
+  font-family:'Poppins', sans-serif;
+}
+
+.transformation-paragraph {
+  color:#ccc;
+  margin-bottom:18px;
+}
+
+.btn {
+  background:#e10600;
+  padding:14px 30px;
+  border-radius:8px;
+  font-weight:700;
+  color:#fff;
+  display:inline-block;
+  margin-top:10px;
+  transition:0.3s;
+}
+
+.btn:hover {
+  background:#ff2a2a;
+}
+
+/* --- FOOTER --- */
+footer {
+  background:#000;
+  padding:20px;
+  text-align:center;
+}
+
+/* --- MOBILE / TABLET RESPONSIVE --- */
+@media(max-width:992px){
+  #transformation {
+    flex-direction:column;
+    align-items:center;
+    padding:80px 20px 40px 20px;
+  }
+
+  #transformation img {
+    width:80%;
+    max-width:400px;
+  }
+
+  .transformation-text {
+    width:100%;
+    text-align:center;
+  }
+}
+
+@media(max-width:500px){
+  #transformation {
+    padding:60px 20px;
+    gap:30px;
+  }
+
+  #transformation img {
+    width:100%;
+    max-width:320px;
+  }
+
+  .transformation-text h2 {
+    font-size:1.6rem;
+  }
+
+  .transformation-paragraph {
+    font-size:0.95rem;
+    line-height:1.6;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION (Same as homepage) -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="clothing.html">Clothing</a>
+  <a href="about.html">About</a>
+</nav>
+
+<!-- TRANSFORMATION SECTION -->
+<section id="transformation">
+  <img src="new-transform.jpg" alt="Self Transformation Photo">
+
+  <div class="transformation-text">
+    <h2>My Transformation</h2>
+
+    <p class="transformation-paragraph">
+      Over time, I transformed my body and mindset, going from <strong>56kg to 70kg</strong>. 
+      This journey wasn’t just about gaining weight—it was about building 
+      <strong>strength, confidence, and consistency</strong>.
+    </p>
+
+    <p class="transformation-paragraph">
+      Through dedication to proper <strong>nutrition</strong>, regular 
+      <strong>workouts</strong>, and staying committed to my goals, I gradually 
+      developed a healthier, more powerful version of myself.
+    </p>
+
+    <p class="transformation-paragraph">
+      Every step of the way taught me <strong>resilience</strong> and the importance 
+      of celebrating small victories on the path to personal growth.
+    </p>
+
+    <!-- Back to Home Button -->
+    <a href="index.html" class="btn">Back to Home</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Revered Fitness
+</footer>
+
+</body>
+</html>
