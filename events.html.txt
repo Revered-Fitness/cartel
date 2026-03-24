@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revered Fitness - Events</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* --- BASE STYLING --- */
+body {
+  margin:0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background:#0f0f0f;
+  color:#fff;
+  line-height:1.6;
+  overflow-x:hidden;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+a { text-decoration:none; }
+
+/* --- NAVIGATION --- */
+nav {
+  background:rgba(0,0,0,0.95);
+  backdrop-filter:blur(10px);
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:100;
+  display:flex;
+  justify-content:center;
+  padding:12px 0;
+}
+
+nav a {
+  color:#f5f5f5;
+  margin:0 25px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  padding:6px 12px;
+  position:relative;
+  transition:0.3s;
+  font-family:'Poppins', sans-serif;
+}
+
+nav a::before {
+  content:"";
+  position:absolute;
+  bottom:-4px;
+  left:50%;
+  transform:translateX(-50%);
+  width:0%;
+  height:2px;
+  background:#e10600;
+  transition:0.3s;
+}
+
+nav a:hover { color:#e10600; }
+nav a:hover::before { width:60%; }
+
+/* --- HERO SECTION --- */
+header {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding-top:100px; /* space for fixed nav */
+}
+
+.hero-container {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  max-width:1200px;
+  width:100%;
+  padding:0 20px;
+  gap:30px;
+  text-align:center;
+}
+
+.hero-img {
+  width:80%;
+  max-width:600px;
+  border-radius:12px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.5);
+}
+
+.hero-text h1 {
+  font-family:'Poppins', sans-serif;
+  font-size:2.3rem;
+  margin:0;
+}
+
+.hero-text p {
+  color:#d1d1d1;
+  font-size:1.2rem;
+  max-width:700px;
+}
+
+/* --- EVENTS CARDS --- */
+.events-container {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:30px;
+  max-width:1200px;
+  margin:50px auto 0 auto;
+  padding:0 20px;
+}
+
+.event-card {
+  background:#1c1c1c;
+  padding:25px 20px;
+  width:280px;
+  border-radius:12px;
+  box-shadow:0 0 18px rgba(225,6,0,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align:left;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow:0 0 28px rgba(225,6,0,0.5);
+}
+
+.event-card h2 {
+  margin-top:0;
+  font-size:20px;
+  color:white;
+}
+
+.event-card p {
+  color:#ccc;
+  margin:10px 0 0 0;
+}
+
+.event-card .btn {
+  margin-top:15px;
+  width:100%;
+  text-align:center;
+}
+
+/* BUTTON */
+.btn {
+  background:#e10600;
+  padding:12px 20px;
+  border-radius:8px;
+  font-weight:700;
+  color:#fff;
+  display:inline-block;
+  text-decoration:none;
+  transition:0.3s;
+}
+.btn:hover {
+  background:#ff2a2a;
+  transform:translateY(-2px);
+}
+
+/* FOOTER */
+footer {
+  background:#000;
+  padding:20px;
+  text-align:center;
+  margin-top:auto;
+}
+
+/* --- MOBILE / TABLET --- */
+@media(max-width:992px){
+  .hero-container {
+    width:100%;
+  }
+  .events-container {
+    flex-direction:column;
+    align-items:center;
+  }
+  .event-card {
+    width:90%;
+  }
+}
+
+@media(max-width:500px){
+  header {
+    margin-top:70px;
+  }
+  .hero-img {
+    width:100%;
+    max-width:320px;
+  }
+  .hero-text h1 {
+    font-size:1.8rem;
+  }
+  .hero-text p {
+    font-size:1rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="transformation.html">Transformation</a>
+  <a href="events.html">Events</a>
+  <a href="clothing.html">Clothing</a>
+  <a href="about.html">About</a>
+</nav>
+
+<!-- HERO SECTION -->
+<header>
+  <div class="hero-container">
+    <img src="hero.jpg" class="hero-img" alt="Events Hero Image">
+    <div class="hero-text">
+      <h1>Upcoming Events</h1>
+      <p>Keep an eye out for any free events scheduled with Revered Fitness. Stay tuned for updates!</p>
+    </div>
+  </div>
+</header>
+
+<!-- EVENTS SECTION -->
+<div class="events-container">
+  <!-- Example Event Card -->
+  <div class="event-card">
+    <h2>Free Online Workout</h2>
+    <p>Date: March 30, 2026</p>
+    <p>Join our 1-hour live online workout session. All levels welcome!</p>
+    <a href="#" class="btn">Learn More</a>
+  </div>
+
+  <div class="event-card">
+    <h2>Outdoor Fitness Meetup</h2>
+    <p>Date: April 10, 2026</p>
+    <p>Come join a free outdoor group training session at the local park.</p>
+    <a href="#" class="btn">Learn More</a>
+  </div>
+
+  <!-- Add more cards as needed -->
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Revered Fitness
+</footer>
+
+</body>
+</html>
