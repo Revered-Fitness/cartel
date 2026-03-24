@@ -90,7 +90,7 @@ header {
   object-fit:cover;
 }
 
-/* HERO TEXT */
+/* HERO TEXT STACKED */
 .hero-text {
   width:45%;
   display:flex;
@@ -98,20 +98,23 @@ header {
   align-items:flex-start;
 }
 
-/* Logo same width as hero text container */
+/* Logo same width as heading */
 .hero-text img.logo {
   width:100%;
-  max-width:100%;
-  margin-bottom:20px;
+  max-width:fit-content; /* restricts width to heading width */
+  margin-bottom:15px;
 }
 
+/* Heading */
 .hero-text h1 {
   font-size:3rem;
   letter-spacing:3px;
   margin-bottom:15px;
   font-family:'Poppins', sans-serif;
+  width:max-content; /* define width for alignment with logo */
 }
 
+/* Tagline */
 .hero-text p {
   color:#ddd;
   font-size:1.2rem;
@@ -245,7 +248,7 @@ footer {
 
 <header>
   <div class="hero-container">
-    <!-- Moving.jpg without overlay -->
+    <!-- Hero image -->
     <img src="moving.jpg" alt="Hero Image" class="hero-img">
     <div class="hero-text">
       <img src="logo.png" alt="Revered Fitness Logo" class="logo">
