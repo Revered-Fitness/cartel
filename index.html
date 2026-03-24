@@ -62,7 +62,7 @@ nav a:hover::before { width:60%; }
 header {
   position:relative;
   width:100%;
-  min-height:55vh;
+  min-height:44vh; /* reduced height for 20% shrink */
   display:flex;
   justify-content:center;
   align-items:center;
@@ -81,10 +81,12 @@ header {
   gap:50px;
 }
 
-/* HERO IMAGE SHRUNK */
+/* HERO IMAGE */
 .hero-container img.hero-img {
-  width:45%; /* reduced from 50% to 45% */
-  max-width:450px;
+  width:50%; /* revert width */
+  max-width:500px;
+  height:auto;
+  max-height:80%; /* reduce height by ~20% */
   border-radius:12px;
   box-shadow:0 8px 25px rgba(0,0,0,0.5);
   object-fit:cover;
@@ -92,7 +94,7 @@ header {
 
 /* HERO TEXT STACKED */
 .hero-text {
-  width:50%; /* increased slightly to fill space left by smaller image */
+  width:45%;
   display:flex;
   flex-direction:column;
   align-items:flex-start;
@@ -225,7 +227,7 @@ footer {
   }
   .hero-text { width:100%; align-items:center; justify-content:center; }
   .hero-text img.logo { margin-bottom:15px; width:75%; }
-  .hero-container img.hero-img { width:80%; margin-bottom:20px; }
+  .hero-container img.hero-img { width:80%; margin-bottom:20px; max-height:none; }
   #transformation { flex-direction:column; }
   #transformation img, .transformation-text { width:80%; }
 }
@@ -249,7 +251,7 @@ footer {
 
 <header>
   <div class="hero-container">
-    <!-- Hero image slightly smaller -->
+    <!-- Hero image reduced in height -->
     <img src="moving.jpg" alt="Hero Image" class="hero-img">
     <div class="hero-text">
       <img src="logo.png" alt="Revered Fitness Logo" class="logo">
