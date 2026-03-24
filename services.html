@@ -1,52 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Services - Revered Fitness</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-/* --- BASE STYLING --- */
 body{
-  margin:0;
-  font-family:'Roboto', Arial, sans-serif;
   background:#0f0f0f;
-  color:#fff;
-  line-height:1.6;
+  color:white;
+  font-family:Arial, sans-serif;
+  margin:0;
   text-align:center;
-  overflow-x:hidden;
 }
 
-a{ text-decoration:none; }
-
-/* --- NAVIGATION FIXED TOP (MATCH INDEX) --- */
+/* NAVIGATION */
 nav{
-  background:rgba(0,0,0,0.95);
-  backdrop-filter:blur(10px);
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:100;
-  display:flex;
-  justify-content:center;
-  padding:12px 0;
+  background:black;
+  padding:18px 10px;
 }
 
 nav a{
   color:#f5f5f5;
-  margin:0 25px;
-  font-weight:700;
+  margin:0 18px;
+  text-decoration:none;
+  font-weight:600;
   letter-spacing:1px;
-  padding:6px 12px;
+  padding:6px 14px;
   position:relative;
   transition:all 0.3s ease;
-  font-family:'Poppins', sans-serif;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  right:-10px;
+  top:50%;
+  transform:translateY(-50%);
+  height:18px;
+  width:1px;
+  background:rgba(255,255,255,0.25);
+}
+
+nav a:last-child::after{
+  display:none;
+}
+
+nav a:hover{
+  color:#ffffff;
+  text-shadow:0 0 6px rgba(225,6,0,0.6);
 }
 
 nav a::before{
   content:"";
   position:absolute;
-  bottom:-4px;
+  bottom:-6px;
   left:50%;
   transform:translateX(-50%);
   width:0%;
@@ -56,37 +64,26 @@ nav a::before{
   border-radius:2px;
 }
 
-nav a:hover{ color:#e10600; }
-nav a:hover::before{ width:60%; }
+nav a:hover::before{
+  width:60%;
+}
 
-/* --- SECTION STYLING --- */
+/* FOOTER */
+footer{
+  background:black;
+  padding:20px;
+  margin-top:40px;
+}
+
+/* HERO SECTION */
 section{
-  padding:80px 20px;
+  padding:60px 20px;
   max-width:1200px;
   margin:auto;
+  text-align:center;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
   position:relative;
   overflow:hidden;
-  margin-top:70px; /* offset for fixed nav */
-}
-
-/* Section Title */
-section h1{
-  font-family:'Poppins', sans-serif;
-  font-weight:700;
-  font-size:2.5rem;
-  color:#fff;
-  margin-bottom:40px;
-}
-
-/* Section Intro Text */
-section p{
-  font-family:'Roboto', sans-serif;
-  font-weight:400;
-  font-size:1.1rem;
-  color:#ddd;
-  max-width:800px;
-  margin:auto 0 50px 0;
-  line-height:1.6;
 }
 
 /* SERVICES CONTAINER */
@@ -101,11 +98,11 @@ section p{
 
 /* SERVICE CARD */
 .service{
-  background:#1a1a1a;
+  background:#1c1c1c;
   padding:30px 20px;
-  width:280px;
+  width:280px; /* desktop width */
   border-radius:12px;
-  box-shadow:0 0 20px rgba(225,6,0,0.3);
+  box-shadow:0 0 18px rgba(225,6,0,0.3);
   text-align:left;
   transition: transform 0.3s, box-shadow 0.3s;
   position:relative;
@@ -113,21 +110,19 @@ section p{
 
 .service:hover{
   transform: translateY(-8px);
-  box-shadow:0 0 30px rgba(225,6,0,0.5);
+  box-shadow:0 0 28px rgba(225,6,0,0.5);
 }
 
 .service h2{
   margin-top:0;
   font-size:20px;
-  font-family:'Poppins', sans-serif;
-  font-weight:700;
   color:white;
 }
 
 .price{
   color:#e10600;
   font-size:20px;
-  font-weight:700;
+  font-weight:bold;
   margin-top:12px;
 }
 
@@ -135,24 +130,20 @@ section p{
 .btn{
   display:inline-block;
   margin-top:20px;
-  padding:14px 28px;
+  padding:14px 20px;
   background:#e10600;
   color:white;
   text-decoration:none;
-  border-radius:8px;
-  font-weight:700;
-  text-transform:uppercase;
-  transition:all 0.3s ease;
+  border-radius:6px;
+  font-weight:600;
+  transition:all 0.3s;
   width:100%;
   text-align:center;
   box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
 }
-
 .btn:hover{
-  background:#a00000;
+  background:#ff2a2a;
   transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(225,6,0,0.5);
 }
 
 /* BEST VALUE ANIMATION */
@@ -169,26 +160,15 @@ section p{
   100% { text-shadow: 0 0 2px #00ff4c; }
 }
 
-/* SERVICE GROUP (8- & 12-week) */
+/* 8-WEEK & 12-WEEK GROUP (DESKTOP SIDE BY SIDE) */
 .service-group{
   display:flex;
   gap:20px;
   justify-content:center;
-  align-items:flex-start;
+  align-items:flex-start; /* align tops */
 }
 
-/* FOOTER */
-footer{
-  background:#000;
-  padding:20px;
-  margin-top:40px;
-  font-family:'Roboto', sans-serif;
-  font-size:0.9rem;
-  letter-spacing:0.5px;
-  text-align:center;
-}
-
-/* MOBILE RESPONSIVE */
+/* MOBILE OPTIMIZATION */
 @media (max-width:768px){
   nav{
     display:grid;
@@ -201,9 +181,14 @@ footer{
     padding:12px 0;
     border-bottom:1px solid rgba(255,255,255,0.15);
   }
-  nav a::after{ display:none; }
-  nav a:nth-last-child(-n+2){ border-bottom:none; }
+  nav a::after{
+    display:none;
+  }
+  nav a:nth-last-child(-n+2){
+    border-bottom:none;
+  }
 
+  /* STACK ALL SERVICE BOXES VERTICALLY */
   .services-container{
     flex-direction:column;
     align-items:center;
@@ -211,18 +196,40 @@ footer{
   }
 
   .service, .service-group .service{
-    width:90%;
+    width:90%; /* all boxes same width */
   }
 
+  /* STACK 8- & 12-week boxes vertically and align */
   .service-group{
     flex-direction:column;
     gap:25px;
-    align-items:center;
+    align-items:center; /* align all boxes horizontally centered */
     width:100%;
   }
 }
+
+/* BACKGROUND TEXTURES */
+section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-image:
+    url('https://www.transparenttextures.com/patterns/diagonal-noise.png'),
+    url('https://www.svgrepo.com/show/31244/dumbbell.svg'),
+    url('https://www.svgrepo.com/show/31306/yoga.svg');
+  background-repeat:repeat, no-repeat, no-repeat;
+  background-position:top left, 80% 20%, 10% 80%;
+  background-size:auto, 80px, 100px;
+  opacity:0.05;
+  pointer-events:none;
+  z-index:0;
+}
 </style>
 </head>
+
 <body>
 
 <nav>
@@ -233,68 +240,74 @@ footer{
 </nav>
 
 <section>
-<h1>Achieve Your Goals with Revered Fitness</h1>
-<p>Personalized coaching, nutrition guidance, and support to help you get stronger, fitter, and healthier—your way.</p>
+
+<h1 style="font-size:32px; margin-bottom:40px; color:white;">Achieve Your Goals with Revered Fitness</h1>
+<p style="font-size:18px; max-width:800px; margin:auto; margin-bottom:50px; color:#ddd;">
+Personalized coaching, nutrition guidance, and support to help you get stronger, fitter, and healthier—your way.
+</p>
 
 <div class="services-container">
 
-  <!-- 1-on-1 Personal Training -->
+<!-- 1-on-1 Personal Training -->
+<div class="service">
+<h2>1-on-1 Personal Training</h2>
+<p>Hands-on coaching to build strength, perfect form, and achieve real results. Each session is tailored to your goals, with expert guidance and motivation.</p>
+<p class="price">£20/session</p>
+<a href="index.html#contact" class="btn">Book Now</a>
+</div>
+
+<!-- Zoom Training Sessions -->
+<div class="service">
+<h2>Zoom Training Sessions</h2>
+<p>Flexible coaching from anywhere.<br>
+✅ Personalized sessions for your goals<br>
+✅ Real-time guidance & actionable strategies<br>
+✅ Convenient, effective, and flexible</p>
+<p class="price">£15/session</p>
+<a href="index.html#contact" class="btn">Book Now</a>
+</div>
+
+<!-- Custom Nutrition Plan -->
+<div class="service">
+<h2>Custom Nutrition Plan</h2>
+<p>Nutrition designed around your lifestyle and goals.<br>
+✅ Optimize energy & performance<br>
+✅ Boost results & progress<br>
+✅ Clear, actionable guidance</p>
+<p class="price">£30</p>
+<a href="index.html#contact" class="btn">Get Your Plan</a>
+</div>
+
+<!-- 8-week and 12-week programs side by side on desktop -->
+<div class="service-group">
+
+  <!-- 8-Week Online Transformation -->
   <div class="service">
-    <h2>1-on-1 Personal Training</h2>
-    <p>Hands-on coaching to build strength, perfect form, and achieve real results. Each session is tailored to your goals, with expert guidance and motivation.</p>
-    <p class="price">£20/session</p>
-    <a href="index.html#contact" class="btn">Book Now</a>
+  <h2>8-Week Online Transformation</h2>
+  <p>Intensive 8-week program for fast, measurable results.<br>
+  ✅ Focused coaching & goal tracking<br>
+  ✅ Nutrition guidance<br>
+  ✅ App support & messaging for accountability</p>
+  <p class="price">£160</p>
+  <a href="index.html#contact" class="btn">Start Now</a>
   </div>
 
-  <!-- Zoom Training Sessions -->
+  <!-- 12-Week Online Transformation -->
   <div class="service">
-    <h2>Zoom Training Sessions</h2>
-    <p>Flexible coaching from anywhere.<br>
-    ✅ Personalized sessions for your goals<br>
-    ✅ Real-time guidance & actionable strategies<br>
-    ✅ Convenient, effective, and flexible</p>
-    <p class="price">£15/session</p>
-    <a href="index.html#contact" class="btn">Book Now</a>
-  </div>
-
-  <!-- Custom Nutrition Plan -->
-  <div class="service">
-    <h2>Custom Nutrition Plan</h2>
-    <p>Nutrition designed around your lifestyle and goals.<br>
-    ✅ Optimize energy & performance<br>
-    ✅ Boost results & progress<br>
-    ✅ Clear, actionable guidance</p>
-    <p class="price">£30</p>
-    <a href="index.html#contact" class="btn">Get Your Plan</a>
-  </div>
-
-  <!-- 8-week and 12-week programs -->
-  <div class="service-group">
-
-    <div class="service">
-      <h2>8-Week Online Transformation</h2>
-      <p>Intensive 8-week program for fast, measurable results.<br>
-      ✅ Focused coaching & goal tracking<br>
-      ✅ Nutrition guidance<br>
-      ✅ App support & messaging for accountability</p>
-      <p class="price">£160</p>
-      <a href="index.html#contact" class="btn">Start Now</a>
-    </div>
-
-    <div class="service">
-      <h2>12-Week Online Transformation <span class="best-value">– Best Value!</span></h2>
-      <p>Comprehensive 12-week program to transform your fitness.<br>
-      ✅ Dynamic coaching & goal tracking<br>
-      ✅ Regular progress reviews<br>
-      ✅ Nutrition guidance + app support<br>
-      ✅ 24/7 messaging for motivation</p>
-      <p class="price">£220</p>
-      <a href="index.html#contact" class="btn">Start Now</a>
-    </div>
-
+  <h2>12-Week Online Transformation <span class="best-value">– Best Value!</span></h2>
+  <p>Comprehensive 12-week program to transform your fitness.<br>
+  ✅ Dynamic coaching & goal tracking<br>
+  ✅ Regular progress reviews<br>
+  ✅ Nutrition guidance + app support<br>
+  ✅ 24/7 messaging for motivation</p>
+  <p class="price">£220</p>
+  <a href="index.html#contact" class="btn">Start Now</a>
   </div>
 
 </div>
+
+</div>
+
 </section>
 
 <footer>
