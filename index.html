@@ -183,15 +183,16 @@ footer {
     flex-direction:column;
     text-align:center;
   }
-  .hero-text { width:100%; }
+  .hero-text { width:100%; align-items:center; }
   .hero-container img.hero-img { width:80%; }
 }
 
-/* 🔥 MOBILE NAV FIX */
+/* 🔥 MOBILE FIXES */
 @media(max-width:500px){
   .hero-text h1 { font-size:1.8rem; }
   .hero-text p { font-size:1rem; }
 
+  /* NAV WRAP */
   nav {
     flex-wrap: wrap;
     justify-content: center;
@@ -200,6 +201,30 @@ footer {
   nav a {
     margin: 8px 12px;
     font-size: 0.9rem;
+  }
+
+  /* 🔄 SWAP HERO ORDER */
+  .hero-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-text {
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-text img.logo {
+    width: 80%;
+    max-width: 220px;
+    margin-bottom: 15px;
+  }
+
+  .hero-container img.hero-img {
+    width: 100%;
+    max-width: 320px;
+    margin-top: 10px;
   }
 }
 </style>
@@ -218,9 +243,9 @@ footer {
 <!-- HERO -->
 <header>
   <div class="hero-container">
-    <img src="moving.jpg" class="hero-img">
+    <img src="moving.jpg" class="hero-img" alt="Hero Image">
     <div class="hero-text">
-      <img src="logo.png" class="logo">
+      <img src="logo.png" class="logo" alt="Revered Fitness Logo">
       <h1>REVERED FITNESS</h1>
       <p>Strength • Discipline • Respect</p>
       <a href="#contact" class="btn">Start Your Journey</a>
@@ -230,7 +255,7 @@ footer {
 
 <!-- TRANSFORMATION -->
 <section id="transformation">
-  <img src="new-transform.jpg">
+  <img src="new-transform.jpg" alt="Transformation">
   <div class="transformation-text">
     <h2>My Transformation</h2>
     <p>56kg → 70kg transformation through discipline and consistency.</p>
@@ -242,7 +267,7 @@ footer {
   <h2>Contact</h2>
   <div class="contact-box">
     <p>Email: j.p.blackburn@hotmail.co.uk</p>
-    <a class="btn" href="https://instagram.com/Revered_fitness_pt">Instagram</a>
+    <a class="btn" href="https://instagram.com/Revered_fitness_pt" target="_blank">Instagram</a>
   </div>
 </section>
 
