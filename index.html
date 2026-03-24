@@ -114,39 +114,63 @@ header {
   margin-top:10px;
 }
 
-/* --- TRANSFORMATION --- */
-#transformation {
+/* --- SERVICES --- */
+section {
+  padding:60px 20px;
+  max-width:1200px;
+  margin:auto;
+  text-align:center;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  position:relative;
+  overflow:hidden;
+}
+
+.services-container{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  align-items:center;
-  padding:80px 20px;
-  gap:50px;
+  gap:30px;
+  position:relative;
+  z-index:1;
 }
 
-#transformation img {
-  width:45%;
-  max-width:500px;
+.service{
+  background:#1c1c1c;
+  padding:30px 20px;
+  width:280px;
   border-radius:12px;
-  box-shadow:0 8px 25px rgba(225,6,0,0.6);
+  box-shadow:0 0 18px rgba(225,6,0,0.3);
+  text-align:left;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position:relative;
 }
 
-.transformation-text {
-  flex:1;
-  min-width:300px;
+.service:hover{
+  transform: translateY(-8px);
+  box-shadow:0 0 28px rgba(225,6,0,0.5);
 }
 
-.transformation-text h2 {
+.service h2{
+  margin-top:0;
+  font-size:20px;
+  color:white;
+}
+
+.price{
   color:#e10600;
-  margin-bottom:20px;
+  font-size:20px;
+  font-weight:bold;
+  margin-top:12px;
 }
 
-.transformation-paragraph {
-  color:#ccc;
-  margin-bottom:18px;
+.service-group{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  align-items:flex-start;
 }
 
-/* CONTACT */
+/* --- CONTACT --- */
 #contact {
   text-align:center;
   padding:40px 20px;
@@ -158,107 +182,69 @@ header {
   border-radius:12px;
 }
 
-/* FOOTER */
+/* --- FOOTER --- */
 footer {
   background:#000;
   padding:20px;
   text-align:center;
 }
 
-/* --- TABLET --- */
+/* --- MOBILE / TABLET RESPONSIVE --- */
 @media(max-width:992px){
   .hero-container {
     flex-direction:column;
     text-align:center;
   }
-
   .hero-text {
     width:100%;
     align-items:center;
   }
-
   .hero-img {
     width:80%;
   }
+  .service-group{
+    flex-direction:column;
+    gap:25px;
+    align-items:center;
+    width:100%;
+  }
 }
 
-/* --- MOBILE FIXES --- */
 @media(max-width:500px){
-
-  /* PUSH HERO BELOW NAV */
   header {
     margin-top: 70px;
   }
-
-  /* NAV */
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  nav a {
-    margin: 8px 12px;
-    font-size: 0.9rem;
-  }
-
-  /* HERO SWAP */
   .hero-container {
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
   }
-
   .hero-text {
     width: 100%;
     align-items: center;
   }
-
   .logo {
     width: 80%;
     max-width: 220px;
-    margin-top: 10px; /* small extra spacing */
+    margin-top: 10px;
   }
-
   .hero-img {
     width: 100%;
     max-width: 320px;
   }
-
   .hero-text h1 {
     font-size:1.8rem;
   }
-
   .hero-text p {
     font-size:1rem;
   }
-
-  /* TRANSFORMATION MOBILE IMPROVEMENT */
-  #transformation {
-    flex-direction: column;
-    align-items: center;
-    padding: 60px 20px;
-    gap: 30px;
+  .services-container{
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
   }
-
-  #transformation img {
-    width: 100%;
-    max-width: 320px;
-  }
-
-  .transformation-text {
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-  }
-
-  .transformation-text h2 {
-    font-size: 1.6rem;
-  }
-
-  .transformation-paragraph {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    padding: 0 10px;
+  .service, .service-group .service{
+    width:90%;
   }
 }
 </style>
@@ -266,52 +252,97 @@ footer {
 
 <body>
 
+<!-- NAVIGATION -->
 <nav>
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
+  <a href="transformation.html">Transformation</a> <!-- NEW LINK -->
   <a href="clothing.html">Clothing</a>
   <a href="about.html">About</a>
 </nav>
 
+<!-- HERO SECTION -->
 <header>
   <div class="hero-container">
     <img src="moving.jpg" class="hero-img" alt="Hero Image">
-    
     <div class="hero-text">
       <img src="logo.png" class="logo" alt="Revered Fitness Logo">
       <h1>REVERED FITNESS</h1>
       <p>Strength • Discipline • Respect</p>
-      <!-- Updated Button -->
-      <a href="services.html" class="btn">Start Your Journey</a>
+      <a href="#contact" class="btn">Start Your Journey</a>
     </div>
   </div>
 </header>
 
-<section id="transformation">
-  <img src="new-transform.jpg" alt="Self Transformation Photo">
+<!-- SERVICES SECTION -->
+<section>
+  <h1 style="font-size:32px; margin-bottom:40px; color:white;">Achieve Your Goals with Revered Fitness</h1>
+  <p style="font-size:18px; max-width:800px; margin:auto; margin-bottom:50px; color:#ddd;">
+    Personalized coaching, nutrition guidance, and support to help you get stronger, fitter, and healthier—your way.
+  </p>
 
-  <div class="transformation-text">
-    <h2>My Transformation</h2>
+  <div class="services-container">
 
-    <p class="transformation-paragraph">
-      Over time, I transformed my body and mindset, going from <strong>56kg to 70kg</strong>. 
-      This journey wasn’t just about gaining weight—it was about building 
-      <strong>strength, confidence, and consistency</strong>.
-    </p>
+    <!-- 1-on-1 Personal Training -->
+    <div class="service">
+      <h2>1-on-1 Personal Training</h2>
+      <p>Hands-on coaching to build strength, perfect form, and achieve real results. Each session is tailored to your goals, with expert guidance and motivation.</p>
+      <p class="price">£20/session</p>
+      <a href="index.html#contact" class="btn">Book Now</a>
+    </div>
 
-    <p class="transformation-paragraph">
-      Through dedication to proper <strong>nutrition</strong>, regular 
-      <strong>workouts</strong>, and staying committed to my goals, I gradually 
-      developed a healthier, more powerful version of myself.
-    </p>
+    <!-- Zoom Training Sessions -->
+    <div class="service">
+      <h2>Zoom Training Sessions</h2>
+      <p>Flexible coaching from anywhere.<br>
+      ✅ Personalized sessions for your goals<br>
+      ✅ Real-time guidance & actionable strategies<br>
+      ✅ Convenient, effective, and flexible</p>
+      <p class="price">£15/session</p>
+      <a href="index.html#contact" class="btn">Book Now</a>
+    </div>
 
-    <p class="transformation-paragraph">
-      Every step of the way taught me <strong>resilience</strong> and the importance 
-      of celebrating small victories on the path to personal growth.
-    </p>
+    <!-- Custom Nutrition Plan -->
+    <div class="service">
+      <h2>Custom Nutrition Plan</h2>
+      <p>Nutrition designed around your lifestyle and goals.<br>
+      ✅ Optimize energy & performance<br>
+      ✅ Boost results & progress<br>
+      ✅ Clear, actionable guidance</p>
+      <p class="price">£30</p>
+      <a href="index.html#contact" class="btn">Get Your Plan</a>
+    </div>
+
+    <!-- 8-week and 12-week programs -->
+    <div class="service-group">
+
+      <div class="service">
+        <h2>8-Week Online Transformation</h2>
+        <p>Intensive 8-week program for fast, measurable results.<br>
+        ✅ Focused coaching & goal tracking<br>
+        ✅ Nutrition guidance<br>
+        ✅ App support & messaging for accountability</p>
+        <p class="price">£160</p>
+        <a href="index.html#contact" class="btn">Start Now</a>
+      </div>
+
+      <div class="service">
+        <h2>12-Week Online Transformation <span style="color:#00ff4c; font-weight:bold;">– Best Value!</span></h2>
+        <p>Comprehensive 12-week program to transform your fitness.<br>
+        ✅ Dynamic coaching & goal tracking<br>
+        ✅ Regular progress reviews<br>
+        ✅ Nutrition guidance + app support<br>
+        ✅ 24/7 messaging for motivation</p>
+        <p class="price">£220</p>
+        <a href="index.html#contact" class="btn">Start Now</a>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
+<!-- CONTACT SECTION -->
 <section id="contact">
   <h2>Contact</h2>
   <div class="contact-box">
@@ -320,6 +351,7 @@ footer {
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   © 2026 Revered Fitness
 </footer>
