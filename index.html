@@ -72,7 +72,7 @@ header {
 
 .hero-container {
   display:flex;
-  align-items:center; /* vertical alignment for logo and text */
+  align-items:center;
   justify-content:space-between;
   max-width:1200px;
   width:100%;
@@ -88,45 +88,44 @@ header {
   border-radius:12px;
   box-shadow:0 8px 25px rgba(0,0,0,0.5);
   object-fit:cover;
+  display:block;
 }
 
-/* HERO TEXT STACKED */
+/* HERO TEXT ON RIGHT */
 .hero-text {
   width:35%;
   display:flex;
   flex-direction:column;
-  justify-content:center; /* vertically center logo with text */
+  justify-content:center; /* vertically centered with image */
   align-items:flex-start;
   height:100%;
 }
 
-/* Logo aligned vertically with hero text */
+/* Logo aligned vertically in line with hero text */
 .hero-text img.logo {
   width:75%;
-  margin-bottom:15px;
+  margin-bottom:20px;
   object-fit:contain;
-  align-self:flex-start; /* keep left aligned with text */
 }
 
 /* Text group (heading, tagline, button) */
 .hero-text .text-group {
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
-  height:auto;
-  gap:10px; /* small spacing between heading, tagline, button */
+  justify-content:center; /* center all text vertically */
+  gap:12px;
 }
 
 /* Heading */
 .hero-text h1 {
-  font-size:2.2rem;
+  font-size:2.3rem; /* slightly larger */
   letter-spacing:2px;
-  margin-bottom:0;
+  margin:0;
 }
 
 /* Tagline */
 .hero-text p {
-  font-size:1.1rem;
+  font-size:1.2rem; /* slightly larger */
   color:#ddd;
   margin:0;
 }
@@ -136,7 +135,7 @@ header {
   display:inline-block;
   background:#e10600;
   color:#fff;
-  padding:12px 28px;
+  padding:14px 30px; /* slightly bigger */
   border-radius:8px;
   font-weight:bold;
   text-transform:uppercase;
