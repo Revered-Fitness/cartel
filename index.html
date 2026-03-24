@@ -17,6 +17,19 @@ body {
 
 a { text-decoration:none; }
 
+/* --- LOGO ABOVE NAV --- */
+.logo-container {
+  display:flex;
+  justify-content:center;
+  padding:20px 0 0 0;
+}
+
+.logo-container img {
+  width:150px;
+  height:auto;
+  display:block;
+}
+
 /* --- NAVIGATION --- */
 nav {
   background:rgba(0,0,0,0.85);
@@ -25,22 +38,13 @@ nav {
   top:0;
   z-index:100;
   display:flex;
-  align-items:center;
-  padding:10px 20px;
-  transition: all 0.3s ease;
+  justify-content:center;
+  padding:10px 0;
 }
 
-/* Logo */
-nav img.logo {
-  height:50px;
-  margin-right:auto;
-  transition: all 0.3s ease;
-}
-
-/* Nav links */
 nav a {
   color:#f5f5f5;
-  margin:0 18px;
+  margin:0 25px;
   font-weight:600;
   letter-spacing:1px;
   padding:6px 12px;
@@ -64,42 +68,33 @@ nav a::before {
 nav a:hover { color:#e10600; }
 nav a:hover::before { width:60%; }
 
-nav.scrolled img.logo { height:35px; }
-
 /* --- HERO SECTION --- */
 header {
   position:relative;
   width:100%;
-  min-height:60vh;
+  min-height:80vh;
   display:flex;
   justify-content:center;
   align-items:center;
-  text-align:center;
   overflow:hidden;
+  padding:0 20px;
 }
 
-/* Hero image and overlay container */
 .hero-container {
-  position:relative;
-  width:100%;
   display:flex;
-  justify-content:center;
   align-items:center;
+  justify-content:space-between;
+  max-width:1200px;
+  width:100%;
 }
 
 .hero-container img.hero-img {
-  width:80%;
-  max-width:600px;
-  height:auto;
+  width:45%;
   border-radius:15px;
-  object-fit:cover;
   box-shadow:0 8px 25px rgba(225,6,0,0.6);
-  transform:translateZ(0);
-  will-change: transform;
-  z-index:0;
+  object-fit:cover;
 }
 
-/* Moving gradient overlay */
 .hero-overlay {
   position:absolute;
   top:0; left:0;
@@ -112,31 +107,22 @@ header {
   transition: transform 0.1s ease-out;
 }
 
-header .hero-content {
-  position:relative;
+.hero-text {
+  width:50%;
+  text-align:left;
   z-index:2;
-  margin-top:20px;
-  opacity:0;
-  transform:translateY(20px);
-  animation: fadeSlideIn 1.5s forwards;
 }
 
-header h1 {
-  font-size:2.5rem;
+.hero-text h1 {
+  font-size:3rem;
   letter-spacing:3px;
-  margin:20px 0 10px;
+  margin-bottom:15px;
 }
 
-header .tagline {
+.hero-text p {
   color:#ddd;
-  font-size:1.1rem;
-  margin-bottom:20px;
-}
-
-/* --- HERO TEXT ANIMATION --- */
-@keyframes fadeSlideIn {
-  0% { opacity:0; transform:translateY(20px); }
-  100% { opacity:1; transform:translateY(0); }
+  font-size:1.2rem;
+  margin-bottom:25px;
 }
 
 /* --- PREMIUM BUTTON --- */
@@ -177,8 +163,6 @@ section {
   gap:30px;
 }
 
-section:nth-child(even) { flex-direction:row-reverse; }
-
 section h2 {
   font-size:2rem;
   color:#e10600;
@@ -192,16 +176,15 @@ section p {
   line-height:1.5;
 }
 
-/* IMAGE STYLING & ANIMATION */
 .section-img {
   flex:1 1 300px;
   border-radius:12px;
   box-shadow:0 8px 20px rgba(225,6,0,0.5);
   max-width:100%;
   height:auto;
-  transition:transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
   opacity:0;
   transform:translateY(50px);
+  transition:transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
   transform-style: preserve-3d;
   will-change: transform;
   cursor:pointer;
@@ -212,7 +195,6 @@ section p {
   transform:translateY(0);
 }
 
-/* HOVER/INTERACTIVE EFFECT */
 .section-img:hover {
   transform: scale(1.05) rotateX(2deg) rotateY(2deg);
   box-shadow: 0 15px 40px rgba(225,6,0,0.7);
@@ -223,6 +205,10 @@ section p {
 #transformation {
   text-align:center;
   flex-direction:column;
+  min-height:calc(100vh - 120px);
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 #transformation img {
@@ -268,23 +254,28 @@ footer {
 }
 
 /* --- RESPONSIVE --- */
-@media(max-width:768px){
-  section { flex-direction:column; }
-  section:nth-child(even) { flex-direction:column; }
-  header h1 { font-size:2rem; }
-  header .tagline { font-size:1rem; }
+@media(max-width:992px){
+  .hero-container {
+    flex-direction:column;
+  }
+  .hero-text { text-align:center; width:100%; margin-top:20px; }
+  .hero-container img.hero-img { width:80%; }
 }
 
 @media(max-width:500px){
-  .hero-container img.hero-img { width:90%; }
-  nav img.logo { height:40px; }
+  .hero-text h1 { font-size:2rem; }
+  .hero-text p { font-size:1rem; }
+  .logo-container img { width:120px; }
 }
 </style>
 </head>
 <body>
 
-<nav id="navbar">
-  <img src="logo.png" alt="Revered Fitness Logo" class="logo">
+<div class="logo-container">
+  <img src="logo.png" alt="Revered Fitness Logo">
+</div>
+
+<nav>
   <a href="#">Home</a>
   <a href="#">Services</a>
   <a href="#">Clothing</a>
@@ -295,29 +286,13 @@ footer {
   <div class="hero-container">
     <img src="moving.jpg" alt="Hero Image" class="hero-img" id="hero-image">
     <div class="hero-overlay" id="hero-overlay"></div>
-    <div class="hero-content">
+    <div class="hero-text">
       <h1>REVERED FITNESS</h1>
-      <p class="tagline">Strength • Discipline • Respect</p>
+      <p>Strength • Discipline • Respect</p>
       <a href="#contact" class="btn">Start Your Journey</a>
     </div>
   </div>
 </header>
-
-<section>
-  <img src="selfie.jpg" alt="Trainer Selfie" class="section-img" data-delay="0">
-  <div>
-    <h2>Meet Your Trainer</h2>
-    <p>Our expert coach will guide you every step of the way, helping beginners build strength and confidence.</p>
-  </div>
-</section>
-
-<section>
-  <img src="moving.jpg" alt="Client Exercising" class="section-img" data-delay="150">
-  <div>
-    <h2>Clients in Action</h2>
-    <p>See our clients pushing their limits and achieving results, motivating you to start your own journey.</p>
-  </div>
-</section>
 
 <section id="transformation">
   <h2>My Transformation</h2>
@@ -339,21 +314,14 @@ footer {
 </footer>
 
 <script>
-// Shrink logo on scroll
+// Shrink nav if needed (no logo inside nav now)
 window.addEventListener('scroll', function() {
-  const navbar = document.getElementById('navbar');
-  if(window.scrollY > 50) navbar.classList.add('scrolled');
-  else navbar.classList.remove('scrolled');
-
-  // Parallax hero image
   const hero = document.getElementById('hero-image');
   hero.style.transform = `translateY(${window.scrollY * 0.2}px)`;
-
-  // Moving gradient overlay
+  
   const overlay = document.getElementById('hero-overlay');
   overlay.style.transform = `translateY(${window.scrollY * 0.1}px)`;
 
-  // Section images parallax
   document.querySelectorAll('.section-img').forEach(img => {
     const rect = img.getBoundingClientRect();
     const offset = window.scrollY - img.offsetTop + window.innerHeight;
