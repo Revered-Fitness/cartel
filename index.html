@@ -96,7 +96,7 @@ header {
   width:35%;
   display:flex;
   flex-direction:column;
-  justify-content:center; /* vertically centered with image */
+  justify-content:center;
   align-items:flex-start;
   height:100%;
 }
@@ -112,20 +112,20 @@ header {
 .hero-text .text-group {
   display:flex;
   flex-direction:column;
-  justify-content:center; /* center all text vertically */
+  justify-content:center;
   gap:12px;
 }
 
 /* Heading */
 .hero-text h1 {
-  font-size:2.3rem; /* slightly larger */
+  font-size:2.3rem;
   letter-spacing:2px;
   margin:0;
 }
 
 /* Tagline */
 .hero-text p {
-  font-size:1.2rem; /* slightly larger */
+  font-size:1.2rem;
   color:#ddd;
   margin:0;
 }
@@ -135,7 +135,7 @@ header {
   display:inline-block;
   background:#e10600;
   color:#fff;
-  padding:14px 30px; /* slightly bigger */
+  padding:14px 30px;
   border-radius:8px;
   font-weight:bold;
   text-transform:uppercase;
@@ -163,6 +163,7 @@ header {
   gap:50px;
 }
 
+/* Transformation image */
 #transformation img {
   width:45%;
   max-width:500px;
@@ -177,22 +178,27 @@ header {
   box-shadow:0 15px 40px rgba(225,6,0,0.7);
 }
 
+/* Transformation text styling */
 .transformation-text {
   flex:1;
   min-width:300px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center; /* vertically align text with image */
 }
 
 .transformation-text h2 {
   font-size:2rem;
   color:#e10600;
-  margin-bottom:15px;
+  margin-bottom:20px;
   font-family:'Poppins', sans-serif;
 }
 
-.transformation-text p {
+.transformation-paragraph {
   font-size:1rem;
   color:#ccc;
-  line-height:1.5;
+  line-height:1.7;
+  margin-bottom:18px;
   font-family:'Roboto', sans-serif;
 }
 
@@ -257,6 +263,7 @@ footer {
   <a href="about.html">About</a>
 </nav>
 
+<!-- HERO SECTION -->
 <header>
   <div class="hero-container">
     <img src="moving.jpg" alt="Hero Image" class="hero-img">
@@ -271,14 +278,24 @@ footer {
   </div>
 </header>
 
+<!-- TRANSFORMATION SECTION -->
 <section id="transformation">
   <img src="transform.jpg" alt="Self Transformation Photo" class="section-img">
   <div class="transformation-text">
     <h2>My Transformation</h2>
-    <p>A personal journey from dedication to results, showing the power of consistency and hard work.</p>
+    <p class="transformation-paragraph">
+      Over time, I transformed my body and mindset, going from <strong>56kg to 70kg</strong>. This journey wasn’t just about gaining weight—it was about building <strong>strength, confidence, and consistency</strong>.
+    </p>
+    <p class="transformation-paragraph">
+      Through dedication to proper <strong>nutrition</strong>, regular <strong>workouts</strong>, and staying committed to my goals, I gradually developed a healthier, more powerful version of myself.
+    </p>
+    <p class="transformation-paragraph">
+      Every step of the way taught me <strong>resilience</strong> and the importance of celebrating small victories on the path to personal growth.
+    </p>
   </div>
 </section>
 
+<!-- CONTACT SECTION -->
 <section id="contact">
   <h2>Contact</h2>
   <div class="contact-box">
@@ -287,6 +304,7 @@ footer {
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   © 2026 Revered Fitness
 </footer>
