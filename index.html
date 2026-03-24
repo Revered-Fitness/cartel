@@ -62,7 +62,7 @@ nav a:hover::before { width:60%; }
 header {
   position:relative;
   width:100%;
-  min-height:50vh;
+  min-height:55vh;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -73,7 +73,7 @@ header {
 
 .hero-container {
   display:flex;
-  align-items:center;
+  align-items:center; /* vertically center text with image */
   justify-content:space-between;
   max-width:1200px;
   width:100%;
@@ -96,12 +96,13 @@ header {
   display:flex;
   flex-direction:column;
   align-items:flex-start;
+  justify-content:center; /* vertical centering */
 }
 
-/* Logo same width as heading */
+/* Logo above heading, 25% smaller */
 .hero-text img.logo {
-  width:100%;
-  max-width:fit-content; /* restricts width to heading width */
+  width:75%; /* 25% smaller */
+  max-width:fit-content;
   margin-bottom:15px;
 }
 
@@ -111,7 +112,7 @@ header {
   letter-spacing:3px;
   margin-bottom:15px;
   font-family:'Poppins', sans-serif;
-  width:max-content; /* define width for alignment with logo */
+  width:max-content;
 }
 
 /* Tagline */
@@ -222,8 +223,8 @@ footer {
     flex-direction:column;
     text-align:center;
   }
-  .hero-text { width:100%; align-items:center; }
-  .hero-text img.logo { margin-bottom:15px; }
+  .hero-text { width:100%; align-items:center; justify-content:center; }
+  .hero-text img.logo { margin-bottom:15px; width:75%; }
   .hero-container img.hero-img { width:80%; margin-bottom:20px; }
   #transformation { flex-direction:column; }
   #transformation img, .transformation-text { width:80%; }
@@ -232,7 +233,7 @@ footer {
 @media(max-width:500px){
   .hero-text h1 { font-size:2rem; }
   .hero-text p { font-size:1rem; }
-  .hero-text img.logo { width:100%; max-width:280px; }
+  .hero-text img.logo { width:100%; max-width:210px; }
 }
 </style>
 </head>
