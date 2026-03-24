@@ -183,6 +183,8 @@
 <nav>
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
+  <a href="transformation.html">Transformation</a>
+  <a href="events.html">Events</a>
   <a href="clothing.html">Clothing</a>
   <a href="about.html">About</a>
 </nav>
@@ -192,7 +194,6 @@
   <p>Premium Performance Wear.</p>
 
   <div class="products-container">
-    <!-- Clicking an image opens the lightbox -->
     <img src="shirt.jpg" alt="Revered Fitness Shirt" class="product-img" onclick="openLightbox('shirt.jpg')">
     <img src="hoodie.jpg" alt="Revered Fitness Hoodie" class="product-img" onclick="openLightbox('hoodie.jpg')">
   </div>
@@ -220,7 +221,6 @@
     document.getElementById('lightbox').style.display = 'none';
   }
 
-  // Close lightbox when clicking outside the image
   document.getElementById('lightbox').addEventListener('click', function(e){
     if(e.target.id === 'lightbox') closeLightbox();
   });
