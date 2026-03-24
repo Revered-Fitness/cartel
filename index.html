@@ -19,7 +19,7 @@ body {
 
 a { text-decoration:none; }
 
-/* --- NAVIGATION FIXED TOP --- */
+/* --- NAVIGATION --- */
 nav {
   background:rgba(0,0,0,0.95);
   backdrop-filter:blur(10px);
@@ -39,7 +39,7 @@ nav a {
   letter-spacing:1.5px;
   padding:6px 12px;
   position:relative;
-  transition:all 0.3s ease;
+  transition:0.3s;
   font-family:'Poppins', sans-serif;
 }
 
@@ -52,27 +52,22 @@ nav a::before {
   width:0%;
   height:2px;
   background:#e10600;
-  transition:width 0.3s ease;
-  border-radius:2px;
+  transition:0.3s;
 }
 
 nav a:hover { color:#e10600; }
 nav a:hover::before { width:60%; }
 
-/* --- HERO SECTION --- */
+/* --- HERO --- */
 header {
-  position:relative;
-  width:100%;
   display:flex;
   justify-content:center;
   align-items:center;
-  overflow:hidden;
   padding-top:20px;
 }
 
 .hero-container {
   display:flex;
-  align-items:center;
   justify-content:space-between;
   max-width:1200px;
   width:100%;
@@ -80,12 +75,11 @@ header {
   gap:40px;
 }
 
-.hero-container img.hero-img {
+.hero-img {
   width:60%;
   max-width:600px;
   border-radius:12px;
   box-shadow:0 8px 25px rgba(0,0,0,0.5);
-  object-fit:cover;
 }
 
 .hero-text {
@@ -95,45 +89,37 @@ header {
   justify-content:center;
 }
 
-.hero-text img.logo {
+.logo {
   width:75%;
   margin-bottom:20px;
 }
 
 .hero-text h1 {
-  font-family:'Poppins', sans-serif;
+  font-family:'Poppins';
   font-size:2.3rem;
-  letter-spacing:2px;
-  margin:0;
 }
 
 .hero-text p {
-  font-size:1.2rem;
   color:#d1d1d1;
 }
 
+/* BUTTON */
 .btn {
-  display:inline-block;
   background:#e10600;
-  color:#fff;
   padding:14px 30px;
   border-radius:8px;
   font-weight:700;
-  text-transform:uppercase;
-  box-shadow:0 5px 15px rgba(225,6,0,0.4);
-  transition:0.3s;
+  color:#fff;
+  display:inline-block;
+  margin-top:10px;
 }
 
-.btn:hover {
-  background:#a00000;
-  transform:translateY(-3px);
-}
-
-/* --- TRANSFORMATION SECTION --- */
+/* --- TRANSFORMATION --- */
 #transformation {
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
+  align-items:center;
   padding:80px 20px;
   gap:50px;
 }
@@ -152,10 +138,12 @@ header {
 
 .transformation-text h2 {
   color:#e10600;
+  margin-bottom:20px;
 }
 
 .transformation-paragraph {
   color:#ccc;
+  margin-bottom:18px;
 }
 
 /* CONTACT */
@@ -177,22 +165,32 @@ footer {
   text-align:center;
 }
 
-/* --- RESPONSIVE --- */
+/* --- TABLET --- */
 @media(max-width:992px){
   .hero-container {
     flex-direction:column;
     text-align:center;
   }
-  .hero-text { width:100%; align-items:center; }
-  .hero-container img.hero-img { width:80%; }
+
+  .hero-text {
+    width:100%;
+    align-items:center;
+  }
+
+  .hero-img {
+    width:80%;
+  }
 }
 
-/* 🔥 MOBILE FIXES */
+/* --- MOBILE FIXES --- */
 @media(max-width:500px){
-  .hero-text h1 { font-size:1.8rem; }
-  .hero-text p { font-size:1rem; }
 
-  /* NAV WRAP */
+  /* PUSH HERO BELOW NAV */
+  header {
+    margin-top: 70px;
+  }
+
+  /* NAV */
   nav {
     flex-wrap: wrap;
     justify-content: center;
@@ -203,7 +201,7 @@ footer {
     font-size: 0.9rem;
   }
 
-  /* 🔄 SWAP HERO ORDER */
+  /* HERO SWAP */
   .hero-container {
     flex-direction: column-reverse;
     align-items: center;
@@ -215,16 +213,52 @@ footer {
     align-items: center;
   }
 
-  .hero-text img.logo {
+  .logo {
     width: 80%;
     max-width: 220px;
-    margin-bottom: 15px;
+    margin-top: 10px; /* small extra spacing */
   }
 
-  .hero-container img.hero-img {
+  .hero-img {
     width: 100%;
     max-width: 320px;
-    margin-top: 10px;
+  }
+
+  .hero-text h1 {
+    font-size:1.8rem;
+  }
+
+  .hero-text p {
+    font-size:1rem;
+  }
+
+  /* TRANSFORMATION MOBILE IMPROVEMENT */
+  #transformation {
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    gap: 30px;
+  }
+
+  #transformation img {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .transformation-text {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .transformation-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .transformation-paragraph {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 10px;
   }
 }
 </style>
@@ -232,7 +266,6 @@ footer {
 
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
@@ -240,10 +273,10 @@ footer {
   <a href="about.html">About</a>
 </nav>
 
-<!-- HERO -->
 <header>
   <div class="hero-container">
     <img src="moving.jpg" class="hero-img" alt="Hero Image">
+    
     <div class="hero-text">
       <img src="logo.png" class="logo" alt="Revered Fitness Logo">
       <h1>REVERED FITNESS</h1>
@@ -253,16 +286,31 @@ footer {
   </div>
 </header>
 
-<!-- TRANSFORMATION -->
 <section id="transformation">
-  <img src="new-transform.jpg" alt="Transformation">
+  <img src="new-transform.jpg" alt="Self Transformation Photo">
+
   <div class="transformation-text">
     <h2>My Transformation</h2>
-    <p>56kg → 70kg transformation through discipline and consistency.</p>
+
+    <p class="transformation-paragraph">
+      Over time, I transformed my body and mindset, going from <strong>56kg to 70kg</strong>. 
+      This journey wasn’t just about gaining weight—it was about building 
+      <strong>strength, confidence, and consistency</strong>.
+    </p>
+
+    <p class="transformation-paragraph">
+      Through dedication to proper <strong>nutrition</strong>, regular 
+      <strong>workouts</strong>, and staying committed to my goals, I gradually 
+      developed a healthier, more powerful version of myself.
+    </p>
+
+    <p class="transformation-paragraph">
+      Every step of the way taught me <strong>resilience</strong> and the importance 
+      of celebrating small victories on the path to personal growth.
+    </p>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <h2>Contact</h2>
   <div class="contact-box">
