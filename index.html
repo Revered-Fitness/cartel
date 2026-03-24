@@ -12,11 +12,10 @@ body {
   background:#0f0f0f;
   color:#fff;
   line-height:1.6;
+  overflow-x:hidden;
 }
 
-a {
-  text-decoration:none;
-}
+a { text-decoration:none; }
 
 /* --- NAVIGATION --- */
 nav {
@@ -26,10 +25,19 @@ nav {
   top:0;
   z-index:100;
   display:flex;
-  justify-content:center;
-  padding:15px 10px;
+  align-items:center;
+  padding:10px 20px;
+  transition: all 0.3s ease;
 }
 
+/* Logo */
+nav img.logo {
+  height:50px;
+  margin-right:auto;
+  transition: all 0.3s ease;
+}
+
+/* Nav links */
 nav a {
   color:#f5f5f5;
   margin:0 18px;
@@ -53,105 +61,162 @@ nav a::before {
   border-radius:2px;
 }
 
-nav a:hover {
-  color:#e10600;
-}
+nav a:hover { color:#e10600; }
+nav a:hover::before { width:60%; }
 
-nav a:hover::before {
-  width:60%;
-}
+nav.scrolled img.logo { height:35px; }
 
 /* --- HERO SECTION --- */
 header {
   position:relative;
   width:100%;
-  min-height:80vh;
+  min-height:60vh;
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
-  background:url('hero.jpg') center/cover no-repeat;
+  overflow:hidden;
 }
 
-header::after {
-  content:"";
+/* Hero image and overlay container */
+.hero-container {
+  position:relative;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-container img.hero-img {
+  width:80%;
+  max-width:600px;
+  height:auto;
+  border-radius:15px;
+  object-fit:cover;
+  box-shadow:0 8px 25px rgba(225,6,0,0.6);
+  transform:translateZ(0);
+  will-change: transform;
+  z-index:0;
+}
+
+/* Moving gradient overlay */
+.hero-overlay {
   position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.6);
+  top:0; left:0;
+  width:100%; height:100%;
+  border-radius:15px;
+  background:linear-gradient(120deg, rgba(225,6,0,0.25), rgba(255,255,255,0.05), rgba(225,6,0,0.25));
+  mix-blend-mode:overlay;
+  pointer-events:none;
+  z-index:1;
+  transition: transform 0.1s ease-out;
 }
 
 header .hero-content {
   position:relative;
-  z-index:1;
+  z-index:2;
+  margin-top:20px;
+  opacity:0;
+  transform:translateY(20px);
+  animation: fadeSlideIn 1.5s forwards;
 }
 
 header h1 {
-  font-size:3rem;
+  font-size:2.5rem;
   letter-spacing:3px;
   margin:20px 0 10px;
 }
 
 header .tagline {
   color:#ddd;
-  font-size:1.2rem;
+  font-size:1.1rem;
   margin-bottom:20px;
 }
 
-header .btn {
-  background:#e10600;
-  padding:12px 28px;
-  border-radius:6px;
-  font-weight:bold;
-  color:#fff;
-  transition:0.3s;
+/* --- HERO TEXT ANIMATION --- */
+@keyframes fadeSlideIn {
+  0% { opacity:0; transform:translateY(20px); }
+  100% { opacity:1; transform:translateY(0); }
 }
 
-header .btn:hover {
-  background:#a00000;
+/* --- PREMIUM BUTTON --- */
+.btn {
+  display:inline-block;
+  background:#e10600;       
+  color:#fff;
+  padding:12px 28px;
+  border-radius:8px;
+  font-weight:bold;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  box-shadow:0 5px 15px rgba(225,6,0,0.4);
+  transition: all 0.3s ease;
+  animation: pulse-glow 2.5s infinite alternate;
+}
+
+.btn:hover {
+  background:#a00000;        
+  box-shadow:0 8px 25px rgba(225,6,0,0.7);
   transform:translateY(-3px);
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow:0 5px 15px rgba(225,6,0,0.4); }
+  50% { box-shadow:0 8px 25px rgba(225,6,0,0.6); }
+  100% { box-shadow:0 5px 15px rgba(225,6,0,0.4); }
 }
 
 /* --- SECTIONS --- */
 section {
-  padding:80px 20px;
-  max-width:1100px;
+  padding:60px 20px;
+  max-width:1000px;
   margin:0 auto;
   display:flex;
   flex-wrap:wrap;
   align-items:center;
-  gap:40px;
+  gap:30px;
 }
 
-section:nth-child(even) {
-  flex-direction:row-reverse;
-}
+section:nth-child(even) { flex-direction:row-reverse; }
 
 section h2 {
-  font-size:2.5rem;
+  font-size:2rem;
   color:#e10600;
-  margin-bottom:20px;
+  margin-bottom:15px;
 }
 
 section p {
-  font-size:1.1rem;
+  font-size:1rem;
   color:#ccc;
-  max-width:500px;
+  max-width:450px;
   line-height:1.5;
 }
 
-/* IMAGE STYLING */
+/* IMAGE STYLING & ANIMATION */
 .section-img {
-  flex:1 1 400px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(225,6,0,0.5);
+  flex:1 1 300px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(225,6,0,0.5);
   max-width:100%;
   height:auto;
-  transition:transform 0.3s ease, box-shadow 0.3s ease;
+  transition:transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+  opacity:0;
+  transform:translateY(50px);
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor:pointer;
 }
 
+.section-img.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* HOVER/INTERACTIVE EFFECT */
 .section-img:hover {
-  transform:scale(1.03);
-  box-shadow:0 12px 35px rgba(225,6,0,0.7);
+  transform: scale(1.05) rotateX(2deg) rotateY(2deg);
+  box-shadow: 0 15px 40px rgba(225,6,0,0.7);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* TRANSFORMATION SECTION */
@@ -161,11 +226,18 @@ section p {
 }
 
 #transformation img {
-  width:90%;
-  max-width:700px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(225,6,0,0.6);
+  width:70%;
+  max-width:500px;
+  border-radius:12px;
+  box-shadow:0 8px 25px rgba(225,6,0,0.6);
   margin-bottom:15px;
+  cursor:pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+#transformation img:hover {
+  transform: scale(1.05) rotateX(2deg) rotateY(-2deg);
+  box-shadow:0 15px 40px rgba(225,6,0,0.7);
 }
 
 /* CONTACT SECTION */
@@ -176,26 +248,19 @@ section p {
 
 .contact-box {
   background:rgba(26,26,26,0.9);
-  padding:40px;
-  border-radius:15px;
-  box-shadow:0 0 30px rgba(225,6,0,0.5);
-  max-width:600px;
+  padding:35px;
+  border-radius:12px;
+  box-shadow:0 0 25px rgba(225,6,0,0.5);
+  max-width:500px;
   margin:0 auto;
 }
 
-.contact-box p {
-  margin:15px 0;
-}
-
-.contact-box a.btn {
-  display:inline-block;
-  margin-top:15px;
-}
+.contact-box p { margin:12px 0; }
 
 /* FOOTER */
 footer {
   background:#000;
-  padding:25px;
+  padding:20px;
   font-size:0.9rem;
   letter-spacing:0.5px;
   text-align:center;
@@ -203,26 +268,23 @@ footer {
 }
 
 /* --- RESPONSIVE --- */
-@media(max-width:900px){
-  section {
-    flex-direction:column;
-  }
-  section:nth-child(even) {
-    flex-direction:column;
-  }
-  header h1 {
-    font-size:2rem;
-  }
-  header .tagline {
-    font-size:1rem;
-  }
+@media(max-width:768px){
+  section { flex-direction:column; }
+  section:nth-child(even) { flex-direction:column; }
+  header h1 { font-size:2rem; }
+  header .tagline { font-size:1rem; }
 }
 
+@media(max-width:500px){
+  .hero-container img.hero-img { width:90%; }
+  nav img.logo { height:40px; }
+}
 </style>
 </head>
 <body>
 
-<nav>
+<nav id="navbar">
+  <img src="logo.png" alt="Revered Fitness Logo" class="logo">
   <a href="#">Home</a>
   <a href="#">Services</a>
   <a href="#">Clothing</a>
@@ -230,15 +292,19 @@ footer {
 </nav>
 
 <header>
-  <div class="hero-content">
-    <h1>REVERED FITNESS</h1>
-    <p class="tagline">Strength • Discipline • Respect</p>
-    <a href="#contact" class="btn">Start Your Journey</a>
+  <div class="hero-container">
+    <img src="moving.jpg" alt="Hero Image" class="hero-img" id="hero-image">
+    <div class="hero-overlay" id="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>REVERED FITNESS</h1>
+      <p class="tagline">Strength • Discipline • Respect</p>
+      <a href="#contact" class="btn">Start Your Journey</a>
+    </div>
   </div>
 </header>
 
 <section>
-  <img src="selfie.jpg" alt="Trainer Selfie" class="section-img">
+  <img src="selfie.jpg" alt="Trainer Selfie" class="section-img" data-delay="0">
   <div>
     <h2>Meet Your Trainer</h2>
     <p>Our expert coach will guide you every step of the way, helping beginners build strength and confidence.</p>
@@ -246,7 +312,7 @@ footer {
 </section>
 
 <section>
-  <img src="moving.jpg" alt="Client Exercising" class="section-img">
+  <img src="moving.jpg" alt="Client Exercising" class="section-img" data-delay="150">
   <div>
     <h2>Clients in Action</h2>
     <p>See our clients pushing their limits and achieving results, motivating you to start your own journey.</p>
@@ -255,7 +321,7 @@ footer {
 
 <section id="transformation">
   <h2>My Transformation</h2>
-  <img src="transform.jpg" alt="Self Transformation Photo">
+  <img src="transform.jpg" alt="Self Transformation Photo" class="section-img" data-delay="300">
   <p>A personal journey from dedication to results, showing the power of consistency and hard work.</p>
 </section>
 
@@ -271,6 +337,53 @@ footer {
 <footer>
   © 2026 Revered Fitness
 </footer>
+
+<script>
+// Shrink logo on scroll
+window.addEventListener('scroll', function() {
+  const navbar = document.getElementById('navbar');
+  if(window.scrollY > 50) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
+
+  // Parallax hero image
+  const hero = document.getElementById('hero-image');
+  hero.style.transform = `translateY(${window.scrollY * 0.2}px)`;
+
+  // Moving gradient overlay
+  const overlay = document.getElementById('hero-overlay');
+  overlay.style.transform = `translateY(${window.scrollY * 0.1}px)`;
+
+  // Section images parallax
+  document.querySelectorAll('.section-img').forEach(img => {
+    const rect = img.getBoundingClientRect();
+    const offset = window.scrollY - img.offsetTop + window.innerHeight;
+    img.style.transform = `translateY(${Math.min(offset * 0.05, 50)}px)`;
+  });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if(target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+});
+
+// Staggered scroll animation
+const images = document.querySelectorAll('.section-img');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const delay = entry.target.dataset.delay || 0;
+      setTimeout(() => entry.target.classList.add('visible'), delay);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+images.forEach(img => observer.observe(img));
+</script>
 
 </body>
 </html>
