@@ -114,81 +114,6 @@ header {
   margin-top:10px;
 }
 
-/* --- SERVICES --- */
-section {
-  padding:60px 20px;
-  max-width:1200px;
-  margin:auto;
-  text-align:center;
-  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-  position:relative;
-  overflow:hidden;
-}
-
-.services-container{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:30px;
-  position:relative;
-  z-index:1;
-}
-
-.service{
-  background:#1c1c1c;
-  padding:30px 20px;
-  width:280px;
-  border-radius:12px;
-  box-shadow:0 0 18px rgba(225,6,0,0.3);
-  text-align:left;
-  transition: transform 0.3s, box-shadow 0.3s;
-  position:relative;
-}
-
-.service:hover{
-  transform: translateY(-8px);
-  box-shadow:0 0 28px rgba(225,6,0,0.5);
-}
-
-.service h2{
-  margin-top:0;
-  font-size:20px;
-  color:white;
-}
-
-.price{
-  color:#e10600;
-  font-size:20px;
-  font-weight:bold;
-  margin-top:12px;
-}
-
-.service-group{
-  display:flex;
-  gap:20px;
-  justify-content:center;
-  align-items:flex-start;
-}
-
-/* --- CONTACT --- */
-#contact {
-  text-align:center;
-  padding:40px 20px;
-}
-
-.contact-box {
-  background:#1a1a1a;
-  padding:30px;
-  border-radius:12px;
-}
-
-/* --- FOOTER --- */
-footer {
-  background:#000;
-  padding:20px;
-  text-align:center;
-}
-
 /* --- MOBILE / TABLET RESPONSIVE --- */
 @media(max-width:992px){
   .hero-container {
@@ -201,12 +126,6 @@ footer {
   }
   .hero-img {
     width:80%;
-  }
-  .service-group{
-    flex-direction:column;
-    gap:25px;
-    align-items:center;
-    width:100%;
   }
 }
 
@@ -238,14 +157,6 @@ footer {
   .hero-text p {
     font-size:1rem;
   }
-  .services-container{
-    flex-direction:column;
-    align-items:center;
-    gap:25px;
-  }
-  .service, .service-group .service{
-    width:90%;
-  }
 }
 </style>
 </head>
@@ -269,90 +180,13 @@ footer {
       <img src="logo.png" class="logo" alt="Revered Fitness Logo">
       <h1>REVERED FITNESS</h1>
       <p>Strength • Discipline • Respect</p>
-      <a href="#contact" class="btn">Start Your Journey</a>
+      <a href="services.html" class="btn">Start Your Journey</a>
     </div>
   </div>
 </header>
 
-<!-- SERVICES SECTION -->
-<section>
-  <h1 style="font-size:32px; margin-bottom:40px; color:white;">Achieve Your Goals with Revered Fitness</h1>
-  <p style="font-size:18px; max-width:800px; margin:auto; margin-bottom:50px; color:#ddd;">
-    Personalized coaching, nutrition guidance, and support to help you get stronger, fitter, and healthier—your way.
-  </p>
-
-  <div class="services-container">
-
-    <!-- 1-on-1 Personal Training -->
-    <div class="service">
-      <h2>1-on-1 Personal Training</h2>
-      <p>Hands-on coaching to build strength, perfect form, and achieve real results. Each session is tailored to your goals, with expert guidance and motivation.</p>
-      <p class="price">£20/session</p>
-      <a href="index.html#contact" class="btn">Book Now</a>
-    </div>
-
-    <!-- Zoom Training Sessions -->
-    <div class="service">
-      <h2>Zoom Training Sessions</h2>
-      <p>Flexible coaching from anywhere.<br>
-      ✅ Personalized sessions for your goals<br>
-      ✅ Real-time guidance & actionable strategies<br>
-      ✅ Convenient, effective, and flexible</p>
-      <p class="price">£15/session</p>
-      <a href="index.html#contact" class="btn">Book Now</a>
-    </div>
-
-    <!-- Custom Nutrition Plan -->
-    <div class="service">
-      <h2>Custom Nutrition Plan</h2>
-      <p>Nutrition designed around your lifestyle and goals.<br>
-      ✅ Optimize energy & performance<br>
-      ✅ Boost results & progress<br>
-      ✅ Clear, actionable guidance</p>
-      <p class="price">£30</p>
-      <a href="index.html#contact" class="btn">Get Your Plan</a>
-    </div>
-
-    <!-- 8-week and 12-week programs -->
-    <div class="service-group">
-
-      <div class="service">
-        <h2>8-Week Online Transformation</h2>
-        <p>Intensive 8-week program for fast, measurable results.<br>
-        ✅ Focused coaching & goal tracking<br>
-        ✅ Nutrition guidance<br>
-        ✅ App support & messaging for accountability</p>
-        <p class="price">£160</p>
-        <a href="index.html#contact" class="btn">Start Now</a>
-      </div>
-
-      <div class="service">
-        <h2>12-Week Online Transformation <span style="color:#00ff4c; font-weight:bold;">– Best Value!</span></h2>
-        <p>Comprehensive 12-week program to transform your fitness.<br>
-        ✅ Dynamic coaching & goal tracking<br>
-        ✅ Regular progress reviews<br>
-        ✅ Nutrition guidance + app support<br>
-        ✅ 24/7 messaging for motivation</p>
-        <p class="price">£220</p>
-        <a href="index.html#contact" class="btn">Start Now</a>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT SECTION -->
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="contact-box">
-    <p>Email: j.p.blackburn@hotmail.co.uk</p>
-    <a class="btn" href="https://instagram.com/Revered_fitness_pt" target="_blank">Instagram</a>
-  </div>
-</section>
-
 <!-- FOOTER -->
-<footer>
+<footer style="margin-top:200px; text-align:center; padding:20px; background:#000;">
   © 2026 Revered Fitness
 </footer>
 
