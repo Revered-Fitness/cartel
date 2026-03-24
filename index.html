@@ -62,45 +62,44 @@ nav a:hover::before { width:60%; }
 header {
   position:relative;
   width:100%;
-  min-height:45vh; /* compact hero */
+  min-height:50vh; /* slightly taller for image+text */
   display:flex;
   justify-content:center;
   align-items:center;
   overflow:hidden;
   padding-top:60px; /* adjust for fixed nav */
   margin-top:0; /* flush with nav */
-  text-align:center;
 }
 
 .hero-container {
   display:flex;
-  flex-direction:column;
   align-items:center;
-  justify-content:center;
-  max-width:900px;
+  justify-content:space-between;
+  max-width:1200px;
   width:100%;
+  padding:0 20px;
+  gap:40px;
 }
 
 /* HERO IMAGE */
 .hero-container img.hero-img {
-  width:60%;
+  width:50%;
   max-width:500px;
   border-radius:12px;
   box-shadow:0 8px 25px rgba(0,0,0,0.5);
   object-fit:cover;
-  margin-bottom:20px;
 }
 
-/* --- HERO TEXT --- */
+/* HERO TEXT */
 .hero-text {
-  width:100%;
+  width:45%;
   display:flex;
   flex-direction:column;
-  align-items:center;
+  align-items:flex-start;
 }
 
 .hero-text img.logo {
-  width:340px; /* slightly larger logo */
+  width:320px; /* enlarged logo */
   margin-bottom:20px;
 }
 
@@ -118,7 +117,7 @@ header {
   font-family:'Roboto', sans-serif;
 }
 
-/* --- BUTTON --- */
+/* BUTTON */
 .btn {
   display:inline-block;
   background:#e10600;
@@ -214,10 +213,14 @@ footer {
 
 /* --- RESPONSIVE --- */
 @media(max-width:992px){
-  #transformation {
+  .hero-container {
     flex-direction:column;
     text-align:center;
   }
+  .hero-text { width:100%; align-items:center; }
+  .hero-text img.logo { margin-bottom:15px; }
+  .hero-container img.hero-img { width:80%; margin-bottom:20px; }
+  #transformation { flex-direction:column; }
   #transformation img, .transformation-text { width:80%; }
 }
 
@@ -225,7 +228,6 @@ footer {
   .hero-text h1 { font-size:2rem; }
   .hero-text p { font-size:1rem; }
   .hero-text img.logo { width:280px; }
-  .hero-container img.hero-img { width:80%; }
 }
 </style>
 </head>
@@ -241,7 +243,7 @@ footer {
 
 <header>
   <div class="hero-container">
-    <!-- Moving.jpg without gradient -->
+    <!-- Moving.jpg without overlay -->
     <img src="moving.jpg" alt="Hero Image" class="hero-img">
     <div class="hero-text">
       <img src="logo.png" alt="Revered Fitness Logo" class="logo">
