@@ -67,7 +67,7 @@ header {
   justify-content:center;
   align-items:center;
   overflow:hidden;
-  padding-top:20px; /* move text up slightly */
+  padding-top:20px; /* moves hero text slightly up */
   margin-top:0;
 }
 
@@ -83,10 +83,10 @@ header {
 
 /* HERO IMAGE INCREASED WIDTH + SHRINK HEIGHT */
 .hero-container img.hero-img {
-  width:65%; /* increased by 15% */
+  width:65%; /* increased 15% */
   max-width:650px;
   height:auto;
-  transform: scale(0.75); /* maintain 25% height reduction */
+  transform: scale(0.75); /* maintain height reduction */
   transform-origin: top left;
   border-radius:12px;
   box-shadow:0 8px 25px rgba(0,0,0,0.5);
@@ -100,16 +100,20 @@ header {
   flex-direction:column;
   justify-content:flex-start; /* align text to top */
   align-items:flex-start;
-  margin-top:-20px; /* move text slightly up */
 }
 
-/* Logo SHRINKED */
+/* Logo stays in original position */
 .hero-text img.logo {
   width:75%;
   margin-bottom:10px;
-  transform: scale(0.75);
-  transform-origin: top left;
   object-fit:contain;
+}
+
+/* Heading, tagline, button moved up slightly */
+.hero-text .text-group {
+  display:flex;
+  flex-direction:column;
+  margin-top:-20px; /* move heading, tagline, button up */
 }
 
 /* Heading */
@@ -230,8 +234,9 @@ footer {
     text-align:center;
     align-items:center;
   }
-  .hero-text { width:100%; align-items:center; justify-content:flex-start; margin-top:-10px; }
-  .hero-text img.logo { margin-bottom:15px; width:75%; transform: scale(0.75); }
+  .hero-text { width:100%; align-items:center; justify-content:flex-start; }
+  .hero-text img.logo { margin-bottom:15px; width:75%; }
+  .hero-text .text-group { margin-top:-10px; }
   .hero-container img.hero-img { width:80%; margin-bottom:20px; transform: scale(0.75); }
   #transformation { flex-direction:column; }
   #transformation img, .transformation-text { width:80%; }
@@ -240,7 +245,7 @@ footer {
 @media(max-width:500px){
   .hero-text h1 { font-size:1.8rem; }
   .hero-text p { font-size:0.9rem; }
-  .hero-text img.logo { width:100%; max-width:210px; transform: scale(0.75); }
+  .hero-text img.logo { width:100%; max-width:210px; }
   .hero-container img.hero-img { width:100%; max-width:none; transform: scale(0.75); }
 }
 </style>
@@ -257,12 +262,14 @@ footer {
 
 <header>
   <div class="hero-container">
-    <img src="moving.jpg" alt="Hero Image" class="hero-img">
+    <img src="moving.jpg" alt="Hero Image" class="hero-img"> <!-- New moving.jpg -->
     <div class="hero-text">
       <img src="logo.png" alt="Revered Fitness Logo" class="logo">
-      <h1>REVERED FITNESS</h1>
-      <p>Strength • Discipline • Respect</p>
-      <a href="#contact" class="btn">Start Your Journey</a>
+      <div class="text-group">
+        <h1>REVERED FITNESS</h1>
+        <p>Strength • Discipline • Respect</p>
+        <a href="#contact" class="btn">Start Your Journey</a>
+      </div>
     </div>
   </div>
 </header>
