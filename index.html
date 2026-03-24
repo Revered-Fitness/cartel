@@ -5,225 +5,266 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-
+/* --- BASE STYLING --- */
 body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#0f0f0f;
-color:white;
-text-align:center;
+  margin:0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background:#0f0f0f;
+  color:white;
+  text-align:center;
+  line-height:1.6;
 }
 
 nav{
-background:black;
-padding:18px 10px;
+  background:rgba(0,0,0,0.85);
+  padding:18px 10px;
+  backdrop-filter: blur(10px);
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:center;
 }
 
 nav a{
-color:#f5f5f5;
-margin:0 18px;
-text-decoration:none;
-font-weight:600;
-letter-spacing:1px;
-padding:6px 14px;
-position:relative;
-transition:all 0.3s ease;
+  color:#f5f5f5;
+  margin:0 18px;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:1px;
+  padding:6px 14px;
+  position:relative;
+  transition:all 0.3s ease;
 }
 
 nav a::after{
-content:"";
-position:absolute;
-right:-10px;
-top:50%;
-transform:translateY(-50%);
-height:18px;
-width:1px;
-background:rgba(255,255,255,0.25);
+  content:"";
+  position:absolute;
+  right:-10px;
+  top:50%;
+  transform:translateY(-50%);
+  height:18px;
+  width:1px;
+  background:rgba(255,255,255,0.25);
 }
 
 nav a:last-child::after{
-display:none;
+  display:none;
 }
 
 nav a:hover{
-color:#ffffff;
-text-shadow:0 0 6px rgba(225,6,0,0.6);
+  color:#e10600;
+  text-shadow:0 0 8px rgba(225,6,0,0.6);
 }
 
 nav a::before{
-content:"";
-position:absolute;
-bottom:-6px;
-left:50%;
-transform:translateX(-50%);
-width:0%;
-height:2px;
-background:#e10600;
-transition:width 0.3s ease;
-border-radius:2px;
+  content:"";
+  position:absolute;
+  bottom:-6px;
+  left:50%;
+  transform:translateX(-50%);
+  width:0%;
+  height:2px;
+  background:#e10600;
+  transition:width 0.3s ease;
+  border-radius:2px;
 }
 
 nav a:hover::before{
-width:60%;
+  width:60%;
 }
 
+/* --- HERO SECTION --- */
 header{
-padding:50px 20px;
+  position:relative;
+  height:90vh;
+  background:url('hero.jpg') center/cover no-repeat;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:white;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.7);
+}
+
+header::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.5);
 }
 
 header img{
-width:160px;
-border-radius:10px;
+  width:160px;
+  position:relative;
+  z-index:1;
 }
 
-h1{
-font-size:36px;
-margin:10px 0;
-letter-spacing:2px;
+header h1{
+  font-size:48px;
+  letter-spacing:3px;
+  margin:15px 0;
+  z-index:1;
 }
 
-.tagline{
-color:#aaa;
+header .tagline{
+  color:#ddd;
+  font-size:20px;
+  z-index:1;
 }
 
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:12px 26px;
-background:#e10600;
-color:white;
-text-decoration:none;
-font-weight:bold;
-border-radius:6px;
+header .btn{
+  position:relative;
+  z-index:1;
+  margin-top:30px;
+  padding:14px 32px;
+  font-size:18px;
+  border-radius:8px;
+  transition:all 0.3s ease;
+  box-shadow:0 5px 15px rgba(225,6,0,0.5);
 }
 
-.btn:hover{
-background:#a00000;
+header .btn:hover{
+  background:#a00000;
+  transform:translateY(-3px);
 }
 
+/* --- SECTIONS --- */
 section{
-padding:40px 20px;
-max-width:700px;
-margin:auto;
+  padding:60px 20px;
+  max-width:900px;
+  margin:auto;
+  backdrop-filter: blur(8px);
 }
 
+section h2{
+  font-size:32px;
+  margin-bottom:20px;
+  color:#e10600;
+  letter-spacing:1px;
+}
+
+section p{
+  font-size:18px;
+  color:#ccc;
+}
+
+/* IMAGE GRID */
+.image-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  margin-top:30px;
+}
+
+.image-grid div{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.image-grid img{
+  width:100%;
+  border-radius:15px;
+  box-shadow:0 8px 20px rgba(225,6,0,0.5);
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-grid img:hover{
+  transform:scale(1.05);
+  box-shadow:0 12px 25px rgba(225,6,0,0.8);
+}
+
+.image-grid p{
+  color:#aaa;
+  font-size:14px;
+  margin-top:6px;
+}
+
+/* CONTACT BOX */
 .contact-box{
-background:#1a1a1a;
-padding:25px;
-border-radius:10px;
-box-shadow:0 0 20px rgba(225,6,0,0.3);
+  background:rgba(26,26,26,0.9);
+  padding:35px;
+  border-radius:15px;
+  box-shadow:0 0 25px rgba(225,6,0,0.5);
 }
 
-/* IMAGE STYLING */
-section img{
-width:100%;
-max-width:600px;
-border-radius:10px;
-margin-top:20px;
+.contact-box p{
+  margin:12px 0;
 }
 
 footer{
-background:black;
-padding:15px;
-font-size:14px;
-margin-top:40px;
+  background:black;
+  padding:20px;
+  font-size:14px;
+  margin-top:40px;
+  letter-spacing:0.5px;
 }
 
-@media (max-width:600px){
-
-nav{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
+/* --- MOBILE --- */
+@media(max-width:600px){
+  nav{
+    flex-direction:column;
+  }
+  header h1{
+    font-size:32px;
+  }
+  header .tagline{
+    font-size:16px;
+  }
+  header .btn{
+    font-size:16px;
+  }
 }
-
-nav a{
-display:block;
-margin:0;
-padding:12px 0;
-border-bottom:1px solid rgba(255,255,255,0.15);
-}
-
-nav a::after{
-display:none;
-}
-
-nav a:nth-last-child(-n+2){
-border-bottom:none;
-}
-
-h1{
-font-size:28px;
-}
-}
-
 </style>
 </head>
 
 <body>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="clothing.html">Clothing</a>
-<a href="about.html">About</a>
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="clothing.html">Clothing</a>
+  <a href="about.html">About</a>
 </nav>
 
 <header>
-<img src="logo.png" alt="Revered Fitness Logo">
-
-<h1>REVERED FITNESS</h1>
-
-<p class="tagline">Strength • Discipline • Respect</p>
-
-<a class="btn" href="#contact">Start Your Journey</a>
+  <img src="logo.png" alt="Revered Fitness Logo">
+  <h1>REVERED FITNESS</h1>
+  <p class="tagline">Strength • Discipline • Respect</p>
+  <a class="btn" href="#contact">Start Your Journey</a>
 </header>
 
 <section>
-<h2>Build Strength & Confidence</h2>
-<p>
-Helping beginners step into the gym, build strength, 
-and develop lifelong discipline through professional coaching.
-</p>
+  <h2>Our Mission</h2>
+  <p>
+    Helping beginners step into the gym, build strength, 
+    and develop lifelong discipline through professional coaching.
+  </p>
 
-<!-- Hero image -->
-<img src="hero.jpg" alt="Hero Image of Gym or Fitness Training">
-</section>
-
-<section>
-<h2>Our Trainer</h2>
-<p>Meet our expert trainer dedicated to your fitness journey.</p>
-
-<!-- Selfie image -->
-<img src="selfie.jpg" alt="Trainer Selfie">
-</section>
-
-<section>
-<h2>Get Moving</h2>
-<p>See our clients in action and get inspired to start your own journey.</p>
-
-<!-- Moving image -->
-<img src="moving.jpg" alt="People Exercising / Moving">
+  <div class="image-grid">
+    <div>
+      <img src="selfie.jpg" alt="Trainer Selfie">
+      <p>Meet your trainer</p>
+    </div>
+    <div>
+      <img src="moving.jpg" alt="Client Exercising in Gym">
+      <p>Client in action</p>
+    </div>
+  </div>
 </section>
 
 <section id="contact">
-<h2>Contact</h2>
-
-<div class="contact-box">
-<p><strong>Email</strong><br>
-j.p.blackburn@hotmail.co.uk</p>
-
-<p><strong>Mobile</strong><br>
-07576588552</p>
-
-<a class="btn" href="https://instagram.com/Revered_fitness_pt" target="_blank">
-Instagram
-</a>
-</div>
+  <h2>Contact</h2>
+  <div class="contact-box">
+    <p><strong>Email</strong><br>j.p.blackburn@hotmail.co.uk</p>
+    <p><strong>Mobile</strong><br>07576588552</p>
+    <a class="btn" href="https://instagram.com/Revered_fitness_pt" target="_blank">Instagram</a>
+  </div>
 </section>
 
 <footer>
-© 2026 Revered Fitness
+  © 2026 Revered Fitness
 </footer>
 
 </body>
