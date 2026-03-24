@@ -62,13 +62,13 @@ nav a:hover::before { width:60%; }
 header {
   position:relative;
   width:100%;
-  min-height:50vh; /* compact hero */
+  min-height:50vh;
   display:flex;
   justify-content:center;
   align-items:center;
   overflow:hidden;
-  padding-top:60px; /* adjust for fixed nav */
-  margin-top:0; /* flush with nav */
+  padding-top:60px;
+  margin-top:0;
 }
 
 .hero-container {
@@ -98,8 +98,10 @@ header {
   align-items:flex-start;
 }
 
+/* Logo same width as hero text container */
 .hero-text img.logo {
-  width:360px; /* SLIGHTLY INCREASED LOGO SIZE */
+  width:100%;
+  max-width:100%;
   margin-bottom:20px;
 }
 
@@ -227,7 +229,7 @@ footer {
 @media(max-width:500px){
   .hero-text h1 { font-size:2rem; }
   .hero-text p { font-size:1rem; }
-  .hero-text img.logo { width:300px; }
+  .hero-text img.logo { width:100%; max-width:280px; }
 }
 </style>
 </head>
