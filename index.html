@@ -16,7 +16,6 @@ body {
   overflow-x:hidden;
 }
 
-/* Links */
 a { text-decoration:none; }
 
 /* --- NAVIGATION FIXED TOP --- */
@@ -97,17 +96,20 @@ header {
   width:35%;
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:center; /* vertically center with hero image */
   align-items:flex-start;
   height:100%;
+  gap:20px; /* spacing between logo, heading, tagline, button */
 }
 
+/* Logo */
 .hero-text img.logo {
-  width:75%;
-  margin-bottom:20px;
+  width:80%;
+  margin-bottom:15px;
   object-fit:contain;
 }
 
+/* Text Group */
 .hero-text .text-group {
   display:flex;
   flex-direction:column;
@@ -119,8 +121,8 @@ header {
 .hero-text h1 {
   font-family:'Poppins', sans-serif;
   font-weight:700;
-  font-size:2.3rem;
-  letter-spacing:2px;
+  font-size:2.6rem;
+  letter-spacing:3px;
   margin:0;
   color:#fff;
 }
@@ -129,21 +131,27 @@ header {
 .hero-text p {
   font-family:'Roboto', sans-serif;
   font-weight:500;
-  font-size:1.2rem;
+  font-size:1.3rem;
   color:#d1d1d1;
   margin:0;
+  line-height:1.5;
 }
 
-/* BUTTON */
+/* Hero Button */
+.hero-text .btn {
+  font-size:1rem;
+  padding:16px 34px;
+  letter-spacing:1.5px;
+}
+
+/* BUTTON GENERAL */
 .btn {
   display:inline-block;
   background:#e10600;
   color:#fff;
-  padding:14px 30px;
   border-radius:8px;
   font-weight:700;
   text-transform:uppercase;
-  letter-spacing:1px;
   box-shadow:0 5px 15px rgba(225,6,0,0.4);
   transition: all 0.3s ease;
   font-family:'Poppins', sans-serif;
@@ -222,7 +230,7 @@ header {
 #contact {
   flex-direction:column;
   text-align:center;
-  padding:40px 20px; /* moved up slightly from 60px */
+  padding:40px 20px; /* moved up slightly */
 }
 
 .contact-box {
