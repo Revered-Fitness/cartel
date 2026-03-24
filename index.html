@@ -31,7 +31,6 @@ position:relative;
 transition:all 0.3s ease;
 }
 
-/* subtle vertical divider */
 nav a::after{
 content:"";
 position:absolute;
@@ -52,7 +51,6 @@ color:#ffffff;
 text-shadow:0 0 6px rgba(225,6,0,0.6);
 }
 
-/* underline animation */
 nav a::before{
 content:"";
 position:absolute;
@@ -76,6 +74,34 @@ padding:50px 20px;
 
 header img{
 width:160px;
+}
+
+.hero-img{
+width:100%;
+max-width:400px;
+height:450px;
+object-fit:cover;
+border-radius:15px;
+box-shadow:0 0 30px rgba(225,6,0,0.4);
+margin-top:25px;
+}
+
+/* NEW IMAGE GRID */
+.image-row{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.image-row img{
+width:100%;
+max-width:300px;
+height:300px;
+object-fit:cover;
+border-radius:12px;
+box-shadow:0 0 20px rgba(225,6,0,0.3);
 }
 
 h1{
@@ -123,7 +149,7 @@ font-size:14px;
 margin-top:40px;
 }
 
-/* MOBILE: 2 COLUMN NAV (FIXED) */
+/* MOBILE */
 @media (max-width:600px){
 
 nav{
@@ -139,12 +165,10 @@ padding:12px 0;
 border-bottom:1px solid rgba(255,255,255,0.15);
 }
 
-/* remove desktop divider */
 nav a::after{
 display:none;
 }
 
-/* remove border from last row (2 items) */
 nav a:nth-last-child(-n+2){
 border-bottom:none;
 }
@@ -152,6 +176,16 @@ border-bottom:none;
 h1{
 font-size:28px;
 }
+
+.hero-img{
+height:350px;
+}
+
+.image-row img{
+max-width:45%;
+height:200px;
+}
+
 }
 
 </style>
@@ -175,6 +209,15 @@ font-size:28px;
 <p class="tagline">Strength • Discipline • Respect</p>
 
 <a class="btn" href="#contact">Start Your Journey</a>
+
+<!-- MAIN HERO IMAGE -->
+<img src="hero.jpg" class="hero-img">
+
+<!-- NEW IMAGE ROW -->
+<div class="image-row">
+  <img src="moving.jpg" alt="Training Movement">
+  <img src="selfie.jpg" alt="Fitness Selfie">
+</div>
 
 </header>
 
