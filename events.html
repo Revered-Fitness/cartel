@@ -30,6 +30,7 @@
       padding:6px 14px;
       position:relative;
       transition:all 0.3s ease;
+      font-family:'Poppins', sans-serif;
     }
 
     nav a::after{
@@ -75,35 +76,28 @@
       justify-content:center;
       align-items:center;
       flex-direction:column;
-      padding:100px 20px 40px 20px;
+      padding:100px 20px 40px 20px; /* account for fixed nav */
     }
 
     .hero-img{
-      width:60%;
-      max-width:300px;
-      border-radius:16px;
-      box-shadow:0 12px 30px rgba(0,0,0,0.6);
-      border:2px solid #e10600;
+      width:50%;
+      max-width:250px;
+      border-radius:12px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.5);
       margin-bottom:20px;
-      transition: transform 0.3s;
-    }
-
-    .hero-img:hover {
-      transform: scale(1.03);
     }
 
     .hero-text h1{
       font-size:2rem;
-      margin:10px 0 10px 0;
-      letter-spacing:1px;
+      margin:0 0 10px 0;
+      font-family:'Poppins', sans-serif;
     }
 
     .hero-text p{
       color:#d1d1d1;
-      font-size:1rem;
-      max-width:600px;
+      font-size:1.1rem;
+      max-width:700px;
       margin:auto;
-      line-height:1.6;
     }
 
     /* EVENTS CARDS */
@@ -121,16 +115,18 @@
       background:#1c1c1c;
       padding:25px 20px;
       width:280px;
-      border-radius:16px;
-      box-shadow:0 0 28px rgba(225,6,0,0.4);
+      border-radius:12px;
+      box-shadow:0 0 18px rgba(225,6,0,0.3);
       transition: transform 0.3s, box-shadow 0.3s;
       text-align:left;
-      border:1px solid rgba(255,255,255,0.05);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
     }
 
     .event-card:hover {
-      transform: translateY(-10px);
-      box-shadow:0 0 40px rgba(225,6,0,0.6);
+      transform: translateY(-8px);
+      box-shadow:0 0 28px rgba(225,6,0,0.5);
     }
 
     .event-card h2 {
@@ -142,26 +138,30 @@
     .event-card p {
       color:#ccc;
       margin:10px 0 0 0;
-      line-height:1.5;
+      flex-grow:1;
     }
 
+    /* PREMIUM BUTTONS FITTING TILE */
     .btn {
-      background:#e10600;
-      padding:12px 20px;
-      border-radius:8px;
-      font-weight:700;
-      color:#fff;
-      display:inline-block;
-      text-decoration:none;
-      margin-top:15px;
+      display:block;
       width:100%;
+      padding:12px 0;
+      border-radius:12px;
+      font-weight:600;
+      font-size:0.95rem;
+      color:#fff;
+      background: linear-gradient(135deg, #e10600, #ff2a2a);
+      text-decoration:none;
+      margin-top:20px;
       text-align:center;
-      transition:0.3s;
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      box-shadow:0 4px 12px rgba(225,6,0,0.4);
     }
 
     .btn:hover {
-      background:#ff2a2a;
-      transform:translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow:0 6px 20px rgba(225,6,0,0.6);
+      background: linear-gradient(135deg, #ff2a2a, #e10600);
     }
 
     footer{
@@ -190,12 +190,13 @@
       nav a:nth-last-child(-n+2){
         border-bottom:none;
       }
+
       .hero-img{
-        width:80%;
-        max-width:220px;
+        width:40%;
+        max-width:150px;
       }
       .hero-text h1{
-        font-size:1.6rem;
+        font-size:1.5rem;
       }
       .hero-text p{
         font-size:0.95rem;
@@ -223,7 +224,7 @@
   <img src="car.jpg" class="hero-img" alt="Events Hero Image">
   <div class="hero-text">
     <h1>Upcoming Events</h1>
-    <p>Keep an eye out for our premium fitness events and workshops. Stay tuned for exclusive sessions with Revered Fitness!</p>
+    <p>Keep an eye out for any free events scheduled with Revered Fitness. Stay tuned for updates!</p>
   </div>
 </header>
 
@@ -238,7 +239,7 @@
   <div class="event-card">
     <h2>Outdoor Fitness Meetup</h2>
     <p>Date: April 10, 2026</p>
-    <p>Join a free outdoor group training session at the local park for a premium experience.</p>
+    <p>Come join a free outdoor group training session at the local park.</p>
     <a href="#" class="btn">Learn More</a>
   </div>
 </div>
