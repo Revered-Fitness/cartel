@@ -10,13 +10,18 @@
 /* --- BASE STYLING --- */
 body {
   margin:0;
-  padding-top:70px; /* moved closer to nav */
+  padding-top:70px; /* space for fixed nav */
   font-family: Arial, sans-serif;
   background:#0f0f0f;
   color:#fff;
   line-height:1.6;
   overflow-x:hidden;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
 }
+
+a { text-decoration:none; }
 
 /* --- NAVIGATION --- */
 nav {
@@ -45,7 +50,7 @@ nav a {
   justify-content:center;
 }
 
-/* vertical divider */
+/* Divider */
 nav a::after {
   content:"";
   position:absolute;
@@ -61,7 +66,7 @@ nav a:last-child::after {
   display:none;
 }
 
-/* underline animation */
+/* Hover underline */
 nav a::before {
   content:"";
   position:absolute;
@@ -90,8 +95,8 @@ nav a:hover::before {
   flex-wrap:wrap;
   justify-content:center;
   align-items:center;
-  padding:60px 20px 30px 20px; /* tighter top padding */
-  gap:35px; /* smaller gap for premium look */
+  padding:60px 20px 30px 20px;
+  gap:35px;
 }
 
 #transformation img {
@@ -99,6 +104,7 @@ nav a:hover::before {
   max-width:500px;
   border-radius:12px;
   box-shadow:0 8px 25px rgba(225,6,0,0.6);
+  object-fit:cover;
 }
 
 .transformation-text {
@@ -144,7 +150,7 @@ footer {
   #transformation {
     flex-direction:column;
     align-items:center;
-    padding:50px 20px 25px 20px; /* closer on tablet */
+    padding:50px 20px 25px 20px;
   }
 
   #transformation img {
@@ -158,10 +164,10 @@ footer {
   }
 }
 
-/* --- MOBILE NAV & SECTION --- */
+/* --- MOBILE --- */
 @media(max-width:500px){
   body {
-    padding-top:110px; /* closer on mobile */
+    padding-top:110px;
   }
 
   nav {
@@ -194,13 +200,15 @@ footer {
   }
 
   #transformation {
-    padding:30px 15px 20px 15px; /* very tight on mobile */
+    padding:30px 15px 20px 15px;
     gap:20px;
   }
 
   #transformation img {
     width:100%;
-    max-width:300px;
+    max-width:100%; /* fix off-screen */
+    height:auto;
+    border-radius:12px;
   }
 
   .transformation-text h2 {
@@ -229,7 +237,7 @@ footer {
 
 <!-- TRANSFORMATION SECTION -->
 <section id="transformation">
-  <img src="new-transform.jpg" alt="Self Transformation Photo">
+  <img src="selfie.jpg" alt="Self Transformation Photo">
 
   <div class="transformation-text">
     <h2>My Transformation</h2>
