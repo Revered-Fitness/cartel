@@ -10,6 +10,7 @@
 /* --- BASE STYLING --- */
 body {
   margin:0;
+  padding-top:80px; /* pushes content below nav */
   font-family: 'Roboto', Arial, sans-serif;
   background:#0f0f0f;
   color:#fff;
@@ -46,7 +47,7 @@ nav a {
   font-family:'Poppins', sans-serif;
 }
 
-/* Vertical divider */
+/* Divider */
 nav a::after {
   content:"";
   position:absolute;
@@ -62,7 +63,7 @@ nav a:last-child::after {
   display:none;
 }
 
-/* Hover only */
+/* Hover */
 nav a::before {
   content:"";
   position:absolute;
@@ -90,7 +91,6 @@ header {
   display:flex;
   justify-content:center;
   align-items:center;
-  padding-top:80px;
   flex:1;
 }
 
@@ -164,9 +164,8 @@ footer {
 /* --- MOBILE --- */
 @media(max-width:500px){
 
-  /* MORE SPACE BELOW NAV */
-  header {
-    padding-top:80px;
+  body {
+    padding-top:120px; /* taller nav = more space */
   }
 
   .hero-container {
@@ -175,8 +174,8 @@ footer {
 
   .hero-img {
     width:80%;
-    max-width:200px;
-    margin-top:10px; /* extra breathing room */
+    max-width:220px;
+    margin-top:10px;
   }
 
   .logo {
@@ -191,7 +190,7 @@ footer {
     font-size:0.95rem;
   }
 
-  /* Mobile nav layout */
+  /* Mobile nav */
   nav {
     display:grid;
     grid-template-columns:1fr 1fr;
