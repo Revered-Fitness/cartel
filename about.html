@@ -7,40 +7,41 @@
 <style>
 
 body{
-margin:0;
-font-family:Arial, sans-serif;
-background:#0f0f0f;
-color:white;
-text-align:center;
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0f0f0f;
+  color:white;
+  text-align:center;
 }
 
 nav{
-background:black;
-padding:18px 10px;
+  background:black;
+  padding:18px 10px;
 }
 
 /* PREMIUM NAV LINKS */
 nav a{
-color:#f5f5f5;
-margin:0 18px;
-text-decoration:none;
-font-weight:600;
-letter-spacing:1px;
-padding:6px 14px;
-position:relative;
-transition:all 0.3s ease;
+  color:#f5f5f5;
+  margin:0 18px;
+  text-decoration:none;
+  font-weight:600;
+  letter-spacing:1px;
+  padding:6px 14px;
+  position:relative;
+  transition:all 0.3s ease;
+  font-family:'Poppins', sans-serif;
 }
 
 /* subtle vertical divider */
 nav a::after{
-content:"";
-position:absolute;
-right:-10px;
-top:50%;
-transform:translateY(-50%);
-height:18px;
-width:1px;
-background:rgba(255,255,255,0.25);
+  content:"";
+  position:absolute;
+  right:-10px;
+  top:50%;
+  transform:translateY(-50%);
+  height:18px;
+  width:1px;
+  background:rgba(255,255,255,0.25);
 }
 
 nav a:last-child::after{
@@ -95,6 +96,81 @@ color:#e10600;
 font-weight:bold;
 }
 
+/* CONTACT SECTION */
+.contact{
+  max-width:800px;
+  margin:40px auto;
+  padding:40px;
+  background:#1a1a1a;
+  border-radius:12px;
+  box-shadow:0 0 25px rgba(225,6,0,0.25);
+  text-align:left;
+}
+
+.contact h2{
+color:#e10600;
+margin-bottom:20px;
+font-family:'Poppins', sans-serif;
+}
+
+.contact form input,
+.contact form textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+border-radius:8px;
+border:none;
+background:#2a2a2a;
+color:white;
+font-size:16px;
+box-sizing:border-box;
+}
+
+.contact form button{
+background:#e10600;
+color:white;
+font-weight:600;
+padding:12px 20px;
+border:none;
+border-radius:8px;
+margin-top:10px;
+cursor:pointer;
+width:100%;
+font-size:16px;
+transition:0.3s;
+}
+
+.contact form button:hover{
+background:#ff2a2a;
+}
+
+/* Instagram button */
+.contact .instagram-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+background:#e10600;
+color:white;
+font-weight:600;
+padding:12px 20px;
+border-radius:8px;
+margin-top:15px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.contact .instagram-btn:hover{
+background:#ff2a2a;
+}
+
+.contact .instagram-btn svg{
+width:20px;
+height:20px;
+fill:white;
+}
+
+/* FOOTER */
 footer{
 background:black;
 padding:20px;
@@ -118,12 +194,10 @@ padding:12px 0;
 border-bottom:1px solid rgba(255,255,255,0.15);
 }
 
-/* remove desktop divider */
 nav a::after{
 display:none;
 }
 
-/* remove bottom border from last row */
 nav a:nth-last-child(-n+2){
 border-bottom:none;
 }
@@ -138,6 +212,18 @@ padding:25px;
 font-size:16px;
 }
 
+.contact{
+margin:20px;
+padding:25px;
+}
+
+.contact form input,
+.contact form textarea,
+.contact form button,
+.contact .instagram-btn{
+font-size:14px;
+padding:8px;
+}
 }
 
 </style>
@@ -155,13 +241,10 @@ font-size:16px;
 </nav>
 
 <div class="hero">
-
 <h1>About Revered Fitness</h1>
-
 </div>
 
 <div class="content">
-
 <p>
 Revered Fitness was built through a passion for 
 <span class="highlight">strength sports</span>, discipline, 
@@ -185,7 +268,25 @@ This brand is built on three principles:
 <br><br>
 <strong>Strength • Discipline • Respect</strong>
 </p>
+</div>
 
+<!-- CONTACT SECTION -->
+<div class="contact">
+<h2>Contact Me</h2>
+<form action="https://formspree.io/f/mqegzpvk" method="POST">
+<input type="text" name="name" placeholder="Full Name" required>
+<input type="email" name="email" placeholder="Email Address" required>
+<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+
+<!-- Instagram Button -->
+<a href="https://www.instagram.com/yourprofile" target="_blank" class="instagram-btn">
+<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+<path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 256 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.7c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.3-9.9-66.6-36.2-92.9S382.4 7.7 347.1 6c-35.3-1.7-141-1.7-176.3 0-35.3 1.7-66.6 9.9-92.9 36.2S7.7 129.6 6 164.9c-1.7 35.3-1.7 141 0 176.3 1.7 35.3 9.9 66.6 36.2 92.9s57.6 34.5 92.9 36.2c35.3 1.7 141 1.7 176.3 0 35.3-1.7 66.6-9.9 92.9-36.2s34.5-57.6 36.2-92.9c1.7-35.3 1.7-141 0-176.3zM398.8 388c-7.8 19.5-22.9 34.6-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 2.6-132.4-9c-19.5-7.8-34.6-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-2.6-103 9-132.4c7.8-19.5 22.9-34.6 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-2.6 132.4 9c19.5 7.8 34.6 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s2.7 103-9 132.4z"/>
+</svg>
+Follow on Instagram
+</a>
 </div>
 
 <footer>
