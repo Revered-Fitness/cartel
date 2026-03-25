@@ -75,27 +75,35 @@
       justify-content:center;
       align-items:center;
       flex-direction:column;
-      padding:100px 20px 40px 20px; /* account for fixed nav */
+      padding:100px 20px 40px 20px;
     }
 
     .hero-img{
-      width:80%;
-      max-width:600px;
-      border-radius:12px;
-      box-shadow:0 8px 25px rgba(0,0,0,0.5);
+      width:60%;
+      max-width:300px;
+      border-radius:16px;
+      box-shadow:0 12px 30px rgba(0,0,0,0.6);
+      border:2px solid #e10600;
       margin-bottom:20px;
+      transition: transform 0.3s;
+    }
+
+    .hero-img:hover {
+      transform: scale(1.03);
     }
 
     .hero-text h1{
-      font-size:2.3rem;
-      margin:0;
+      font-size:2rem;
+      margin:10px 0 10px 0;
+      letter-spacing:1px;
     }
 
     .hero-text p{
       color:#d1d1d1;
-      font-size:1.2rem;
-      max-width:700px;
+      font-size:1rem;
+      max-width:600px;
       margin:auto;
+      line-height:1.6;
     }
 
     /* EVENTS CARDS */
@@ -113,15 +121,16 @@
       background:#1c1c1c;
       padding:25px 20px;
       width:280px;
-      border-radius:12px;
-      box-shadow:0 0 18px rgba(225,6,0,0.3);
+      border-radius:16px;
+      box-shadow:0 0 28px rgba(225,6,0,0.4);
       transition: transform 0.3s, box-shadow 0.3s;
       text-align:left;
+      border:1px solid rgba(255,255,255,0.05);
     }
 
     .event-card:hover {
-      transform: translateY(-8px);
-      box-shadow:0 0 28px rgba(225,6,0,0.5);
+      transform: translateY(-10px);
+      box-shadow:0 0 40px rgba(225,6,0,0.6);
     }
 
     .event-card h2 {
@@ -133,6 +142,7 @@
     .event-card p {
       color:#ccc;
       margin:10px 0 0 0;
+      line-height:1.5;
     }
 
     .btn {
@@ -181,14 +191,14 @@
         border-bottom:none;
       }
       .hero-img{
-        width:100%;
-        max-width:320px;
+        width:80%;
+        max-width:220px;
       }
       .hero-text h1{
-        font-size:1.8rem;
+        font-size:1.6rem;
       }
       .hero-text p{
-        font-size:1rem;
+        font-size:0.95rem;
       }
       .event-card{
         width:90%;
@@ -210,10 +220,10 @@
 </nav>
 
 <header>
-  <img src="hero.jpg" class="hero-img" alt="Events Hero Image">
+  <img src="car.jpg" class="hero-img" alt="Events Hero Image">
   <div class="hero-text">
     <h1>Upcoming Events</h1>
-    <p>Keep an eye out for any free events scheduled with Revered Fitness. Stay tuned for updates!</p>
+    <p>Keep an eye out for our premium fitness events and workshops. Stay tuned for exclusive sessions with Revered Fitness!</p>
   </div>
 </header>
 
@@ -228,7 +238,7 @@
   <div class="event-card">
     <h2>Outdoor Fitness Meetup</h2>
     <p>Date: April 10, 2026</p>
-    <p>Come join a free outdoor group training session at the local park.</p>
+    <p>Join a free outdoor group training session at the local park for a premium experience.</p>
     <a href="#" class="btn">Learn More</a>
   </div>
 </div>
