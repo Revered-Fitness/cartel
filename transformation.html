@@ -10,7 +10,7 @@
 /* --- BASE STYLING --- */
 body {
   margin:0;
-  padding-top:70px; /* space for fixed nav */
+  padding-top:70px;
   font-family: Arial, sans-serif;
   background:#0f0f0f;
   color:#fff;
@@ -97,6 +97,7 @@ nav a:hover::before {
   align-items:center;
   padding:60px 20px 30px 20px;
   gap:35px;
+  text-align:center;
 }
 
 #transformation img {
@@ -105,6 +106,10 @@ nav a:hover::before {
   border-radius:12px;
   box-shadow:0 8px 25px rgba(225,6,0,0.6);
   object-fit:cover;
+}
+
+#transformation img.mobile-img {
+  display:none;
 }
 
 .transformation-text {
@@ -160,7 +165,6 @@ footer {
 
   .transformation-text {
     width:100%;
-    text-align:center;
   }
 }
 
@@ -204,11 +208,15 @@ footer {
     gap:20px;
   }
 
-  #transformation img {
+  #transformation img.desktop-img {
+    display:none;
+  }
+
+  #transformation img.mobile-img {
+    display:block;
     width:100%;
-    max-width:100%; /* fix off-screen */
+    max-width:100%;
     height:auto;
-    border-radius:12px;
   }
 
   .transformation-text h2 {
@@ -237,7 +245,11 @@ footer {
 
 <!-- TRANSFORMATION SECTION -->
 <section id="transformation">
-  <img src="selfie.jpg" alt="Self Transformation Photo">
+  <!-- Desktop Image -->
+  <img src="selfie.jpg" alt="Self Transformation Photo" class="desktop-img">
+
+  <!-- Mobile Image -->
+  <img src="transform.jpg" alt="Mobile Transformation Photo" class="mobile-img">
 
   <div class="transformation-text">
     <h2>My Transformation</h2>
