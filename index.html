@@ -24,29 +24,29 @@ a { text-decoration:none; }
 
 /* --- NAVIGATION --- */
 nav {
-  background:rgba(0,0,0,0.95);
-  backdrop-filter:blur(10px);
+  background:black;
   position:fixed;
   top:0;
   width:100%;
   z-index:100;
   display:flex;
   justify-content:center;
-  padding:12px 0;
+  padding:18px 10px;
 }
 
 nav a {
   color:#f5f5f5;
-  margin:0 18px; /* smaller margin to make dividers visible */
-  font-weight:700;
-  letter-spacing:1.5px;
+  margin:0 18px;
+  text-decoration:none;
+  font-weight:600; /* match About page */
+  letter-spacing:1px; /* match About page */
   padding:6px 14px;
   position:relative;
-  transition:0.3s;
-  font-family:'Poppins', sans-serif;
+  transition:all 0.3s ease;
+  font-family:'Poppins', sans-serif; /* match About page */
 }
 
-/* Vertical divider after each link */
+/* Vertical divider */
 nav a::after {
   content:"";
   position:absolute;
@@ -62,6 +62,7 @@ nav a:last-child::after {
   display:none;
 }
 
+/* Hover / Active */
 nav a.active {
   color:#e10600;
 }
@@ -73,17 +74,19 @@ nav a.active::before {
 nav a::before {
   content:"";
   position:absolute;
-  bottom:-4px;
+  bottom:-6px;
   left:50%;
   transform:translateX(-50%);
   width:0%;
   height:2px;
   background:#e10600;
-  transition:0.3s;
+  transition:width 0.3s;
+  border-radius:2px;
 }
 
 nav a:hover {
-  color:#e10600;
+  color:#ffffff;
+  text-shadow:0 0 6px rgba(225,6,0,0.6);
 }
 
 nav a:hover::before {
@@ -127,7 +130,7 @@ header {
 }
 
 .logo {
-  width:220px; /* larger logo */
+  width:220px;
   margin-bottom:20px;
 }
 
@@ -212,7 +215,7 @@ footer {
     font-size:0.95rem;
   }
 
-  /* Mobile: remove dividers, stack nav links */
+  /* Mobile: stack nav links & remove dividers */
   nav {
     display:grid;
     grid-template-columns:1fr 1fr;
