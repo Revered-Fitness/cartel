@@ -76,7 +76,7 @@
       justify-content:center;
       align-items:center;
       flex-direction:column;
-      padding:100px 20px 40px 20px; /* account for fixed nav */
+      padding:40px 20px 20px 20px; /* reduced top padding */
     }
 
     .hero-img{
@@ -84,12 +84,12 @@
       max-width:250px;
       border-radius:12px;
       box-shadow:0 8px 25px rgba(0,0,0,0.5);
-      margin-bottom:20px;
+      margin-bottom:15px; /* smaller spacing below image */
     }
 
     .hero-text h1{
       font-size:2rem;
-      margin:0 0 10px 0;
+      margin:0 0 8px 0;
       font-family:'Poppins', sans-serif;
     }
 
@@ -107,7 +107,7 @@
       justify-content:center;
       gap:30px;
       max-width:1200px;
-      margin:50px auto 0 auto;
+      margin:30px auto 0 auto; /* moved closer to header */
       padding:0 20px;
     }
 
@@ -152,7 +152,7 @@
       color:#fff;
       background: linear-gradient(135deg, #e10600, #ff2a2a);
       text-decoration:none;
-      margin-top:20px;
+      margin-top:15px;
       text-align:center;
       transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
       box-shadow:0 4px 12px rgba(225,6,0,0.4);
@@ -200,6 +200,9 @@
       }
       .hero-text p{
         font-size:0.95rem;
+      }
+      .events-container{
+        margin-top:20px; /* closer on mobile */
       }
       .event-card{
         width:90%;
