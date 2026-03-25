@@ -38,12 +38,12 @@ nav a {
   color:#f5f5f5;
   margin:0 18px;
   text-decoration:none;
-  font-weight:600; /* match About page */
-  letter-spacing:1px; /* match About page */
+  font-weight:600;
+  letter-spacing:1px;
   padding:6px 14px;
   position:relative;
   transition:all 0.3s ease;
-  font-family:'Poppins', sans-serif; /* match About page */
+  font-family:'Poppins', sans-serif;
 }
 
 /* Vertical divider */
@@ -62,15 +62,7 @@ nav a:last-child::after {
   display:none;
 }
 
-/* Hover / Active */
-nav a.active {
-  color:#e10600;
-}
-
-nav a.active::before {
-  width:60%;
-}
-
+/* Hover only (no active styling) */
 nav a::before {
   content:"";
   position:absolute;
@@ -98,7 +90,7 @@ header {
   display:flex;
   justify-content:center;
   align-items:center;
-  padding-top:80px; /* space from fixed nav */
+  padding-top:80px;
   flex:1;
 }
 
@@ -169,53 +161,63 @@ footer {
   margin-top:auto;
 }
 
-/* --- MOBILE / TABLET --- */
+/* --- MOBILE --- */
 @media(max-width:992px){
   header {
     padding-top:60px;
   }
+
   .hero-container {
     flex-direction:column;
     gap:10px;
-    text-align:center;
   }
+
   .hero-img {
     width:60%;
     max-width:250px;
   }
+
   .logo {
     width:180px;
   }
+
   .hero-text h1 {
     font-size:2rem;
   }
+
   .hero-text p {
     font-size:1rem;
   }
 }
 
 @media(max-width:500px){
+
   header {
     padding-top:50px;
   }
+
   .hero-container {
     gap:8px;
   }
+
   .hero-img {
     width:80%;
     max-width:200px;
   }
+
   .logo {
     width:140px;
   }
+
   .hero-text h1 {
     font-size:1.6rem;
   }
+
   .hero-text p {
     font-size:0.95rem;
   }
 
-  /* Mobile: stack nav links & remove dividers */
+  /* Mobile nav layout */
   nav {
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -244,7 +246,7 @@ footer {
 
 <!-- NAVIGATION -->
 <nav>
-  <a href="index.html" class="active">Home</a>
+  <a href="index.html">Home</a>
   <a href="services.html">Services</a>
   <a href="transformation.html">Transformation</a>
   <a href="events.html">Events</a>
@@ -252,10 +254,11 @@ footer {
   <a href="about.html">About</a>
 </nav>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <header>
   <div class="hero-container">
     <img src="hero.jpg" class="hero-img" alt="Hero Image">
+
     <div class="hero-text">
       <img src="logo.png" class="logo" alt="Revered Fitness Logo">
       <h1>REVERED FITNESS</h1>
