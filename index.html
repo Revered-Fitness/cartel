@@ -62,7 +62,7 @@ nav a:last-child::after {
   display:none;
 }
 
-/* Hover only (no active styling) */
+/* Hover only */
 nav a::before {
   content:"";
   position:absolute;
@@ -162,38 +162,11 @@ footer {
 }
 
 /* --- MOBILE --- */
-@media(max-width:992px){
-  header {
-    padding-top:60px;
-  }
-
-  .hero-container {
-    flex-direction:column;
-    gap:10px;
-  }
-
-  .hero-img {
-    width:60%;
-    max-width:250px;
-  }
-
-  .logo {
-    width:180px;
-  }
-
-  .hero-text h1 {
-    font-size:2rem;
-  }
-
-  .hero-text p {
-    font-size:1rem;
-  }
-}
-
 @media(max-width:500px){
 
+  /* MORE SPACE BELOW NAV */
   header {
-    padding-top:50px;
+    padding-top:80px;
   }
 
   .hero-container {
@@ -203,6 +176,7 @@ footer {
   .hero-img {
     width:80%;
     max-width:200px;
+    margin-top:10px; /* extra breathing room */
   }
 
   .logo {
@@ -225,7 +199,10 @@ footer {
   }
 
   nav a {
-    display:block;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
     margin:0;
     padding:12px 0;
     border-bottom:1px solid rgba(255,255,255,0.15);
