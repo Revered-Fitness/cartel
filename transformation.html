@@ -10,8 +10,8 @@
 /* --- BASE STYLING --- */
 body {
   margin:0;
-  padding-top:80px; /* space for fixed nav */
-  font-family: Arial, sans-serif; /* match About page */
+  padding-top:70px; /* moved closer to nav */
+  font-family: Arial, sans-serif;
   background:#0f0f0f;
   color:#fff;
   line-height:1.6;
@@ -27,17 +27,17 @@ nav {
   z-index:100;
   display:flex;
   justify-content:center;
-  padding:12px 0; /* tighter, like About page */
+  padding:12px 0;
 }
 
 nav a {
   color:#f5f5f5;
-  margin:0 12px; /* tighter spacing */
+  margin:0 12px;
   text-decoration:none;
   font-weight:600;  
   font-family: Arial, sans-serif; 
   letter-spacing:1px;
-  padding:6px 12px; /* match About page */
+  padding:6px 12px;
   position:relative;
   transition:all 0.3s ease;
   display:flex;
@@ -90,8 +90,8 @@ nav a:hover::before {
   flex-wrap:wrap;
   justify-content:center;
   align-items:center;
-  padding:80px 20px 40px 20px; /* moved closer to nav */
-  gap:50px;
+  padding:60px 20px 30px 20px; /* tighter top padding */
+  gap:35px; /* smaller gap for premium look */
 }
 
 #transformation img {
@@ -114,7 +114,7 @@ nav a:hover::before {
 
 .transformation-paragraph {
   color:#ccc;
-  margin-bottom:18px;
+  margin-bottom:16px;
 }
 
 .btn {
@@ -144,7 +144,7 @@ footer {
   #transformation {
     flex-direction:column;
     align-items:center;
-    padding:60px 20px 30px 20px; /* closer padding on tablet */
+    padding:50px 20px 25px 20px; /* closer on tablet */
   }
 
   #transformation img {
@@ -161,13 +161,13 @@ footer {
 /* --- MOBILE NAV & SECTION --- */
 @media(max-width:500px){
   body {
-    padding-top:120px; /* match About page mobile */
+    padding-top:110px; /* closer on mobile */
   }
 
   nav {
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:8px; /* tighter spacing like About page */
+    gap:8px;
     justify-items:center;
     padding:8px 0;
   }
@@ -194,22 +194,22 @@ footer {
   }
 
   #transformation {
-    padding:40px 15px 30px 15px; /* closer on mobile */
-    gap:30px;
+    padding:30px 15px 20px 15px; /* very tight on mobile */
+    gap:20px;
   }
 
   #transformation img {
     width:100%;
-    max-width:320px;
+    max-width:300px;
   }
 
   .transformation-text h2 {
-    font-size:1.6rem;
+    font-size:1.5rem;
   }
 
   .transformation-paragraph {
-    font-size:0.95rem;
-    line-height:1.6;
+    font-size:0.9rem;
+    line-height:1.5;
   }
 }
 </style>
@@ -251,7 +251,6 @@ footer {
       of celebrating small victories on the path to personal growth.
     </p>
 
-    <!-- Back to Home Button -->
     <a href="index.html" class="btn">Back to Home</a>
   </div>
 </section>
