@@ -19,7 +19,7 @@ body {
 
 a { text-decoration:none; }
 
-/* --- NAVIGATION --- */
+/* --- NAVIGATION (match About page) --- */
 nav{
   background:black;
   padding:18px 10px;
@@ -35,13 +35,15 @@ nav a{
   color:#f5f5f5;
   margin:0 18px;
   text-decoration:none;
-  font-weight:600;
-  letter-spacing:1px;
+  font-weight:600;       /* match About page */
+  letter-spacing:1px;    /* match About page */
   padding:6px 14px;
   position:relative;
   transition:all 0.3s ease;
+  font-family:'Poppins', sans-serif; /* match About page */
 }
 
+/* vertical dividers */
 nav a::after{
   content:"";
   position:absolute;
@@ -57,9 +59,13 @@ nav a:last-child::after{
   display:none;
 }
 
-nav a:hover{
-  color:#ffffff;
-  text-shadow:0 0 6px rgba(225,6,0,0.6);
+/* hover / active */
+nav a.active {
+  color:#e10600;
+}
+
+nav a.active::before{
+  width:60%;
 }
 
 nav a::before{
@@ -73,6 +79,11 @@ nav a::before{
   background:#e10600;
   transition:width 0.3s ease;
   border-radius:2px;
+}
+
+nav a:hover{
+  color:#ffffff;
+  text-shadow:0 0 6px rgba(225,6,0,0.6);
 }
 
 nav a:hover::before{
@@ -172,6 +183,28 @@ footer {
     font-size:0.95rem;
     line-height:1.6;
   }
+
+  /* Mobile nav stack & remove dividers */
+  nav{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  nav a{
+    display:block;
+    margin:0;
+    padding:12px 0;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+  }
+
+  nav a::after{
+    display:none;
+  }
+
+  nav a:nth-last-child(-n+2){
+    border-bottom:none;
+  }
 }
 </style>
 </head>
@@ -182,7 +215,7 @@ footer {
 <nav>
   <a href="index.html">Home</a>
   <a href="services.html">Services</a>
-  <a href="transformation.html">Transformation</a>
+  <a href="transformation.html" class="active">Transformation</a>
   <a href="events.html">Events</a>
   <a href="clothing.html">Clothing</a>
   <a href="about.html">About</a>
