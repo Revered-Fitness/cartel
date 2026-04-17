@@ -1,256 +1,530 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Events - Revered Fitness</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root{
+      --bg:#0a0a0a;
+      --text:#f4efe8;
+      --muted:#c9c1b5;
+      --soft:#9f9689;
+      --line:rgba(255,255,255,0.08);
+      --line-strong:rgba(214,185,140,0.16);
+      --accent:#d6b98c;
+      --primary:#b11510;
+      --primary-hover:#d32017;
+      --shadow:0 20px 50px rgba(0,0,0,0.24);
+      --radius:28px;
+      --container:1240px;
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
-      font-family:Arial, sans-serif;
-      background:#0f0f0f;
-      color:white;
-      text-align:center;
+      font-family:'Manrope', sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top center, rgba(177,21,16,0.10), transparent 24%),
+        linear-gradient(180deg, #0a0a0a 0%, #060606 100%);
+      overflow-x:hidden;
+      min-height:100vh;
       display:flex;
       flex-direction:column;
-      min-height:100vh;
     }
 
-    /* NAVIGATION */
-    nav{
-      background:black;
-      padding:18px 10px;
-      display:flex;
-      justify-content:center;
-    }
-
-    nav a{
-      color:#f5f5f5;
-      margin:0 18px;
+    a{
+      color:inherit;
       text-decoration:none;
-      font-weight:600;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+    .container{
+      width:min(var(--container), calc(100% - 32px));
+      margin:0 auto;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(10,10,10,0.88);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .topbar-inner{
+      min-height:64px;
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      align-items:center;
+      gap:24px;
+      padding:10px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      min-width:0;
+    }
+
+    .brand-mark{
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      border:1px solid var(--line-strong);
+      background:linear-gradient(135deg, rgba(177,21,16,0.22), rgba(214,185,140,0.08));
+      color:#fff;
+      font-family:'Cormorant Garamond', serif;
+      font-size:1rem;
+      font-weight:700;
+      flex:0 0 auto;
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1;
+    }
+
+    .brand-text strong{
+      font-size:0.84rem;
+      font-weight:800;
+      letter-spacing:1.5px;
+    }
+
+    .brand-text span{
+      margin-top:4px;
+      font-size:0.62rem;
+      color:var(--muted);
       letter-spacing:1px;
-      padding:6px 14px;
-      position:relative;
-      transition:all 0.3s ease;
-      font-family:'Poppins', sans-serif;
+      text-transform:uppercase;
     }
 
-    nav a::after{
-      content:"";
-      position:absolute;
-      right:-10px;
-      top:50%;
-      transform:translateY(-50%);
-      height:18px;
-      width:1px;
-      background:rgba(255,255,255,0.25);
-    }
-
-    nav a:last-child::after{
-      display:none;
-    }
-
-    nav a:hover{
-      color:#ffffff;
-      text-shadow:0 0 6px rgba(225,6,0,0.6);
-    }
-
-    nav a::before{
-      content:"";
-      position:absolute;
-      bottom:-6px;
-      left:50%;
-      transform:translateX(-50%);
-      width:0%;
-      height:2px;
-      background:#e10600;
-      transition:width 0.3s ease;
-      border-radius:2px;
-    }
-
-    nav a:hover::before{
-      width:60%;
-    }
-
-    /* HERO SECTION */
-    header{
+    .nav-links{
       display:flex;
       justify-content:center;
       align-items:center;
-      flex-direction:column;
-      padding:40px 20px 20px 20px; 
-    }
-
-    .hero-img{
-      width:50%;
-      max-width:250px;
-      border-radius:12px;
-      box-shadow:0 8px 25px rgba(0,0,0,0.5);
-      margin-bottom:15px;
-    }
-
-    .hero-text h1{
-      font-size:2rem;
-      margin:0 0 8px 0;
-      font-family:'Poppins', sans-serif;
-    }
-
-    .hero-text p{
-      color:#d1d1d1;
-      font-size:1.1rem;
-      max-width:700px;
-      margin:auto;
-    }
-
-    /* EVENTS CARDS */
-    .events-container {
-      display:flex;
+      gap:12px;
       flex-wrap:wrap;
-      justify-content:center;
-      gap:30px;
-      max-width:1200px;
-      margin:30px auto 0 auto;
-      padding:0 20px;
     }
 
-    .event-card {
-      background:#1c1c1c;
-      padding:25px 20px;
-      width:280px;
-      border-radius:12px;
-      box-shadow:0 0 18px rgba(225,6,0,0.3);
-      transition: transform 0.3s, box-shadow 0.3s;
-      text-align:left;
+    .nav-links a{
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:0.82rem;
+      font-weight:700;
+      color:#d7cec2;
+      border:1px solid transparent;
+      transition:background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active{
+      background:rgba(255,255,255,0.03);
+      border-color:var(--line);
+      color:#fff;
+    }
+
+    .nav-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:150px;
+      padding:11px 16px;
+      border-radius:999px;
+      background:#f3ede5;
+      color:#111;
+      font-size:0.82rem;
+      font-weight:800;
+      transition:transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .nav-cta:hover{
+      transform:translateY(-1px);
+      opacity:0.94;
+    }
+
+    .page-hero{
+      padding:46px 0 34px;
+    }
+
+    .page-hero-wrap{
+      display:grid;
+      grid-template-columns:minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap:48px;
+      align-items:center;
+    }
+
+    .page-copy{
+      max-width:540px;
+    }
+
+    .page-logo{
+      width:min(170px, 38vw);
+      margin:0 0 24px;
+      object-fit:contain;
+      mix-blend-mode:screen;
+      filter:drop-shadow(0 0 16px rgba(0,0,0,0.22));
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:18px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid var(--line-strong);
+      color:var(--accent);
+      font-size:0.74rem;
+      font-weight:800;
+      letter-spacing:1.8px;
+      text-transform:uppercase;
+      background:rgba(255,255,255,0.02);
+    }
+
+    h1{
+      margin:0 0 18px;
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(3rem, 6vw, 5.5rem);
+      line-height:0.9;
+      font-weight:700;
+      letter-spacing:0.2px;
+    }
+
+    .hero-text{
+      margin:0;
+      color:#d7cec3;
+      font-size:1rem;
+      line-height:1.95;
+      max-width:560px;
+    }
+
+    .hero-panel{
+      position:relative;
+      min-height:460px;
+      padding:28px;
+      border-radius:36px;
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),
+        #101010;
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+
+    .hero-panel::before{
+      content:"";
+      position:absolute;
+      inset:18px;
+      border:1px solid rgba(214,185,140,0.08);
+      border-radius:26px;
+      pointer-events:none;
+    }
+
+    .hero-panel img{
+      position:relative;
+      z-index:1;
+      width:100%;
+      height:100%;
+      max-height:420px;
+      object-fit:contain;
+      object-position:center;
+      filter:drop-shadow(0 20px 38px rgba(0,0,0,0.22));
+    }
+
+    .events-section{
+      padding:20px 0 92px;
+    }
+
+    .events-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:20px;
+    }
+
+    .event-card{
       display:flex;
       flex-direction:column;
-      justify-content:space-between;
+      padding:30px 28px;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
+      box-shadow:var(--shadow);
+      min-height:100%;
     }
 
-    .event-card:hover {
-      transform: translateY(-8px);
-      box-shadow:0 0 28px rgba(225,6,0,0.5);
+    .event-card.featured{
+      border-color:rgba(214,185,140,0.24);
+      background:
+        radial-gradient(circle at top right, rgba(177,21,16,0.10), transparent 40%),
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.012));
     }
 
-    .event-card h2 {
-      margin-top:0;
-      font-size:20px;
-      color:white;
+    .event-label{
+      display:inline-block;
+      margin-bottom:14px;
+      color:var(--accent);
+      font-size:0.74rem;
+      font-weight:800;
+      letter-spacing:2px;
+      text-transform:uppercase;
     }
 
-    .event-card p {
-      color:#ccc;
-      margin:10px 0 0 0;
-      flex-grow:1;
+    .event-card h2{
+      margin:0 0 12px;
+      font-family:'Cormorant Garamond', serif;
+      font-size:2rem;
+      line-height:0.96;
+      font-weight:700;
     }
 
-    /* BUTTON */
-    .btn {
-      display:block;
-      width:100%;
-      padding:12px 0;
-      border-radius:12px;
-      font-weight:600;
+    .event-date{
+      margin:0 0 14px;
+      color:#f1dfc0;
       font-size:0.95rem;
-      color:#fff;
-      background: linear-gradient(135deg, #e10600, #ff2a2a);
-      text-decoration:none;
-      margin-top:15px;
-      text-align:center;
-      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
-      box-shadow:0 4px 12px rgba(225,6,0,0.4);
+      font-weight:800;
+      letter-spacing:0.6px;
+      text-transform:uppercase;
     }
 
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow:0 6px 20px rgba(225,6,0,0.6);
-      background: linear-gradient(135deg, #ff2a2a, #e10600);
+    .event-card p{
+      margin:0 0 18px;
+      color:#d0c6ba;
+      font-size:0.95rem;
+      line-height:1.85;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      margin-top:auto;
+      padding:15px 18px;
+      border:none;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--primary), var(--primary-hover));
+      color:#fff;
+      font-size:0.92rem;
+      font-weight:800;
+      transition:transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      opacity:0.96;
     }
 
     footer{
-      background:black;
-      padding:20px;
+      padding:24px 16px 36px;
+      color:#bfb5a7;
       text-align:center;
+      border-top:1px solid rgba(255,255,255,0.06);
+      font-size:0.92rem;
       margin-top:auto;
     }
 
-    /* MOBILE: 2 COLUMN NAV & Responsive */
-    @media(max-width:600px){
-      nav{
-        display:grid;
-        grid-template-columns:1fr 1fr;
-        gap:10px;
-      }
-      nav a{
-        display:block;
-        margin:0;
-        padding:12px 0;
-        border-bottom:1px solid rgba(255,255,255,0.15);
-      }
-      nav a::after{
-        display:none;
-      }
-      nav a:nth-last-child(-n+2){
-        border-bottom:none;
+    @media (max-width: 1120px){
+      .page-hero-wrap{
+        grid-template-columns:1fr;
+        gap:28px;
       }
 
-      .hero-img{
-        width:40%;
-        max-width:150px;
+      .events-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
       }
-      .hero-text h1{
-        font-size:1.5rem;
+
+      .hero-panel{
+        min-height:360px;
       }
-      .hero-text p{
-        font-size:0.95rem;
+    }
+
+    @media (max-width: 900px){
+      .topbar-inner{
+        grid-template-columns:1fr;
+        gap:12px;
+        padding:10px 0 12px;
       }
-      .events-container{
-        margin-top:20px;
+
+      .brand{
+        justify-content:center;
       }
+
+      .nav-links{
+        justify-content:center;
+      }
+
+      .nav-cta{
+        width:100%;
+      }
+
+      .page-copy{
+        max-width:none;
+        text-align:center;
+      }
+
+      .page-logo{
+        margin:0 auto 24px;
+      }
+
+      .eyebrow{
+        margin-left:auto;
+        margin-right:auto;
+      }
+    }
+
+    @media (max-width: 700px){
+      .events-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 640px){
+      .container{
+        width:min(var(--container), calc(100% - 20px));
+      }
+
+      .page-hero{
+        padding:26px 0 24px;
+      }
+
+      .events-section{
+        padding:14px 0 72px;
+      }
+
+      h1{
+        font-size:clamp(2.7rem, 13vw, 4.5rem);
+      }
+
+      .page-logo{
+        width:min(138px, 48vw);
+      }
+
+      .hero-panel{
+        min-height:300px;
+        padding:18px;
+        border-radius:24px;
+      }
+
       .event-card{
-        width:90%;
+        padding:24px 20px;
+      }
+
+      .nav-links a{
+        width:100%;
+        text-align:center;
       }
     }
   </style>
 </head>
-
 <body>
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <a href="index.html" class="brand" aria-label="Revered Fitness home">
+          <div class="brand-mark">R</div>
+          <div class="brand-text">
+            <strong>REVERED FITNESS</strong>
+            <span>Strength • Discipline • Respect</span>
+          </div>
+        </a>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="transformation.html">Transformation</a>
-  <a href="events.html">Events</a>
-  <a href="clothing.html">Clothing</a>
-  <a href="about.html">About</a>
-</nav>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="transformation.html">Transformation</a>
+          <a href="events.html" class="active">Events</a>
+          <a href="clothing.html">Clothing</a>
+          <a href="about.html">About</a>
+        </nav>
 
-<header>
-  <img src="car.jpg" class="hero-img" alt="Events Hero Image">
-  <div class="hero-text">
-    <h1>Upcoming Events</h1>
-    <p>Keep an eye out for any free events scheduled with Revered Fitness. Stay tuned for updates!</p>
+        <a href="about.html#contact" class="nav-cta">Book Consultation</a>
+      </div>
+    </div>
   </div>
-</header>
 
-<div class="events-container">
-  <div class="event-card">
-    <h2>Free Online Workout</h2>
-    <p>Date: March 30, 2026</p>
-    <p>Join our 1-hour live online workout session. All levels welcome!</p>
-    <a href="about.html#contact" class="btn">Contact Me</a>
-  </div>
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-wrap">
+        <div class="page-copy">
+          <img src="logo.png" alt="Revered Fitness Logo" class="page-logo">
 
-  <div class="event-card">
-    <h2>Outdoor Fitness Meetup</h2>
-    <p>Date: April 10, 2026</p>
-    <p>Come join a free outdoor group training session at the local park.</p>
-    <a href="about.html#contact" class="btn">Contact Me</a>
-  </div>
-</div>
+          <div class="eyebrow">Community & Sessions</div>
 
-<footer>
-  © 2026 Revered Fitness
-</footer>
+          <h1>Upcoming Events</h1>
 
+          <p class="hero-text">
+            Keep an eye out for free training sessions, community workouts, and upcoming Revered Fitness events designed to bring people together and keep progress moving.
+          </p>
+        </div>
+
+        <div class="hero-panel">
+          <img src="car.jpg.jpeg" alt="Revered Fitness Events Image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-section">
+    <div class="container">
+      <div class="events-grid">
+        <article class="event-card">
+          <span class="event-label">Online Session</span>
+          <h2>Free Online Workout</h2>
+          <div class="event-date">May 24, 2026</div>
+          <p>
+            Join a 1-hour live online workout session built to challenge, motivate, and support all fitness levels from wherever you are training.
+          </p>
+          <a href="about.html#contact" class="btn">Contact Me</a>
+        </article>
+
+        <article class="event-card featured">
+          <span class="event-label">Outdoor Training</span>
+          <h2>Outdoor Fitness Meetup</h2>
+          <div class="event-date">June 14, 2026</div>
+          <p>
+            Take part in a free outdoor group training session focused on energy, accountability, and community in a strong supportive environment.
+          </p>
+          <a href="about.html#contact" class="btn">Contact Me</a>
+        </article>
+
+        <article class="event-card">
+          <span class="event-label">Community Event</span>
+          <h2>Strength & Conditioning Session</h2>
+          <div class="event-date">July 5, 2026</div>
+          <p>
+            A free group session combining conditioning, strength work, and coaching cues to help you improve performance and confidence.
+          </p>
+          <a href="about.html#contact" class="btn">Contact Me</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Revered Fitness
+  </footer>
 </body>
 </html>
