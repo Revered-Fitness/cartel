@@ -11,7 +11,6 @@
     :root{
       --bg:#0a0a0a;
       --panel:#111111;
-      --panel-soft:rgba(255,255,255,0.025);
       --text:#f4efe8;
       --muted:#c7bfb4;
       --soft:#9d958a;
@@ -58,7 +57,6 @@
       margin:0 auto;
     }
 
-    /* NAV */
     .topbar{
       padding:18px 0 0;
     }
@@ -164,7 +162,6 @@
       opacity:0.94;
     }
 
-    /* HERO */
     header{
       padding:42px 0 92px;
     }
@@ -178,6 +175,12 @@
 
     .hero-copy{
       padding:12px 0;
+    }
+
+    .hero-logo{
+      width:min(210px, 48vw);
+      margin-bottom:22px;
+      filter:drop-shadow(0 14px 30px rgba(0,0,0,0.2));
     }
 
     .eyebrow{
@@ -302,32 +305,6 @@
       filter:drop-shadow(0 26px 48px rgba(0,0,0,0.25));
     }
 
-    .hero-caption{
-      position:absolute;
-      left:30px;
-      right:30px;
-      bottom:30px;
-      z-index:2;
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      padding-top:18px;
-      border-top:1px solid rgba(255,255,255,0.08);
-      color:#c8beb1;
-      font-size:0.88rem;
-      line-height:1.7;
-    }
-
-    .hero-caption strong{
-      display:block;
-      margin-bottom:4px;
-      color:#f4efe8;
-      font-size:0.86rem;
-      letter-spacing:1.2px;
-      text-transform:uppercase;
-    }
-
-    /* SECTION */
     .overview{
       padding:0 0 92px;
     }
@@ -466,13 +443,6 @@
         border-radius:24px;
       }
 
-      .hero-caption{
-        position:static;
-        margin-top:14px;
-        padding-top:14px;
-        flex-direction:column;
-      }
-
       .nav-links a{
         width:100%;
         text-align:center;
@@ -501,7 +471,7 @@
           <a href="about.html">About</a>
         </nav>
 
-        <a href="services.html" class="nav-cta">Book Consultation</a>
+        <a href="about.html#contact" class="nav-cta">Book Consultation</a>
       </div>
     </div>
   </div>
@@ -510,6 +480,8 @@
     <div class="container">
       <div class="hero">
         <div class="hero-copy">
+          <img src="logo.png" alt="Revered Fitness Logo" class="hero-logo">
+
           <div class="eyebrow">Online & In-Person Coaching</div>
 
           <h1>Revered<br>Fitness</h1>
@@ -533,16 +505,6 @@
         <div class="hero-visual">
           <div class="hero-frame">
             <img src="hero.jpg" class="hero-img" alt="Revered Fitness training session">
-            <div class="hero-caption">
-              <div>
-                <strong>Revered Standard</strong>
-                Elevated coaching built on discipline, consistency, and clear progression.
-              </div>
-              <div>
-                <strong>Full Image Display</strong>
-                The hero image is used once only and shown with <code>object-fit: contain</code> so it stays fully visible.
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -553,26 +515,26 @@
     <div class="container">
       <div class="overview-grid">
         <div class="card">
-          <span class="card-label">Why Revered</span>
-          <h2>A quieter, more premium approach to fitness branding.</h2>
+          <span class="card-label">Revered Fitness</span>
+          <h2>A coaching brand built on discipline, respect, and real standards.</h2>
           <p>
-            This version strips back the extra effects and lets spacing, typography, and composition do the work. The result is cleaner, more confident, and more luxury-led without losing strength.
+            Revered Fitness is more than training sessions. It is a focused coaching experience designed to help people build strength, improve confidence, and develop the mindset needed for lasting progress.
           </p>
         </div>
 
         <div class="card">
-          <span class="card-label">Coaching</span>
-          <h3>Tailored support.</h3>
+          <span class="card-label">Our Approach</span>
+          <h3>Structured coaching that creates results.</h3>
           <p>
-            Structured plans, personal guidance, and a clear route to stronger results both online and in person.
+            At Revered Fitness, every client journey is built around accountability, consistency, and clear progression, with support that feels personal, professional, and tailored to the individual.
           </p>
         </div>
 
         <div class="card">
-          <span class="card-label">Identity</span>
-          <h3>Minimal, but not plain.</h3>
+          <span class="card-label">The Standard</span>
+          <h3>Strength with purpose.</h3>
           <p>
-            Warm neutrals, restrained contrast, and editorial type make the brand feel established rather than overdesigned.
+            Revered Fitness stands for high standards in training, discipline in mindset, and respect for the process, helping clients become stronger physically and mentally through genuine commitment.
           </p>
         </div>
       </div>
