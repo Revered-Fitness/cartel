@@ -1,266 +1,1084 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Revered Fitness</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revered Fitness</title>
 
-<style>
-/* --- BASE STYLING --- */
-body {
-  margin:0;
-  padding-top:80px;
-  font-family: Arial, sans-serif;
-  background:#0f0f0f;
-  color:#fff;
-  line-height:1.6;
-  overflow-x:hidden;
-  display:flex;
-  flex-direction:column;
-  min-height:100vh;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
-a { text-decoration:none; }
+  <style>
+    :root{
+      --bg:#080808;
+      --bg-soft:rgba(8,8,8,0.78);
+      --card:rgba(18,18,18,0.82);
+      --text:#f7f3ed;
+      --muted:#cfc6bb;
+      --line:rgba(255,255,255,0.10);
+      --primary:#b30d08;
+      --primary-hover:#d82118;
+      --accent:#d5b98d;
+      --shadow:0 20px 60px rgba(0,0,0,0.48);
+      --radius:22px;
+    }
 
-/* --- NAVIGATION --- */
-nav {
-  background:black;
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:100;
-  display:flex;
-  justify-content:center;
-  padding:18px 10px;
-}
+    *{
+      box-sizing:border-box;
+    }
 
-nav a {
-  color:#f5f5f5;
-  margin:0 18px;
-  text-decoration:none;
-  font-weight:600;      
-  font-family: Arial, sans-serif;
-  letter-spacing:1px;   
-  padding:6px 14px;
-  position:relative;
-  transition:all 0.3s ease;
-}
+    html{
+      scroll-behavior:smooth;
+    }
 
-/* Divider */
-nav a::after {
-  content:"";
-  position:absolute;
-  right:-10px;
-  top:50%;
-  transform:translateY(-50%);
-  height:18px;
-  width:1px;
-  background:rgba(255,255,255,0.25);
-}
+    body{
+      margin:0;
+      color:var(--text);
+      font-family:'Manrope', sans-serif;
+      background:
+        radial-gradient(circle at top center, rgba(179,13,8,0.16), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(213,185,141,0.06), transparent 28%),
+        linear-gradient(180deg, #090909 0%, #050505 100%);
+      overflow-x:hidden;
+    }
 
-nav a:last-child::after {
-  display:none;
-}
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:0.045;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size:110px 110px;
+      mask-image:radial-gradient(circle at center, black 34%, transparent 82%);
+      -webkit-mask-image:radial-gradient(circle at center, black 34%, transparent 82%);
+      z-index:0;
+    }
 
-/* Hover underline */
-nav a::before {
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:50%;
-  transform:translateX(-50%);
-  width:0%;
-  height:2px;
-  background:#e10600;
-  transition:width 0.3s;
-  border-radius:2px;
-}
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
 
-nav a:hover {
-  color:#ffffff;
-  text-shadow:0 0 6px rgba(225,6,0,0.6);
-}
+    img{
+      max-width:100%;
+      display:block;
+    }
 
-nav a:hover::before {
-  width:60%;
-}
+    .page-shell{
+      position:relative;
+      z-index:1;
+    }
 
-/* --- HERO --- */
-header {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex:1;
-}
+    /* TOP BAR */
+    .topbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1200;
+      padding:18px 24px;
+    }
 
-.hero-container {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:15px;
-  flex-wrap:wrap;
-  max-width:1200px;
-  width:100%;
-  padding:0 20px;
-  text-align:center;
-}
+    .topbar-inner{
+      width:min(1240px, calc(100% - 8px));
+      margin:0 auto;
+      height:68px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 18px 0 20px;
+      background:rgba(8,8,8,0.52);
+      border:1px solid rgba(213,185,141,0.14);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      border-radius:999px;
+      box-shadow:0 18px 45px rgba(0,0,0,0.44);
+    }
 
-.hero-img {
-  width:40%;
-  max-width:300px;
-  border-radius:12px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.5);
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
 
-.hero-text {
-  flex:1;
-  min-width:250px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
+    .brand-mark{
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, rgba(179,13,8,0.34), rgba(213,185,141,0.12));
+      border:1px solid rgba(213,185,141,0.20);
+      color:white;
+      font-family:'Cormorant Garamond', serif;
+      font-size:1.2rem;
+      font-weight:700;
+      box-shadow:0 0 26px rgba(179,13,8,0.22);
+      flex:0 0 auto;
+    }
 
-.logo {
-  width:220px;
-  margin-bottom:20px;
-}
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1;
+    }
 
-.hero-text h1 {
-  font-family:'Poppins', sans-serif;
-  font-size:2.5rem;
-  margin:0 0 15px 0;
-}
+    .brand-text strong{
+      font-size:0.96rem;
+      letter-spacing:1.8px;
+      font-weight:800;
+    }
 
-.hero-text p {
-  font-size:1.2rem;
-  color:#d1d1d1;
-  margin-bottom:20px;
-}
+    .brand-text span{
+      font-size:0.7rem;
+      color:#d3cabf;
+      letter-spacing:1.4px;
+      margin-top:5px;
+      text-transform:uppercase;
+    }
 
-/* BUTTON */
-.btn {
-  background:#e10600;
-  padding:14px 30px;
-  border-radius:8px;
-  font-weight:700;
-  color:#fff;
-  display:inline-block;
-  transition:0.3s;
-}
+    /* MENU BUTTON */
+    .menu-btn{
+      position:relative;
+      width:56px;
+      height:56px;
+      border:none;
+      outline:none;
+      cursor:pointer;
+      border-radius:50%;
+      background:linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border:1px solid rgba(213,185,141,0.16);
+      display:grid;
+      place-items:center;
+      transition:transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      box-shadow:0 10px 28px rgba(0,0,0,0.34);
+      flex:0 0 auto;
+    }
 
-.btn:hover {
-  background:#ff2a2a;
-}
+    .menu-btn:hover{
+      transform:translateY(-1px) scale(1.02);
+      box-shadow:0 14px 30px rgba(179,13,8,0.24);
+      background:linear-gradient(135deg, rgba(179,13,8,0.16), rgba(213,185,141,0.04));
+    }
 
-/* FOOTER */
-footer {
-  background:#000;
-  padding:20px;
-  text-align:center;
-  margin-top:auto;
-}
+    .menu-btn-lines{
+      position:relative;
+      width:24px;
+      height:18px;
+    }
 
-/* --- MOBILE --- */
-@media(max-width:500px){
+    .menu-btn-lines span{
+      position:absolute;
+      left:0;
+      width:100%;
+      height:2.5px;
+      border-radius:999px;
+      background:white;
+      transition:transform 0.35s ease, opacity 0.25s ease, top 0.35s ease;
+      box-shadow:0 0 8px rgba(255,255,255,0.18);
+    }
 
-  body {
-    padding-top:100px;
-  }
+    .menu-btn-lines span:nth-child(1){ top:0; }
+    .menu-btn-lines span:nth-child(2){ top:7.5px; width:75%; right:0; left:auto; }
+    .menu-btn-lines span:nth-child(3){ top:15px; }
 
-  .hero-container {
-    gap:10px;
-    flex-direction:column;
-    align-items:center;
-  }
+    .menu-btn.active .menu-btn-lines span:nth-child(1){
+      top:7.5px;
+      transform:rotate(45deg);
+    }
 
-  /* Hide hero image on mobile */
-  .hero-img {
-    display:none;
-  }
+    .menu-btn.active .menu-btn-lines span:nth-child(2){
+      opacity:0;
+      transform:translateX(8px);
+    }
 
-  /* Hero text spacing */
-  .hero-text {
-    margin-top:20px;
-  }
+    .menu-btn.active .menu-btn-lines span:nth-child(3){
+      top:7.5px;
+      transform:rotate(-45deg);
+    }
 
-  /* Increase logo size slightly */
-  .logo {
-    width:160px;
-    margin-bottom:10px;
-  }
+    /* OVERLAY MENU */
+    .menu-overlay{
+      position:fixed;
+      inset:0;
+      z-index:1100;
+      background:
+        radial-gradient(circle at top right, rgba(179,13,8,0.18), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(213,185,141,0.08), transparent 24%),
+        linear-gradient(180deg, rgba(0,0,0,0.92), rgba(8,8,8,0.98));
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+      transition:opacity 0.35s ease, visibility 0.35s ease;
+    }
 
-  .hero-text h1 {
-    font-size:1.6rem;
-    margin-bottom:5px;
-  }
+    .menu-overlay.active{
+      opacity:1;
+      visibility:visible;
+      pointer-events:auto;
+    }
 
-  .hero-text p {
-    font-size:0.95rem;
-    margin-bottom:10px;
-  }
+    .menu-panel{
+      width:min(1120px, calc(100% - 40px));
+      min-height:min(78vh, 760px);
+      border-radius:30px;
+      background:linear-gradient(180deg, rgba(22,22,22,0.88), rgba(10,10,10,0.94));
+      border:1px solid rgba(213,185,141,0.12);
+      box-shadow:0 30px 80px rgba(0,0,0,0.52);
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      overflow:hidden;
+      transform:translateY(24px) scale(0.985);
+      transition:transform 0.4s ease;
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+    }
 
-  /* Mobile nav: 2-column About style */
-  nav {
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    justify-items:center;
-  }
+    .menu-overlay.active .menu-panel{
+      transform:translateY(0) scale(1);
+    }
 
-  nav a {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    margin:0;
-    padding:12px 0;
-    font-family: Arial, sans-serif !important;
-    font-weight:600 !important;
-    letter-spacing:1px !important;
-    border-bottom:1px solid rgba(255,255,255,0.15);
-  }
+    .menu-left{
+      padding:110px 54px 54px;
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      background:linear-gradient(135deg, rgba(255,255,255,0.02), transparent 36%);
+    }
 
-  nav a::after {
-    display:none;
-  }
+    .menu-left::after{
+      content:"";
+      position:absolute;
+      right:0;
+      top:40px;
+      bottom:40px;
+      width:1px;
+      background:linear-gradient(to bottom, transparent, rgba(213,185,141,0.18), transparent);
+    }
 
-  nav a:nth-last-child(-n+2){
-    border-bottom:none;
-  }
-}
-</style>
+    .menu-kicker{
+      font-size:0.8rem;
+      letter-spacing:2.6px;
+      color:#d6cfc6;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .menu-heading{
+      margin:0 0 16px;
+      max-width:500px;
+      font-family:'Cormorant Garamond', serif;
+      font-weight:700;
+      font-size:clamp(2.6rem, 4vw, 4.2rem);
+      line-height:0.95;
+    }
+
+    .menu-subtext{
+      max-width:460px;
+      color:#d0c7bc;
+      font-size:1rem;
+      line-height:1.8;
+      margin:0;
+    }
+
+    .menu-links{
+      display:grid;
+      gap:16px;
+      margin-top:40px;
+    }
+
+    .menu-link{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:18px 22px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(213,185,141,0.09);
+      transition:transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .menu-link:hover{
+      transform:translateX(10px);
+      background:linear-gradient(90deg, rgba(179,13,8,0.12), rgba(213,185,141,0.04));
+      border-color:rgba(213,185,141,0.18);
+      box-shadow:0 12px 30px rgba(0,0,0,0.22);
+    }
+
+    .menu-link-text strong{
+      display:block;
+      font-size:1.08rem;
+      font-weight:800;
+      margin-bottom:4px;
+    }
+
+    .menu-link-text span{
+      color:#c6beb4;
+      font-size:0.92rem;
+    }
+
+    .menu-link-arrow{
+      font-size:1.2rem;
+      color:#f2ede5;
+      opacity:0.85;
+      transition:transform 0.25s ease, color 0.25s ease;
+    }
+
+    .menu-link:hover .menu-link-arrow{
+      transform:translateX(4px);
+      color:white;
+    }
+
+    .menu-footer-note{
+      margin-top:36px;
+      color:#b8afa3;
+      font-size:0.9rem;
+      letter-spacing:0.5px;
+    }
+
+    .menu-right{
+      padding:40px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    }
+
+    .menu-feature{
+      width:100%;
+      max-width:370px;
+      border-radius:28px;
+      overflow:hidden;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(213,185,141,0.10);
+      box-shadow:0 20px 50px rgba(0,0,0,0.34);
+      transition:transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .menu-feature:hover{
+      transform:translateY(-4px);
+      box-shadow:0 26px 60px rgba(0,0,0,0.44);
+    }
+
+    .menu-feature-image{
+      width:100%;
+      height:270px;
+      object-fit:cover;
+      transition:transform 1.5s ease;
+    }
+
+    .menu-feature:hover .menu-feature-image{
+      transform:scale(1.08);
+    }
+
+    .menu-feature-content{
+      padding:24px 24px 26px;
+    }
+
+    .menu-feature-label{
+      display:inline-block;
+      font-size:0.74rem;
+      letter-spacing:1.9px;
+      text-transform:uppercase;
+      color:#e0d0b2;
+      margin-bottom:10px;
+    }
+
+    .menu-feature h3{
+      margin:0 0 10px;
+      font-family:'Cormorant Garamond', serif;
+      font-size:1.9rem;
+      line-height:1;
+      font-weight:700;
+    }
+
+    .menu-feature p{
+      margin:0 0 18px;
+      color:#d0c6bb;
+      line-height:1.75;
+      font-size:0.95rem;
+    }
+
+    .menu-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:170px;
+      padding:14px 22px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--primary), var(--primary-hover));
+      color:white;
+      font-weight:800;
+      letter-spacing:0.2px;
+      box-shadow:0 12px 26px rgba(179,13,8,0.28);
+      transition:transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .menu-cta:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 32px rgba(179,13,8,0.34);
+    }
+
+    /* HERO */
+    header{
+      position:relative;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    .hero-img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      z-index:-3;
+      transform:scale(1.04);
+      animation:heroZoom 14s ease-out forwards;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.34) 0%, rgba(0,0,0,0.58) 44%, rgba(0,0,0,0.88) 100%);
+      z-index:-2;
+    }
+
+    .hero-glow{
+      position:absolute;
+      width:640px;
+      height:640px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(179,13,8,0.22), transparent 62%);
+      filter:blur(22px);
+      top:50%;
+      left:50%;
+      transform:translate(-50%, -52%);
+      z-index:-1;
+      pointer-events:none;
+    }
+
+    .hero-content{
+      width:min(980px, calc(100% - 40px));
+      text-align:center;
+      padding-top:128px;
+      padding-bottom:72px;
+      animation:fadeUp 1s ease both;
+    }
+
+    .logo{
+      width:min(220px, 42vw);
+      margin:0 auto 22px;
+      filter:drop-shadow(0 8px 20px rgba(0,0,0,0.38));
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:18px;
+      padding:9px 15px;
+      border-radius:999px;
+      background:rgba(213,185,141,0.09);
+      border:1px solid rgba(213,185,141,0.20);
+      color:#f0dfc4;
+      letter-spacing:1.8px;
+      text-transform:uppercase;
+      font-size:0.76rem;
+      font-weight:800;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(3.5rem, 7vw, 6.6rem);
+      line-height:0.88;
+      letter-spacing:0.2px;
+      font-weight:700;
+      text-shadow:0 10px 32px rgba(0,0,0,0.35);
+    }
+
+    .tagline{
+      margin:0 auto 18px;
+      color:var(--accent);
+      max-width:700px;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      font-size:0.82rem;
+      font-weight:800;
+    }
+
+    .subline{
+      color:#ddd4c9;
+      max-width:760px;
+      margin:0 auto 34px;
+      line-height:1.9;
+      font-size:1rem;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      justify-content:center;
+      flex-wrap:wrap;
+      margin-bottom:26px;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:200px;
+      padding:16px 24px;
+      border-radius:999px;
+      font-weight:800;
+      transition:transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, #99100c, #d81f17);
+      color:white;
+      box-shadow:0 18px 40px rgba(179,13,8,0.30);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 22px 44px rgba(179,13,8,0.36);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(213,185,141,0.16);
+      color:white;
+    }
+
+    .btn-secondary:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,0.07);
+      border-color:rgba(213,185,141,0.24);
+    }
+
+    .hero-meta{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .hero-meta span{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(213,185,141,0.13);
+      color:#ddd2c3;
+      font-size:0.8rem;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    /* SIGNATURE SECTION */
+    .signature{
+      padding:90px 20px 100px;
+    }
+
+    .signature-wrap{
+      width:min(1180px, 100%);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.05fr 0.95fr;
+      gap:28px;
+      align-items:stretch;
+    }
+
+    .signature-card,
+    .signature-image-card{
+      border-radius:30px;
+      overflow:hidden;
+      background:linear-gradient(180deg, rgba(20,20,20,0.82), rgba(10,10,10,0.92));
+      border:1px solid rgba(213,185,141,0.10);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+    }
+
+    .signature-card{
+      padding:42px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .section-label{
+      display:inline-block;
+      margin-bottom:16px;
+      color:#e3d3b6;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-size:0.76rem;
+      font-weight:800;
+    }
+
+    .signature-card h2{
+      margin:0 0 16px;
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(2.4rem, 4vw, 4rem);
+      line-height:0.95;
+      font-weight:700;
+    }
+
+    .signature-card p{
+      margin:0 0 28px;
+      color:#d2c8bc;
+      line-height:1.9;
+      max-width:560px;
+    }
+
+    .signature-points{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:14px;
+    }
+
+    .signature-point{
+      padding:18px 16px;
+      border-radius:20px;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(213,185,141,0.09);
+    }
+
+    .signature-point strong{
+      display:block;
+      font-size:1.35rem;
+      margin-bottom:4px;
+      color:#fff3dd;
+      font-weight:800;
+    }
+
+    .signature-point span{
+      color:#c6bcae;
+      font-size:0.9rem;
+      line-height:1.5;
+    }
+
+    .signature-image-card{
+      position:relative;
+      min-height:520px;
+    }
+
+    .signature-image-card img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .signature-image-overlay{
+      position:absolute;
+      inset:auto 24px 24px 24px;
+      padding:22px;
+      border-radius:22px;
+      background:rgba(8,8,8,0.58);
+      border:1px solid rgba(213,185,141,0.12);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+    }
+
+    .signature-image-overlay strong{
+      display:block;
+      margin-bottom:6px;
+      font-size:1.05rem;
+      font-weight:800;
+    }
+
+    .signature-image-overlay span{
+      color:#d2c7b8;
+      line-height:1.7;
+      font-size:0.94rem;
+    }
+
+    footer{
+      background:#050505;
+      color:#cfc5b8;
+      text-align:center;
+      padding:24px 16px;
+      border-top:1px solid rgba(213,185,141,0.08);
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(28px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    @keyframes heroZoom{
+      from{
+        transform:scale(1.08);
+      }
+      to{
+        transform:scale(1.02);
+      }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1040px){
+      .menu-panel,
+      .signature-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .menu-left{
+        padding:100px 28px 28px;
+      }
+
+      .menu-left::after{
+        display:none;
+      }
+
+      .menu-right{
+        padding:0 28px 28px;
+        align-items:stretch;
+      }
+
+      .menu-feature{
+        max-width:none;
+      }
+
+      .signature-image-card{
+        min-height:420px;
+      }
+    }
+
+    @media (max-width: 700px){
+      .topbar{
+        padding:14px;
+      }
+
+      .topbar-inner{
+        height:62px;
+        padding:0 12px 0 14px;
+      }
+
+      .brand-text strong{
+        font-size:0.84rem;
+        letter-spacing:1.2px;
+      }
+
+      .brand-text span{
+        font-size:0.64rem;
+      }
+
+      .menu-btn{
+        width:52px;
+        height:52px;
+      }
+
+      .menu-panel{
+        width:calc(100% - 20px);
+        min-height:calc(100vh - 20px);
+        border-radius:24px;
+      }
+
+      .menu-left{
+        padding:86px 18px 18px;
+      }
+
+      .menu-heading{
+        font-size:2.4rem;
+      }
+
+      .menu-subtext{
+        font-size:0.95rem;
+      }
+
+      .menu-links{
+        gap:12px;
+        margin-top:26px;
+      }
+
+      .menu-link{
+        padding:16px;
+      }
+
+      .menu-right{
+        padding:0 18px 18px;
+      }
+
+      .menu-feature-image{
+        height:200px;
+      }
+
+      .menu-feature-content{
+        padding:18px;
+      }
+
+      .hero-content{
+        padding-top:118px;
+      }
+
+      .hero-actions{
+        flex-direction:column;
+        align-items:center;
+      }
+
+      .btn-primary,
+      .btn-secondary{
+        width:100%;
+        max-width:320px;
+      }
+
+      .hero-meta{
+        gap:10px;
+      }
+
+      .hero-meta span{
+        width:100%;
+        max-width:320px;
+      }
+
+      .signature{
+        padding:70px 14px 80px;
+      }
+
+      .signature-card{
+        padding:26px 20px;
+      }
+
+      .signature-points{
+        grid-template-columns:1fr;
+      }
+
+      .signature-image-card{
+        min-height:320px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="page-shell">
 
-<!-- NAVIGATION -->
-<nav>
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="transformation.html">Transformation</a>
-  <a href="events.html">Events</a>
-  <a href="clothing.html">Clothing</a>
-  <a href="about.html">About</a>
-</nav>
+    <div class="topbar">
+      <div class="topbar-inner">
+        <a href="index.html" class="brand" aria-label="Revered Fitness home">
+          <div class="brand-mark">R</div>
+          <div class="brand-text">
+            <strong>REVERED FITNESS</strong>
+            <span>Strength • Discipline • Respect</span>
+          </div>
+        </a>
 
-<!-- HERO -->
-<header>
-  <div class="hero-container">
-    <img src="hero.jpg" class="hero-img" alt="Hero Image">
-    <div class="hero-text">
-      <img src="logo.png" class="logo" alt="Revered Fitness Logo">
-      <h1>REVERED FITNESS</h1>
-      <p>Strength • Discipline • Respect</p>
-      <a href="services.html" class="btn">Start Your Journey</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menuOverlay">
+          <div class="menu-btn-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </button>
+      </div>
     </div>
+
+    <div class="menu-overlay" id="menuOverlay">
+      <div class="menu-panel">
+        <div class="menu-left">
+          <div>
+            <div class="menu-kicker">Navigation</div>
+            <h2 class="menu-heading">Choose your next move.</h2>
+            <p class="menu-subtext">
+              Explore coaching, transformation support, events, apparel, and the discipline-led philosophy behind Revered Fitness.
+            </p>
+
+            <div class="menu-links">
+              <a href="index.html" class="menu-link">
+                <div class="menu-link-text">
+                  <strong>Home</strong>
+                  <span>Return to the main landing page</span>
+                </div>
+                <div class="menu-link-arrow">→</div>
+              </a>
+
+              <a href="services.html" class="menu-link">
+                <div class="menu-link-text">
+                  <strong>Services</strong>
+                  <span>Training, coaching, and structured plans</span>
+                </div>
+                <div class="menu-link-arrow">→</div>
+              </a>
+
+              <a href="transformation.html" class="menu-link">
+                <div class="menu-link-text">
+                  <strong>Transformation</strong>
+                  <span>See what consistent work can become</span>
+                </div>
+                <div class="menu-link-arrow">→</div>
+              </a>
+
+              <a href="events.html" class="menu-link">
+                <div class="menu-link-text">
+                  <strong>Events</strong>
+                  <span>Join community sessions and workouts</span>
+                </div>
+                <div class="menu-link-arrow">→</div>
+              </a>
+
+              <a href="clothing.html" class="menu-link">
+                <div class="menu-link-text">
+                  <strong>Clothing</strong>
+                  <span>Wear the Revered Fitness identity</span>
+                </div>
+                <div class="menu-link-arrow">→</div>
+              </a>
+
+              <a href="about.html" class="menu-link">
+                <div class="menu-link-text">
+                  <strong>About</strong>
+                  <span>Learn the mission and get in touch</span>
+                </div>
+                <div class="menu-link-arrow">→</div>
+              </a>
+            </div>
+          </div>
+
+          <div class="menu-footer-note">
+            Built on discipline. Refined through consistency.
+          </div>
+        </div>
+
+        <div class="menu-right">
+          <div class="menu-feature">
+            <img src="hero.jpg" alt="Revered Fitness training" class="menu-feature-image">
+            <div class="menu-feature-content">
+              <span class="menu-feature-label">Featured</span>
+              <h3>Start your transformation properly.</h3>
+              <p>
+                Personal training, online coaching, and structured support designed to build strength, confidence, and lasting discipline.
+              </p>
+              <a href="services.html" class="menu-cta">View Services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <img src="hero.jpg" class="hero-img" alt="Revered Fitness Hero Image">
+      <div class="hero-overlay"></div>
+      <div class="hero-glow"></div>
+
+      <div class="hero-content">
+        <img src="logo.png" class="logo" alt="Revered Fitness Logo">
+
+        <div class="eyebrow">Online & In-Person Coaching</div>
+
+        <h1>Revered<br>Fitness</h1>
+
+        <p class="tagline">Strength • Discipline • Respect</p>
+
+        <p class="subline">
+          Build a stronger body, a sharper mindset, and real confidence through structured coaching, clear guidance, and a training standard that feels elevated from day one.
+        </p>
+
+        <div class="hero-actions">
+          <a href="services.html" class="btn-primary">Start Your Journey</a>
+          <a href="transformation.html" class="btn-secondary">See Transformation</a>
+        </div>
+
+        <div class="hero-meta">
+          <span>Elite Coaching</span>
+          <span>Body Transformation</span>
+          <span>Online + In Person</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="signature">
+      <div class="signature-wrap">
+        <div class="signature-card">
+          <span class="section-label">Why Revered</span>
+          <h2>A premium standard for real physical change.</h2>
+          <p>
+            Revered Fitness is built for people who want more than motivation. The focus is disciplined coaching, intentional structure, and a training experience that looks, feels, and performs at a higher level.
+          </p>
+
+          <div class="signature-points">
+            <div class="signature-point">
+              <strong>1:1</strong>
+              <span>Tailored coaching with a personal approach.</span>
+            </div>
+            <div class="signature-point">
+              <strong>Results</strong>
+              <span>Plans designed around measurable progression.</span>
+            </div>
+            <div class="signature-point">
+              <strong>Mindset</strong>
+              <span>Confidence built through consistency and discipline.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="signature-image-card">
+          <img src="hero.jpg" alt="Revered Fitness Signature Training">
+          <div class="signature-image-overlay">
+            <strong>Coaching that feels elevated.</strong>
+            <span>
+              From the first session to long-term transformation, every detail is designed to reinforce progress, identity, and high standards.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © 2026 Revered Fitness
+    </footer>
   </div>
-</header>
 
-<!-- FOOTER -->
-<footer>
-  © 2026 Revered Fitness
-</footer>
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const menuOverlay = document.getElementById('menuOverlay');
 
+    function toggleMenu(forceState) {
+      const willOpen = typeof forceState === 'boolean'
+        ? forceState
+        : !menuOverlay.classList.contains('active');
+
+      menuOverlay.classList.toggle('active', willOpen);
+      menuBtn.classList.toggle('active', willOpen);
+      menuBtn.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+      document.body.style.overflow = willOpen ? 'hidden' : '';
+    }
+
+    menuBtn.addEventListener('click', function() {
+      toggleMenu();
+    });
+
+    menuOverlay.addEventListener('click', function(e) {
+      if (e.target === menuOverlay) {
+        toggleMenu(false);
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && menuOverlay.classList.contains('active')) {
+        toggleMenu(false);
+      }
+    });
+  </script>
 </body>
 </html>
