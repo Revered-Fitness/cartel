@@ -223,17 +223,18 @@
     .hero-panel{
       position:relative;
       min-height:460px;
-      padding:28px;
+      padding:34px;
       border-radius:36px;
       border:1px solid var(--line);
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),
+        radial-gradient(circle at top right, rgba(177,21,16,0.10), transparent 34%),
+        linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01)),
         #101010;
       box-shadow:var(--shadow);
       display:flex;
-      align-items:flex-end;
-      justify-content:flex-start;
-      overflow:hidden;
+      align-items:center;
+      justify-content:center;
+      text-align:left;
     }
 
     .hero-panel::before{
@@ -245,35 +246,33 @@
       pointer-events:none;
     }
 
-    .hero-panel::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,0.18), rgba(0,0,0,0.62)),
-        url("hero.jpg") center/cover no-repeat;
-      opacity:0.72;
-    }
-
     .hero-panel-content{
       position:relative;
       z-index:1;
-      max-width:360px;
+      max-width:420px;
     }
 
     .hero-panel-content strong{
       display:block;
-      margin-bottom:8px;
+      margin-bottom:10px;
       font-size:0.8rem;
       letter-spacing:1.8px;
       text-transform:uppercase;
       color:var(--accent);
     }
 
+    .hero-panel-content h2{
+      margin:0 0 14px;
+      font-family:'Cormorant Garamond', serif;
+      font-size:clamp(2.2rem, 4vw, 3.4rem);
+      line-height:0.95;
+      font-weight:700;
+    }
+
     .hero-panel-content p{
       margin:0;
-      color:#efe7dc;
-      line-height:1.8;
+      color:#d7cec3;
+      line-height:1.85;
       font-size:0.98rem;
     }
 
@@ -642,8 +641,9 @@
         <div class="hero-panel">
           <div class="hero-panel-content">
             <strong>Revered Method</strong>
+            <h2>Coaching built around standards, structure, and progress.</h2>
             <p>
-              Every service is built around clarity, accountability, and progression so you know exactly what you are working toward and how to get there.
+              Every service is designed to give you clarity, accountability, and a clear path forward, whether you want personal training, online support, or a full transformation phase.
             </p>
           </div>
         </div>
