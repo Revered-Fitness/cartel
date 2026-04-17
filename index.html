@@ -10,7 +10,6 @@
   <style>
     :root{
       --bg:#0a0a0a;
-      --panel:#111111;
       --text:#f4efe8;
       --muted:#c7bfb4;
       --soft:#9d958a;
@@ -19,7 +18,7 @@
       --accent:#d6b98c;
       --primary:#b11510;
       --primary-hover:#d32017;
-      --shadow:0 24px 60px rgba(0,0,0,0.32);
+      --shadow:0 18px 40px rgba(0,0,0,0.22);
       --radius:28px;
       --container:1240px;
     }
@@ -58,35 +57,36 @@
     }
 
     .topbar{
-      padding:18px 0 0;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      padding:0;
+      border-bottom:1px solid var(--line-soft);
+      background:rgba(10,10,10,0.88);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
     }
 
     .topbar-inner{
-      min-height:76px;
+      min-height:62px;
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:20px;
-      padding:14px 18px 14px 20px;
-      border:1px solid var(--line-soft);
-      border-radius:999px;
-      background:rgba(12,12,12,0.72);
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
-      box-shadow:0 14px 40px rgba(0,0,0,0.22);
+      padding:10px 0;
     }
 
     .brand{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:10px;
       flex:0 0 auto;
       min-width:0;
     }
 
     .brand-mark{
-      width:42px;
-      height:42px;
+      width:34px;
+      height:34px;
       border-radius:50%;
       display:grid;
       place-items:center;
@@ -94,7 +94,7 @@
       background:linear-gradient(135deg, rgba(177,21,16,0.22), rgba(214,185,140,0.08));
       color:#fff;
       font-family:'Cormorant Garamond', serif;
-      font-size:1.25rem;
+      font-size:1rem;
       font-weight:700;
     }
 
@@ -105,31 +105,31 @@
     }
 
     .brand-text strong{
-      font-size:0.94rem;
+      font-size:0.82rem;
       font-weight:800;
-      letter-spacing:1.7px;
+      letter-spacing:1.5px;
     }
 
     .brand-text span{
-      margin-top:5px;
-      font-size:0.68rem;
+      margin-top:4px;
+      font-size:0.62rem;
       color:var(--muted);
-      letter-spacing:1.2px;
+      letter-spacing:1px;
       text-transform:uppercase;
     }
 
     .nav-links{
       display:flex;
       align-items:center;
-      gap:6px;
+      gap:2px;
       flex-wrap:wrap;
       justify-content:center;
     }
 
     .nav-links a{
-      padding:11px 15px;
+      padding:8px 12px;
       border-radius:999px;
-      font-size:0.9rem;
+      font-size:0.82rem;
       font-weight:700;
       color:#d7cec2;
       border:1px solid transparent;
@@ -146,12 +146,12 @@
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      min-width:158px;
-      padding:14px 20px;
+      min-width:144px;
+      padding:10px 16px;
       border-radius:999px;
       background:#f3ede5;
       color:#111;
-      font-size:0.92rem;
+      font-size:0.82rem;
       font-weight:800;
       transition:transform 0.25s ease, opacity 0.25s ease;
       flex:0 0 auto;
@@ -175,6 +175,12 @@
 
     .hero-copy{
       padding:12px 0;
+    }
+
+    .hero-logo{
+      width:min(180px, 42vw);
+      margin:0 0 22px;
+      object-fit:contain;
     }
 
     .eyebrow{
@@ -288,33 +294,6 @@
       pointer-events:none;
     }
 
-    .hero-logo-badge{
-      position:absolute;
-      top:42%;
-      left:36px;
-      transform:translateY(-50%);
-      z-index:3;
-      width:128px;
-      height:128px;
-      padding:16px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border-radius:50%;
-      background:rgba(8,8,8,0.84);
-      border:1px solid rgba(214,185,140,0.18);
-      box-shadow:0 18px 38px rgba(0,0,0,0.34);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-    }
-
-    .hero-logo{
-      width:100%;
-      max-width:84px;
-      max-height:84px;
-      object-fit:contain;
-    }
-
     .hero-img{
       position:relative;
       z-index:1;
@@ -324,7 +303,6 @@
       object-fit:contain;
       object-position:center;
       filter:drop-shadow(0 26px 48px rgba(0,0,0,0.25));
-      padding-left:82px;
     }
 
     .overview{
@@ -386,11 +364,6 @@
     }
 
     @media (max-width: 1120px){
-      .topbar-inner{
-        border-radius:28px;
-        padding:16px;
-      }
-
       .hero{
         grid-template-columns:1fr;
       }
@@ -404,11 +377,13 @@
       }
     }
 
-    @media (max-width: 860px){
+    @media (max-width: 900px){
       .topbar-inner{
+        min-height:auto;
         flex-direction:column;
         align-items:stretch;
-        gap:14px;
+        gap:10px;
+        padding:10px 0 12px;
       }
 
       .brand{
@@ -422,26 +397,11 @@
       .nav-cta{
         width:100%;
       }
-
-      .hero-logo-badge{
-        top:40%;
-        left:24px;
-        width:108px;
-        height:108px;
-      }
-
-      .hero-img{
-        padding-left:58px;
-      }
     }
 
     @media (max-width: 640px){
       .container{
         width:min(var(--container), calc(100% - 20px));
-      }
-
-      .topbar{
-        padding-top:12px;
       }
 
       header{
@@ -454,6 +414,10 @@
 
       h1{
         font-size:clamp(2.8rem, 14vw, 4.6rem);
+      }
+
+      .hero-logo{
+        width:min(140px, 50vw);
       }
 
       .hero-actions{
@@ -474,25 +438,6 @@
         min-height:420px;
         padding:18px;
         border-radius:24px;
-      }
-
-      .hero-logo-badge{
-        top:24px;
-        left:50%;
-        transform:translateX(-50%);
-        width:92px;
-        height:92px;
-        padding:14px;
-      }
-
-      .hero-logo{
-        max-width:64px;
-        max-height:64px;
-      }
-
-      .hero-img{
-        padding-left:0;
-        padding-top:78px;
       }
 
       .nav-links a{
@@ -532,7 +477,9 @@
     <div class="container">
       <div class="hero">
         <div class="hero-copy">
-          <div class="eyebrow">Online & In-Person Coaching</div>
+          <img src="logo.png" alt="Revered Fitness Logo" class="hero-logo">
+
+          <div class="eyebrow">Online &amp; In-Person Coaching</div>
 
           <h1>Revered<br>Fitness</h1>
 
@@ -554,9 +501,6 @@
 
         <div class="hero-visual">
           <div class="hero-frame">
-            <div class="hero-logo-badge">
-              <img src="logo.png" alt="Revered Fitness Logo" class="hero-logo">
-            </div>
             <img src="hero.jpg" class="hero-img" alt="Revered Fitness training session">
           </div>
         </div>
