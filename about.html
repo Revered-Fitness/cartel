@@ -67,7 +67,7 @@
       background:rgba(10,10,10,0.88);
       backdrop-filter:blur(14px);
       -webkit-backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--line);
+      border-bottom:1px solid rgba(255,255,255,0.08);
     }
 
     .topbar-inner{
@@ -92,7 +92,7 @@
       border-radius:50%;
       display:grid;
       place-items:center;
-      border:1px solid var(--line-strong);
+      border:1px solid rgba(214,185,140,0.16);
       background:linear-gradient(135deg, rgba(177,21,16,0.22), rgba(214,185,140,0.08));
       color:#fff;
       font-family:'Cormorant Garamond', serif;
@@ -116,7 +116,7 @@
     .brand-text span{
       margin-top:4px;
       font-size:0.62rem;
-      color:var(--muted);
+      color:#c9c1b5;
       letter-spacing:1px;
       text-transform:uppercase;
     }
@@ -142,7 +142,7 @@
     .nav-links a:hover,
     .nav-links a.active{
       background:rgba(255,255,255,0.03);
-      border-color:var(--line);
+      border-color:rgba(255,255,255,0.08);
       color:#fff;
     }
 
@@ -163,6 +163,65 @@
     .nav-cta:hover{
       transform:translateY(-1px);
       opacity:0.94;
+    }
+
+    .menu-toggle{
+      display:none;
+      width:46px;
+      height:46px;
+      margin-left:auto;
+      border:none;
+      border-radius:50%;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:5px;
+      cursor:pointer;
+    }
+
+    .menu-toggle span{
+      width:18px;
+      height:2px;
+      border-radius:999px;
+      background:#fff;
+      transition:0.25s ease;
+    }
+
+    .mobile-nav{
+      display:none;
+      padding:0 0 14px;
+    }
+
+    .mobile-nav-links{
+      display:grid;
+      gap:10px;
+      padding-top:8px;
+    }
+
+    .mobile-nav-links a{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);
+      color:#f4efe8;
+      font-size:0.92rem;
+      font-weight:700;
+    }
+
+    .mobile-nav-links a.active{
+      border-color:rgba(214,185,140,0.18);
+      color:#fff;
+    }
+
+    .mobile-nav-cta{
+      background:linear-gradient(135deg, #b11510, #d32017) !important;
+      border-color:transparent !important;
+      color:#fff !important;
     }
 
     .page-hero{
@@ -507,21 +566,33 @@
 
     @media (max-width: 900px){
       .topbar-inner{
-        grid-template-columns:1fr;
-        gap:12px;
-        padding:10px 0 12px;
+        grid-template-columns:auto auto;
+        gap:16px;
       }
 
-      .brand{
-        justify-content:center;
+      .desktop-nav,
+      .desktop-cta{
+        display:none;
       }
 
-      .nav-links{
-        justify-content:center;
+      .menu-toggle{
+        display:flex;
       }
 
-      .nav-cta{
-        width:100%;
+      .mobile-nav.open{
+        display:block;
+      }
+
+      .menu-toggle.active span:nth-child(1){
+        transform:translateY(7px) rotate(45deg);
+      }
+
+      .menu-toggle.active span:nth-child(2){
+        opacity:0;
+      }
+
+      .menu-toggle.active span:nth-child(3){
+        transform:translateY(-7px) rotate(-45deg);
       }
 
       .page-copy{
@@ -584,9 +655,8 @@
         padding:20px;
       }
 
-      .nav-links a{
-        width:100%;
-        text-align:center;
+      .mobile-nav-links a{
+        min-height:46px;
       }
     }
   </style>
@@ -603,7 +673,13 @@
           </div>
         </a>
 
-        <nav class="nav-links" aria-label="Primary navigation">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav-links desktop-nav" aria-label="Primary navigation">
           <a href="index.html">Home</a>
           <a href="services.html">Services</a>
           <a href="transformation.html">Transformation</a>
@@ -612,7 +688,19 @@
           <a href="about.html" class="active">About</a>
         </nav>
 
-        <a href="#contact" class="nav-cta">Book Consultation</a>
+        <a href="#contact" class="nav-cta desktop-cta">Book Consultation</a>
+      </div>
+
+      <div class="mobile-nav" id="mobileNav">
+        <nav class="mobile-nav-links" aria-label="Mobile navigation">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="transformation.html">Transformation</a>
+          <a href="events.html">Events</a>
+          <a href="clothing.html">Clothing</a>
+          <a href="about.html" class="active">About</a>
+          <a href="#contact" class="mobile-nav-cta">Book Consultation</a>
+        </nav>
       </div>
     </div>
   </div>
@@ -727,5 +815,18 @@
   <footer>
     © 2026 Revered Fitness
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    if (menuToggle && mobileNav) {
+      menuToggle.addEventListener("click", function () {
+        const isOpen = mobileNav.classList.toggle("open");
+        menuToggle.classList.toggle("active", isOpen);
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    }
+  </script>
 </body>
 </html>
