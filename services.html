@@ -26,13 +26,9 @@
       --container:1240px;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{ box-sizing:border-box; }
 
-    html{
-      scroll-behavior:smooth;
-    }
+    html{ scroll-behavior:smooth; }
 
     body{
       margin:0;
@@ -44,17 +40,11 @@
       overflow-x:hidden;
     }
 
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
+    a{ color:inherit; text-decoration:none; }
 
-    button,
-    input,
-    select,
-    textarea{
-      font:inherit;
-    }
+    button,input,select,textarea{ font:inherit; }
+
+    img{ display:block; max-width:100%; }
 
     .container{
       width:min(var(--container), calc(100% - 32px));
@@ -343,6 +333,7 @@
       border:1px solid var(--line);
       background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
       box-shadow:var(--shadow);
+      min-height:100%;
     }
 
     .service-card.featured{
@@ -451,19 +442,110 @@
       font-size:0.92rem;
     }
 
+    #questionnaireModal{
+      display:none;
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.84);
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+      padding:20px;
+      opacity:0;
+      transition:opacity 0.3s ease;
+      backdrop-filter:blur(8px);
+      -webkit-backdrop-filter:blur(8px);
+    }
+
+    .modal-card{
+      position:relative;
+      width:min(560px, 100%);
+      max-height:90vh;
+      overflow:auto;
+      padding:30px;
+      border-radius:30px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(20,20,20,0.96), rgba(10,10,10,0.98));
+      box-shadow:0 30px 70px rgba(0,0,0,0.45);
+    }
+
+    .modal-card h2{
+      margin:0 0 18px;
+      font-family:'Cormorant Garamond', serif;
+      font-size:2.2rem;
+      line-height:0.95;
+      font-weight:700;
+    }
+
+    .modal-close{
+      position:absolute;
+      top:14px;
+      right:18px;
+      font-size:1.8rem;
+      line-height:1;
+      cursor:pointer;
+      color:#fff;
+    }
+
+    .form-grid{
+      display:grid;
+      gap:14px;
+    }
+
+    .field{
+      display:grid;
+      gap:6px;
+      text-align:left;
+    }
+
+    .field label{
+      font-size:0.9rem;
+      color:#e8e1d7;
+      font-weight:700;
+    }
+
+    .field input,
+    .field select,
+    .field textarea{
+      width:100%;
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.10);
+      background:rgba(255,255,255,0.03);
+      color:white;
+      outline:none;
+    }
+
+    .field textarea{
+      min-height:100px;
+      resize:vertical;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus{
+      border-color:rgba(214,185,140,0.28);
+    }
+
+    .submit-btn{
+      margin-top:8px;
+    }
+
     @media (max-width:1120px){
       .page-hero-wrap{
         grid-template-columns:1fr;
+        gap:28px;
       }
 
       .services-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(2, minmax(0, 1fr));
       }
     }
 
     @media (max-width:900px){
       .topbar-inner{
         grid-template-columns:auto auto;
+        gap:16px;
       }
 
       .desktop-nav,
@@ -479,18 +561,25 @@
         display:block;
       }
 
+      .menu-toggle.active span:nth-child(1){
+        transform:translateY(7px) rotate(45deg);
+      }
+
+      .menu-toggle.active span:nth-child(2){
+        opacity:0;
+      }
+
+      .menu-toggle.active span:nth-child(3){
+        transform:translateY(-7px) rotate(-45deg);
+      }
+
       .page-copy{
-        text-align:center;
         max-width:none;
+        text-align:center;
       }
 
       .page-logo{
         margin:0 auto 24px;
-      }
-
-      .eyebrow{
-        margin-left:auto;
-        margin-right:auto;
       }
     }
 
@@ -505,8 +594,20 @@
         width:min(var(--container), calc(100% - 20px));
       }
 
+      .page-hero{
+        padding:26px 0 24px;
+      }
+
+      .services-section{
+        padding:14px 0 72px;
+      }
+
       h1{
         font-size:clamp(2.7rem, 13vw, 4.5rem);
+      }
+
+      .page-logo{
+        width:min(138px, 48vw);
       }
 
       .hero-panel{
@@ -518,17 +619,20 @@
       .service-card{
         padding:24px 20px;
       }
+
+      .modal-card{
+        padding:24px 18px;
+        border-radius:24px;
+      }
     }
   </style>
 </head>
 
 <body>
-
   <div class="topbar">
     <div class="container">
       <div class="topbar-inner">
-
-        <a href="index.html" class="brand">
+        <a href="index.html" class="brand" aria-label="Revered Fitness home">
           <img src="logo.png" alt="Revered Fitness Logo" class="nav-logo">
           <div class="brand-text">
             <strong>REVERED FITNESS</strong>
@@ -536,13 +640,13 @@
           </div>
         </a>
 
-        <button class="menu-toggle" id="menuToggle">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav">
           <span></span>
           <span></span>
           <span></span>
         </button>
 
-        <nav class="nav-links desktop-nav">
+        <nav class="nav-links desktop-nav" aria-label="Primary navigation">
           <a href="index.html">Home</a>
           <a href="services.html" class="active">Services</a>
           <a href="transformation.html">Transformation</a>
@@ -551,28 +655,262 @@
           <a href="about.html">About</a>
         </nav>
 
-        <a href="about.html#contact" class="nav-cta desktop-cta">
-          Book Consultation
-        </a>
-
+        <a href="about.html#contact" class="nav-cta desktop-cta">Book Consultation</a>
       </div>
 
       <div class="mobile-nav" id="mobileNav">
-        <nav class="mobile-nav-links">
+        <nav class="mobile-nav-links" aria-label="Mobile navigation">
           <a href="index.html">Home</a>
           <a href="services.html" class="active">Services</a>
           <a href="transformation.html">Transformation</a>
           <a href="events.html">Events</a>
           <a href="clothing.html">Clothing</a>
           <a href="about.html">About</a>
-          <a href="about.html#contact" class="mobile-nav-cta">
-            Book Consultation
-          </a>
+          <a href="about.html#contact" class="mobile-nav-cta">Book Consultation</a>
         </nav>
       </div>
-
     </div>
   </div>
 
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-wrap">
+        <div class="page-copy">
+          <img src="logo.png" alt="Revered Fitness Logo" class="page-logo">
+
+          <div class="eyebrow">Coaching & Programs</div>
+
+          <h1>Services</h1>
+
+          <p class="hero-text">
+            Personalized coaching, nutrition guidance, and structured support to help you get stronger, fitter, and healthier through a standard that feels elevated from the start.
+          </p>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-panel-content">
+            <strong>Revered Method</strong>
+            <h2>Coaching built around standards, structure, and progress.</h2>
+            <p>
+              Every service is designed to give you clarity, accountability, and a clear path forward, whether you want personal training, online support, or a full transformation phase.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="container">
+      <div class="services-grid">
+
+        <article class="service-card">
+          <span class="service-label">In Person</span>
+          <h2>1-on-1 Personal Training</h2>
+          <p>Hands-on coaching to build strength, improve technique, and achieve real results through sessions tailored to your goals.</p>
+          <ul class="service-list">
+            <li>Personal coaching for your individual targets</li>
+            <li>Form correction and structured progression</li>
+            <li>Motivation, accountability, and expert guidance</li>
+          </ul>
+          <div class="price">£20 / session</div>
+          <a href="#" class="btn service-btn" data-service="personal_training">Book Now</a>
+        </article>
+
+        <article class="service-card">
+          <span class="service-label">Remote Coaching</span>
+          <h2>Zoom Training Sessions</h2>
+          <p>Flexible coaching from anywhere with live guidance, clear feedback, and practical support designed around your schedule.</p>
+          <ul class="service-list">
+            <li>Live sessions tailored to your goals</li>
+            <li>Real-time coaching and actionable strategy</li>
+            <li>Convenient, effective, and flexible</li>
+          </ul>
+          <div class="price">£15 / session</div>
+          <a href="#" class="btn service-btn" data-service="zoom_training">Book Now</a>
+        </article>
+
+        <article class="service-card">
+          <span class="service-label">Nutrition</span>
+          <h2>Custom Nutrition Plan</h2>
+          <p>Clear nutrition guidance designed around your lifestyle, performance needs, and body composition goals.</p>
+          <ul class="service-list">
+            <li>Built around your routine and preferences</li>
+            <li>Supports energy, recovery, and performance</li>
+            <li>Simple, practical, sustainable guidance</li>
+          </ul>
+          <div class="price">£30</div>
+          <a href="#" class="btn service-btn" data-service="nutrition_plan">Get Your Plan</a>
+        </article>
+
+        <article class="service-card">
+          <span class="service-label">Transformation</span>
+          <h2>8-Week Online Transformation</h2>
+          <p>An intensive short-term transformation designed for focused momentum, clear targets, and measurable results.</p>
+          <ul class="service-list">
+            <li>Focused coaching and goal tracking</li>
+            <li>Nutrition guidance included</li>
+            <li>App support and messaging for accountability</li>
+          </ul>
+          <div class="price">£160</div>
+          <a href="#" class="btn service-btn" data-service="8_week_program">Start Now</a>
+        </article>
+
+        <article class="service-card featured">
+          <span class="service-label">Best Value</span>
+          <h2>12-Week Online Transformation</h2>
+          <p>A more complete coaching phase for deeper change, stronger habits, and a more sustainable transformation.</p>
+          <ul class="service-list">
+            <li>Dynamic coaching and full goal tracking</li>
+            <li>Regular progress reviews and adjustments</li>
+            <li>Nutrition guidance, app support, and messaging</li>
+          </ul>
+          <div class="price">£220</div>
+          <span class="best-value">Most Complete Option</span>
+          <a href="#" class="btn service-btn" data-service="12_week_program">Start Now</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <div id="questionnaireModal">
+    <form id="questionnaireForm" class="modal-card" action="https://formspree.io/f/mqegzpvk" method="POST">
+      <span id="closeModal" class="modal-close">&times;</span>
+      <h2>Personal Training Questionnaire</h2>
+
+      <input type="hidden" name="service" id="serviceInput">
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">Full Name</label>
+          <input id="name" type="text" name="name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" name="email" required>
+        </div>
+
+        <div class="field">
+          <label for="health_issues">Any injuries or medical conditions?</label>
+          <textarea id="health_issues" name="health_issues"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="goal">Main Fitness Goal</label>
+          <select id="goal" name="goal" required>
+            <option value="weight_loss">Weight Loss</option>
+            <option value="muscle_gain">Muscle Gain</option>
+            <option value="endurance">Increase Endurance</option>
+            <option value="general_health">General Health</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="days_per_week">Days Per Week You Can Train</label>
+          <input id="days_per_week" type="number" name="days_per_week" min="1" max="7" required>
+        </div>
+
+        <div class="field">
+          <label for="workout_time">Preferred Workout Time</label>
+          <select id="workout_time" name="workout_time">
+            <option value="morning">Morning</option>
+            <option value="afternoon">Afternoon</option>
+            <option value="evening">Evening</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn submit-btn">Submit &amp; Pay</button>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    © 2026 Revered Fitness
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileNav = document.getElementById("mobileNav");
+
+    if (menuToggle && mobileNav) {
+      menuToggle.addEventListener("click", function () {
+        const isOpen = mobileNav.classList.toggle("open");
+        menuToggle.classList.toggle("active", isOpen);
+        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+    }
+
+    const stripeLinks = {
+      personal_training: "https://buy.stripe.com/bJefZhg4Pc0j5Cn34jgEg04",
+      zoom_training: "https://buy.stripe.com/bJefZhbOz7K33uffR5gEg03",
+      nutrition_plan: "https://buy.stripe.com/5kQ6oHcSD5BV6Gr20fgEg02",
+      "8_week_program": "https://buy.stripe.com/7sYeVddWH0hBaWHcETgEg01",
+      "12_week_program": "https://buy.stripe.com/14A14n4m7c0je8TbAPgEg00"
+    };
+
+    const modal = document.getElementById("questionnaireModal");
+    const closeModal = document.getElementById("closeModal");
+    const form = document.getElementById("questionnaireForm");
+    const serviceInput = document.getElementById("serviceInput");
+
+    document.querySelectorAll(".service-btn").forEach((button) => {
+      button.addEventListener("click", function(e) {
+        e.preventDefault();
+        serviceInput.value = this.dataset.service;
+        modal.style.display = "flex";
+        requestAnimationFrame(() => {
+          modal.style.opacity = "1";
+        });
+      });
+    });
+
+    function hideModal() {
+      modal.style.opacity = "0";
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 300);
+    }
+
+    closeModal.addEventListener("click", hideModal);
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        hideModal();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.style.display === "flex") {
+        hideModal();
+      }
+    });
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { Accept: "application/json" }
+      })
+      .then(() => {
+        const service = formData.get("service");
+
+        if (stripeLinks[service]) {
+          window.location.href = stripeLinks[service];
+        } else {
+          alert("Service not found.");
+        }
+      })
+      .catch((error) => {
+        alert("Error submitting form.");
+        console.error(error);
+      });
+    });
+  </script>
 </body>
 </html>
