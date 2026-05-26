@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Transformation - Revered Fitness</title>
 
+  <meta name="description" content="Revered Fitness transformation story. Built through discipline, training, nutrition, and consistency.">
+  <link rel="icon" type="image/png" href="logo.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -85,19 +88,11 @@
       min-width:0;
     }
 
-    .brand-mark{
-      width:34px;
-      height:34px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      border:1px solid rgba(214,185,140,0.16);
-      background:linear-gradient(135deg, rgba(177,21,16,0.22), rgba(214,185,140,0.08));
-      color:#fff;
-      font-family:'Cormorant Garamond', serif;
-      font-size:1rem;
-      font-weight:700;
-      flex:0 0 auto;
+    .nav-logo{
+      width:38px;
+      height:38px;
+      object-fit:contain;
+      filter:drop-shadow(0 0 10px rgba(214,185,140,0.18));
     }
 
     .brand-text{
@@ -135,7 +130,7 @@
       font-weight:700;
       color:#d7cec2;
       border:1px solid transparent;
-      transition:background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+      transition:0.25s ease;
     }
 
     .nav-links a:hover,
@@ -156,7 +151,7 @@
       color:#111;
       font-size:0.82rem;
       font-weight:800;
-      transition:transform 0.25s ease, opacity 0.25s ease;
+      transition:0.25s ease;
     }
 
     .nav-cta:hover{
@@ -384,7 +379,7 @@
       color:#fff;
       font-size:0.92rem;
       font-weight:800;
-      transition:transform 0.25s ease, opacity 0.25s ease;
+      transition:0.25s ease;
     }
 
     .btn:hover{
@@ -401,7 +396,7 @@
       margin-top:auto;
     }
 
-    @media (max-width: 1120px){
+    @media (max-width:1120px){
       .page-hero-wrap{
         grid-template-columns:1fr;
         gap:28px;
@@ -416,7 +411,7 @@
       }
     }
 
-    @media (max-width: 900px){
+    @media (max-width:900px){
       .topbar-inner{
         grid-template-columns:auto auto;
         gap:16px;
@@ -462,7 +457,7 @@
       }
     }
 
-    @media (max-width: 640px){
+    @media (max-width:640px){
       .container{
         width:min(var(--container), calc(100% - 20px));
       }
@@ -509,12 +504,13 @@
     }
   </style>
 </head>
+
 <body>
   <div class="topbar">
     <div class="container">
       <div class="topbar-inner">
         <a href="index.html" class="brand" aria-label="Revered Fitness home">
-          <div class="brand-mark">R</div>
+          <img src="logo.png" alt="Revered Fitness Logo" class="nav-logo">
           <div class="brand-text">
             <strong>REVERED FITNESS</strong>
             <span>Strength • Discipline • Respect</span>
@@ -601,6 +597,7 @@
           <p>
             Every stage of the process taught me patience, discipline, and the value of small victories. That same approach now shapes how I help others progress.
           </p>
+
           <div class="cta-wrap">
             <a href="about.html#contact" class="btn">Contact Me</a>
           </div>
