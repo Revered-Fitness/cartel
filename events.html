@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Events - Revered Fitness</title>
 
+  <meta name="description" content="Upcoming Revered Fitness events, community workouts, free sessions, and fitness meetups.">
+  <link rel="icon" type="image/png" href="logo.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -23,13 +26,9 @@
       --container:1240px;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{ box-sizing:border-box; }
 
-    html{
-      scroll-behavior:smooth;
-    }
+    html{ scroll-behavior:smooth; }
 
     body{
       margin:0;
@@ -44,15 +43,9 @@
       flex-direction:column;
     }
 
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
+    a{ color:inherit; text-decoration:none; }
 
-    img{
-      display:block;
-      max-width:100%;
-    }
+    img{ display:block; max-width:100%; }
 
     .container{
       width:min(var(--container), calc(100% - 32px));
@@ -85,19 +78,11 @@
       min-width:0;
     }
 
-    .brand-mark{
-      width:34px;
-      height:34px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      border:1px solid rgba(214,185,140,0.16);
-      background:linear-gradient(135deg, rgba(177,21,16,0.22), rgba(214,185,140,0.08));
-      color:#fff;
-      font-family:'Cormorant Garamond', serif;
-      font-size:1rem;
-      font-weight:700;
-      flex:0 0 auto;
+    .nav-logo{
+      width:38px;
+      height:38px;
+      object-fit:contain;
+      filter:drop-shadow(0 0 10px rgba(214,185,140,0.18));
     }
 
     .brand-text{
@@ -135,7 +120,7 @@
       font-weight:700;
       color:#d7cec2;
       border:1px solid transparent;
-      transition:background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+      transition:0.25s ease;
     }
 
     .nav-links a:hover,
@@ -156,7 +141,7 @@
       color:#111;
       font-size:0.82rem;
       font-weight:800;
-      transition:transform 0.25s ease, opacity 0.25s ease;
+      transition:0.25s ease;
     }
 
     .nav-cta:hover{
@@ -388,7 +373,7 @@
       color:#fff;
       font-size:0.92rem;
       font-weight:800;
-      transition:transform 0.25s ease, opacity 0.25s ease;
+      transition:0.25s ease;
     }
 
     .btn:hover{
@@ -405,7 +390,7 @@
       margin-top:auto;
     }
 
-    @media (max-width: 1120px){
+    @media (max-width:1120px){
       .page-hero-wrap{
         grid-template-columns:1fr;
         gap:28px;
@@ -420,7 +405,7 @@
       }
     }
 
-    @media (max-width: 900px){
+    @media (max-width:900px){
       .topbar-inner{
         grid-template-columns:auto auto;
         gap:16px;
@@ -466,13 +451,13 @@
       }
     }
 
-    @media (max-width: 700px){
+    @media (max-width:700px){
       .events-grid{
         grid-template-columns:1fr;
       }
     }
 
-    @media (max-width: 640px){
+    @media (max-width:640px){
       .container{
         width:min(var(--container), calc(100% - 20px));
       }
@@ -509,12 +494,13 @@
     }
   </style>
 </head>
+
 <body>
   <div class="topbar">
     <div class="container">
       <div class="topbar-inner">
         <a href="index.html" class="brand" aria-label="Revered Fitness home">
-          <div class="brand-mark">R</div>
+          <img src="logo.png" alt="Revered Fitness Logo" class="nav-logo">
           <div class="brand-text">
             <strong>REVERED FITNESS</strong>
             <span>Strength • Discipline • Respect</span>
@@ -578,10 +564,11 @@
   <section class="events-section">
     <div class="container">
       <div class="events-grid">
+
         <article class="event-card">
           <span class="event-label">Online Session</span>
           <h2>Free Online Workout</h2>
-          <div class="event-date">May 24, 2026</div>
+          <div class="event-date">June 7, 2026</div>
           <p>
             Join a 1-hour live online workout session built to challenge, motivate, and support all fitness levels from wherever you are training.
           </p>
@@ -591,7 +578,7 @@
         <article class="event-card featured">
           <span class="event-label">Outdoor Training</span>
           <h2>Outdoor Fitness Meetup</h2>
-          <div class="event-date">June 14, 2026</div>
+          <div class="event-date">June 21, 2026</div>
           <p>
             Take part in a free outdoor group training session focused on energy, accountability, and community in a strong supportive environment.
           </p>
@@ -607,6 +594,7 @@
           </p>
           <a href="about.html#contact" class="btn">Contact Me</a>
         </article>
+
       </div>
     </div>
   </section>
