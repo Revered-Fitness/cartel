@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About - Revered Fitness</title>
 
+  <meta name="description" content="About Revered Fitness. Strength, discipline, respect, personal training, online coaching, and transformation support.">
+  <link rel="icon" type="image/png" href="logo.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -23,13 +26,9 @@
       --container:1240px;
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{ box-sizing:border-box; }
 
-    html{
-      scroll-behavior:smooth;
-    }
+    html{ scroll-behavior:smooth; }
 
     body{
       margin:0;
@@ -53,6 +52,11 @@
     input,
     textarea{
       font:inherit;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
     }
 
     .container{
@@ -86,19 +90,11 @@
       min-width:0;
     }
 
-    .brand-mark{
-      width:34px;
-      height:34px;
-      border-radius:50%;
-      display:grid;
-      place-items:center;
-      border:1px solid rgba(214,185,140,0.16);
-      background:linear-gradient(135deg, rgba(177,21,16,0.22), rgba(214,185,140,0.08));
-      color:#fff;
-      font-family:'Cormorant Garamond', serif;
-      font-size:1rem;
-      font-weight:700;
-      flex:0 0 auto;
+    .nav-logo{
+      width:38px;
+      height:38px;
+      object-fit:contain;
+      filter:drop-shadow(0 0 10px rgba(214,185,140,0.18));
     }
 
     .brand-text{
@@ -136,7 +132,7 @@
       font-weight:700;
       color:#d7cec2;
       border:1px solid transparent;
-      transition:background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+      transition:0.25s ease;
     }
 
     .nav-links a:hover,
@@ -157,7 +153,7 @@
       color:#111;
       font-size:0.82rem;
       font-weight:800;
-      transition:transform 0.25s ease, opacity 0.25s ease;
+      transition:0.25s ease;
     }
 
     .nav-cta:hover{
@@ -475,7 +471,7 @@
       color:#fff;
       font-size:0.92rem;
       font-weight:800;
-      transition:transform 0.25s ease, opacity 0.25s ease;
+      transition:0.25s ease;
       cursor:pointer;
     }
 
@@ -523,7 +519,7 @@
       border:1px solid rgba(255,255,255,0.10);
       color:#fff;
       font-weight:800;
-      transition:transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+      transition:0.25s ease;
     }
 
     .instagram-btn:hover{
@@ -548,7 +544,7 @@
       margin-top:auto;
     }
 
-    @media (max-width: 1120px){
+    @media (max-width:1120px){
       .page-hero-wrap{
         grid-template-columns:1fr;
         gap:28px;
@@ -564,7 +560,7 @@
       }
     }
 
-    @media (max-width: 900px){
+    @media (max-width:900px){
       .topbar-inner{
         grid-template-columns:auto auto;
         gap:16px;
@@ -615,7 +611,7 @@
       }
     }
 
-    @media (max-width: 640px){
+    @media (max-width:640px){
       .container{
         width:min(var(--container), calc(100% - 20px));
       }
@@ -661,12 +657,13 @@
     }
   </style>
 </head>
+
 <body>
   <div class="topbar">
     <div class="container">
       <div class="topbar-inner">
         <a href="index.html" class="brand" aria-label="Revered Fitness home">
-          <div class="brand-mark">R</div>
+          <img src="logo.png" alt="Revered Fitness Logo" class="nav-logo">
           <div class="brand-text">
             <strong>REVERED FITNESS</strong>
             <span>Strength • Discipline • Respect</span>
@@ -800,7 +797,7 @@
               Follow along for updates, training content, and more from Revered Fitness.
             </p>
 
-            <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" class="instagram-btn">
+            <a href="https://www.instagram.com/Revered_fitness_pt" target="_blank" rel="noopener noreferrer" class="instagram-btn">
               <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 256 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.7c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.3-9.9-66.6-36.2-92.9S382.4 7.7 347.1 6c-35.3-1.7-141-1.7-176.3 0-35.3 1.7-66.6 9.9-92.9 36.2S7.7 129.6 6 164.9c-1.7 35.3-1.7 141 0 176.3 1.7 35.3 9.9 66.6 36.2 92.9s57.6 34.5 92.9 36.2c35.3 1.7 141 1.7 176.3 0 35.3-1.7 66.6-9.9 92.9-36.2s34.5-57.6 36.2-92.9c1.7-35.3 1.7-141 0-176.3zM398.8 388c-7.8 19.5-22.9 34.6-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 2.6-132.4-9c-19.5-7.8-34.6-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-2.6-103 9-132.4c7.8-19.5 22.9-34.6 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-2.6 132.4 9c19.5 7.8 34.6 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s2.7 103-9 132.4z"/>
               </svg>
