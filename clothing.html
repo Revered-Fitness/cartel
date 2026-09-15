@@ -1,54 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VRX9C1CB33"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-VRX9C1CB33');
-</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clothing - Revered Fitness</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Premium fitness apparel from Revered Fitness. High-quality gym clothing built for performance, strength, and style.">
-  <link rel="icon" type="image/png" href="logo.png">
+  <title>Clothing | Revered Fitness</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <meta
+    name="description"
+    content="Premium fitness apparel from Revered Fitness. High-quality gym clothing built for performance, strength, and style."
+  >
 
-  <style>
-    :root{
-      --bg:#0a0a0a;
-      --text:#f4efe8;
-      --muted:#c9c1b5;
-      --line:rgba(255,255,255,0.08);
-      --line-strong:rgba(214,185,140,0.16);
-      --accent:#d6b98c;
-      --primary:#b11510;
-      --primary-hover:#d32017;
-      --shadow:0 20px 50px rgba(0,0,0,0.24);
-      --radius:28px;
-      --container:1240px;
+  <link
+    rel="icon"
+    type="image/png"
+    href="logo.png"
+  >
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Google Analytics -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-VRX9C1CB33"
+  ></script>
+
+  <script>
+
+    window.dataLayer =
+      window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
     }
 
-    *{ box-sizing:border-box; }
+    gtag('js', new Date());
 
-    html{ scroll-behavior:smooth; }
+    gtag(
+      'config',
+      'G-VRX9C1CB33'
+    );
+
+  </script>
+
+
+  <style>
+
+    :root{
+
+      --bg:#0a0a0a;
+      --bg-soft:#111111;
+
+      --text:#f4efe8;
+      --muted:#c9c1b5;
+      --soft:#9f9689;
+
+      --line:rgba(255,255,255,0.08);
+      --line-strong:rgba(214,185,140,0.16);
+
+      --accent:#d6b98c;
+
+      --primary:#b11510;
+      --primary-hover:#d32017;
+
+      --shadow:
+        0 20px 50px rgba(0,0,0,0.24);
+
+      --radius:28px;
+
+      --container:1240px;
+
+    }
+
+
+    /* =========================
+       RESET
+    ========================= */
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
+
       margin:0;
-      font-family:'Manrope', sans-serif;
+
+      font-family:
+        'Manrope',
+        sans-serif;
+
       color:var(--text);
+
       background:
-        radial-gradient(circle at top center, rgba(177,21,16,0.10), transparent 24%),
-        linear-gradient(180deg, #0a0a0a 0%, #060606 100%);
+
+        radial-gradient(
+          circle at top center,
+          rgba(177,21,16,0.10),
+          transparent 24%
+        ),
+
+        linear-gradient(
+          180deg,
+          #0a0a0a 0%,
+          #060606 100%
+        );
+
       overflow-x:hidden;
+
       min-height:100vh;
+
       display:flex;
       flex-direction:column;
+
     }
 
     a{
@@ -61,680 +137,1968 @@
       max-width:100%;
     }
 
+
+    /* =========================
+       CONTAINER
+    ========================= */
+
     .container{
-      width:min(var(--container), calc(100% - 32px));
+
+      width:min(
+        var(--container),
+        calc(100% - 32px)
+      );
+
       margin:0 auto;
+
     }
 
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
     .topbar{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(10,10,10,0.88);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,0.08);
+
+      padding:20px 0;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.05);
+
     }
 
     .topbar-inner{
-      min-height:64px;
+
       display:grid;
-      grid-template-columns:auto 1fr auto;
+
+      grid-template-columns:
+        auto 1fr auto;
+
       align-items:center;
-      gap:24px;
-      padding:10px 0;
+
+      gap:30px;
+
     }
+
+
+    /* BRAND */
 
     .brand{
+
       display:flex;
+
       align-items:center;
-      gap:10px;
-      min-width:0;
+
+      gap:12px;
+
+      min-width:max-content;
+
     }
 
-    .nav-logo{
+    .brand-mark{
+
       width:38px;
       height:38px;
-      object-fit:contain;
-      filter:drop-shadow(0 0 10px rgba(214,185,140,0.18));
+
+      display:flex;
+
+      align-items:center;
+      justify-content:center;
+
+      border:
+        1px solid var(--accent);
+
+      border-radius:50%;
+
+      color:var(--accent);
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:1.5rem;
+
+      font-weight:700;
+
     }
 
     .brand-text{
+
       display:flex;
+
       flex-direction:column;
-      line-height:1;
+
+      gap:3px;
+
     }
 
     .brand-text strong{
-      font-size:0.84rem;
+
+      font-size:.82rem;
+
+      letter-spacing:1.8px;
+
       font-weight:800;
-      letter-spacing:1.5px;
+
     }
 
     .brand-text span{
-      margin-top:4px;
-      font-size:0.62rem;
-      color:#c9c1b5;
-      letter-spacing:1px;
+
+      color:var(--soft);
+
+      font-size:.62rem;
+
+      letter-spacing:1.3px;
+
       text-transform:uppercase;
+
     }
 
+
+    /* =========================
+       DESKTOP NAV
+    ========================= */
+
     .nav-links{
+
       display:flex;
+
       justify-content:center;
       align-items:center;
-      gap:12px;
-      flex-wrap:wrap;
+
+      gap:30px;
+
     }
 
     .nav-links a{
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:0.82rem;
+
+      position:relative;
+
+      color:#cfc7bc;
+
+      font-size:.78rem;
+
       font-weight:700;
-      color:#d7cec2;
-      border:1px solid transparent;
-      transition:0.25s ease;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+
+      transition:
+        color .25s ease;
+
+    }
+
+    .nav-links a::after{
+
+      content:"";
+
+      position:absolute;
+
+      left:0;
+      bottom:-8px;
+
+      width:0;
+      height:1px;
+
+      background:var(--accent);
+
+      transition:
+        width .25s ease;
+
     }
 
     .nav-links a:hover,
     .nav-links a.active{
-      background:rgba(255,255,255,0.03);
-      border-color:rgba(255,255,255,0.08);
+
       color:#fff;
+
     }
 
+    .nav-links a:hover::after,
+    .nav-links a.active::after{
+
+      width:100%;
+
+    }
+
+
+    /* NAV CTA */
+
     .nav-cta{
+
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
-      min-width:150px;
-      padding:11px 16px;
+
+      padding:12px 18px;
+
+      border:
+        1px solid rgba(214,185,140,.35);
+
       border-radius:999px;
-      background:#f3ede5;
-      color:#111;
-      font-size:0.82rem;
+
+      color:var(--accent);
+
+      font-size:.74rem;
+
       font-weight:800;
-      transition:0.25s ease;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+
+      transition:
+        background .25s ease,
+        color .25s ease;
+
     }
 
     .nav-cta:hover{
-      transform:translateY(-1px);
-      opacity:0.94;
+
+      background:var(--accent);
+
+      color:#0a0a0a;
+
     }
 
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
     .menu-toggle{
+
       display:none;
-      width:46px;
-      height:46px;
+
+      width:44px;
+      height:44px;
+
       margin-left:auto;
-      border:none;
-      border-radius:50%;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.08);
+
       align-items:center;
       justify-content:center;
+
       flex-direction:column;
+
       gap:5px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius:50%;
+
+      background:transparent;
+
       cursor:pointer;
+
     }
 
     .menu-toggle span{
+
+      display:block;
+
       width:18px;
       height:2px;
-      border-radius:999px;
-      background:#fff;
-      transition:0.25s ease;
+
+      background:#f4efe8;
+
+      transition:
+        transform .25s ease,
+        opacity .25s ease;
+
     }
 
     .mobile-nav{
       display:none;
-      padding:0 0 14px;
     }
 
     .mobile-nav-links{
-      display:grid;
-      gap:10px;
-      padding-top:8px;
+
+      display:flex;
+
+      flex-direction:column;
+
+      margin-top:18px;
+
+      border-top:
+        1px solid var(--line);
+
     }
 
     .mobile-nav-links a{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:48px;
-      border-radius:16px;
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.08);
-      color:#f4efe8;
-      font-size:0.92rem;
+
+      padding:15px 5px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.06);
+
+      color:#d8d0c5;
+
+      font-size:.8rem;
+
       font-weight:700;
+
+      letter-spacing:1.2px;
+
+      text-transform:uppercase;
+
     }
 
     .mobile-nav-links a.active{
-      border-color:rgba(214,185,140,0.18);
-      color:#fff;
+
+      color:var(--accent);
+
     }
 
     .mobile-nav-cta{
-      background:linear-gradient(135deg, #b11510, #d32017) !important;
-      border-color:transparent !important;
-      color:#fff !important;
+
+      margin-top:12px;
+
+      text-align:center;
+
+      border:
+        1px solid rgba(214,185,140,.25) !important;
+
+      border-radius:999px;
+
+      color:
+        var(--accent) !important;
+
     }
 
+
+    /* =========================
+       CLOTHING HERO
+    ========================= */
+
     .page-hero{
-      padding:46px 0 34px;
+
+      padding:
+        15px 0 35px;
+
+    }
+
+    .page-hero > .container{
+
+      width:100%;
+
+      max-width:none;
+
+      padding-left:60px;
+      padding-right:60px;
+
+      margin:0;
+
     }
 
     .page-hero-wrap{
+
       display:grid;
-      grid-template-columns:minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap:48px;
+
+      grid-template-columns:
+        minmax(0,.95fr)
+        minmax(0,1.05fr);
+
+      column-gap:70px;
+
       align-items:center;
+
+      width:100%;
+
     }
+
+
+    /* HERO LEFT */
 
     .page-copy{
-      max-width:540px;
-    }
 
-    .page-logo{
-      width:min(170px, 38vw);
-      margin:0 0 24px;
-      object-fit:contain;
-      mix-blend-mode:screen;
-      filter:drop-shadow(0 0 16px rgba(0,0,0,0.22));
-    }
+      width:100%;
 
-    .eyebrow{
-      display:inline-block;
-      margin-bottom:18px;
-      padding:8px 14px;
-      border-radius:999px;
-      border:1px solid var(--line-strong);
-      color:var(--accent);
-      font-size:0.74rem;
-      font-weight:800;
-      letter-spacing:1.8px;
-      text-transform:uppercase;
-      background:rgba(255,255,255,0.02);
-    }
+      max-width:none;
 
-    h1{
-      margin:0 0 18px;
-      font-family:'Cormorant Garamond', serif;
-      font-size:clamp(3rem, 6vw, 5.5rem);
-      line-height:0.9;
-      font-weight:700;
-    }
-
-    .hero-text{
-      margin:0;
-      color:#d7cec3;
-      font-size:1rem;
-      line-height:1.95;
-      max-width:560px;
-    }
-
-    .hero-panel{
-      position:relative;
-      min-height:460px;
-      padding:34px;
-      border-radius:36px;
-      border:1px solid var(--line);
-      background:
-        radial-gradient(circle at top right, rgba(177,21,16,0.10), transparent 34%),
-        linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01)),
-        #101010;
-      box-shadow:var(--shadow);
       display:flex;
+
+      flex-direction:column;
+
       align-items:center;
       justify-content:center;
+
+      text-align:center;
+
+    }
+
+
+    /* LOGO */
+
+    .page-logo{
+
+      width:240px;
+
+      margin:
+        0 auto 28px;
+
+      object-fit:contain;
+
+      mix-blend-mode:screen;
+
+      filter:
+        drop-shadow(
+          0 0 16px rgba(0,0,0,.22)
+        );
+
+    }
+
+
+    /* EYEBROW */
+
+    .eyebrow{
+
+      display:inline-block;
+
+      margin:
+        0 auto 18px;
+
+      padding:
+        8px 14px;
+
+      border:
+        1px solid var(--line-strong);
+
+      border-radius:999px;
+
+      color:var(--accent);
+
+      font-size:.74rem;
+
+      font-weight:800;
+
+      letter-spacing:1.8px;
+
+      text-transform:uppercase;
+
+      background:
+        rgba(255,255,255,.02);
+
+    }
+
+
+    /* TITLE */
+
+    h1{
+
+      margin:
+        0 0 20px;
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        clamp(
+          4rem,
+          6vw,
+          6rem
+        );
+
+      line-height:.86;
+
+      font-weight:700;
+
+      text-align:center;
+
+    }
+
+
+    /* HERO TEXT */
+
+    .hero-text{
+
+      margin:0 auto;
+
+      max-width:560px;
+
+      color:#d7cec3;
+
+      font-size:1rem;
+
+      line-height:1.9;
+
+      text-align:center;
+
+    }
+
+
+    /* =========================
+       HERO RIGHT PANEL
+    ========================= */
+
+    .hero-panel{
+
+      position:relative;
+
+      width:100%;
+
+      min-height:520px;
+
+      padding:34px;
+
+      border-radius:32px;
+
+      border:
+        1px solid var(--line);
+
+      background:
+
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(177,21,16,.10),
+          transparent 55%
+        ),
+
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.025),
+          rgba(255,255,255,.01)
+        ),
+
+        #101010;
+
+      box-shadow:var(--shadow);
+
+      display:flex;
+
+      align-items:center;
+      justify-content:center;
+
+      overflow:hidden;
+
+      text-align:center;
+
     }
 
     .hero-panel::before{
+
       content:"";
+
       position:absolute;
+
       inset:18px;
-      border:1px solid rgba(214,185,140,0.08);
-      border-radius:26px;
+
+      border:
+        1px solid rgba(214,185,140,.08);
+
+      border-radius:24px;
+
       pointer-events:none;
+
     }
 
     .hero-panel-content{
+
       position:relative;
+
       z-index:1;
-      max-width:420px;
+
+      max-width:470px;
+
+      margin:auto;
+
     }
 
     .hero-panel-content strong{
+
       display:block;
-      margin-bottom:10px;
-      font-size:0.8rem;
-      letter-spacing:1.8px;
-      text-transform:uppercase;
+
+      margin-bottom:14px;
+
       color:var(--accent);
+
+      font-size:.76rem;
+
+      letter-spacing:2px;
+
+      text-transform:uppercase;
+
     }
 
     .hero-panel-content h2{
-      margin:0 0 14px;
-      font-family:'Cormorant Garamond', serif;
-      font-size:clamp(2.2rem, 4vw, 3.4rem);
-      line-height:0.95;
+
+      margin:
+        0 0 18px;
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        clamp(
+          2.7rem,
+          4vw,
+          4rem
+        );
+
+      line-height:.95;
+
       font-weight:700;
+
     }
 
     .hero-panel-content p{
-      margin:0;
+
+      margin:0 auto;
+
+      max-width:420px;
+
       color:#d7cec3;
+
       line-height:1.85;
-      font-size:0.98rem;
+
+      font-size:.98rem;
+
     }
 
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
     .products-section{
-      padding:20px 0 92px;
+
+      padding:
+        0 0 30px;
+
     }
 
     .products-grid{
+
       display:grid;
-      grid-template-columns:repeat(3, minmax(0, 1fr));
-      gap:20px;
+
+      grid-template-columns:
+        repeat(
+          2,
+          minmax(0,1fr)
+        );
+
+      gap:22px;
+
     }
+
+
+    /* PRODUCT CARD */
 
     .product-card{
+
+      position:relative;
+
+      display:flex;
+
+      flex-direction:column;
+
       padding:22px;
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
-      box-shadow:var(--shadow);
+
+      border-radius:
+        var(--radius);
+
+      border:
+        1px solid var(--line);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.025),
+          rgba(255,255,255,.01)
+        );
+
+      box-shadow:
+        var(--shadow);
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease;
+
     }
 
+    .product-card:hover{
+
+      transform:
+        translateY(-3px);
+
+      border-color:
+        rgba(214,185,140,.18);
+
+    }
+
+
+    /* LIMITED EDITION */
+
+    .product-card.limited{
+
+      border-color:
+        rgba(214,185,140,.28);
+
+      background:
+
+        radial-gradient(
+          circle at top right,
+          rgba(177,21,16,.13),
+          transparent 40%
+        ),
+
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.03),
+          rgba(255,255,255,.012)
+        );
+
+    }
+
+    .limited-badge{
+
+      position:absolute;
+
+      top:34px;
+      left:34px;
+
+      z-index:3;
+
+      padding:
+        8px 12px;
+
+      border-radius:999px;
+
+      background:
+        rgba(10,10,10,.90);
+
+      border:
+        1px solid rgba(214,185,140,.35);
+
+      color:var(--accent);
+
+      font-size:.68rem;
+
+      font-weight:800;
+
+      letter-spacing:1.4px;
+
+      text-transform:uppercase;
+
+      box-shadow:
+        0 8px 25px rgba(0,0,0,.25);
+
+    }
+
+
+    /* PRODUCT IMAGE */
+
     .product-image-wrap{
+
       border-radius:22px;
+
       overflow:hidden;
-      border:1px solid rgba(255,255,255,0.06);
+
+      border:
+        1px solid rgba(255,255,255,.06);
+
       background:#111;
+
       margin-bottom:18px;
+
       cursor:pointer;
+
       display:flex;
+
       align-items:center;
       justify-content:center;
+
       padding:14px;
-      min-height:300px;
+
+      min-height:360px;
+
     }
 
     .product-img{
+
       width:100%;
-      max-width:240px;
-      max-height:270px;
+
+      max-width:300px;
+
+      max-height:330px;
+
       object-fit:contain;
-      transition:transform 0.45s cubic-bezier(.22,1,.36,1);
+
+      transition:
+        transform .45s cubic-bezier(
+          .22,
+          1,
+          .36,
+          1
+        );
+
     }
 
-    .product-image-wrap:hover .product-img{
-      transform:scale(1.03);
+    .product-image-wrap:hover
+    .product-img{
+
+      transform:
+        scale(1.035);
+
     }
+
+
+    /* PRODUCT TEXT */
 
     .product-card h2{
-      margin:0 0 8px;
-      font-family:'Cormorant Garamond', serif;
-      font-size:2rem;
-      line-height:0.96;
+
+      margin:
+        0 0 8px;
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:2.1rem;
+
+      line-height:.96;
+
       font-weight:700;
+
     }
 
     .price{
-      margin:12px 0 14px;
+
+      margin:
+        12px 0 14px;
+
       font-size:1.15rem;
+
       font-weight:800;
+
       color:var(--accent);
-      letter-spacing:0.5px;
+
+      letter-spacing:.5px;
+
     }
 
     .product-card p{
-      margin:0;
+
+      margin:
+        0 0 4px;
+
       color:#d0c6ba;
-      font-size:0.96rem;
+
+      font-size:.96rem;
+
       line-height:1.85;
+
     }
 
+
+    /* BUY BUTTON */
+
     .buy-btn{
+
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
-      margin-top:18px;
-      width:100%;
+
+      margin-top:auto;
+
+      padding:
+        15px 18px;
+
       min-height:50px;
-      border-radius:16px;
-      background:linear-gradient(135deg, #b11510, #d32017);
+
+      border-radius:999px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-hover)
+        );
+
       color:#fff;
+
       font-weight:800;
-      font-size:0.95rem;
-      transition:0.25s ease;
+
+      font-size:.95rem;
+
+      text-align:center;
+
+      transition:
+        transform .25s ease,
+        opacity .25s ease;
+
+    }
+
+    .product-card p + .buy-btn{
+
+      margin-top:22px;
+
     }
 
     .buy-btn:hover{
-      transform:translateY(-2px);
-      opacity:0.95;
+
+      transform:
+        translateY(-1px);
+
+      opacity:.96;
+
     }
+
+
+    /* PRODUCTS NOTE */
 
     .products-note{
-      margin-top:26px;
+
+      margin:
+        22px 0 0;
+
       text-align:center;
+
       color:#cfc5b8;
-      font-size:1rem;
-      line-height:1.85;
+
+      font-size:.95rem;
+
+      line-height:1.7;
+
     }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer{
-      padding:24px 16px 36px;
+
+      padding:
+        20px 16px 26px;
+
       color:#bfb5a7;
+
       text-align:center;
-      border-top:1px solid rgba(255,255,255,0.06);
-      font-size:0.92rem;
-      margin-top:auto;
+
+      border-top:
+        1px solid rgba(255,255,255,.06);
+
+      font-size:.92rem;
+
     }
 
+
+    /* =========================
+       LIGHTBOX
+    ========================= */
+
     #lightbox{
+
       display:none;
+
       position:fixed;
+
       inset:0;
+
       z-index:9999;
-      background:rgba(0,0,0,0.92);
+
+      background:
+        rgba(0,0,0,.92);
+
       justify-content:center;
       align-items:center;
+
       padding:20px;
-      backdrop-filter:blur(8px);
-      -webkit-backdrop-filter:blur(8px);
+
+      backdrop-filter:
+        blur(8px);
+
+      -webkit-backdrop-filter:
+        blur(8px);
+
     }
 
     #lightbox img{
+
       max-width:90%;
       max-height:90%;
+
       border-radius:18px;
-      box-shadow:0 0 30px rgba(177,21,16,0.35);
+
+      box-shadow:
+        0 0 30px rgba(177,21,16,.35);
+
       object-fit:contain;
+
     }
 
     #lightbox span{
+
       position:absolute;
+
       top:18px;
       right:28px;
+
       color:#fff;
+
       font-size:2.5rem;
+
       cursor:pointer;
+
     }
 
-    @media (max-width: 1120px){
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width:1100px){
+
+      .page-hero > .container{
+
+        padding-left:40px;
+        padding-right:40px;
+
+      }
+
       .page-hero-wrap{
-        grid-template-columns:1fr;
-        gap:28px;
+
+        grid-template-columns:
+          minmax(0,1fr)
+          minmax(0,1fr);
+
+        column-gap:45px;
+
+      }
+
+      .page-logo{
+
+        width:220px;
+
       }
 
       .hero-panel{
-        min-height:360px;
+
+        min-height:480px;
+
       }
 
-      .products-grid{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
-      }
     }
 
-    @media (max-width: 900px){
+
+    /* =========================
+       MOBILE NAV
+    ========================= */
+
+    @media (max-width:900px){
+
       .topbar-inner{
-        grid-template-columns:auto auto;
+
+        grid-template-columns:
+          auto auto;
+
         gap:16px;
+
       }
 
       .desktop-nav,
       .desktop-cta{
+
         display:none;
+
       }
 
       .menu-toggle{
+
         display:flex;
+
       }
 
       .mobile-nav.open{
+
         display:block;
+
       }
 
-      .menu-toggle.active span:nth-child(1){
-        transform:translateY(7px) rotate(45deg);
+      .menu-toggle.active
+      span:nth-child(1){
+
+        transform:
+          translateY(7px)
+          rotate(45deg);
+
       }
 
-      .menu-toggle.active span:nth-child(2){
+      .menu-toggle.active
+      span:nth-child(2){
+
         opacity:0;
+
       }
 
-      .menu-toggle.active span:nth-child(3){
-        transform:translateY(-7px) rotate(-45deg);
+      .menu-toggle.active
+      span:nth-child(3){
+
+        transform:
+          translateY(-7px)
+          rotate(-45deg);
+
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width:760px){
+
+      .page-hero{
+
+        padding:
+          15px 0 30px;
+
+      }
+
+      .page-hero > .container{
+
+        width:100%;
+
+        padding-left:16px;
+        padding-right:16px;
+
+        margin:0;
+
+      }
+
+      .page-hero-wrap{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+        text-align:center;
+
       }
 
       .page-copy{
-        max-width:none;
-        text-align:center;
+
+        width:100%;
+
+        max-width:600px;
+
+        margin:0 auto;
+
       }
 
       .page-logo{
-        margin:0 auto 24px;
-      }
-    }
 
-    @media (max-width: 700px){
-      .products-grid{
-        grid-template-columns:1fr;
-      }
-    }
+        width:200px;
 
-    @media (max-width: 640px){
-      .container{
-        width:min(var(--container), calc(100% - 20px));
-      }
+        margin:
+          0 auto 24px;
 
-      .page-hero{
-        padding:26px 0 24px;
-      }
-
-      .products-section{
-        padding:14px 0 72px;
-      }
-
-      h1{
-        font-size:clamp(2.7rem, 13vw, 4.5rem);
-      }
-
-      .page-logo{
-        width:min(138px, 48vw);
       }
 
       .hero-panel{
-        min-height:300px;
-        padding:18px;
-        border-radius:24px;
+
+        min-height:350px;
+
+        padding:24px;
+
       }
 
-      .product-card{
-        padding:18px;
+      .products-grid{
+
+        grid-template-columns:1fr;
+
       }
 
       .product-image-wrap{
-        min-height:260px;
+
+        min-height:320px;
+
+      }
+
+      .products-section{
+
+        padding:
+          0 0 28px;
+
+      }
+
+    }
+
+
+    /* =========================
+       SMALL MOBILE
+    ========================= */
+
+    @media (max-width:480px){
+
+      .container{
+
+        width:
+          min(
+            var(--container),
+            calc(100% - 20px)
+          );
+
+      }
+
+      .page-hero{
+
+        padding:
+          15px 0 25px;
+
+      }
+
+      .page-hero > .container{
+
+        width:100%;
+
+        padding-left:10px;
+        padding-right:10px;
+
+      }
+
+      .page-logo{
+
+        width:185px;
+
+      }
+
+      h1{
+
+        font-size:3.7rem;
+
+      }
+
+      .hero-panel{
+
+        min-height:310px;
+
+        padding:22px;
+
+        border-radius:24px;
+
+      }
+
+      .hero-panel::before{
+
+        inset:12px;
+
+        border-radius:18px;
+
+      }
+
+      .hero-panel-content h2{
+
+        font-size:2.5rem;
+
+      }
+
+      .product-card{
+
+        padding:18px;
+
+      }
+
+      .product-image-wrap{
+
+        min-height:280px;
+
       }
 
       .product-img{
-        max-height:230px;
+
+        max-height:260px;
+
       }
+
+      .limited-badge{
+
+        top:28px;
+        left:28px;
+
+      }
+
+      .products-section{
+
+        padding:
+          0 0 24px;
+
+      }
+
+      footer{
+
+        padding:
+          18px 12px 22px;
+
+      }
+
     }
+
   </style>
+
 </head>
 
+
 <body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
   <div class="topbar">
+
     <div class="container">
+
       <div class="topbar-inner">
-        <a href="index.html" class="brand" aria-label="Revered Fitness home">
-          <img src="logo.png" alt="Revered Fitness Logo" class="nav-logo">
-          <div class="brand-text">
-            <strong>REVERED FITNESS</strong>
-            <span>Strength • Discipline • Respect</span>
+
+
+        <a
+          href="index.html"
+          class="brand"
+          aria-label="Revered Fitness home"
+        >
+
+          <div class="brand-mark">
+            R
           </div>
+
+          <div class="brand-text">
+
+            <strong>
+              REVERED FITNESS
+            </strong>
+
+            <span>
+              Strength • Discipline • Respect
+            </span>
+
+          </div>
+
         </a>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav">
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+        >
+
           <span></span>
           <span></span>
           <span></span>
+
         </button>
 
-        <nav class="nav-links desktop-nav" aria-label="Primary navigation">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="transformation.html">Transformation</a>
-          <a href="events.html">Events</a>
-          <a href="clothing.html" class="active">Clothing</a>
-          <a href="about.html">About</a>
+
+        <nav
+          class="nav-links desktop-nav"
+          aria-label="Primary navigation"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="events.html">
+            Events
+          </a>
+
+          <a
+            href="clothing.html"
+            class="active"
+          >
+            Clothing
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
         </nav>
 
-        <a href="about.html#contact" class="nav-cta desktop-cta">Book Consultation</a>
+
+        <a
+          href="about.html#contact"
+          class="nav-cta desktop-cta"
+        >
+          Book Consultation
+        </a>
+
+
       </div>
 
-      <div class="mobile-nav" id="mobileNav">
-        <nav class="mobile-nav-links" aria-label="Mobile navigation">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="transformation.html">Transformation</a>
-          <a href="events.html">Events</a>
-          <a href="clothing.html" class="active">Clothing</a>
-          <a href="about.html">About</a>
-          <a href="about.html#contact" class="mobile-nav-cta">Book Consultation</a>
+
+      <div
+        class="mobile-nav"
+        id="mobileNav"
+      >
+
+        <nav
+          class="mobile-nav-links"
+          aria-label="Mobile navigation"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="events.html">
+            Events
+          </a>
+
+          <a
+            href="clothing.html"
+            class="active"
+          >
+            Clothing
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a
+            href="about.html#contact"
+            class="mobile-nav-cta"
+          >
+            Book Consultation
+          </a>
+
         </nav>
+
       </div>
+
     </div>
+
   </div>
 
+
+  <!-- =========================
+       CLOTHING HERO
+  ========================= -->
+
   <section class="page-hero">
+
     <div class="container">
+
       <div class="page-hero-wrap">
+
+
+        <!-- LEFT -->
+
         <div class="page-copy">
-          <img src="logo.png" alt="Revered Fitness Logo" class="page-logo" loading="lazy">
 
-          <div class="eyebrow">Apparel</div>
 
-          <h1>Revered Fitness Clothing</h1>
+          <img
+            src="logo.png"
+            alt="Revered Fitness Logo"
+            class="page-logo"
+          >
+
+
+          <div class="eyebrow">
+            Apparel
+          </div>
+
+
+          <h1>
+            Revered Fitness<br>
+            Clothing
+          </h1>
+
 
           <p class="hero-text">
-            Premium training apparel designed to carry the Revered Fitness identity with strength, simplicity, and presence in and out of the gym.
+
+            Premium training apparel designed to
+            carry the Revered Fitness identity with
+            strength, simplicity, and presence in
+            and out of the gym.
+
           </p>
+
+
         </div>
+
+
+        <!-- RIGHT -->
 
         <div class="hero-panel">
+
           <div class="hero-panel-content">
-            <strong>Performance Wear</strong>
-            <h2>Built for training. Styled with intent.</h2>
+
+            <strong>
+              Performance Wear
+            </strong>
+
+            <h2>
+              Built for training.<br>
+              Styled with intent.
+            </h2>
+
             <p>
-              High-quality pieces designed to reflect the standard behind the brand, combining performance, comfort, and a clean visual identity.
+
+              High-quality pieces designed to reflect
+              the standard behind the brand,
+              combining performance, comfort, and a
+              clean visual identity.
+
             </p>
+
           </div>
+
         </div>
+
+
       </div>
+
     </div>
+
   </section>
+
+
+  <!-- =========================
+       PRODUCTS
+  ========================= -->
 
   <section class="products-section">
+
     <div class="container">
+
       <div class="products-grid">
 
+
+        <!-- =====================
+             T-SHIRT
+        ====================== -->
+
         <article class="product-card">
-          <div class="product-image-wrap" onclick="openLightbox('shirt.jpg')">
-            <img src="shirt.jpg" alt="Revered Fitness T-Shirt" class="product-img" loading="lazy">
+
+
+          <div
+            class="product-image-wrap"
+            onclick="openLightbox('shirt.jpg')"
+          >
+
+            <img
+              src="shirt.jpg"
+              alt="Revered Fitness T-Shirt"
+              class="product-img"
+              loading="lazy"
+            >
+
           </div>
-          <h2>Revered Fitness T-Shirt</h2>
-          <div class="price">£15</div>
+
+
+          <h2>
+            Revered Fitness T-Shirt
+          </h2>
+
+
+          <div class="price">
+            £15
+          </div>
+
+
           <p>
-            A clean training essential designed to represent the brand with a strong, minimal look suited for workouts and everyday wear.
+
+            A clean training essential designed to
+            represent the brand with a strong,
+            minimal look suited for workouts and
+            everyday wear.
+
           </p>
-          <a href="https://buy.stripe.com/fZuaEXf0Lc0j1m7eN1gEg05" class="buy-btn" target="_blank" rel="noopener noreferrer">
+
+
+          <a
+            href="https://buy.stripe.com/fZuaEXf0Lc0j1m7eN1gEg05"
+            class="buy-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Purchase T-Shirt
           </a>
+
+
         </article>
 
+
+        <!-- =====================
+             HOODIE
+        ====================== -->
+
         <article class="product-card">
-          <div class="product-image-wrap" onclick="openLightbox('hoodie.jpg')">
-            <img src="hoodie.jpg" alt="Revered Fitness Hoodie" class="product-img" loading="lazy">
+
+
+          <div
+            class="product-image-wrap"
+            onclick="openLightbox('hoodie.jpg')"
+          >
+
+            <img
+              src="hoodie.jpg"
+              alt="Revered Fitness Hoodie"
+              class="product-img"
+              loading="lazy"
+            >
+
           </div>
-          <h2>Revered Fitness Hoodie</h2>
-          <div class="price">£25</div>
+
+
+          <h2>
+            Revered Fitness Hoodie
+          </h2>
+
+
+          <div class="price">
+            £25
+          </div>
+
+
           <p>
-            A heavier layer built for comfort, presence, and performance, carrying the same Revered identity in a more elevated streetwear style.
+
+            A heavier layer built for comfort,
+            presence, and performance, carrying the
+            same Revered identity in a more elevated
+            streetwear style.
+
           </p>
-          <a href="https://buy.stripe.com/4gM9ATaKvfcvc0L5crgEg07" class="buy-btn" target="_blank" rel="noopener noreferrer">
+
+
+          <a
+            href="https://buy.stripe.com/4gM9ATaKvfcvc0L5crgEg07"
+            class="buy-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Purchase Hoodie
           </a>
+
+
         </article>
 
+
+        <!-- =====================
+             JOGGERS
+        ====================== -->
+
         <article class="product-card">
-          <div class="product-image-wrap" onclick="openLightbox('pants.jpg')">
-            <img src="pants.jpg" alt="Revered Fitness Joggers" class="product-img" loading="lazy">
+
+
+          <div
+            class="product-image-wrap"
+            onclick="openLightbox('pants.jpg')"
+          >
+
+            <img
+              src="pants.jpg"
+              alt="Revered Fitness Joggers"
+              class="product-img"
+              loading="lazy"
+            >
+
           </div>
-          <h2>Revered Fitness Joggers</h2>
-          <div class="price">£20</div>
+
+
+          <h2>
+            Revered Fitness Joggers
+          </h2>
+
+
+          <div class="price">
+            £20
+          </div>
+
+
           <p>
-            Training bottoms designed to keep the full Revered branding visible with a clean athletic fit and strong everyday wear appeal.
+
+            Training bottoms designed to keep the
+            full Revered branding visible with a
+            clean athletic fit and strong everyday
+            wear appeal.
+
           </p>
-          <a href="https://buy.stripe.com/6oU14n9Grfcv2qb0WbgEg06" class="buy-btn" target="_blank" rel="noopener noreferrer">
+
+
+          <a
+            href="https://buy.stripe.com/6oU14n9Grfcv2qb0WbgEg06"
+            class="buy-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Purchase Joggers
           </a>
+
+
         </article>
+
+
+        <!-- =====================
+             PAUL SYKES
+             LIMITED EDITION
+        ====================== -->
+
+        <article class="product-card limited">
+
+
+          <span class="limited-badge">
+            Limited Edition
+          </span>
+
+
+          <div
+            class="product-image-wrap"
+            onclick="openLightbox('paul.jpg')"
+          >
+
+            <img
+              src="paul.jpg"
+              alt="Limited Edition Paul Sykes T-Shirt"
+              class="product-img"
+              loading="lazy"
+            >
+
+          </div>
+
+
+          <h2>
+            Paul Sykes T-Shirt
+          </h2>
+
+
+          <div class="price">
+            £20
+          </div>
+
+
+          <p>
+
+            Limited Edition Paul Sykes T-Shirt.
+            A special release available in limited
+            numbers for £20.
+
+          </p>
+
+
+          <a
+            href="https://buy.stripe.com/9B65kDaKv5BVfcX8oDgEg09"
+            class="buy-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Purchase Paul Sykes T-Shirt
+          </a>
+
+
+        </article>
+
 
       </div>
 
+
       <p class="products-note">
-        High quality training apparel designed for strength and style.
+
+        High quality training apparel designed
+        for strength and style.
+
       </p>
+
+
     </div>
+
   </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
     © 2026 Revered Fitness
   </footer>
 
+
+  <!-- =========================
+       LIGHTBOX
+  ========================= -->
+
   <div id="lightbox">
-    <span onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-img" src="" alt="Expanded product image">
+
+    <span
+      onclick="closeLightbox()"
+    >
+      &times;
+    </span>
+
+    <img
+      id="lightbox-img"
+      src=""
+      alt="Expanded product image"
+    >
+
   </div>
 
+
+  <!-- =========================
+       SCRIPT
+  ========================= -->
+
   <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileNav = document.getElementById("mobileNav");
 
-    if (menuToggle && mobileNav) {
-      menuToggle.addEventListener("click", function () {
-        const isOpen = mobileNav.classList.toggle("open");
-        menuToggle.classList.toggle("active", isOpen);
-        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
+    /* MOBILE MENU */
+
+    const menuToggle =
+      document.getElementById(
+        "menuToggle"
+      );
+
+    const mobileNav =
+      document.getElementById(
+        "mobileNav"
+      );
+
+
+    if(
+      menuToggle &&
+      mobileNav
+    ){
+
+      menuToggle.addEventListener(
+        "click",
+        function(){
+
+          const isOpen =
+            mobileNav.classList.toggle(
+              "open"
+            );
+
+          menuToggle.classList.toggle(
+            "active",
+            isOpen
+          );
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+              ? "true"
+              : "false"
+          );
+
+        }
+      );
+
+
+      const mobileLinks =
+        mobileNav.querySelectorAll(
+          "a"
+        );
+
+
+      mobileLinks.forEach(
+        function(link){
+
+          link.addEventListener(
+            "click",
+            function(){
+
+              mobileNav.classList.remove(
+                "open"
+              );
+
+              menuToggle.classList.remove(
+                "active"
+              );
+
+              menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+          );
+
+        }
+      );
+
     }
 
-    function openLightbox(src) {
-      document.getElementById("lightbox-img").src = src;
-      document.getElementById("lightbox").style.display = "flex";
+
+    /* LIGHTBOX */
+
+    function openLightbox(src){
+
+      document.getElementById(
+        "lightbox-img"
+      ).src = src;
+
+      document.getElementById(
+        "lightbox"
+      ).style.display = "flex";
+
     }
 
-    function closeLightbox() {
-      document.getElementById("lightbox").style.display = "none";
+
+    function closeLightbox(){
+
+      document.getElementById(
+        "lightbox"
+      ).style.display = "none";
+
     }
 
-    document.getElementById("lightbox").addEventListener("click", function(e) {
-      if (e.target.id === "lightbox") {
-        closeLightbox();
+
+    document.getElementById(
+      "lightbox"
+    ).addEventListener(
+      "click",
+      function(e){
+
+        if(
+          e.target.id === "lightbox"
+        ){
+
+          closeLightbox();
+
+        }
+
       }
-    });
+    );
 
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape") {
-        closeLightbox();
+
+    document.addEventListener(
+      "keydown",
+      function(e){
+
+        if(
+          e.key === "Escape"
+        ){
+
+          closeLightbox();
+
+        }
+
       }
-    });
+    );
+
   </script>
+
+
 </body>
 </html>
