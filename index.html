@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +65,9 @@
 
     body{
       margin:0;
+
       font-family:'Manrope',sans-serif;
+
       color:var(--text);
 
       background:
@@ -110,27 +113,38 @@
 
 
     /* =========================
-       TOP NAVIGATION
+       NAVIGATION
     ========================= */
 
     .topbar{
       padding:20px 0;
-      border-bottom:1px solid rgba(255,255,255,.05);
+
+      border-bottom:
+        1px solid rgba(255,255,255,.05);
     }
 
 
     .topbar-inner{
       display:grid;
-      grid-template-columns:auto 1fr auto;
+
+      grid-template-columns:
+        auto
+        1fr
+        auto;
+
       align-items:center;
+
       gap:30px;
     }
 
 
     .brand{
       display:flex;
+
       align-items:center;
+
       gap:12px;
+
       min-width:max-content;
     }
 
@@ -140,15 +154,21 @@
       height:38px;
 
       display:flex;
+
       align-items:center;
       justify-content:center;
 
-      border:1px solid var(--accent);
+      border:
+        1px solid var(--accent);
+
       border-radius:50%;
 
       color:var(--accent);
 
-      font-family:'Cormorant Garamond',serif;
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
       font-size:1.5rem;
       font-weight:700;
     }
@@ -156,30 +176,39 @@
 
     .brand-text{
       display:flex;
+
       flex-direction:column;
+
       gap:3px;
     }
 
 
     .brand-text strong{
       font-size:.82rem;
+
       letter-spacing:1.8px;
+
       font-weight:800;
     }
 
 
     .brand-text span{
       color:var(--soft);
+
       font-size:.62rem;
+
       letter-spacing:1.3px;
+
       text-transform:uppercase;
     }
 
 
     .nav-links{
       display:flex;
+
       justify-content:center;
       align-items:center;
+
       gap:30px;
     }
 
@@ -193,6 +222,7 @@
       font-weight:700;
 
       letter-spacing:1px;
+
       text-transform:uppercase;
 
       transition:
@@ -232,12 +262,15 @@
 
     .nav-cta{
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
 
       padding:12px 18px;
 
-      border:1px solid rgba(214,185,140,.35);
+      border:
+        1px solid rgba(214,185,140,.35);
+
       border-radius:999px;
 
       color:var(--accent);
@@ -246,6 +279,7 @@
       font-weight:800;
 
       letter-spacing:1px;
+
       text-transform:uppercase;
 
       transition:
@@ -256,12 +290,13 @@
 
     .nav-cta:hover{
       background:var(--accent);
+
       color:#0a0a0a;
     }
 
 
     /* =========================
-       MOBILE MENU BUTTON
+       MOBILE MENU
     ========================= */
 
     .menu-toggle{
@@ -274,11 +309,14 @@
 
       align-items:center;
       justify-content:center;
+
       flex-direction:column;
 
       gap:5px;
 
-      border:1px solid var(--line);
+      border:
+        1px solid var(--line);
+
       border-radius:50%;
 
       background:transparent;
@@ -308,18 +346,21 @@
 
     .mobile-nav-links{
       display:flex;
+
       flex-direction:column;
 
       margin-top:18px;
 
-      border-top:1px solid var(--line);
+      border-top:
+        1px solid var(--line);
     }
 
 
     .mobile-nav-links a{
       padding:15px 5px;
 
-      border-bottom:1px solid rgba(255,255,255,.06);
+      border-bottom:
+        1px solid rgba(255,255,255,.06);
 
       color:#d8d0c5;
 
@@ -327,6 +368,7 @@
       font-weight:700;
 
       letter-spacing:1.2px;
+
       text-transform:uppercase;
     }
 
@@ -341,7 +383,9 @@
 
       text-align:center;
 
-      border:1px solid rgba(214,185,140,.25) !important;
+      border:
+        1px solid rgba(214,185,140,.25) !important;
+
       border-radius:999px;
 
       color:var(--accent) !important;
@@ -358,13 +402,28 @@
 
 
     /*
-      IMPORTANT:
+      THE HERO IS NOW A TRUE 50/50 SPLIT.
 
-      The .container controls the equal
-      left and right spacing.
+      The .container creates the exact same
+      outer margin on both sides.
 
-      The hero itself therefore does NOT
-      have a max-width or margin:auto.
+      The hero fills that container completely.
+
+      Therefore:
+
+      EDGE
+      ↓
+      equal margin
+      ↓
+      LEFT COLUMN
+      ↓
+      50px gap
+      ↓
+      RIGHT COLUMN
+      ↓
+      equal margin
+      ↓
+      EDGE
     */
 
     .hero{
@@ -374,32 +433,42 @@
         minmax(0,1fr)
         minmax(0,1fr);
 
-      gap:50px;
+      column-gap:50px;
 
       align-items:center;
 
       width:100%;
-    }
-
-
-    .hero-copy{
-      width:100%;
-      max-width:540px;
-
-      /*
-        No auto-centering here.
-
-        This means the left edge of the
-        text begins exactly where the
-        container begins.
-      */
 
       margin:0;
     }
 
 
+    /*
+      IMPORTANT:
+      No max-width here.
+
+      The text column now occupies the entire
+      left half of the hero.
+    */
+
+    .hero-copy{
+      width:100%;
+
+      max-width:none;
+
+      margin:0;
+
+      padding:0;
+    }
+
+
+    /*
+      Main Revered Fitness logo increased
+      from 180px to 205px.
+    */
+
     .hero-logo{
-      width:180px;
+      width:205px;
 
       margin:
         0 0 24px 15px;
@@ -433,9 +502,11 @@
       font-weight:800;
 
       letter-spacing:1.8px;
+
       text-transform:uppercase;
 
-      background:rgba(255,255,255,.02);
+      background:
+        rgba(255,255,255,.02);
     }
 
 
@@ -564,14 +635,28 @@
     .hero-visual{
       position:relative;
 
+      width:100%;
+
       min-width:0;
 
-      width:100%;
+      margin:0;
+
+      padding:0;
     }
 
 
+    /*
+      The image frame fills the entire
+      right-hand column.
+
+      This means its right edge lines up
+      with the container's right edge.
+    */
+
     .hero-frame{
       position:relative;
+
+      width:100%;
 
       min-height:620px;
 
@@ -636,11 +721,6 @@
 
       object-position:center;
 
-      /*
-        No airbrushing or artificial
-        image enhancement.
-      */
-
       filter:
         drop-shadow(
           0 25px 45px rgba(0,0,0,.3)
@@ -649,7 +729,7 @@
 
 
     /* =========================
-       OVERVIEW CARDS
+       OVERVIEW
     ========================= */
 
     .overview{
@@ -768,17 +848,13 @@
     @media (max-width:1000px){
 
       .hero{
-        gap:35px;
-      }
-
-
-      .hero-copy{
-        max-width:500px;
+        column-gap:35px;
       }
 
 
       .hero-logo{
-        width:170px;
+        width:190px;
+
         margin-left:10px;
       }
 
@@ -864,6 +940,8 @@
 
 
       .hero-copy{
+        width:100%;
+
         max-width:600px;
 
         margin:0 auto;
@@ -871,7 +949,7 @@
 
 
       .hero-logo{
-        width:180px;
+        width:190px;
 
         margin:
           0 auto 24px;
@@ -937,7 +1015,7 @@
 
 
       .hero-logo{
-        width:165px;
+        width:175px;
       }
 
 
@@ -1021,8 +1099,6 @@
         </a>
 
 
-        <!-- Mobile menu button -->
-
         <button
           class="menu-toggle"
           id="menuToggle"
@@ -1037,8 +1113,6 @@
 
         </button>
 
-
-        <!-- Desktop navigation -->
 
         <nav
           class="nav-links desktop-nav"
@@ -1080,8 +1154,6 @@
 
       </div>
 
-
-      <!-- Mobile navigation -->
 
       <div
         class="mobile-nav"
@@ -1148,7 +1220,6 @@
 
         <div class="hero-copy">
 
-
           <img
             src="https://reveredfitness.co.uk/logo.png"
             alt="Revered Fitness Logo"
@@ -1186,7 +1257,6 @@
               Start Your Journey
             </a>
 
-
             <a
               href="about.html#contact"
               class="btn-secondary"
@@ -1208,7 +1278,6 @@
             </span>
 
           </div>
-
 
         </div>
 
