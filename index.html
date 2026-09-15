@@ -14,6 +14,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
@@ -58,6 +59,11 @@
       --container:1240px;
     }
 
+
+    /* =========================
+       RESET
+    ========================= */
+
     *{
       box-sizing:border-box;
     }
@@ -98,6 +104,11 @@
       max-width:100%;
     }
 
+
+    /* =========================
+       CONTAINER
+    ========================= */
+
     .container{
       width:min(
         var(--container),
@@ -129,6 +140,9 @@
 
       gap:30px;
     }
+
+
+    /* BRAND */
 
     .brand{
       display:flex;
@@ -191,7 +205,9 @@
     }
 
 
-    /* DESKTOP NAV */
+    /* =========================
+       DESKTOP NAV
+    ========================= */
 
     .nav-links{
       display:flex;
@@ -247,6 +263,9 @@
     .nav-links a.active::after{
       width:100%;
     }
+
+
+    /* NAV CTA */
 
     .nav-cta{
       display:inline-flex;
@@ -380,7 +399,14 @@
     ========================= */
 
     header{
-      padding:15px 0 90px;
+      /*
+         15px top keeps the hero raised.
+
+         Bottom reduced from 90px
+         to 35px so the lower section
+         sits closer to the hero.
+      */
+      padding:15px 0 35px;
     }
 
     header > .container{
@@ -413,7 +439,6 @@
 
     /* =========================
        HERO LEFT SIDE
-       EVERYTHING CENTRED
     ========================= */
 
     .hero-copy{
@@ -527,14 +552,16 @@
     }
 
 
-    /* HERO BUTTONS */
+    /* =========================
+       HERO BUTTONS
+    ========================= */
 
     .hero-actions{
       display:flex;
 
       justify-content:center;
 
-      gap:14px;
+      gap:28px;
 
       flex-wrap:wrap;
 
@@ -719,7 +746,7 @@
 
 
     /* =========================
-       OVERVIEW
+       LOWER OVERVIEW SECTION
     ========================= */
 
     .overview{
@@ -924,8 +951,12 @@
     @media (max-width:760px){
 
       header{
+        /*
+           Reduced bottom spacing
+           on mobile too.
+        */
         padding:
-          15px 0 75px;
+          15px 0 35px;
       }
 
       header > .container{
@@ -974,7 +1005,12 @@
           0 auto 30px;
       }
 
-      .hero-actions,
+      .hero-actions{
+        justify-content:center;
+
+        gap:18px;
+      }
+
       .hero-meta{
         justify-content:center;
       }
@@ -1006,7 +1042,7 @@
 
       header{
         padding:
-          15px 0 70px;
+          15px 0 30px;
       }
 
       header > .container{
@@ -1047,6 +1083,12 @@
         width:100%;
       }
 
+      .hero-actions{
+        width:100%;
+
+        gap:14px;
+      }
+
       .hero-meta{
         flex-direction:column;
 
@@ -1060,6 +1102,7 @@
   </style>
 </head>
 
+
 <body>
 
 
@@ -1072,6 +1115,9 @@
     <div class="container">
 
       <div class="topbar-inner">
+
+
+        <!-- BRAND -->
 
         <a
           href="index.html"
@@ -1098,6 +1144,8 @@
         </a>
 
 
+        <!-- MOBILE MENU BUTTON -->
+
         <button
           class="menu-toggle"
           id="menuToggle"
@@ -1113,12 +1161,17 @@
         </button>
 
 
+        <!-- DESKTOP NAV -->
+
         <nav
           class="nav-links desktop-nav"
           aria-label="Primary navigation"
         >
 
-          <a href="index.html" class="active">
+          <a
+            href="index.html"
+            class="active"
+          >
             Home
           </a>
 
@@ -1141,6 +1194,8 @@
         </nav>
 
 
+        <!-- DESKTOP CTA -->
+
         <a
           href="about.html#contact"
           class="nav-cta desktop-cta"
@@ -1148,8 +1203,11 @@
           Book Consultation
         </a>
 
+
       </div>
 
+
+      <!-- MOBILE NAV -->
 
       <div
         class="mobile-nav"
@@ -1161,7 +1219,10 @@
           aria-label="Mobile navigation"
         >
 
-          <a href="index.html" class="active">
+          <a
+            href="index.html"
+            class="active"
+          >
             Home
           </a>
 
@@ -1213,6 +1274,8 @@
         <div class="hero-copy">
 
 
+          <!-- LOGO -->
+
           <img
             src="https://reveredfitness.co.uk/logo.png"
             alt="Revered Fitness Logo"
@@ -1220,16 +1283,22 @@
           >
 
 
+          <!-- COACHING LABEL -->
+
           <div class="eyebrow">
             Online &amp; In-Person Coaching
           </div>
 
+
+          <!-- TITLE -->
 
           <h1>
             Revered<br>
             Fitness
           </h1>
 
+
+          <!-- DESCRIPTION -->
 
           <p class="subline">
             Build a stronger body, a sharper mindset,
@@ -1238,6 +1307,8 @@
             premium training experience.
           </p>
 
+
+          <!-- BUTTONS -->
 
           <div class="hero-actions">
 
@@ -1258,6 +1329,8 @@
           </div>
 
 
+          <!-- META -->
+
           <div class="hero-meta">
 
             <span>
@@ -1270,10 +1343,13 @@
 
           </div>
 
+
         </div>
 
 
-        <!-- HERO IMAGE -->
+        <!-- =========================
+             HERO IMAGE
+        ========================== -->
 
         <div class="hero-visual">
 
@@ -1308,6 +1384,8 @@
       <div class="overview-grid">
 
 
+        <!-- CARD 1 -->
+
         <div class="card">
 
           <span class="card-label">
@@ -1330,6 +1408,8 @@
         </div>
 
 
+        <!-- CARD 2 -->
+
         <div class="card">
 
           <span class="card-label">
@@ -1350,6 +1430,8 @@
 
         </div>
 
+
+        <!-- CARD 3 -->
 
         <div class="card">
 
@@ -1395,20 +1477,29 @@
   <script>
 
     const menuToggle =
-      document.getElementById("menuToggle");
+      document.getElementById(
+        "menuToggle"
+      );
 
     const mobileNav =
-      document.getElementById("mobileNav");
+      document.getElementById(
+        "mobileNav"
+      );
 
 
-    if(menuToggle && mobileNav){
+    if(
+      menuToggle &&
+      mobileNav
+    ){
 
       menuToggle.addEventListener(
         "click",
         function(){
 
           const isOpen =
-            mobileNav.classList.toggle("open");
+            mobileNav.classList.toggle(
+              "open"
+            );
 
           menuToggle.classList.toggle(
             "active",
@@ -1417,7 +1508,9 @@
 
           menuToggle.setAttribute(
             "aria-expanded",
-            isOpen ? "true" : "false"
+            isOpen
+              ? "true"
+              : "false"
           );
 
         }
@@ -1425,7 +1518,9 @@
 
 
       const mobileLinks =
-        mobileNav.querySelectorAll("a");
+        mobileNav.querySelectorAll(
+          "a"
+        );
 
 
       mobileLinks.forEach(
@@ -1435,9 +1530,13 @@
             "click",
             function(){
 
-              mobileNav.classList.remove("open");
+              mobileNav.classList.remove(
+                "open"
+              );
 
-              menuToggle.classList.remove("active");
+              menuToggle.classList.remove(
+                "active"
+              );
 
               menuToggle.setAttribute(
                 "aria-expanded",
