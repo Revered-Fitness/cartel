@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VRX9C1CB33"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VRX9C1CB33');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Revered Fitness</title>
 
-  <meta name="description" content="Revered Fitness - Strength, Discipline & Respect. Premium online and in-person coaching.">
-  <link rel="icon" type="image/png" href="logo.png">
-
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
+
     :root{
       --bg:#0a0a0a;
       --bg-soft:#111111;
       --panel:rgba(255,255,255,0.03);
+
       --text:#f4efe8;
       --muted:#c9c1b5;
       --soft:#9f9689;
+
       --line:rgba(255,255,255,0.08);
       --line-strong:rgba(214,185,140,0.16);
+
       --accent:#d6b98c;
+
       --primary:#b11510;
       --primary-hover:#d32017;
+
       --shadow:0 20px 50px rgba(0,0,0,0.24);
+
       --radius:28px;
       --container:1240px;
     }
@@ -49,9 +46,19 @@
       margin:0;
       font-family:'Manrope', sans-serif;
       color:var(--text);
+
       background:
-        radial-gradient(circle at top center, rgba(177,21,16,0.10), transparent 24%),
-        linear-gradient(180deg, #0a0a0a 0%, #060606 100%);
+        radial-gradient(
+          circle at top center,
+          rgba(177,21,16,0.10),
+          transparent 24%
+        ),
+        linear-gradient(
+          180deg,
+          #0a0a0a 0%,
+          #060606 100%
+        );
+
       overflow-x:hidden;
     }
 
@@ -66,244 +73,442 @@
     }
 
     .container{
-      width:min(var(--container), calc(100% - 32px));
+      width:min(
+        var(--container),
+        calc(100% - 32px)
+      );
+
       margin:0 auto;
     }
+
+
+    /* ==================================================
+       TOP NAVIGATION
+    ================================================== */
 
     .topbar{
       position:sticky;
       top:0;
       z-index:1000;
+
       background:rgba(10,10,10,0.88);
+
       backdrop-filter:blur(14px);
       -webkit-backdrop-filter:blur(14px);
+
       border-bottom:1px solid rgba(255,255,255,0.08);
     }
 
     .topbar-inner{
       min-height:64px;
+
       display:grid;
       grid-template-columns:auto 1fr auto;
+
       align-items:center;
+
       gap:24px;
+
       padding:10px 0;
     }
+
+
+    /* Brand */
 
     .brand{
       display:flex;
       align-items:center;
+
       gap:10px;
+
       min-width:0;
     }
 
-    .nav-logo{
-      width:38px;
-      height:38px;
-      object-fit:contain;
-      filter:drop-shadow(0 0 10px rgba(214,185,140,0.18));
+    .brand-mark{
+      width:34px;
+      height:34px;
+
+      border-radius:50%;
+
+      display:grid;
+      place-items:center;
+
+      border:1px solid rgba(214,185,140,0.16);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(177,21,16,0.22),
+          rgba(214,185,140,0.08)
+        );
+
+      color:#fff;
+
+      font-family:'Cormorant Garamond', serif;
+
+      font-size:1rem;
+      font-weight:700;
+
+      flex:0 0 auto;
     }
 
     .brand-text{
       display:flex;
       flex-direction:column;
+
       line-height:1;
     }
 
     .brand-text strong{
       font-size:0.84rem;
+
       font-weight:800;
+
       letter-spacing:1.5px;
     }
 
     .brand-text span{
       margin-top:4px;
+
       font-size:0.62rem;
+
       color:#c9c1b5;
+
       letter-spacing:1px;
+
       text-transform:uppercase;
     }
 
+
+    /* Desktop navigation */
+
     .nav-links{
       display:flex;
+
       justify-content:center;
       align-items:center;
+
       gap:12px;
+
       flex-wrap:wrap;
     }
 
     .nav-links a{
       padding:8px 12px;
+
       border-radius:999px;
+
       font-size:0.82rem;
+
       font-weight:700;
+
       color:#d7cec2;
+
       border:1px solid transparent;
-      transition:background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+
+      transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
     }
 
     .nav-links a:hover,
     .nav-links a.active{
       background:rgba(255,255,255,0.03);
+
       border-color:rgba(255,255,255,0.08);
+
       color:#fff;
     }
 
+
+    /* Consultation button */
+
     .nav-cta{
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
+
       min-width:150px;
+
       padding:11px 16px;
+
       border-radius:999px;
+
       background:#f3ede5;
+
       color:#111;
+
       font-size:0.82rem;
+
       font-weight:800;
-      transition:transform 0.25s ease, opacity 0.25s ease;
+
+      transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
     }
 
     .nav-cta:hover{
       transform:translateY(-1px);
+
       opacity:0.94;
     }
 
+
+    /* ==================================================
+       MOBILE MENU
+    ================================================== */
+
     .menu-toggle{
       display:none;
+
       width:46px;
       height:46px;
+
       margin-left:auto;
+
       border:none;
+
       border-radius:50%;
+
       background:rgba(255,255,255,0.04);
+
       border:1px solid rgba(255,255,255,0.08);
+
       align-items:center;
       justify-content:center;
+
       flex-direction:column;
+
       gap:5px;
+
       cursor:pointer;
     }
 
     .menu-toggle span{
       width:18px;
       height:2px;
+
       border-radius:999px;
+
       background:#fff;
+
       transition:0.25s ease;
     }
 
     .mobile-nav{
       display:none;
+
       padding:0 0 14px;
     }
 
     .mobile-nav-links{
       display:grid;
+
       gap:10px;
+
       padding-top:8px;
     }
 
     .mobile-nav-links a{
       display:flex;
+
       align-items:center;
       justify-content:center;
+
       min-height:48px;
+
       border-radius:16px;
+
       background:rgba(255,255,255,0.03);
+
       border:1px solid rgba(255,255,255,0.08);
+
       color:#f4efe8;
+
       font-size:0.92rem;
+
       font-weight:700;
     }
 
     .mobile-nav-links a.active{
       border-color:rgba(214,185,140,0.18);
+
       color:#fff;
     }
 
     .mobile-nav-cta{
-      background:linear-gradient(135deg, #b11510, #d32017) !important;
+      background:
+        linear-gradient(
+          135deg,
+          #b11510,
+          #d32017
+        ) !important;
+
       border-color:transparent !important;
+
       color:#fff !important;
     }
 
+
+    /* ==================================================
+       HERO
+    ================================================== */
+
     header{
-      padding:40px 0 88px;
+      padding:50px 0 90px;
     }
 
     .hero{
+
       display:grid;
-      grid-template-columns:minmax(0, 0.88fr) minmax(0, 1.12fr);
-      gap:56px;
+
+      /*
+        TEXT LEFT
+        IMAGE RIGHT
+      */
+
+      grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+
+      gap:45px;
+
       align-items:center;
+
+      max-width:1200px;
+
+      margin:0 auto;
     }
 
+
+    /* Hero text */
+
     .hero-copy{
-      max-width:520px;
-      margin-left:auto;
-      margin-right:20px;
+      max-width:540px;
     }
 
     .hero-logo{
-      width:min(180px, 42vw);
+      width:150px;
+
       margin:0 0 24px;
+
       object-fit:contain;
+
       mix-blend-mode:screen;
-      filter:drop-shadow(0 0 16px rgba(0,0,0,0.22));
+
+      filter:
+        drop-shadow(
+          0 0 16px rgba(0,0,0,0.22)
+        );
     }
 
     .eyebrow{
+
       display:inline-block;
+
       margin-bottom:18px;
+
       padding:8px 14px;
+
       border-radius:999px;
+
       border:1px solid var(--line-strong);
+
       color:var(--accent);
+
       font-size:0.74rem;
+
       font-weight:800;
+
       letter-spacing:1.8px;
+
       text-transform:uppercase;
+
       background:rgba(255,255,255,0.02);
     }
 
     h1{
-      margin:0 0 18px;
-      font-family:'Cormorant Garamond', serif;
-      font-size:clamp(3.4rem, 7vw, 6.2rem);
-      line-height:0.88;
+
+      margin:0 0 20px;
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        clamp(
+          4rem,
+          6vw,
+          6rem
+        );
+
+      line-height:0.86;
+
       font-weight:700;
-      letter-spacing:0.2px;
     }
 
     .subline{
+
       margin:0 0 30px;
+
+      max-width:500px;
+
       color:#d7cec3;
+
       font-size:1rem;
-      line-height:1.95;
+
+      line-height:1.9;
     }
 
+
+    /* Hero buttons */
+
     .hero-actions{
+
       display:flex;
+
       gap:14px;
+
       flex-wrap:wrap;
+
       margin-bottom:26px;
     }
 
     .btn-primary,
     .btn-secondary{
+
       display:inline-flex;
+
       align-items:center;
+
       justify-content:center;
-      min-width:190px;
-      padding:16px 22px;
+
+      min-width:175px;
+
+      padding:15px 22px;
+
       border-radius:999px;
-      font-size:0.95rem;
+
+      font-size:0.92rem;
+
       font-weight:800;
-      transition:transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
     }
 
     .btn-primary{
-      background:linear-gradient(135deg, var(--primary), var(--primary-hover));
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-hover)
+        );
+
       color:#fff;
+
+      transition:
+        transform 0.25s ease;
     }
 
     .btn-primary:hover{
@@ -311,105 +516,215 @@
     }
 
     .btn-secondary{
+
       border:1px solid var(--line);
+
       background:transparent;
+
       color:#f4efe8;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease;
     }
 
     .btn-secondary:hover{
+
       transform:translateY(-1px);
+
       background:rgba(255,255,255,0.03);
     }
 
+
+    /* Hero information */
+
     .hero-meta{
+
       display:flex;
+
       flex-wrap:wrap;
+
       gap:18px;
+
       color:var(--soft);
-      font-size:0.78rem;
+
+      font-size:0.75rem;
+
       font-weight:700;
+
       letter-spacing:1.4px;
+
       text-transform:uppercase;
     }
 
+
+    /* ==================================================
+       HERO IMAGE
+    ================================================== */
+
     .hero-visual{
+
       position:relative;
+
+      min-width:0;
     }
 
     .hero-frame{
+
       position:relative;
-      min-height:680px;
-      padding:28px;
-      border-radius:36px;
+
+      min-height:620px;
+
+      padding:20px;
+
+      border-radius:32px;
+
       border:1px solid var(--line);
+
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),
+
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(177,21,16,0.10),
+          transparent 55%
+        ),
+
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.025),
+          rgba(255,255,255,0.01)
+        ),
+
         #101010;
+
       box-shadow:var(--shadow);
+
       display:flex;
+
       align-items:center;
+
       justify-content:center;
+
       overflow:hidden;
     }
 
     .hero-frame::before{
+
       content:"";
+
       position:absolute;
+
       inset:18px;
-      border:1px solid rgba(214,185,140,0.08);
-      border-radius:26px;
+
+      border:
+        1px solid
+        rgba(214,185,140,0.08);
+
+      border-radius:24px;
+
       pointer-events:none;
     }
 
     .hero-img{
+
       position:relative;
+
       z-index:1;
+
       width:100%;
+
       height:100%;
-      max-height:620px;
+
+      max-height:600px;
+
       object-fit:contain;
+
       object-position:center;
-      filter:drop-shadow(0 26px 48px rgba(0,0,0,0.25));
+
+      filter:
+        drop-shadow(
+          0 25px 45px rgba(0,0,0,0.3)
+        );
     }
+
+
+    /* ==================================================
+       OVERVIEW
+    ================================================== */
 
     .overview{
       padding:0 0 92px;
     }
 
     .overview-grid{
+
       display:grid;
-      grid-template-columns:1.2fr 0.9fr 0.9fr;
+
+      grid-template-columns:
+        1.2fr
+        0.9fr
+        0.9fr;
+
       gap:18px;
     }
 
     .card{
+
       padding:32px 28px;
+
       border-radius:var(--radius);
+
       border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
+
+      background:
+
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,0.025),
+          rgba(255,255,255,0.01)
+        );
+
       box-shadow:var(--shadow);
     }
 
     .card-label{
+
       display:inline-block;
+
       margin-bottom:14px;
+
       color:var(--accent);
+
       font-size:0.74rem;
+
       font-weight:800;
+
       letter-spacing:2px;
+
       text-transform:uppercase;
     }
 
     .card h2,
     .card h3{
+
       margin:0 0 12px;
-      font-family:'Cormorant Garamond', serif;
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
       font-weight:700;
+
       line-height:0.95;
     }
 
     .card h2{
-      font-size:clamp(2.1rem, 3.5vw, 3.5rem);
+      font-size:
+        clamp(
+          2.1rem,
+          3.5vw,
+          3.5rem
+        );
     }
 
     .card h3{
@@ -417,43 +732,81 @@
     }
 
     .card p{
+
       margin:0;
+
       color:#d0c6ba;
+
       font-size:0.96rem;
+
       line-height:1.9;
     }
 
+
+    /* ==================================================
+       FOOTER
+    ================================================== */
+
     footer{
+
       padding:24px 16px 36px;
+
       color:#bfb5a7;
+
       text-align:center;
-      border-top:1px solid rgba(255,255,255,0.06);
+
+      border-top:
+        1px solid
+        rgba(255,255,255,0.06);
+
       font-size:0.92rem;
     }
 
-    @media (max-width: 1120px){
+
+    /* ==================================================
+       TABLET
+    ================================================== */
+
+    @media (max-width:1000px){
+
       .hero{
-        grid-template-columns:1fr;
-        gap:32px;
-      }
 
-      .hero-copy{
-        max-width:none;
-        margin:0;
-      }
+        grid-template-columns:
+          minmax(0, 0.95fr)
+          minmax(0, 1.05fr);
 
-      .overview-grid{
-        grid-template-columns:1fr;
+        gap:28px;
       }
 
       .hero-frame{
-        min-height:560px;
+        min-height:520px;
       }
+
+      h1{
+
+        font-size:
+          clamp(
+            3.5rem,
+            7vw,
+            5rem
+          );
+      }
+
     }
 
-    @media (max-width: 900px){
+
+    /* ==================================================
+       MOBILE
+    ================================================== */
+
+    @media (max-width:900px){
+
       .topbar-inner{
-        grid-template-columns:auto auto;
+
+        grid-template-columns:
+          auto
+          auto;
+
         gap:16px;
       }
 
@@ -470,248 +823,597 @@
         display:block;
       }
 
-      .menu-toggle.active span:nth-child(1){
-        transform:translateY(7px) rotate(45deg);
+      .menu-toggle.active
+      span:nth-child(1){
+
+        transform:
+          translateY(7px)
+          rotate(45deg);
       }
 
-      .menu-toggle.active span:nth-child(2){
+      .menu-toggle.active
+      span:nth-child(2){
+
         opacity:0;
       }
 
-      .menu-toggle.active span:nth-child(3){
-        transform:translateY(-7px) rotate(-45deg);
+      .menu-toggle.active
+      span:nth-child(3){
+
+        transform:
+          translateY(-7px)
+          rotate(-45deg);
       }
 
-      .hero-copy{
+    }
+
+
+    /* ==================================================
+       SMALLER MOBILE
+    ================================================== */
+
+    @media (max-width:760px){
+
+      .hero{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
         text-align:center;
       }
 
+      .hero-copy{
+
+        max-width:600px;
+
+        margin:0 auto;
+      }
+
       .hero-logo{
-        margin:0 auto 24px;
+
+        margin-left:auto;
+
+        margin-right:auto;
       }
 
       .eyebrow{
+
         margin-left:auto;
+
+        margin-right:auto;
+      }
+
+      .subline{
+
+        margin-left:auto;
+
         margin-right:auto;
       }
 
       .hero-actions,
       .hero-meta{
+
         justify-content:center;
       }
+
+      .hero-frame{
+
+        min-height:480px;
+      }
+
+      .overview-grid{
+
+        grid-template-columns:1fr;
+      }
+
     }
 
-    @media (max-width: 640px){
+
+    /* ==================================================
+       SMALL MOBILE
+    ================================================== */
+
+    @media (max-width:480px){
+
       .container{
-        width:min(var(--container), calc(100% - 20px));
+
+        width:
+          min(
+            var(--container),
+            calc(100% - 20px)
+          );
       }
 
       header{
-        padding:26px 0 72px;
-      }
 
-      .overview{
-        padding-bottom:72px;
+        padding:
+          30px
+          0
+          70px;
       }
 
       h1{
-        font-size:clamp(2.8rem, 14vw, 4.6rem);
+
+        font-size:3.5rem;
       }
 
-      .hero-logo{
-        width:min(140px, 50vw);
+      .hero-frame{
+
+        min-height:400px;
+
+        padding:14px;
+
+        border-radius:24px;
       }
 
-      .hero-actions{
-        flex-direction:column;
+      .hero-frame::before{
+
+        inset:12px;
+
+        border-radius:18px;
+      }
+
+      .hero-img{
+
+        max-height:380px;
       }
 
       .btn-primary,
       .btn-secondary{
+
         width:100%;
       }
 
       .hero-meta{
-        gap:10px;
+
         flex-direction:column;
+
         align-items:center;
+
+        gap:10px;
       }
 
-      .hero-frame{
-        min-height:420px;
-        padding:18px;
-        border-radius:24px;
-      }
-
-      .mobile-nav-links a{
-        min-height:46px;
-      }
     }
+
   </style>
 </head>
 
+
 <body>
 
+
+  <!-- ==================================================
+       TOP NAVIGATION
+  ================================================== -->
+
   <div class="topbar">
+
     <div class="container">
+
       <div class="topbar-inner">
 
-        <a href="index.html" class="brand" aria-label="Revered Fitness home">
-          <img src="logo.png" alt="Revered Fitness Logo" class="nav-logo">
-          <div class="brand-text">
-            <strong>REVERED FITNESS</strong>
-            <span>Strength • Discipline • Respect</span>
+
+        <!-- Brand -->
+
+        <a
+          href="index.html"
+          class="brand"
+          aria-label="Revered Fitness home"
+        >
+
+          <div class="brand-mark">
+            R
           </div>
+
+          <div class="brand-text">
+
+            <strong>
+              REVERED FITNESS
+            </strong>
+
+            <span>
+              Strength • Discipline • Respect
+            </span>
+
+          </div>
+
         </a>
 
-        <button class="menu-toggle" id="menuToggle">
+
+        <!-- Mobile menu button -->
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+        >
+
           <span></span>
           <span></span>
           <span></span>
+
         </button>
 
-        <nav class="nav-links desktop-nav">
-          <a href="index.html" class="active">Home</a>
-          <a href="services.html">Services</a>
-          <a href="transformation.html">Transformation</a>
-          <a href="events.html">Events</a>
-          <a href="clothing.html">Clothing</a>
-          <a href="about.html">About</a>
+
+        <!-- Desktop Navigation -->
+
+        <nav
+          class="nav-links desktop-nav"
+          aria-label="Primary navigation"
+        >
+
+          <a
+            href="index.html"
+            class="active"
+          >
+            Home
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="events.html">
+            Events
+          </a>
+
+          <a href="clothing.html">
+            Clothing
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
         </nav>
 
-        <a href="about.html#contact" class="nav-cta desktop-cta">
+
+        <!-- Consultation -->
+
+        <a
+          href="about.html#contact"
+          class="nav-cta desktop-cta"
+        >
           Book Consultation
         </a>
 
       </div>
 
-      <div class="mobile-nav" id="mobileNav">
-        <nav class="mobile-nav-links">
-          <a href="index.html" class="active">Home</a>
-          <a href="services.html">Services</a>
-          <a href="transformation.html">Transformation</a>
-          <a href="events.html">Events</a>
-          <a href="clothing.html">Clothing</a>
-          <a href="about.html">About</a>
-          <a href="about.html#contact" class="mobile-nav-cta">
+
+      <!-- Mobile Navigation -->
+
+      <div
+        class="mobile-nav"
+        id="mobileNav"
+      >
+
+        <nav
+          class="mobile-nav-links"
+          aria-label="Mobile navigation"
+        >
+
+          <a
+            href="index.html"
+            class="active"
+          >
+            Home
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="events.html">
+            Events
+          </a>
+
+          <a href="clothing.html">
+            Clothing
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a
+            href="about.html#contact"
+            class="mobile-nav-cta"
+          >
             Book Consultation
           </a>
+
         </nav>
+
       </div>
 
     </div>
+
   </div>
 
+
+
+  <!-- ==================================================
+       HERO
+  ================================================== -->
+
   <header>
+
     <div class="container">
+
       <div class="hero">
+
+
+        <!-- LEFT: HERO TEXT -->
 
         <div class="hero-copy">
 
-          <img src="logo.png" alt="Revered Fitness Logo" class="hero-logo">
+
+          <img
+            src="logo.png"
+            alt="Revered Fitness Logo"
+            class="hero-logo"
+          >
+
 
           <div class="eyebrow">
-            Online & In-Person Coaching
+            Online &amp; In-Person Coaching
           </div>
+
 
           <h1>
             Revered<br>
             Fitness
           </h1>
 
+
           <p class="subline">
-            Build a stronger body, a sharper mindset, and real confidence through disciplined coaching, structured progression, and a premium training experience.
+
+            Build a stronger body, a sharper mindset,
+            and real confidence through disciplined
+            coaching, structured progression, and a
+            premium training experience.
+
           </p>
 
+
           <div class="hero-actions">
-            <a href="services.html" class="btn-primary">
+
+            <a
+              href="services.html"
+              class="btn-primary"
+            >
               Start Your Journey
             </a>
 
-            <a href="about.html#contact" class="btn-secondary">
+            <a
+              href="about.html#contact"
+              class="btn-secondary"
+            >
               Contact Me
             </a>
+
           </div>
+
 
           <div class="hero-meta">
-            <span>Elite Coaching</span>
-            <span>Body Transformation</span>
-            <span>Online + In Person</span>
+
+            <span>
+              Elite Coaching
+            </span>
+
+            <span>
+              Online + In Person
+            </span>
+
           </div>
 
+
         </div>
+
+
+        <!-- RIGHT: HERO IMAGE -->
 
         <div class="hero-visual">
+
           <div class="hero-frame">
-            <img src="hero.jpg" class="hero-img" alt="Revered Fitness Training">
+
+            <img
+              src="hero.jpg"
+              class="hero-img"
+              alt="Revered Fitness Training"
+            >
+
           </div>
+
         </div>
 
+
       </div>
+
     </div>
+
   </header>
 
+
+
+  <!-- ==================================================
+       OVERVIEW
+  ================================================== -->
+
   <section class="overview">
+
     <div class="container">
 
       <div class="overview-grid">
 
+
+        <!-- Card 1 -->
+
         <div class="card">
-          <span class="card-label">Revered Fitness</span>
+
+          <span class="card-label">
+            Revered Fitness
+          </span>
 
           <h2>
-            A coaching brand built on discipline, respect, and high standards.
+            A coaching brand built on discipline, respect, and real standards.
           </h2>
 
           <p>
-            Revered Fitness is more than training sessions. It is a focused coaching experience designed to help people build strength, improve confidence, and develop the mindset needed for lasting progress.
+
+            Revered Fitness is more than training sessions.
+            It is a focused coaching experience designed to
+            help people build strength, improve confidence,
+            and develop the mindset needed for lasting progress.
+
           </p>
+
         </div>
 
+
+        <!-- Card 2 -->
+
         <div class="card">
-          <span class="card-label">Our Approach</span>
+
+          <span class="card-label">
+            Our Approach
+          </span>
 
           <h3>
-            Structured coaching that creates real results.
+            Structured coaching that creates results.
           </h3>
 
           <p>
-            Every client journey is built around accountability, consistency, and progression, with support that feels personal, professional, and tailored.
+
+            At Revered Fitness, every client journey is built
+            around accountability, consistency, and clear
+            progression, with support that feels personal,
+            professional, and tailored to the individual.
+
           </p>
+
         </div>
 
+
+        <!-- Card 3 -->
+
         <div class="card">
-          <span class="card-label">The Standard</span>
+
+          <span class="card-label">
+            The Standard
+          </span>
 
           <h3>
             Strength with purpose.
           </h3>
 
           <p>
-            Revered Fitness stands for high standards in training, discipline in mindset, and respect for the process.
+
+            Revered Fitness stands for high standards in
+            training, discipline in mindset, and respect
+            for the process, helping clients become stronger
+            physically and mentally through genuine commitment.
+
           </p>
+
         </div>
+
 
       </div>
 
     </div>
+
   </section>
 
+
+
+  <!-- ==================================================
+       FOOTER
+  ================================================== -->
+
   <footer>
+
     © 2026 Revered Fitness
+
   </footer>
 
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileNav = document.getElementById("mobileNav");
 
-    if (menuToggle && mobileNav) {
-      menuToggle.addEventListener("click", function () {
-        const isOpen = mobileNav.classList.toggle("open");
-        menuToggle.classList.toggle("active", isOpen);
+
+  <!-- ==================================================
+       MOBILE MENU SCRIPT
+  ================================================== -->
+
+  <script>
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const mobileNav =
+      document.getElementById("mobileNav");
+
+
+    if(menuToggle && mobileNav){
+
+      menuToggle.addEventListener(
+        "click",
+        function(){
+
+          const isOpen =
+            mobileNav.classList.toggle("open");
+
+
+          menuToggle.classList.toggle(
+            "active",
+            isOpen
+          );
+
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+          );
+
+        }
+      );
+
+
+      /* Close menu after selecting a link */
+
+      const mobileLinks =
+        mobileNav.querySelectorAll("a");
+
+
+      mobileLinks.forEach(function(link){
+
+        link.addEventListener(
+          "click",
+          function(){
+
+            mobileNav.classList.remove(
+              "open"
+            );
+
+            menuToggle.classList.remove(
+              "active"
+            );
+
+            menuToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+        );
+
       });
+
     }
+
   </script>
+
 
 </body>
 </html>
