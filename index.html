@@ -14,41 +14,30 @@
       --bg:#0a0a0a;
       --bg-soft:#111111;
       --panel:rgba(255,255,255,0.03);
-
       --text:#f4efe8;
       --muted:#c9c1b5;
       --soft:#9f9689;
-
       --line:rgba(255,255,255,0.08);
       --line-strong:rgba(214,185,140,0.16);
-
       --accent:#d6b98c;
-
       --primary:#b11510;
       --primary-hover:#d32017;
-
       --shadow:0 20px 50px rgba(0,0,0,0.24);
-
       --radius:28px;
       --container:1240px;
     }
-
 
     *{
       box-sizing:border-box;
     }
 
-
     html{
       scroll-behavior:smooth;
     }
 
-
     body{
       margin:0;
-
       font-family:'Manrope',sans-serif;
-
       color:var(--text);
 
       background:
@@ -66,28 +55,23 @@
       overflow-x:hidden;
     }
 
-
     a{
       color:inherit;
       text-decoration:none;
     }
-
 
     img{
       display:block;
       max-width:100%;
     }
 
-
     .container{
       width:min(
         var(--container),
         calc(100% - 32px)
       );
-
       margin:0 auto;
     }
-
 
 
     /* =========================
@@ -96,9 +80,7 @@
 
     .topbar{
       position:sticky;
-
       top:0;
-
       z-index:1000;
 
       background:rgba(10,10,10,0.88);
@@ -109,7 +91,6 @@
       border-bottom:
         1px solid rgba(255,255,255,0.08);
     }
-
 
     .topbar-inner{
       min-height:64px;
@@ -128,17 +109,12 @@
       padding:10px 0;
     }
 
-
     .brand{
       display:flex;
-
       align-items:center;
-
       gap:10px;
-
       min-width:0;
     }
-
 
     .brand-mark{
       width:34px;
@@ -147,7 +123,6 @@
       border-radius:50%;
 
       display:grid;
-
       place-items:center;
 
       border:
@@ -167,56 +142,41 @@
         serif;
 
       font-size:1rem;
-
       font-weight:700;
 
       flex:0 0 auto;
     }
 
-
     .brand-text{
       display:flex;
-
       flex-direction:column;
-
       line-height:1;
     }
 
-
     .brand-text strong{
       font-size:0.84rem;
-
       font-weight:800;
-
       letter-spacing:1.5px;
     }
-
 
     .brand-text span{
       margin-top:4px;
 
       font-size:0.62rem;
-
       color:#c9c1b5;
 
       letter-spacing:1px;
-
       text-transform:uppercase;
     }
 
-
     .nav-links{
       display:flex;
-
       justify-content:center;
-
       align-items:center;
 
       gap:12px;
-
       flex-wrap:wrap;
     }
-
 
     .nav-links a{
       padding:8px 12px;
@@ -224,7 +184,6 @@
       border-radius:999px;
 
       font-size:0.82rem;
-
       font-weight:700;
 
       color:#d7cec2;
@@ -238,7 +197,6 @@
         color .25s ease;
     }
 
-
     .nav-links a:hover,
     .nav-links a.active{
       background:
@@ -250,12 +208,9 @@
       color:#fff;
     }
 
-
     .nav-cta{
       display:inline-flex;
-
       align-items:center;
-
       justify-content:center;
 
       min-width:150px;
@@ -265,11 +220,9 @@
       border-radius:999px;
 
       background:#f3ede5;
-
       color:#111;
 
       font-size:0.82rem;
-
       font-weight:800;
 
       transition:
@@ -277,13 +230,10 @@
         opacity .25s ease;
     }
 
-
     .nav-cta:hover{
       transform:translateY(-1px);
-
       opacity:.94;
     }
-
 
 
     /* =========================
@@ -299,7 +249,6 @@
       margin-left:auto;
 
       border:none;
-
       border-radius:50%;
 
       background:
@@ -309,20 +258,16 @@
         1px solid rgba(255,255,255,0.08);
 
       align-items:center;
-
       justify-content:center;
 
       flex-direction:column;
-
       gap:5px;
 
       cursor:pointer;
     }
 
-
     .menu-toggle span{
       width:18px;
-
       height:2px;
 
       border-radius:999px;
@@ -332,28 +277,21 @@
       transition:.25s ease;
     }
 
-
     .mobile-nav{
       display:none;
-
       padding:0 0 14px;
     }
 
-
     .mobile-nav-links{
       display:grid;
-
       gap:10px;
-
       padding-top:8px;
     }
-
 
     .mobile-nav-links a{
       display:flex;
 
       align-items:center;
-
       justify-content:center;
 
       min-height:48px;
@@ -369,10 +307,8 @@
       color:#f4efe8;
 
       font-size:.92rem;
-
       font-weight:700;
     }
-
 
     .mobile-nav-links a.active{
       border-color:
@@ -380,7 +316,6 @@
 
       color:#fff;
     }
-
 
     .mobile-nav-cta{
       background:
@@ -397,7 +332,6 @@
     }
 
 
-
     /* =========================
        HERO
     ========================= */
@@ -406,45 +340,53 @@
       padding:50px 0 90px;
     }
 
-
     .hero{
       display:grid;
 
+      /*
+        Equal balanced columns.
+        The text and image now sit
+        evenly within the available
+        website width.
+      */
       grid-template-columns:
-        minmax(0,.9fr)
-        minmax(0,1.1fr);
+        1fr
+        1fr;
 
-      gap:35px;
+      gap:50px;
 
       align-items:center;
 
-      max-width:1200px;
+      width:100%;
+
+      max-width:1240px;
 
       margin:0 auto;
     }
 
 
-    /*
-      HERO TEXT POSITION
-
-      Increased left margin moves the
-      entire text block further towards
-      the centre of the page.
-    */
+    /* HERO TEXT */
 
     .hero-copy{
+      width:100%;
       max-width:540px;
 
-      margin-left:110px;
-
-      margin-right:0;
+      /*
+        Removes the previous fixed
+        left margin so spacing is
+        naturally balanced.
+      */
+      margin:0 auto;
     }
 
 
-    .hero-logo{
-      width:150px;
+    /* HERO LOGO */
 
-      margin:0 0 24px;
+    .hero-logo{
+      width:180px;
+
+      margin:
+        0 0 24px 15px;
 
       object-fit:contain;
 
@@ -455,7 +397,6 @@
           0 0 16px rgba(0,0,0,.22)
         );
     }
-
 
     .eyebrow{
       display:inline-block;
@@ -472,7 +413,6 @@
       color:var(--accent);
 
       font-size:.74rem;
-
       font-weight:800;
 
       letter-spacing:1.8px;
@@ -482,7 +422,6 @@
       background:
         rgba(255,255,255,.02);
     }
-
 
     h1{
       margin:0 0 20px;
@@ -503,7 +442,6 @@
       font-weight:700;
     }
 
-
     .subline{
       margin:0 0 30px;
 
@@ -516,7 +454,6 @@
       line-height:1.9;
     }
 
-
     .hero-actions{
       display:flex;
 
@@ -527,13 +464,11 @@
       margin-bottom:26px;
     }
 
-
     .btn-primary,
     .btn-secondary{
       display:inline-flex;
 
       align-items:center;
-
       justify-content:center;
 
       min-width:175px;
@@ -543,10 +478,8 @@
       border-radius:999px;
 
       font-size:.92rem;
-
       font-weight:800;
     }
-
 
     .btn-primary{
       background:
@@ -562,11 +495,9 @@
         transform .25s ease;
     }
 
-
     .btn-primary:hover{
       transform:translateY(-1px);
     }
-
 
     .btn-secondary{
       border:
@@ -581,14 +512,12 @@
         background .25s ease;
     }
 
-
     .btn-secondary:hover{
       transform:translateY(-1px);
 
       background:
         rgba(255,255,255,.03);
     }
-
 
     .hero-meta{
       display:flex;
@@ -609,17 +538,16 @@
     }
 
 
-
     /* =========================
        HERO IMAGE
     ========================= */
 
     .hero-visual{
       position:relative;
-
       min-width:0;
-    }
 
+      width:100%;
+    }
 
     .hero-frame{
       position:relative;
@@ -651,12 +579,10 @@
       display:flex;
 
       align-items:center;
-
       justify-content:center;
 
       overflow:hidden;
     }
-
 
     .hero-frame::before{
       content:"";
@@ -673,20 +599,17 @@
       pointer-events:none;
     }
 
-
     .hero-img{
       position:relative;
 
       z-index:1;
 
       width:100%;
-
       height:100%;
 
       max-height:600px;
 
       object-fit:contain;
-
       object-position:center;
 
       filter:
@@ -696,7 +619,6 @@
     }
 
 
-
     /* =========================
        OVERVIEW
     ========================= */
@@ -704,7 +626,6 @@
     .overview{
       padding:0 0 92px;
     }
-
 
     .overview-grid{
       display:grid;
@@ -716,7 +637,6 @@
 
       gap:18px;
     }
-
 
     .card{
       padding:32px 28px;
@@ -736,7 +656,6 @@
       box-shadow:var(--shadow);
     }
 
-
     .card-label{
       display:inline-block;
 
@@ -753,7 +672,6 @@
       text-transform:uppercase;
     }
 
-
     .card h2,
     .card h3{
       margin:0 0 12px;
@@ -767,7 +685,6 @@
       line-height:.95;
     }
 
-
     .card h2{
       font-size:
         clamp(
@@ -777,11 +694,9 @@
         );
     }
 
-
     .card h3{
       font-size:1.8rem;
     }
-
 
     .card p{
       margin:0;
@@ -792,7 +707,6 @@
 
       line-height:1.9;
     }
-
 
 
     /* =========================
@@ -813,7 +727,6 @@
     }
 
 
-
     /* =========================
        TABLET
     ========================= */
@@ -821,23 +734,21 @@
     @media (max-width:1000px){
 
       .hero{
-        grid-template-columns:
-          minmax(0,.95fr)
-          minmax(0,1.05fr);
-
-        gap:28px;
+        gap:35px;
       }
-
 
       .hero-copy{
-        margin-left:55px;
+        max-width:500px;
       }
 
+      .hero-logo{
+        width:170px;
+        margin-left:10px;
+      }
 
       .hero-frame{
         min-height:520px;
       }
-
 
       h1{
         font-size:
@@ -849,7 +760,6 @@
       }
 
     }
-
 
 
     /* =========================
@@ -866,22 +776,18 @@
         gap:16px;
       }
 
-
       .desktop-nav,
       .desktop-cta{
         display:none;
       }
 
-
       .menu-toggle{
         display:flex;
       }
 
-
       .mobile-nav.open{
         display:block;
       }
-
 
       .menu-toggle.active span:nth-child(1){
         transform:
@@ -889,11 +795,9 @@
           rotate(45deg);
       }
 
-
       .menu-toggle.active span:nth-child(2){
         opacity:0;
       }
-
 
       .menu-toggle.active span:nth-child(3){
         transform:
@@ -902,7 +806,6 @@
       }
 
     }
-
 
 
     /* =========================
@@ -919,57 +822,43 @@
         text-align:center;
       }
 
-
-      /*
-        Reset the desktop positioning
-        so the mobile hero stays centred.
-      */
-
       .hero-copy{
         max-width:600px;
 
         margin:0 auto;
       }
 
-
       .hero-logo{
-        margin-left:auto;
+        width:180px;
 
-        margin-right:auto;
+        margin:
+          0 auto 24px;
       }
-
 
       .eyebrow{
         margin-left:auto;
-
         margin-right:auto;
       }
-
 
       .subline{
         margin-left:auto;
-
         margin-right:auto;
       }
-
 
       .hero-actions,
       .hero-meta{
         justify-content:center;
       }
 
-
       .hero-frame{
         min-height:480px;
       }
-
 
       .overview-grid{
         grid-template-columns:1fr;
       }
 
     }
-
 
 
     /* =========================
@@ -986,16 +875,17 @@
           );
       }
 
-
       header{
         padding:30px 0 70px;
       }
-
 
       h1{
         font-size:3.5rem;
       }
 
+      .hero-logo{
+        width:165px;
+      }
 
       .hero-frame{
         min-height:400px;
@@ -1005,24 +895,20 @@
         border-radius:24px;
       }
 
-
       .hero-frame::before{
         inset:12px;
 
         border-radius:18px;
       }
 
-
       .hero-img{
         max-height:380px;
       }
-
 
       .btn-primary,
       .btn-secondary{
         width:100%;
       }
-
 
       .hero-meta{
         flex-direction:column;
@@ -1052,8 +938,6 @@
       <div class="topbar-inner">
 
 
-        <!-- BRAND -->
-
         <a
           href="index.html"
           class="brand"
@@ -1079,9 +963,6 @@
         </a>
 
 
-
-        <!-- MOBILE MENU BUTTON -->
-
         <button
           class="menu-toggle"
           id="menuToggle"
@@ -1096,9 +977,6 @@
 
         </button>
 
-
-
-        <!-- DESKTOP NAVIGATION -->
 
         <nav
           class="nav-links desktop-nav"
@@ -1131,9 +1009,6 @@
         </nav>
 
 
-
-        <!-- DESKTOP CTA -->
-
         <a
           href="about.html#contact"
           class="nav-cta desktop-cta"
@@ -1143,9 +1018,6 @@
 
       </div>
 
-
-
-      <!-- MOBILE NAVIGATION -->
 
       <div
         class="mobile-nav"
@@ -1198,7 +1070,7 @@
 
 
   <!-- =========================
-       HERO SECTION
+       HERO
   ========================= -->
 
   <header>
@@ -1208,12 +1080,7 @@
       <div class="hero">
 
 
-        <!-- HERO COPY -->
-
         <div class="hero-copy">
-
-
-          <!-- LOGO -->
 
           <img
             src="https://reveredfitness.co.uk/logo.png"
@@ -1221,23 +1088,14 @@
             class="hero-logo"
           >
 
-
-          <!-- EYEBROW -->
-
           <div class="eyebrow">
             Online &amp; In-Person Coaching
           </div>
-
-
-          <!-- MAIN TITLE -->
 
           <h1>
             Revered<br>
             Fitness
           </h1>
-
-
-          <!-- DESCRIPTION -->
 
           <p class="subline">
             Build a stronger body, a sharper mindset,
@@ -1245,9 +1103,6 @@
             coaching, structured progression, and a
             premium training experience.
           </p>
-
-
-          <!-- BUTTONS -->
 
           <div class="hero-actions">
 
@@ -1267,9 +1122,6 @@
 
           </div>
 
-
-          <!-- HERO META -->
-
           <div class="hero-meta">
 
             <span>
@@ -1282,12 +1134,9 @@
 
           </div>
 
-
         </div>
 
 
-
-        <!-- HERO IMAGE -->
 
         <div class="hero-visual">
 
@@ -1323,8 +1172,6 @@
       <div class="overview-grid">
 
 
-        <!-- CARD 1 -->
-
         <div class="card">
 
           <span class="card-label">
@@ -1347,9 +1194,6 @@
         </div>
 
 
-
-        <!-- CARD 2 -->
-
         <div class="card">
 
           <span class="card-label">
@@ -1370,9 +1214,6 @@
 
         </div>
 
-
-
-        <!-- CARD 3 -->
 
         <div class="card">
 
@@ -1403,19 +1244,11 @@
 
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
   <footer>
     © 2026 Revered Fitness
   </footer>
 
 
-
-  <!-- =========================
-       MOBILE MENU SCRIPT
-  ========================= -->
 
   <script>
 
