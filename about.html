@@ -1,60 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VRX9C1CB33"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-VRX9C1CB33');
-</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - Revered Fitness</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="About Revered Fitness. Strength, discipline, respect, personal training, online coaching, and transformation support.">
-  <link rel="icon" type="image/png" href="logo.png">
+  <title>About | Revered Fitness</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <meta
+    name="description"
+    content="About Revered Fitness. Strength, discipline, respect, personal training, online coaching, and transformation support."
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="logo.png"
+  >
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Google Analytics -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-VRX9C1CB33"
+  ></script>
+
+  <script>
+
+    window.dataLayer =
+      window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag(
+      'config',
+      'G-VRX9C1CB33'
+    );
+
+  </script>
+
 
   <style>
+
     :root{
+
       --bg:#0a0a0a;
+      --bg-soft:#111111;
+
       --text:#f4efe8;
       --muted:#c9c1b5;
       --soft:#9f9689;
+
       --line:rgba(255,255,255,0.08);
       --line-strong:rgba(214,185,140,0.16);
+
       --accent:#d6b98c;
+
       --primary:#b11510;
       --primary-hover:#d32017;
-      --shadow:0 20px 50px rgba(0,0,0,0.24);
+
+      --shadow:
+        0 20px 50px rgba(0,0,0,0.24);
+
       --radius:28px;
       --container:1240px;
+
     }
 
-    *{ box-sizing:border-box; }
 
-    html{ scroll-behavior:smooth; }
+    /* =========================
+       RESET
+    ========================= */
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
+
       margin:0;
-      font-family:'Manrope', sans-serif;
+
+      font-family:
+        'Manrope',
+        sans-serif;
+
       color:var(--text);
+
       background:
-        radial-gradient(circle at top center, rgba(177,21,16,0.10), transparent 24%),
-        linear-gradient(180deg, #0a0a0a 0%, #060606 100%);
+
+        radial-gradient(
+          circle at top center,
+          rgba(177,21,16,0.10),
+          transparent 24%
+        ),
+
+        linear-gradient(
+          180deg,
+          #0a0a0a 0%,
+          #060606 100%
+        );
+
       overflow-x:hidden;
+
       min-height:100vh;
+
       display:flex;
       flex-direction:column;
+
     }
 
     a{
       color:inherit;
       text-decoration:none;
+    }
+
+    img{
+      display:block;
+      max-width:100%;
     }
 
     button,
@@ -63,776 +142,1991 @@
       font:inherit;
     }
 
-    img{
-      display:block;
-      max-width:100%;
-    }
+
+    /* =========================
+       CONTAINER
+    ========================= */
 
     .container{
-      width:min(var(--container), calc(100% - 32px));
+
+      width:min(
+        var(--container),
+        calc(100% - 32px)
+      );
+
       margin:0 auto;
+
     }
 
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
     .topbar{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(10,10,10,0.88);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,0.08);
+
+      padding:20px 0;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.05);
+
     }
 
     .topbar-inner{
-      min-height:64px;
+
       display:grid;
-      grid-template-columns:auto 1fr auto;
+
+      grid-template-columns:
+        auto 1fr auto;
+
       align-items:center;
-      gap:24px;
-      padding:10px 0;
+
+      gap:30px;
+
     }
+
+
+    /* BRAND */
 
     .brand{
+
       display:flex;
+
       align-items:center;
-      gap:10px;
-      min-width:0;
+
+      gap:12px;
+
+      min-width:max-content;
+
     }
 
-    .nav-logo{
+    .brand-mark{
+
       width:38px;
       height:38px;
-      object-fit:contain;
-      filter:drop-shadow(0 0 10px rgba(214,185,140,0.18));
+
+      display:flex;
+
+      align-items:center;
+      justify-content:center;
+
+      border:
+        1px solid var(--accent);
+
+      border-radius:50%;
+
+      color:var(--accent);
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:1.5rem;
+
+      font-weight:700;
+
     }
 
     .brand-text{
+
       display:flex;
+
       flex-direction:column;
-      line-height:1;
+
+      gap:3px;
+
     }
 
     .brand-text strong{
-      font-size:0.84rem;
+
+      font-size:.82rem;
+
+      letter-spacing:1.8px;
+
       font-weight:800;
-      letter-spacing:1.5px;
+
     }
 
     .brand-text span{
-      margin-top:4px;
-      font-size:0.62rem;
-      color:#c9c1b5;
-      letter-spacing:1px;
+
+      color:var(--soft);
+
+      font-size:.62rem;
+
+      letter-spacing:1.3px;
+
       text-transform:uppercase;
+
     }
 
+
+    /* =========================
+       DESKTOP NAV
+    ========================= */
+
     .nav-links{
+
       display:flex;
+
       justify-content:center;
       align-items:center;
-      gap:12px;
-      flex-wrap:wrap;
+
+      gap:30px;
+
     }
 
     .nav-links a{
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:0.82rem;
+
+      position:relative;
+
+      color:#cfc7bc;
+
+      font-size:.78rem;
+
       font-weight:700;
-      color:#d7cec2;
-      border:1px solid transparent;
-      transition:0.25s ease;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+
+      transition:
+        color .25s ease;
+
+    }
+
+    .nav-links a::after{
+
+      content:"";
+
+      position:absolute;
+
+      left:0;
+      bottom:-8px;
+
+      width:0;
+      height:1px;
+
+      background:var(--accent);
+
+      transition:
+        width .25s ease;
+
     }
 
     .nav-links a:hover,
     .nav-links a.active{
-      background:rgba(255,255,255,0.03);
-      border-color:rgba(255,255,255,0.08);
+
       color:#fff;
+
     }
 
+    .nav-links a:hover::after,
+    .nav-links a.active::after{
+
+      width:100%;
+
+    }
+
+
+    /* NAV CTA */
+
     .nav-cta{
+
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
-      min-width:150px;
-      padding:11px 16px;
+
+      padding:12px 18px;
+
+      border:
+        1px solid rgba(214,185,140,.35);
+
       border-radius:999px;
-      background:#f3ede5;
-      color:#111;
-      font-size:0.82rem;
+
+      color:var(--accent);
+
+      font-size:.74rem;
+
       font-weight:800;
-      transition:0.25s ease;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+
+      transition:
+        background .25s ease,
+        color .25s ease;
+
     }
 
     .nav-cta:hover{
-      transform:translateY(-1px);
-      opacity:0.94;
+
+      background:var(--accent);
+
+      color:#0a0a0a;
+
     }
 
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
     .menu-toggle{
+
       display:none;
-      width:46px;
-      height:46px;
+
+      width:44px;
+      height:44px;
+
       margin-left:auto;
-      border:none;
-      border-radius:50%;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.08);
+
       align-items:center;
       justify-content:center;
+
       flex-direction:column;
+
       gap:5px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius:50%;
+
+      background:transparent;
+
       cursor:pointer;
+
     }
 
     .menu-toggle span{
+
+      display:block;
+
       width:18px;
       height:2px;
-      border-radius:999px;
-      background:#fff;
-      transition:0.25s ease;
+
+      background:#f4efe8;
+
+      transition:
+        transform .25s ease,
+        opacity .25s ease;
+
     }
 
     .mobile-nav{
       display:none;
-      padding:0 0 14px;
     }
 
     .mobile-nav-links{
-      display:grid;
-      gap:10px;
-      padding-top:8px;
+
+      display:flex;
+
+      flex-direction:column;
+
+      margin-top:18px;
+
+      border-top:
+        1px solid var(--line);
+
     }
 
     .mobile-nav-links a{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:48px;
-      border-radius:16px;
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.08);
-      color:#f4efe8;
-      font-size:0.92rem;
+
+      padding:15px 5px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.06);
+
+      color:#d8d0c5;
+
+      font-size:.8rem;
+
       font-weight:700;
+
+      letter-spacing:1.2px;
+
+      text-transform:uppercase;
+
     }
 
     .mobile-nav-links a.active{
-      border-color:rgba(214,185,140,0.18);
-      color:#fff;
+
+      color:var(--accent);
+
     }
 
     .mobile-nav-cta{
-      background:linear-gradient(135deg, #b11510, #d32017) !important;
-      border-color:transparent !important;
-      color:#fff !important;
+
+      margin-top:12px;
+
+      text-align:center;
+
+      border:
+        1px solid rgba(214,185,140,.25) !important;
+
+      border-radius:999px;
+
+      color:
+        var(--accent) !important;
+
     }
 
+
+    /* =========================
+       ABOUT HERO
+    ========================= */
+
     .page-hero{
-      padding:46px 0 34px;
+
+      padding:
+        15px 0 35px;
+
+    }
+
+    .page-hero > .container{
+
+      width:100%;
+
+      max-width:none;
+
+      padding-left:60px;
+      padding-right:60px;
+
+      margin:0;
+
     }
 
     .page-hero-wrap{
+
       display:grid;
-      grid-template-columns:minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap:48px;
+
+      grid-template-columns:
+        minmax(0,.95fr)
+        minmax(0,1.05fr);
+
+      column-gap:70px;
+
       align-items:center;
+
+      width:100%;
+
     }
+
+
+    /* HERO LEFT */
 
     .page-copy{
-      max-width:540px;
-    }
 
-    .page-logo{
-      width:min(170px, 38vw);
-      margin:0 0 24px;
-      object-fit:contain;
-      mix-blend-mode:screen;
-      filter:drop-shadow(0 0 16px rgba(0,0,0,0.22));
-    }
+      width:100%;
 
-    .eyebrow{
-      display:inline-block;
-      margin-bottom:18px;
-      padding:8px 14px;
-      border-radius:999px;
-      border:1px solid var(--line-strong);
-      color:var(--accent);
-      font-size:0.74rem;
-      font-weight:800;
-      letter-spacing:1.8px;
-      text-transform:uppercase;
-      background:rgba(255,255,255,0.02);
-    }
+      max-width:none;
 
-    h1{
-      margin:0 0 18px;
-      font-family:'Cormorant Garamond', serif;
-      font-size:clamp(3rem, 6vw, 5.5rem);
-      line-height:0.9;
-      font-weight:700;
-      letter-spacing:0.2px;
-    }
-
-    .hero-text{
-      margin:0;
-      color:#d7cec3;
-      font-size:1rem;
-      line-height:1.95;
-      max-width:560px;
-    }
-
-    .hero-panel{
-      position:relative;
-      min-height:460px;
-      padding:34px;
-      border-radius:36px;
-      border:1px solid var(--line);
-      background:
-        radial-gradient(circle at top right, rgba(177,21,16,0.10), transparent 34%),
-        linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01)),
-        #101010;
-      box-shadow:var(--shadow);
       display:flex;
+
+      flex-direction:column;
+
       align-items:center;
       justify-content:center;
-      text-align:left;
+
+      text-align:center;
+
+    }
+
+
+    /* LARGE LOGO */
+
+    .page-logo{
+
+      width:240px;
+
+      margin:
+        0 auto 28px;
+
+      object-fit:contain;
+
+      mix-blend-mode:screen;
+
+      filter:
+        drop-shadow(
+          0 0 16px rgba(0,0,0,.22)
+        );
+
+    }
+
+
+    /* EYEBROW */
+
+    .eyebrow{
+
+      display:inline-block;
+
+      margin:
+        0 auto 18px;
+
+      padding:
+        8px 14px;
+
+      border:
+        1px solid var(--line-strong);
+
+      border-radius:999px;
+
+      color:var(--accent);
+
+      font-size:.74rem;
+
+      font-weight:800;
+
+      letter-spacing:1.8px;
+
+      text-transform:uppercase;
+
+      background:
+        rgba(255,255,255,.02);
+
+    }
+
+
+    /* TITLE */
+
+    h1{
+
+      margin:
+        0 0 20px;
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        clamp(
+          4rem,
+          6vw,
+          6rem
+        );
+
+      line-height:.86;
+
+      font-weight:700;
+
+      text-align:center;
+
+    }
+
+
+    /* HERO TEXT */
+
+    .hero-text{
+
+      margin:0 auto;
+
+      max-width:560px;
+
+      color:#d7cec3;
+
+      font-size:1rem;
+
+      line-height:1.9;
+
+      text-align:center;
+
+    }
+
+
+    /* =========================
+       HERO RIGHT PANEL
+    ========================= */
+
+    .hero-panel{
+
+      position:relative;
+
+      width:100%;
+
+      min-height:520px;
+
+      padding:34px;
+
+      border-radius:32px;
+
+      border:
+        1px solid var(--line);
+
+      background:
+
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(177,21,16,.10),
+          transparent 55%
+        ),
+
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.025),
+          rgba(255,255,255,.01)
+        ),
+
+        #101010;
+
+      box-shadow:
+        var(--shadow);
+
+      display:flex;
+
+      align-items:center;
+      justify-content:center;
+
+      overflow:hidden;
+
+      text-align:center;
+
     }
 
     .hero-panel::before{
+
       content:"";
+
       position:absolute;
+
       inset:18px;
-      border:1px solid rgba(214,185,140,0.08);
-      border-radius:26px;
+
+      border:
+        1px solid rgba(214,185,140,.08);
+
+      border-radius:24px;
+
       pointer-events:none;
+
     }
 
     .hero-panel-content{
+
       position:relative;
+
       z-index:1;
-      max-width:420px;
+
+      max-width:470px;
+
+      margin:auto;
+
     }
 
     .hero-panel-content strong{
+
       display:block;
-      margin-bottom:10px;
-      font-size:0.8rem;
-      letter-spacing:1.8px;
-      text-transform:uppercase;
+
+      margin-bottom:14px;
+
       color:var(--accent);
+
+      font-size:.76rem;
+
+      letter-spacing:2px;
+
+      text-transform:uppercase;
+
     }
 
     .hero-panel-content h2{
-      margin:0 0 14px;
-      font-family:'Cormorant Garamond', serif;
-      font-size:clamp(2.2rem, 4vw, 3.4rem);
-      line-height:0.95;
+
+      margin:
+        0 0 18px;
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        clamp(
+          2.7rem,
+          4vw,
+          4rem
+        );
+
+      line-height:.95;
+
       font-weight:700;
+
     }
 
     .hero-panel-content p{
-      margin:0;
+
+      margin:0 auto;
+
+      max-width:420px;
+
       color:#d7cec3;
+
       line-height:1.85;
-      font-size:0.98rem;
+
+      font-size:.98rem;
+
     }
 
+
+    /* =========================
+       ABOUT CARDS
+    ========================= */
+
     .about-section{
-      padding:20px 0 24px;
+
+      padding:
+        0 0 24px;
+
     }
 
     .about-grid{
+
       display:grid;
-      grid-template-columns:1.15fr 0.85fr 0.85fr;
+
+      grid-template-columns:
+        1.2fr .9fr .9fr;
+
       gap:18px;
+
     }
 
     .card{
-      padding:32px 28px;
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
-      box-shadow:var(--shadow);
+
+      padding:
+        32px 28px;
+
+      border-radius:
+        var(--radius);
+
+      border:
+        1px solid var(--line);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.025),
+          rgba(255,255,255,.01)
+        );
+
+      box-shadow:
+        var(--shadow);
+
     }
 
     .card-label{
+
       display:inline-block;
+
       margin-bottom:14px;
+
       color:var(--accent);
-      font-size:0.74rem;
+
+      font-size:.74rem;
+
       font-weight:800;
+
       letter-spacing:2px;
+
       text-transform:uppercase;
+
     }
 
     .card h2,
     .card h3{
-      margin:0 0 12px;
-      font-family:'Cormorant Garamond', serif;
+
+      margin:
+        0 0 12px;
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
       font-weight:700;
-      line-height:0.95;
+
+      line-height:.95;
+
     }
 
     .card h2{
-      font-size:clamp(2.1rem, 3.5vw, 3.5rem);
+
+      font-size:
+        clamp(
+          2.1rem,
+          3.5vw,
+          3.5rem
+        );
+
     }
 
     .card h3{
+
       font-size:1.8rem;
+
     }
 
     .card p{
+
       margin:0;
+
       color:#d0c6ba;
-      font-size:0.96rem;
+
+      font-size:.96rem;
+
       line-height:1.9;
+
     }
 
+
+    /* =========================
+       CONTACT
+    ========================= */
+
     .contact-section{
-      padding:24px 0 92px;
+
+      padding:
+        0 0 30px;
+
     }
 
     .contact-card{
-      padding:34px 30px;
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
-      box-shadow:var(--shadow);
+
+      padding:
+        34px 30px;
+
+      border-radius:
+        var(--radius);
+
+      border:
+        1px solid var(--line);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.025),
+          rgba(255,255,255,.01)
+        );
+
+      box-shadow:
+        var(--shadow);
+
     }
 
     .contact-header{
+
       max-width:680px;
-      margin-bottom:24px;
-      text-align:left;
+
+      margin:
+        0 auto 26px;
+
+      text-align:center;
+
     }
 
     .contact-header h2{
-      margin:0 0 12px;
-      font-family:'Cormorant Garamond', serif;
-      font-size:clamp(2.2rem, 4vw, 3.6rem);
-      line-height:0.95;
+
+      margin:
+        0 0 12px;
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        clamp(
+          2.2rem,
+          4vw,
+          3.6rem
+        );
+
+      line-height:.95;
+
       font-weight:700;
+
     }
 
     .contact-header p{
-      margin:0;
+
+      margin:0 auto;
+
       color:#d0c6ba;
-      font-size:0.96rem;
+
+      font-size:.96rem;
+
       line-height:1.9;
+
     }
 
     .contact-grid{
+
       display:grid;
-      grid-template-columns:1.2fr 0.8fr;
+
+      grid-template-columns:
+        1.2fr .8fr;
+
       gap:24px;
-      align-items:start;
+
+      align-items:stretch;
+
     }
 
+
+    /* FORM */
+
     .form-grid{
+
       display:grid;
+
       gap:14px;
+
     }
 
     .field{
+
       display:grid;
+
       gap:6px;
+
       text-align:left;
+
     }
 
     .field label{
-      font-size:0.9rem;
+
+      font-size:.9rem;
+
       color:#e8e1d7;
+
       font-weight:700;
+
     }
 
     .field input,
     .field textarea{
+
       width:100%;
-      padding:12px 14px;
+
+      padding:
+        12px 14px;
+
       border-radius:16px;
-      border:1px solid rgba(255,255,255,0.10);
-      background:rgba(255,255,255,0.03);
-      color:white;
+
+      border:
+        1px solid rgba(255,255,255,.10);
+
+      background:
+        rgba(255,255,255,.03);
+
+      color:#fff;
+
       outline:none;
+
     }
 
     .field textarea{
+
       min-height:140px;
+
       resize:vertical;
+
     }
 
     .field input:focus,
     .field textarea:focus{
-      border-color:rgba(214,185,140,0.28);
+
+      border-color:
+        rgba(214,185,140,.28);
+
     }
 
+
+    /* SEND BUTTON */
+
     .btn{
+
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
+
       min-width:190px;
-      padding:15px 22px;
+
+      padding:
+        15px 22px;
+
       border:none;
+
       border-radius:999px;
-      background:linear-gradient(135deg, var(--primary), var(--primary-hover));
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-hover)
+        );
+
       color:#fff;
-      font-size:0.92rem;
+
+      font-size:.92rem;
+
       font-weight:800;
-      transition:0.25s ease;
+
+      transition:
+        transform .25s ease,
+        opacity .25s ease;
+
       cursor:pointer;
+
     }
 
     .btn:hover{
-      transform:translateY(-1px);
-      opacity:0.96;
+
+      transform:
+        translateY(-1px);
+
+      opacity:.96;
+
     }
 
     .btn-full{
+
       width:100%;
+
     }
 
+
+    /* =========================
+       SOCIAL CARD
+    ========================= */
+
     .social-card{
-      padding:24px;
+
+      padding:28px;
+
       border-radius:24px;
-      border:1px solid rgba(255,255,255,0.08);
-      background:rgba(255,255,255,0.02);
-      text-align:left;
+
+      border:
+        1px solid rgba(255,255,255,.08);
+
+      background:
+
+        radial-gradient(
+          circle at top right,
+          rgba(177,21,16,.10),
+          transparent 48%
+        ),
+
+        rgba(255,255,255,.02);
+
+      text-align:center;
+
+      display:flex;
+
+      flex-direction:column;
+
+      align-items:center;
+      justify-content:center;
+
     }
 
     .social-card h3{
-      margin:0 0 10px;
-      font-family:'Cormorant Garamond', serif;
-      font-size:2rem;
-      line-height:0.95;
+
+      margin:
+        0 0 12px;
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:2.2rem;
+
+      line-height:.95;
+
       font-weight:700;
+
     }
 
     .social-card p{
-      margin:0 0 18px;
+
+      margin:
+        0 auto 22px;
+
+      max-width:360px;
+
       color:#d0c6ba;
-      font-size:0.94rem;
+
+      font-size:.94rem;
+
       line-height:1.8;
+
     }
 
     .instagram-btn{
+
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
+
       gap:10px;
+
       width:100%;
-      padding:14px 18px;
+
+      padding:
+        14px 18px;
+
       border-radius:999px;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.10);
+
+      background:
+        rgba(255,255,255,.04);
+
+      border:
+        1px solid rgba(255,255,255,.10);
+
       color:#fff;
+
       font-weight:800;
-      transition:0.25s ease;
+
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease;
+
     }
 
     .instagram-btn:hover{
-      transform:translateY(-1px);
-      background:rgba(255,255,255,0.06);
-      border-color:rgba(214,185,140,0.18);
+
+      transform:
+        translateY(-1px);
+
+      background:
+        rgba(255,255,255,.06);
+
+      border-color:
+        rgba(214,185,140,.18);
+
     }
 
     .instagram-btn svg{
+
       width:18px;
       height:18px;
-      fill:white;
+
+      fill:#fff;
+
       flex:0 0 auto;
+
     }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer{
-      padding:24px 16px 36px;
+
+      padding:
+        18px 16px 22px;
+
       color:#bfb5a7;
+
       text-align:center;
-      border-top:1px solid rgba(255,255,255,0.06);
-      font-size:0.92rem;
-      margin-top:auto;
+
+      border-top:
+        1px solid rgba(255,255,255,.06);
+
+      font-size:.92rem;
+
     }
 
-    @media (max-width:1120px){
-      .page-hero-wrap{
-        grid-template-columns:1fr;
-        gap:28px;
+
+    /* =========================
+       LARGE TABLET
+    ========================= */
+
+    @media (max-width:1100px){
+
+      .page-hero > .container{
+
+        padding-left:40px;
+        padding-right:40px;
+
       }
 
-      .about-grid,
-      .contact-grid{
-        grid-template-columns:1fr;
+      .page-hero-wrap{
+
+        grid-template-columns:
+          minmax(0,1fr)
+          minmax(0,1fr);
+
+        column-gap:45px;
+
+      }
+
+      .page-logo{
+
+        width:220px;
+
       }
 
       .hero-panel{
-        min-height:360px;
+
+        min-height:480px;
+
       }
+
+      .about-grid{
+
+        grid-template-columns:1fr;
+
+      }
+
     }
 
+
+    /* =========================
+       MOBILE NAV
+    ========================= */
+
     @media (max-width:900px){
+
       .topbar-inner{
-        grid-template-columns:auto auto;
+
+        grid-template-columns:
+          auto auto;
+
         gap:16px;
+
       }
 
       .desktop-nav,
       .desktop-cta{
+
         display:none;
+
       }
 
       .menu-toggle{
+
         display:flex;
+
       }
 
       .mobile-nav.open{
+
         display:block;
+
       }
 
-      .menu-toggle.active span:nth-child(1){
-        transform:translateY(7px) rotate(45deg);
+      .menu-toggle.active
+      span:nth-child(1){
+
+        transform:
+          translateY(7px)
+          rotate(45deg);
+
       }
 
-      .menu-toggle.active span:nth-child(2){
+      .menu-toggle.active
+      span:nth-child(2){
+
         opacity:0;
+
       }
 
-      .menu-toggle.active span:nth-child(3){
-        transform:translateY(-7px) rotate(-45deg);
+      .menu-toggle.active
+      span:nth-child(3){
+
+        transform:
+          translateY(-7px)
+          rotate(-45deg);
+
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width:760px){
+
+      .page-hero{
+
+        padding:
+          15px 0 30px;
+
+      }
+
+      .page-hero > .container{
+
+        width:100%;
+
+        padding-left:16px;
+        padding-right:16px;
+
+        margin:0;
+
+      }
+
+      .page-hero-wrap{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+        text-align:center;
+
       }
 
       .page-copy{
-        max-width:none;
-        text-align:center;
+
+        width:100%;
+
+        max-width:600px;
+
+        margin:0 auto;
+
       }
 
       .page-logo{
-        margin:0 auto 24px;
-      }
 
-      .eyebrow{
-        margin-left:auto;
-        margin-right:auto;
-      }
+        width:200px;
 
-      .contact-header{
-        text-align:center;
-        max-width:none;
-      }
-    }
+        margin:
+          0 auto 24px;
 
-    @media (max-width:640px){
-      .container{
-        width:min(var(--container), calc(100% - 20px));
-      }
-
-      .page-hero{
-        padding:26px 0 24px;
-      }
-
-      .about-section{
-        padding:14px 0 18px;
-      }
-
-      .contact-section{
-        padding:18px 0 72px;
-      }
-
-      h1{
-        font-size:clamp(2.7rem, 13vw, 4.5rem);
-      }
-
-      .page-logo{
-        width:min(138px, 48vw);
       }
 
       .hero-panel{
-        min-height:300px;
-        padding:18px;
-        border-radius:24px;
+
+        min-height:350px;
+
+        padding:24px;
+
       }
 
-      .card,
+      .about-section{
+
+        padding:
+          0 0 20px;
+
+      }
+
+      .contact-section{
+
+        padding:
+          0 0 26px;
+
+      }
+
+      .contact-grid{
+
+        grid-template-columns:1fr;
+
+      }
+
+    }
+
+
+    /* =========================
+       SMALL MOBILE
+    ========================= */
+
+    @media (max-width:480px){
+
+      .container{
+
+        width:
+          min(
+            var(--container),
+            calc(100% - 20px)
+          );
+
+      }
+
+      .page-hero{
+
+        padding:
+          15px 0 25px;
+
+      }
+
+      .page-hero > .container{
+
+        width:100%;
+
+        padding-left:10px;
+        padding-right:10px;
+
+      }
+
+      .page-logo{
+
+        width:185px;
+
+      }
+
+      h1{
+
+        font-size:3.7rem;
+
+      }
+
+      .hero-panel{
+
+        min-height:310px;
+
+        padding:22px;
+
+        border-radius:24px;
+
+      }
+
+      .hero-panel::before{
+
+        inset:12px;
+
+        border-radius:18px;
+
+      }
+
+      .hero-panel-content h2{
+
+        font-size:2.5rem;
+
+      }
+
+      .card{
+
+        padding:
+          24px 20px;
+
+      }
+
       .contact-card{
-        padding:24px 20px;
+
+        padding:
+          24px 18px;
+
       }
 
       .social-card{
-        padding:20px;
+
+        padding:22px;
+
       }
 
-      .mobile-nav-links a{
-        min-height:46px;
+      .about-section{
+
+        padding:
+          0 0 18px;
+
       }
+
+      .contact-section{
+
+        padding:
+          0 0 22px;
+
+      }
+
+      footer{
+
+        padding:
+          16px 12px 20px;
+
+      }
+
     }
+
   </style>
+
 </head>
 
+
 <body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
   <div class="topbar">
+
     <div class="container">
+
       <div class="topbar-inner">
-        <a href="index.html" class="brand" aria-label="Revered Fitness home">
-          <img src="logo.png" alt="Revered Fitness Logo" class="nav-logo">
-          <div class="brand-text">
-            <strong>REVERED FITNESS</strong>
-            <span>Strength • Discipline • Respect</span>
+
+
+        <a
+          href="index.html"
+          class="brand"
+          aria-label="Revered Fitness home"
+        >
+
+          <div class="brand-mark">
+            R
           </div>
+
+          <div class="brand-text">
+
+            <strong>
+              REVERED FITNESS
+            </strong>
+
+            <span>
+              Strength • Discipline • Respect
+            </span>
+
+          </div>
+
         </a>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav">
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+        >
+
           <span></span>
           <span></span>
           <span></span>
+
         </button>
 
-        <nav class="nav-links desktop-nav" aria-label="Primary navigation">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="transformation.html">Transformation</a>
-          <a href="events.html">Events</a>
-          <a href="clothing.html">Clothing</a>
-          <a href="about.html" class="active">About</a>
+
+        <nav
+          class="nav-links desktop-nav"
+          aria-label="Primary navigation"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="events.html">
+            Events
+          </a>
+
+          <a href="clothing.html">
+            Clothing
+          </a>
+
+          <a
+            href="about.html"
+            class="active"
+          >
+            About
+          </a>
+
         </nav>
 
-        <a href="#contact" class="nav-cta desktop-cta">Book Consultation</a>
+
+        <a
+          href="#contact"
+          class="nav-cta desktop-cta"
+        >
+          Book Consultation
+        </a>
+
+
       </div>
 
-      <div class="mobile-nav" id="mobileNav">
-        <nav class="mobile-nav-links" aria-label="Mobile navigation">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="transformation.html">Transformation</a>
-          <a href="events.html">Events</a>
-          <a href="clothing.html">Clothing</a>
-          <a href="about.html" class="active">About</a>
-          <a href="#contact" class="mobile-nav-cta">Book Consultation</a>
+
+      <div
+        class="mobile-nav"
+        id="mobileNav"
+      >
+
+        <nav
+          class="mobile-nav-links"
+          aria-label="Mobile navigation"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a href="events.html">
+            Events
+          </a>
+
+          <a href="clothing.html">
+            Clothing
+          </a>
+
+          <a
+            href="about.html"
+            class="active"
+          >
+            About
+          </a>
+
+          <a
+            href="#contact"
+            class="mobile-nav-cta"
+          >
+            Book Consultation
+          </a>
+
         </nav>
+
       </div>
+
     </div>
+
   </div>
 
+
+  <!-- =========================
+       ABOUT HERO
+  ========================= -->
+
   <section class="page-hero">
+
     <div class="container">
+
       <div class="page-hero-wrap">
+
+
+        <!-- LEFT -->
+
         <div class="page-copy">
-          <img src="logo.png" alt="Revered Fitness Logo" class="page-logo">
 
-          <div class="eyebrow">About The Brand</div>
 
-          <h1>About Revered Fitness</h1>
+          <img
+            src="logo.png"
+            alt="Revered Fitness Logo"
+            class="page-logo"
+          >
+
+
+          <div class="eyebrow">
+            About The Brand
+          </div>
+
+
+          <h1>
+            About Revered<br>
+            Fitness
+          </h1>
+
 
           <p class="hero-text">
-            Revered Fitness was built through real training experience, a passion for strength sports, and a belief that discipline and confidence can change how people live and perform.
+
+            Revered Fitness was built through real
+            training experience, a passion for
+            strength sports, and a belief that
+            discipline and confidence can change how
+            people live and perform.
+
           </p>
+
+
         </div>
+
+
+        <!-- RIGHT -->
 
         <div class="hero-panel">
+
           <div class="hero-panel-content">
-            <strong>Built With Purpose</strong>
-            <h2>Strength, discipline, and respect at the centre of the brand.</h2>
+
+            <strong>
+              Built With Purpose
+            </strong>
+
+            <h2>
+              Strength, discipline,<br>
+              and respect.
+            </h2>
+
             <p>
-              The mission is to help people step into training with more confidence, less intimidation, and a clearer path toward real progress that lasts.
+
+              The mission is to help people step into
+              training with more confidence, less
+              intimidation, and a clearer path toward
+              real progress that lasts.
+
             </p>
+
           </div>
+
         </div>
+
+
       </div>
+
     </div>
+
   </section>
+
+
+  <!-- =========================
+       ABOUT CARDS
+  ========================= -->
 
   <section class="about-section">
+
     <div class="container">
+
       <div class="about-grid">
-        <div class="card">
-          <span class="card-label">The Story</span>
-          <h2>Built through training, experience, and a genuine passion for progress.</h2>
-          <p>
-            Revered Fitness was built through a passion for <strong>strength sports</strong>, discipline, and years of real training experience. Through training and developing strength over time, I gained first-hand knowledge of what it takes to build not only a stronger body, but a stronger mindset.
-          </p>
-        </div>
+
+
+        <!-- STORY -->
 
         <div class="card">
-          <span class="card-label">The Mission</span>
-          <h3>Guiding people with confidence.</h3>
+
+          <span class="card-label">
+            The Story
+          </span>
+
+          <h2>
+            Built through training, experience,
+            and a genuine passion for progress.
+          </h2>
+
           <p>
-            My mission with <strong>Revered Fitness</strong> is to help new people step into the gym with confidence, remove the intimidation many beginners feel, and guide them towards real progress.
+
+            Revered Fitness was built through a
+            passion for <strong>strength sports</strong>,
+            discipline, and years of real training
+            experience. Through training and
+            developing strength over time, I gained
+            first-hand knowledge of what it takes to
+            build not only a stronger body, but a
+            stronger mindset.
+
           </p>
+
         </div>
 
+
+        <!-- MISSION -->
+
         <div class="card">
-          <span class="card-label">The Principles</span>
-          <h3>Strength. Discipline. Respect.</h3>
+
+          <span class="card-label">
+            The Mission
+          </span>
+
+          <h3>
+            Guiding people with confidence.
+          </h3>
+
           <p>
-            These three principles shape the identity of the brand and the way coaching is delivered, with the goal of building stronger people physically and mentally.
+
+            My mission with
+            <strong>Revered Fitness</strong>
+            is to help new people step into the gym
+            with confidence, remove the intimidation
+            many beginners feel, and guide them
+            towards real progress.
+
           </p>
+
         </div>
+
+
+        <!-- PRINCIPLES -->
+
+        <div class="card">
+
+          <span class="card-label">
+            The Principles
+          </span>
+
+          <h3>
+            Strength. Discipline. Respect.
+          </h3>
+
+          <p>
+
+            These three principles shape the identity
+            of the brand and the way coaching is
+            delivered, with the goal of building
+            stronger people physically and mentally.
+
+          </p>
+
+        </div>
+
+
       </div>
+
     </div>
+
   </section>
 
-  <section class="contact-section" id="contact">
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section
+    class="contact-section"
+    id="contact"
+  >
+
     <div class="container">
+
       <div class="contact-card">
+
+
         <div class="contact-header">
-          <span class="card-label">Get In Touch</span>
-          <h2>Contact Me</h2>
+
+          <span class="card-label">
+            Get In Touch
+          </span>
+
+          <h2>
+            Contact Me
+          </h2>
+
           <p>
-            If you are ready to start your journey, ask a question, or find out more about coaching, send a message below and I will get back to you.
+
+            If you are ready to start your journey,
+            ask a question, or find out more about
+            coaching, send a message below and I will
+            get back to you.
+
           </p>
+
         </div>
+
 
         <div class="contact-grid">
-          <form action="https://formspree.io/f/mqegzpvk" method="POST" class="form-grid">
-            <div class="field">
-              <label for="name">Full Name</label>
-              <input id="name" type="text" name="name" required>
-            </div>
+
+
+          <!-- CONTACT FORM -->
+
+          <form
+            action="https://formspree.io/f/mqegzpvk"
+            method="POST"
+            class="form-grid"
+          >
+
 
             <div class="field">
-              <label for="email">Email Address</label>
-              <input id="email" type="email" name="email" required>
+
+              <label for="name">
+                Full Name
+              </label>
+
+              <input
+                id="name"
+                type="text"
+                name="name"
+                autocomplete="name"
+                required
+              >
+
             </div>
+
 
             <div class="field">
-              <label for="message">Your Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
+
+              <label for="email">
+                Email Address
+              </label>
+
+              <input
+                id="email"
+                type="email"
+                name="email"
+                autocomplete="email"
+                required
+              >
+
             </div>
 
-            <button type="submit" class="btn btn-full">Send Message</button>
+
+            <div class="field">
+
+              <label for="message">
+                Your Message
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="btn btn-full"
+            >
+              Send Message
+            </button>
+
+
           </form>
 
+
+          <!-- INSTAGRAM -->
+
           <div class="social-card">
-            <h3>Instagram</h3>
+
+            <span class="card-label">
+              Social
+            </span>
+
+            <h3>
+              Follow Revered Fitness
+            </h3>
+
             <p>
-              Follow along for updates, training content, and more from Revered Fitness.
+
+              Follow along for training content,
+              updates, new clothing releases, events,
+              and more from Revered Fitness.
+
             </p>
 
-            <a href="https://www.instagram.com/Revered_fitness_pt" target="_blank" rel="noopener noreferrer" class="instagram-btn">
-              <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 256 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.7c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.3-9.9-66.6-36.2-92.9S382.4 7.7 347.1 6c-35.3-1.7-141-1.7-176.3 0-35.3 1.7-66.6 9.9-92.9 36.2S7.7 129.6 6 164.9c-1.7 35.3-1.7 141 0 176.3 1.7 35.3 9.9 66.6 36.2 92.9s57.6 34.5 92.9 36.2c35.3 1.7 141 1.7 176.3 0 35.3-1.7 66.6-9.9 92.9-36.2s34.5-57.6 36.2-92.9c1.7-35.3 1.7-141 0-176.3zM398.8 388c-7.8 19.5-22.9 34.6-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 2.6-132.4-9c-19.5-7.8-34.6-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-2.6-103 9-132.4c7.8-19.5 22.9-34.6 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-2.6 132.4 9c19.5 7.8 34.6 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s2.7 103-9 132.4z"/>
+
+            <a
+              href="https://www.instagram.com/Revered_fitness_pt"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="instagram-btn"
+            >
+
+              <svg
+                viewBox="0 0 448 512"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.9 224.1 370.9 339 319.6 339 256 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7s32.1-71.7 71.7-71.7 71.7 32.1 71.7 71.7-32.1 71.7-71.7 71.7zm146.4-194.7c0 14.9-12.1 27-27 27-14.9 0-27-12.1-27-27s12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.3-9.9-66.6-36.2-92.9S382.4 7.7 347.1 6c-35.3-1.7-141-1.7-176.3 0-35.3 1.7-66.6 9.9-92.9 36.2S7.7 129.6 6 164.9c-1.7 35.3-1.7 141 0 176.3 1.7 35.3 9.9 66.6 36.2 92.9s57.6 34.5 92.9 36.2c35.3 1.7 141 1.7 176.3 0 35.3-1.7 66.6-9.9 92.9-36.2s34.5-57.6 36.2-92.9c1.7-35.3 1.7-141 0-176.3zM398.8 388c-7.8 19.5-22.9 34.6-42.4 42.4-29.4 11.7-99.2 9-132.4 9s-103 2.6-132.4-9c-19.5-7.8-34.6-22.9-42.4-42.4-11.7-29.4-9-99.2-9-132.4s-2.6-103 9-132.4c7.8-19.5 22.9-34.6 42.4-42.4 29.4-11.7 99.2-9 132.4-9s103-2.6 132.4 9c19.5 7.8 34.6 22.9 42.4 42.4 11.7 29.4 9 99.2 9 132.4s2.7 103-9 132.4z"
+                />
+
               </svg>
+
               Follow on Instagram
+
             </a>
+
+
           </div>
+
+
         </div>
+
       </div>
+
     </div>
+
   </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
     © 2026 Revered Fitness
   </footer>
 
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileNav = document.getElementById("mobileNav");
 
-    if (menuToggle && mobileNav) {
-      menuToggle.addEventListener("click", function () {
-        const isOpen = mobileNav.classList.toggle("open");
-        menuToggle.classList.toggle("active", isOpen);
-        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
+  <!-- =========================
+       MOBILE MENU SCRIPT
+  ========================= -->
+
+  <script>
+
+    const menuToggle =
+      document.getElementById(
+        "menuToggle"
+      );
+
+    const mobileNav =
+      document.getElementById(
+        "mobileNav"
+      );
+
+
+    if(
+      menuToggle &&
+      mobileNav
+    ){
+
+      menuToggle.addEventListener(
+        "click",
+        function(){
+
+          const isOpen =
+            mobileNav.classList.toggle(
+              "open"
+            );
+
+          menuToggle.classList.toggle(
+            "active",
+            isOpen
+          );
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+              ? "true"
+              : "false"
+          );
+
+        }
+      );
+
+
+      const mobileLinks =
+        mobileNav.querySelectorAll(
+          "a"
+        );
+
+
+      mobileLinks.forEach(
+        function(link){
+
+          link.addEventListener(
+            "click",
+            function(){
+
+              mobileNav.classList.remove(
+                "open"
+              );
+
+              menuToggle.classList.remove(
+                "active"
+              );
+
+              menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+          );
+
+        }
+      );
+
     }
+
   </script>
+
+
 </body>
 </html>
