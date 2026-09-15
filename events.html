@@ -1,628 +1,1714 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VRX9C1CB33"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-VRX9C1CB33');
-</script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Events - Revered Fitness</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Upcoming Revered Fitness events, community workouts, free sessions, and fitness meetups.">
-  <link rel="icon" type="image/png" href="logo.png">
+  <title>Events | Revered Fitness</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <meta
+    name="description"
+    content="Upcoming Revered Fitness events, community workouts, free sessions, and fitness meetups."
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="logo.png"
+  >
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Google Analytics -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-VRX9C1CB33"
+  ></script>
+
+  <script>
+
+    window.dataLayer =
+      window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag(
+      'config',
+      'G-VRX9C1CB33'
+    );
+
+  </script>
+
 
   <style>
+
     :root{
+
       --bg:#0a0a0a;
+      --bg-soft:#111111;
+
       --text:#f4efe8;
       --muted:#c9c1b5;
       --soft:#9f9689;
+
       --line:rgba(255,255,255,0.08);
       --line-strong:rgba(214,185,140,0.16);
+
       --accent:#d6b98c;
+
       --primary:#b11510;
       --primary-hover:#d32017;
-      --shadow:0 20px 50px rgba(0,0,0,0.24);
+
+      --shadow:
+        0 20px 50px rgba(0,0,0,0.24);
+
       --radius:28px;
+
       --container:1240px;
+
     }
 
-    *{ box-sizing:border-box; }
 
-    html{ scroll-behavior:smooth; }
+    /* =========================
+       RESET
+    ========================= */
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
+
       margin:0;
-      font-family:'Manrope', sans-serif;
+
+      font-family:
+        'Manrope',
+        sans-serif;
+
       color:var(--text);
+
       background:
-        radial-gradient(circle at top center, rgba(177,21,16,0.10), transparent 24%),
-        linear-gradient(180deg, #0a0a0a 0%, #060606 100%);
+
+        radial-gradient(
+          circle at top center,
+          rgba(177,21,16,0.10),
+          transparent 24%
+        ),
+
+        linear-gradient(
+          180deg,
+          #0a0a0a 0%,
+          #060606 100%
+        );
+
       overflow-x:hidden;
+
       min-height:100vh;
+
       display:flex;
+
       flex-direction:column;
+
     }
 
-    a{ color:inherit; text-decoration:none; }
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
 
-    img{ display:block; max-width:100%; }
+    img{
+      display:block;
+      max-width:100%;
+    }
+
+
+    /* =========================
+       CONTAINER
+    ========================= */
 
     .container{
-      width:min(var(--container), calc(100% - 32px));
+
+      width:min(
+        var(--container),
+        calc(100% - 32px)
+      );
+
       margin:0 auto;
+
     }
 
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
     .topbar{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(10,10,10,0.88);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,0.08);
+
+      padding:20px 0;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.05);
+
     }
 
     .topbar-inner{
-      min-height:64px;
+
       display:grid;
-      grid-template-columns:auto 1fr auto;
+
+      grid-template-columns:
+        auto 1fr auto;
+
       align-items:center;
-      gap:24px;
-      padding:10px 0;
+
+      gap:30px;
+
     }
+
+
+    /* BRAND */
 
     .brand{
+
       display:flex;
+
       align-items:center;
-      gap:10px;
-      min-width:0;
+
+      gap:12px;
+
+      min-width:max-content;
+
     }
 
-    .nav-logo{
+    .brand-mark{
+
       width:38px;
       height:38px;
-      object-fit:contain;
-      filter:drop-shadow(0 0 10px rgba(214,185,140,0.18));
+
+      display:flex;
+
+      align-items:center;
+      justify-content:center;
+
+      border:
+        1px solid var(--accent);
+
+      border-radius:50%;
+
+      color:var(--accent);
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:1.5rem;
+
+      font-weight:700;
+
     }
 
     .brand-text{
+
       display:flex;
+
       flex-direction:column;
-      line-height:1;
+
+      gap:3px;
+
     }
 
     .brand-text strong{
-      font-size:0.84rem;
+
+      font-size:.82rem;
+
+      letter-spacing:1.8px;
+
       font-weight:800;
-      letter-spacing:1.5px;
+
     }
 
     .brand-text span{
-      margin-top:4px;
-      font-size:0.62rem;
-      color:#c9c1b5;
-      letter-spacing:1px;
+
+      color:var(--soft);
+
+      font-size:.62rem;
+
+      letter-spacing:1.3px;
+
       text-transform:uppercase;
+
     }
 
+
+    /* =========================
+       DESKTOP NAV
+    ========================= */
+
     .nav-links{
+
       display:flex;
+
       justify-content:center;
       align-items:center;
-      gap:12px;
-      flex-wrap:wrap;
+
+      gap:30px;
+
     }
 
     .nav-links a{
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:0.82rem;
+
+      position:relative;
+
+      color:#cfc7bc;
+
+      font-size:.78rem;
+
       font-weight:700;
-      color:#d7cec2;
-      border:1px solid transparent;
-      transition:0.25s ease;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+
+      transition:
+        color .25s ease;
+
+    }
+
+    .nav-links a::after{
+
+      content:"";
+
+      position:absolute;
+
+      left:0;
+
+      bottom:-8px;
+
+      width:0;
+
+      height:1px;
+
+      background:
+        var(--accent);
+
+      transition:
+        width .25s ease;
+
     }
 
     .nav-links a:hover,
     .nav-links a.active{
-      background:rgba(255,255,255,0.03);
-      border-color:rgba(255,255,255,0.08);
+
       color:#fff;
+
     }
 
+    .nav-links a:hover::after,
+    .nav-links a.active::after{
+
+      width:100%;
+
+    }
+
+
+    /* =========================
+       NAV CTA
+    ========================= */
+
     .nav-cta{
+
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
-      min-width:150px;
-      padding:11px 16px;
+
+      padding:
+        12px 18px;
+
+      border:
+        1px solid rgba(214,185,140,.35);
+
       border-radius:999px;
-      background:#f3ede5;
-      color:#111;
-      font-size:0.82rem;
+
+      color:var(--accent);
+
+      font-size:.74rem;
+
       font-weight:800;
-      transition:0.25s ease;
+
+      letter-spacing:1px;
+
+      text-transform:uppercase;
+
+      transition:
+        background .25s ease,
+        color .25s ease;
+
     }
 
     .nav-cta:hover{
-      transform:translateY(-1px);
-      opacity:0.94;
+
+      background:
+        var(--accent);
+
+      color:#0a0a0a;
+
     }
 
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
     .menu-toggle{
+
       display:none;
-      width:46px;
-      height:46px;
+
+      width:44px;
+      height:44px;
+
       margin-left:auto;
-      border:none;
-      border-radius:50%;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.08);
+
       align-items:center;
       justify-content:center;
+
       flex-direction:column;
+
       gap:5px;
+
+      border:
+        1px solid var(--line);
+
+      border-radius:50%;
+
+      background:transparent;
+
       cursor:pointer;
+
     }
 
     .menu-toggle span{
+
+      display:block;
+
       width:18px;
       height:2px;
-      border-radius:999px;
-      background:#fff;
-      transition:0.25s ease;
+
+      background:#f4efe8;
+
+      transition:
+        transform .25s ease,
+        opacity .25s ease;
+
     }
 
     .mobile-nav{
       display:none;
-      padding:0 0 14px;
     }
 
     .mobile-nav-links{
-      display:grid;
-      gap:10px;
-      padding-top:8px;
+
+      display:flex;
+
+      flex-direction:column;
+
+      margin-top:18px;
+
+      border-top:
+        1px solid var(--line);
+
     }
 
     .mobile-nav-links a{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:48px;
-      border-radius:16px;
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.08);
-      color:#f4efe8;
-      font-size:0.92rem;
+
+      padding:
+        15px 5px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,.06);
+
+      color:#d8d0c5;
+
+      font-size:.8rem;
+
       font-weight:700;
+
+      letter-spacing:1.2px;
+
+      text-transform:uppercase;
+
     }
 
     .mobile-nav-links a.active{
-      border-color:rgba(214,185,140,0.18);
-      color:#fff;
+
+      color:var(--accent);
+
     }
 
     .mobile-nav-cta{
-      background:linear-gradient(135deg, #b11510, #d32017) !important;
-      border-color:transparent !important;
-      color:#fff !important;
+
+      margin-top:12px;
+
+      text-align:center;
+
+      border:
+        1px solid rgba(214,185,140,.25) !important;
+
+      border-radius:999px;
+
+      color:
+        var(--accent) !important;
+
     }
 
+
+    /* =========================
+       EVENTS HERO
+    ========================= */
+
     .page-hero{
-      padding:46px 0 34px;
+
+      padding:
+        15px 0 35px;
+
+    }
+
+    .page-hero > .container{
+
+      width:100%;
+
+      max-width:none;
+
+      padding-left:60px;
+      padding-right:60px;
+
+      margin:0;
+
     }
 
     .page-hero-wrap{
+
       display:grid;
-      grid-template-columns:minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap:48px;
+
+      grid-template-columns:
+        minmax(0,.95fr)
+        minmax(0,1.05fr);
+
+      column-gap:70px;
+
       align-items:center;
+
+      width:100%;
+
     }
+
+
+    /* =========================
+       HERO LEFT
+    ========================= */
 
     .page-copy{
-      max-width:540px;
-    }
 
-    .page-logo{
-      width:min(170px, 38vw);
-      margin:0 0 24px;
-      object-fit:contain;
-      mix-blend-mode:screen;
-      filter:drop-shadow(0 0 16px rgba(0,0,0,0.22));
-    }
+      width:100%;
 
-    .eyebrow{
-      display:inline-block;
-      margin-bottom:18px;
-      padding:8px 14px;
-      border-radius:999px;
-      border:1px solid var(--line-strong);
-      color:var(--accent);
-      font-size:0.74rem;
-      font-weight:800;
-      letter-spacing:1.8px;
-      text-transform:uppercase;
-      background:rgba(255,255,255,0.02);
-    }
+      max-width:none;
 
-    h1{
-      margin:0 0 18px;
-      font-family:'Cormorant Garamond', serif;
-      font-size:clamp(3rem, 6vw, 5.5rem);
-      line-height:0.9;
-      font-weight:700;
-      letter-spacing:0.2px;
-    }
-
-    .hero-text{
-      margin:0;
-      color:#d7cec3;
-      font-size:1rem;
-      line-height:1.95;
-      max-width:560px;
-    }
-
-    .hero-panel{
-      position:relative;
-      min-height:460px;
-      padding:28px;
-      border-radius:36px;
-      border:1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)),
-        #101010;
-      box-shadow:var(--shadow);
       display:flex;
+
+      flex-direction:column;
+
       align-items:center;
       justify-content:center;
+
+      text-align:center;
+
+    }
+
+
+    /* LOGO */
+
+    .page-logo{
+
+      width:240px;
+
+      margin:
+        0 auto 28px;
+
+      object-fit:contain;
+
+      mix-blend-mode:screen;
+
+      filter:
+        drop-shadow(
+          0 0 16px rgba(0,0,0,.22)
+        );
+
+    }
+
+
+    /* EYEBROW */
+
+    .eyebrow{
+
+      display:inline-block;
+
+      margin:
+        0 auto 18px;
+
+      padding:
+        8px 14px;
+
+      border:
+        1px solid var(--line-strong);
+
+      border-radius:999px;
+
+      color:var(--accent);
+
+      font-size:.74rem;
+
+      font-weight:800;
+
+      letter-spacing:1.8px;
+
+      text-transform:uppercase;
+
+      background:
+        rgba(255,255,255,.02);
+
+    }
+
+
+    /* TITLE */
+
+    h1{
+
+      margin:
+        0 0 20px;
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
+      font-size:
+        clamp(
+          4rem,
+          6vw,
+          6rem
+        );
+
+      line-height:.86;
+
+      font-weight:700;
+
+      text-align:center;
+
+    }
+
+
+    /* HERO TEXT */
+
+    .hero-text{
+
+      margin:
+        0 auto;
+
+      max-width:560px;
+
+      color:#d7cec3;
+
+      font-size:1rem;
+
+      line-height:1.9;
+
+      text-align:center;
+
+    }
+
+
+    /* =========================
+       HERO IMAGE
+    ========================= */
+
+    .hero-panel{
+
+      position:relative;
+
+      width:100%;
+
+      min-height:520px;
+
+      padding:20px;
+
+      border-radius:32px;
+
+      border:
+        1px solid var(--line);
+
+      background:
+
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(177,21,16,.10),
+          transparent 55%
+        ),
+
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.025),
+          rgba(255,255,255,.01)
+        ),
+
+        #101010;
+
+      box-shadow:
+        var(--shadow);
+
+      display:flex;
+
+      align-items:center;
+      justify-content:center;
+
       overflow:hidden;
+
     }
 
     .hero-panel::before{
+
       content:"";
+
       position:absolute;
+
       inset:18px;
-      border:1px solid rgba(214,185,140,0.08);
-      border-radius:26px;
+
+      border:
+        1px solid rgba(214,185,140,.08);
+
+      border-radius:24px;
+
       pointer-events:none;
+
     }
 
     .hero-panel img{
+
       position:relative;
+
       z-index:1;
+
       width:100%;
+
       height:100%;
-      max-height:420px;
+
+      max-height:500px;
+
       object-fit:contain;
+
       object-position:center;
-      filter:drop-shadow(0 20px 38px rgba(0,0,0,0.22));
+
+      filter:
+        drop-shadow(
+          0 25px 45px rgba(0,0,0,.3)
+        );
+
     }
 
+
+    /* =========================
+       EVENTS SECTION
+    ========================= */
+
     .events-section{
-      padding:20px 0 92px;
+
+      padding:
+        0 0 35px;
+
     }
 
     .events-grid{
+
       display:grid;
-      grid-template-columns:repeat(3, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(
+          3,
+          minmax(0,1fr)
+        );
+
       gap:20px;
+
     }
+
+
+    /* =========================
+       EVENT CARDS
+    ========================= */
 
     .event-card{
+
       display:flex;
+
       flex-direction:column;
-      padding:30px 28px;
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
-      box-shadow:var(--shadow);
+
+      padding:
+        30px 28px;
+
+      border-radius:
+        var(--radius);
+
+      border:
+        1px solid var(--line);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.025),
+          rgba(255,255,255,.01)
+        );
+
+      box-shadow:
+        var(--shadow);
+
       min-height:100%;
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease;
+
     }
+
+    .event-card:hover{
+
+      transform:
+        translateY(-3px);
+
+      border-color:
+        rgba(214,185,140,.18);
+
+    }
+
+
+    /* FEATURED */
 
     .event-card.featured{
-      border-color:rgba(214,185,140,0.24);
+
+      border-color:
+        rgba(214,185,140,.24);
+
       background:
-        radial-gradient(circle at top right, rgba(177,21,16,0.10), transparent 40%),
-        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.012));
+
+        radial-gradient(
+          circle at top right,
+          rgba(177,21,16,.10),
+          transparent 40%
+        ),
+
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.03),
+          rgba(255,255,255,.012)
+        );
+
     }
+
+
+    /* EVENT LABEL */
 
     .event-label{
+
       display:inline-block;
+
       margin-bottom:14px;
+
       color:var(--accent);
-      font-size:0.74rem;
+
+      font-size:.74rem;
+
       font-weight:800;
+
       letter-spacing:2px;
+
       text-transform:uppercase;
+
     }
+
+
+    /* EVENT TITLE */
 
     .event-card h2{
-      margin:0 0 12px;
-      font-family:'Cormorant Garamond', serif;
+
+      margin:
+        0 0 12px;
+
+      font-family:
+        'Cormorant Garamond',
+        serif;
+
       font-size:2rem;
-      line-height:0.96;
+
+      line-height:.96;
+
       font-weight:700;
+
     }
+
+
+    /* EVENT DATE */
 
     .event-date{
-      margin:0 0 14px;
+
+      margin:
+        0 0 16px;
+
       color:#f1dfc0;
-      font-size:0.95rem;
+
+      font-size:.95rem;
+
       font-weight:800;
-      letter-spacing:0.6px;
+
+      letter-spacing:.7px;
+
       text-transform:uppercase;
+
     }
+
+
+    /* EVENT TEXT */
 
     .event-card p{
-      margin:0 0 18px;
+
+      margin:
+        0 0 24px;
+
       color:#d0c6ba;
-      font-size:0.95rem;
+
+      font-size:.95rem;
+
       line-height:1.85;
+
     }
 
+
+    /* =========================
+       BUTTON
+    ========================= */
+
     .btn{
+
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
+
       width:100%;
+
       margin-top:auto;
-      padding:15px 18px;
+
+      padding:
+        15px 18px;
+
       border:none;
+
       border-radius:999px;
-      background:linear-gradient(135deg, var(--primary), var(--primary-hover));
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary),
+          var(--primary-hover)
+        );
+
       color:#fff;
-      font-size:0.92rem;
+
+      font-size:.92rem;
+
       font-weight:800;
-      transition:0.25s ease;
+
+      transition:
+        transform .25s ease,
+        opacity .25s ease;
+
     }
 
     .btn:hover{
-      transform:translateY(-1px);
-      opacity:0.96;
+
+      transform:
+        translateY(-1px);
+
+      opacity:.96;
+
     }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer{
-      padding:24px 16px 36px;
+
+      padding:
+        20px 16px 26px;
+
       color:#bfb5a7;
+
       text-align:center;
-      border-top:1px solid rgba(255,255,255,0.06);
-      font-size:0.92rem;
-      margin-top:auto;
+
+      border-top:
+        1px solid rgba(255,255,255,.06);
+
+      font-size:.92rem;
+
     }
 
-    @media (max-width:1120px){
-      .page-hero-wrap{
-        grid-template-columns:1fr;
-        gap:28px;
+
+    /* =========================
+       TABLET
+    ========================= */
+
+    @media (max-width:1100px){
+
+      .page-hero > .container{
+
+        padding-left:40px;
+        padding-right:40px;
+
       }
 
-      .events-grid{
-        grid-template-columns:repeat(2, minmax(0, 1fr));
+      .page-hero-wrap{
+
+        grid-template-columns:
+          minmax(0,1fr)
+          minmax(0,1fr);
+
+        column-gap:45px;
+
+      }
+
+      .page-logo{
+        width:220px;
       }
 
       .hero-panel{
-        min-height:360px;
+        min-height:480px;
       }
+
+      .events-grid{
+
+        grid-template-columns:
+          repeat(
+            2,
+            minmax(0,1fr)
+          );
+
+      }
+
     }
 
+
+    /* =========================
+       MOBILE NAV
+    ========================= */
+
     @media (max-width:900px){
+
       .topbar-inner{
-        grid-template-columns:auto auto;
+
+        grid-template-columns:
+          auto auto;
+
         gap:16px;
+
       }
 
       .desktop-nav,
       .desktop-cta{
+
         display:none;
+
       }
 
       .menu-toggle{
+
         display:flex;
+
       }
 
       .mobile-nav.open{
+
         display:block;
+
       }
 
-      .menu-toggle.active span:nth-child(1){
-        transform:translateY(7px) rotate(45deg);
+      .menu-toggle.active
+      span:nth-child(1){
+
+        transform:
+          translateY(7px)
+          rotate(45deg);
+
       }
 
-      .menu-toggle.active span:nth-child(2){
+      .menu-toggle.active
+      span:nth-child(2){
+
         opacity:0;
+
       }
 
-      .menu-toggle.active span:nth-child(3){
-        transform:translateY(-7px) rotate(-45deg);
+      .menu-toggle.active
+      span:nth-child(3){
+
+        transform:
+          translateY(-7px)
+          rotate(-45deg);
+
+      }
+
+    }
+
+
+    /* =========================
+       MOBILE HERO
+    ========================= */
+
+    @media (max-width:760px){
+
+      .page-hero{
+
+        padding:
+          15px 0 30px;
+
+      }
+
+      .page-hero > .container{
+
+        width:100%;
+
+        padding-left:16px;
+        padding-right:16px;
+
+        margin:0;
+
+      }
+
+      .page-hero-wrap{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+        text-align:center;
+
       }
 
       .page-copy{
-        max-width:none;
-        text-align:center;
+
+        width:100%;
+
+        max-width:600px;
+
+        margin:0 auto;
+
       }
 
       .page-logo{
-        margin:0 auto 24px;
-      }
 
-      .eyebrow{
-        margin-left:auto;
-        margin-right:auto;
-      }
-    }
+        width:200px;
 
-    @media (max-width:700px){
-      .events-grid{
-        grid-template-columns:1fr;
-      }
-    }
+        margin:
+          0 auto 24px;
 
-    @media (max-width:640px){
-      .container{
-        width:min(var(--container), calc(100% - 20px));
-      }
-
-      .page-hero{
-        padding:26px 0 24px;
-      }
-
-      .events-section{
-        padding:14px 0 72px;
-      }
-
-      h1{
-        font-size:clamp(2.7rem, 13vw, 4.5rem);
-      }
-
-      .page-logo{
-        width:min(138px, 48vw);
       }
 
       .hero-panel{
-        min-height:300px;
+
+        min-height:380px;
+
         padding:18px;
+
+      }
+
+      .hero-panel img{
+
+        max-height:360px;
+
+      }
+
+      .events-grid{
+
+        grid-template-columns:1fr;
+
+      }
+
+      .events-section{
+
+        padding:
+          0 0 30px;
+
+      }
+
+    }
+
+
+    /* =========================
+       SMALL MOBILE
+    ========================= */
+
+    @media (max-width:480px){
+
+      .container{
+
+        width:
+          min(
+            var(--container),
+            calc(100% - 20px)
+          );
+
+      }
+
+      .page-hero{
+
+        padding:
+          15px 0 25px;
+
+      }
+
+      .page-hero > .container{
+
+        width:100%;
+
+        padding-left:10px;
+        padding-right:10px;
+
+      }
+
+      .page-logo{
+
+        width:185px;
+
+      }
+
+      h1{
+
+        font-size:3.8rem;
+
+      }
+
+      .hero-panel{
+
+        min-height:320px;
+
+        padding:14px;
+
         border-radius:24px;
+
+      }
+
+      .hero-panel::before{
+
+        inset:12px;
+
+        border-radius:18px;
+
+      }
+
+      .hero-panel img{
+
+        max-height:300px;
+
       }
 
       .event-card{
-        padding:24px 20px;
+
+        padding:
+          26px 22px;
+
       }
 
-      .mobile-nav-links a{
-        min-height:46px;
+      .events-section{
+
+        padding:
+          0 0 25px;
+
       }
+
+      footer{
+
+        padding:
+          18px 12px 22px;
+
+      }
+
     }
+
   </style>
+
 </head>
 
+
 <body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
   <div class="topbar">
+
     <div class="container">
+
       <div class="topbar-inner">
-        <a href="index.html" class="brand" aria-label="Revered Fitness home">
-          <img src="logo.png" alt="Revered Fitness Logo" class="nav-logo">
-          <div class="brand-text">
-            <strong>REVERED FITNESS</strong>
-            <span>Strength • Discipline • Respect</span>
+
+
+        <!-- BRAND -->
+
+        <a
+          href="index.html"
+          class="brand"
+          aria-label="Revered Fitness home"
+        >
+
+          <div class="brand-mark">
+            R
           </div>
+
+          <div class="brand-text">
+
+            <strong>
+              REVERED FITNESS
+            </strong>
+
+            <span>
+              Strength • Discipline • Respect
+            </span>
+
+          </div>
+
         </a>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileNav">
+
+        <!-- MOBILE MENU -->
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="mobileNav"
+        >
+
           <span></span>
           <span></span>
           <span></span>
+
         </button>
 
-        <nav class="nav-links desktop-nav" aria-label="Primary navigation">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="transformation.html">Transformation</a>
-          <a href="events.html" class="active">Events</a>
-          <a href="clothing.html">Clothing</a>
-          <a href="about.html">About</a>
+
+        <!-- DESKTOP NAV -->
+
+        <nav
+          class="nav-links desktop-nav"
+          aria-label="Primary navigation"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a
+            href="events.html"
+            class="active"
+          >
+            Events
+          </a>
+
+          <a href="clothing.html">
+            Clothing
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
         </nav>
 
-        <a href="about.html#contact" class="nav-cta desktop-cta">Book Consultation</a>
+
+        <a
+          href="about.html#contact"
+          class="nav-cta desktop-cta"
+        >
+          Book Consultation
+        </a>
+
+
       </div>
 
-      <div class="mobile-nav" id="mobileNav">
-        <nav class="mobile-nav-links" aria-label="Mobile navigation">
-          <a href="index.html">Home</a>
-          <a href="services.html">Services</a>
-          <a href="transformation.html">Transformation</a>
-          <a href="events.html" class="active">Events</a>
-          <a href="clothing.html">Clothing</a>
-          <a href="about.html">About</a>
-          <a href="about.html#contact" class="mobile-nav-cta">Book Consultation</a>
+
+      <!-- MOBILE NAV -->
+
+      <div
+        class="mobile-nav"
+        id="mobileNav"
+      >
+
+        <nav
+          class="mobile-nav-links"
+          aria-label="Mobile navigation"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="services.html">
+            Services
+          </a>
+
+          <a
+            href="events.html"
+            class="active"
+          >
+            Events
+          </a>
+
+          <a href="clothing.html">
+            Clothing
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a
+            href="about.html#contact"
+            class="mobile-nav-cta"
+          >
+            Book Consultation
+          </a>
+
         </nav>
+
       </div>
+
     </div>
+
   </div>
 
+
+  <!-- =========================
+       EVENTS HERO
+  ========================= -->
+
   <section class="page-hero">
+
     <div class="container">
+
       <div class="page-hero-wrap">
+
+
+        <!-- LEFT SIDE -->
+
         <div class="page-copy">
-          <img src="logo.png" alt="Revered Fitness Logo" class="page-logo">
 
-          <div class="eyebrow">Community & Sessions</div>
 
-          <h1>Upcoming Events</h1>
+          <img
+            src="logo.png"
+            alt="Revered Fitness Logo"
+            class="page-logo"
+          >
+
+
+          <div class="eyebrow">
+            Community &amp; Sessions
+          </div>
+
+
+          <h1>
+            Upcoming<br>
+            Events
+          </h1>
+
 
           <p class="hero-text">
-            Keep an eye out for free training sessions, community workouts, and upcoming Revered Fitness events designed to bring people together and keep progress moving.
+
+            Keep an eye out for free training
+            sessions, community workouts, and
+            upcoming Revered Fitness events designed
+            to bring people together and keep
+            progress moving.
+
           </p>
+
+
         </div>
+
+
+        <!-- RIGHT SIDE -->
 
         <div class="hero-panel">
-          <img src="car.jpg" alt="Revered Fitness Events Image">
+
+          <img
+            src="car.jpg"
+            alt="Revered Fitness Events"
+          >
+
         </div>
+
+
       </div>
+
     </div>
+
   </section>
+
+
+  <!-- =========================
+       EVENTS
+  ========================= -->
 
   <section class="events-section">
+
     <div class="container">
+
       <div class="events-grid">
 
+
+        <!-- EVENT 1 -->
+
         <article class="event-card">
-          <span class="event-label">Online Session</span>
-          <h2>Free Online Workout</h2>
-          <div class="event-date">June 7, 2026</div>
+
+          <span class="event-label">
+            Online Session
+          </span>
+
+
+          <h2>
+            Free Online Workout
+          </h2>
+
+
+          <div class="event-date">
+            October 4, 2026
+          </div>
+
+
           <p>
-            Join a 1-hour live online workout session built to challenge, motivate, and support all fitness levels from wherever you are training.
+
+            Join a 1-hour live online workout
+            session built to challenge, motivate,
+            and support all fitness levels from
+            wherever you are training.
+
           </p>
-          <a href="about.html#contact" class="btn">Contact Me</a>
+
+
+          <a
+            href="about.html#contact"
+            class="btn"
+          >
+            Contact Me
+          </a>
+
         </article>
+
+
+        <!-- EVENT 2 -->
 
         <article class="event-card featured">
-          <span class="event-label">Outdoor Training</span>
-          <h2>Outdoor Fitness Meetup</h2>
-          <div class="event-date">June 21, 2026</div>
+
+          <span class="event-label">
+            Outdoor Training
+          </span>
+
+
+          <h2>
+            Outdoor Fitness Meetup
+          </h2>
+
+
+          <div class="event-date">
+            October 18, 2026
+          </div>
+
+
           <p>
-            Take part in a free outdoor group training session focused on energy, accountability, and community in a strong supportive environment.
+
+            Take part in a free outdoor group
+            training session focused on energy,
+            accountability, and community in a
+            strong supportive environment.
+
           </p>
-          <a href="about.html#contact" class="btn">Contact Me</a>
+
+
+          <a
+            href="about.html#contact"
+            class="btn"
+          >
+            Contact Me
+          </a>
+
         </article>
+
+
+        <!-- EVENT 3 -->
 
         <article class="event-card">
-          <span class="event-label">Community Event</span>
-          <h2>Strength & Conditioning Session</h2>
-          <div class="event-date">July 5, 2026</div>
+
+          <span class="event-label">
+            Community Event
+          </span>
+
+
+          <h2>
+            Strength &amp; Conditioning Session
+          </h2>
+
+
+          <div class="event-date">
+            November 1, 2026
+          </div>
+
+
           <p>
-            A free group session combining conditioning, strength work, and coaching cues to help you improve performance and confidence.
+
+            A free group session combining
+            conditioning, strength work, and
+            coaching cues to help you improve
+            performance and confidence.
+
           </p>
-          <a href="about.html#contact" class="btn">Contact Me</a>
+
+
+          <a
+            href="about.html#contact"
+            class="btn"
+          >
+            Contact Me
+          </a>
+
         </article>
 
+
       </div>
+
     </div>
+
   </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
     © 2026 Revered Fitness
   </footer>
 
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileNav = document.getElementById("mobileNav");
 
-    if (menuToggle && mobileNav) {
-      menuToggle.addEventListener("click", function () {
-        const isOpen = mobileNav.classList.toggle("open");
-        menuToggle.classList.toggle("active", isOpen);
-        menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
+  <!-- =========================
+       MOBILE MENU SCRIPT
+  ========================= -->
+
+  <script>
+
+    const menuToggle =
+      document.getElementById(
+        "menuToggle"
+      );
+
+    const mobileNav =
+      document.getElementById(
+        "mobileNav"
+      );
+
+
+    if(
+      menuToggle &&
+      mobileNav
+    ){
+
+      menuToggle.addEventListener(
+        "click",
+        function(){
+
+          const isOpen =
+            mobileNav.classList.toggle(
+              "open"
+            );
+
+          menuToggle.classList.toggle(
+            "active",
+            isOpen
+          );
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen
+              ? "true"
+              : "false"
+          );
+
+        }
+      );
+
+
+      const mobileLinks =
+        mobileNav.querySelectorAll(
+          "a"
+        );
+
+
+      mobileLinks.forEach(
+        function(link){
+
+          link.addEventListener(
+            "click",
+            function(){
+
+              mobileNav.classList.remove(
+                "open"
+              );
+
+              menuToggle.classList.remove(
+                "active"
+              );
+
+              menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+          );
+
+        }
+      );
+
     }
+
   </script>
+
+
 </body>
 </html>
