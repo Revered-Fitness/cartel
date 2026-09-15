@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
+
     :root{
       --bg:#0a0a0a;
       --bg-soft:#111111;
@@ -32,17 +33,22 @@
       --container:1240px;
     }
 
+
     *{
       box-sizing:border-box;
     }
+
 
     html{
       scroll-behavior:smooth;
     }
 
+
     body{
       margin:0;
-      font-family:'Manrope', sans-serif;
+
+      font-family:'Manrope',sans-serif;
+
       color:var(--text);
 
       background:
@@ -60,15 +66,18 @@
       overflow-x:hidden;
     }
 
+
     a{
       color:inherit;
       text-decoration:none;
     }
 
+
     img{
       display:block;
       max-width:100%;
     }
+
 
     .container{
       width:min(
@@ -80,13 +89,16 @@
     }
 
 
+
     /* =========================
        TOP NAVIGATION
     ========================= */
 
     .topbar{
       position:sticky;
+
       top:0;
+
       z-index:1000;
 
       background:rgba(10,10,10,0.88);
@@ -94,14 +106,20 @@
       backdrop-filter:blur(14px);
       -webkit-backdrop-filter:blur(14px);
 
-      border-bottom:1px solid rgba(255,255,255,0.08);
+      border-bottom:
+        1px solid rgba(255,255,255,0.08);
     }
+
 
     .topbar-inner{
       min-height:64px;
 
       display:grid;
-      grid-template-columns:auto 1fr auto;
+
+      grid-template-columns:
+        auto
+        1fr
+        auto;
 
       align-items:center;
 
@@ -110,14 +128,17 @@
       padding:10px 0;
     }
 
+
     .brand{
       display:flex;
+
       align-items:center;
 
       gap:10px;
 
       min-width:0;
     }
+
 
     .brand-mark{
       width:34px;
@@ -126,9 +147,11 @@
       border-radius:50%;
 
       display:grid;
+
       place-items:center;
 
-      border:1px solid rgba(214,185,140,0.16);
+      border:
+        1px solid rgba(214,185,140,0.16);
 
       background:
         linear-gradient(
@@ -139,27 +162,35 @@
 
       color:#fff;
 
-      font-family:'Cormorant Garamond',serif;
+      font-family:
+        'Cormorant Garamond',
+        serif;
 
       font-size:1rem;
+
       font-weight:700;
 
       flex:0 0 auto;
     }
 
+
     .brand-text{
       display:flex;
+
       flex-direction:column;
 
       line-height:1;
     }
 
+
     .brand-text strong{
       font-size:0.84rem;
+
       font-weight:800;
 
       letter-spacing:1.5px;
     }
+
 
     .brand-text span{
       margin-top:4px;
@@ -173,10 +204,12 @@
       text-transform:uppercase;
     }
 
+
     .nav-links{
       display:flex;
 
       justify-content:center;
+
       align-items:center;
 
       gap:12px;
@@ -184,17 +217,20 @@
       flex-wrap:wrap;
     }
 
+
     .nav-links a{
       padding:8px 12px;
 
       border-radius:999px;
 
       font-size:0.82rem;
+
       font-weight:700;
 
       color:#d7cec2;
 
-      border:1px solid transparent;
+      border:
+        1px solid transparent;
 
       transition:
         background .25s ease,
@@ -202,19 +238,24 @@
         color .25s ease;
     }
 
+
     .nav-links a:hover,
     .nav-links a.active{
-      background:rgba(255,255,255,0.03);
+      background:
+        rgba(255,255,255,0.03);
 
-      border-color:rgba(255,255,255,0.08);
+      border-color:
+        rgba(255,255,255,0.08);
 
       color:#fff;
     }
+
 
     .nav-cta{
       display:inline-flex;
 
       align-items:center;
+
       justify-content:center;
 
       min-width:150px;
@@ -224,9 +265,11 @@
       border-radius:999px;
 
       background:#f3ede5;
+
       color:#111;
 
       font-size:0.82rem;
+
       font-weight:800;
 
       transition:
@@ -234,10 +277,13 @@
         opacity .25s ease;
     }
 
+
     .nav-cta:hover{
       transform:translateY(-1px);
+
       opacity:.94;
     }
+
 
 
     /* =========================
@@ -253,13 +299,17 @@
       margin-left:auto;
 
       border:none;
+
       border-radius:50%;
 
-      background:rgba(255,255,255,0.04);
+      background:
+        rgba(255,255,255,0.04);
 
-      border:1px solid rgba(255,255,255,0.08);
+      border:
+        1px solid rgba(255,255,255,0.08);
 
       align-items:center;
+
       justify-content:center;
 
       flex-direction:column;
@@ -269,8 +319,10 @@
       cursor:pointer;
     }
 
+
     .menu-toggle span{
       width:18px;
+
       height:2px;
 
       border-radius:999px;
@@ -280,11 +332,13 @@
       transition:.25s ease;
     }
 
+
     .mobile-nav{
       display:none;
 
       padding:0 0 14px;
     }
+
 
     .mobile-nav-links{
       display:grid;
@@ -294,31 +348,39 @@
       padding-top:8px;
     }
 
+
     .mobile-nav-links a{
       display:flex;
 
       align-items:center;
+
       justify-content:center;
 
       min-height:48px;
 
       border-radius:16px;
 
-      background:rgba(255,255,255,0.03);
+      background:
+        rgba(255,255,255,0.03);
 
-      border:1px solid rgba(255,255,255,0.08);
+      border:
+        1px solid rgba(255,255,255,0.08);
 
       color:#f4efe8;
 
       font-size:.92rem;
+
       font-weight:700;
     }
 
+
     .mobile-nav-links a.active{
-      border-color:rgba(214,185,140,0.18);
+      border-color:
+        rgba(214,185,140,0.18);
 
       color:#fff;
     }
+
 
     .mobile-nav-cta{
       background:
@@ -328,10 +390,12 @@
           #d32017
         ) !important;
 
-      border-color:transparent !important;
+      border-color:
+        transparent !important;
 
       color:#fff !important;
     }
+
 
 
     /* =========================
@@ -341,6 +405,7 @@
     header{
       padding:50px 0 90px;
     }
+
 
     .hero{
       display:grid;
@@ -358,19 +423,23 @@
       margin:0 auto;
     }
 
+
     /*
-      Moves the text slightly towards
-      the centre of the page, creating
-      a better visual balance between
-      the page edge and hero image.
+      HERO TEXT POSITION
+
+      Increased left margin moves the
+      entire text block further towards
+      the centre of the page.
     */
 
     .hero-copy{
       max-width:540px;
 
-      margin-left:55px;
+      margin-left:110px;
+
       margin-right:0;
     }
+
 
     .hero-logo{
       width:150px;
@@ -387,6 +456,7 @@
         );
     }
 
+
     .eyebrow{
       display:inline-block;
 
@@ -396,35 +466,43 @@
 
       border-radius:999px;
 
-      border:1px solid var(--line-strong);
+      border:
+        1px solid var(--line-strong);
 
       color:var(--accent);
 
       font-size:.74rem;
+
       font-weight:800;
 
       letter-spacing:1.8px;
 
       text-transform:uppercase;
 
-      background:rgba(255,255,255,.02);
+      background:
+        rgba(255,255,255,.02);
     }
+
 
     h1{
       margin:0 0 20px;
 
-      font-family:'Cormorant Garamond',serif;
+      font-family:
+        'Cormorant Garamond',
+        serif;
 
-      font-size:clamp(
-        4rem,
-        6vw,
-        6rem
-      );
+      font-size:
+        clamp(
+          4rem,
+          6vw,
+          6rem
+        );
 
       line-height:.86;
 
       font-weight:700;
     }
+
 
     .subline{
       margin:0 0 30px;
@@ -438,6 +516,7 @@
       line-height:1.9;
     }
 
+
     .hero-actions{
       display:flex;
 
@@ -448,11 +527,13 @@
       margin-bottom:26px;
     }
 
+
     .btn-primary,
     .btn-secondary{
       display:inline-flex;
 
       align-items:center;
+
       justify-content:center;
 
       min-width:175px;
@@ -462,8 +543,10 @@
       border-radius:999px;
 
       font-size:.92rem;
+
       font-weight:800;
     }
+
 
     .btn-primary{
       background:
@@ -479,12 +562,15 @@
         transform .25s ease;
     }
 
+
     .btn-primary:hover{
       transform:translateY(-1px);
     }
 
+
     .btn-secondary{
-      border:1px solid var(--line);
+      border:
+        1px solid var(--line);
 
       background:transparent;
 
@@ -495,11 +581,14 @@
         background .25s ease;
     }
 
+
     .btn-secondary:hover{
       transform:translateY(-1px);
 
-      background:rgba(255,255,255,.03);
+      background:
+        rgba(255,255,255,.03);
     }
+
 
     .hero-meta{
       display:flex;
@@ -511,12 +600,14 @@
       color:var(--soft);
 
       font-size:.75rem;
+
       font-weight:700;
 
       letter-spacing:1.4px;
 
       text-transform:uppercase;
     }
+
 
 
     /* =========================
@@ -529,6 +620,7 @@
       min-width:0;
     }
 
+
     .hero-frame{
       position:relative;
 
@@ -538,7 +630,8 @@
 
       border-radius:32px;
 
-      border:1px solid var(--line);
+      border:
+        1px solid var(--line);
 
       background:
         radial-gradient(
@@ -558,10 +651,12 @@
       display:flex;
 
       align-items:center;
+
       justify-content:center;
 
       overflow:hidden;
     }
+
 
     .hero-frame::before{
       content:"";
@@ -570,12 +665,14 @@
 
       inset:18px;
 
-      border:1px solid rgba(214,185,140,.08);
+      border:
+        1px solid rgba(214,185,140,.08);
 
       border-radius:24px;
 
       pointer-events:none;
     }
+
 
     .hero-img{
       position:relative;
@@ -583,6 +680,7 @@
       z-index:1;
 
       width:100%;
+
       height:100%;
 
       max-height:600px;
@@ -598,6 +696,7 @@
     }
 
 
+
     /* =========================
        OVERVIEW
     ========================= */
@@ -605,6 +704,7 @@
     .overview{
       padding:0 0 92px;
     }
+
 
     .overview-grid{
       display:grid;
@@ -617,12 +717,14 @@
       gap:18px;
     }
 
+
     .card{
       padding:32px 28px;
 
       border-radius:var(--radius);
 
-      border:1px solid var(--line);
+      border:
+        1px solid var(--line);
 
       background:
         linear-gradient(
@@ -634,6 +736,7 @@
       box-shadow:var(--shadow);
     }
 
+
     .card-label{
       display:inline-block;
 
@@ -642,6 +745,7 @@
       color:var(--accent);
 
       font-size:.74rem;
+
       font-weight:800;
 
       letter-spacing:2px;
@@ -649,16 +753,20 @@
       text-transform:uppercase;
     }
 
+
     .card h2,
     .card h3{
       margin:0 0 12px;
 
-      font-family:'Cormorant Garamond',serif;
+      font-family:
+        'Cormorant Garamond',
+        serif;
 
       font-weight:700;
 
       line-height:.95;
     }
+
 
     .card h2{
       font-size:
@@ -669,9 +777,11 @@
         );
     }
 
+
     .card h3{
       font-size:1.8rem;
     }
+
 
     .card p{
       margin:0;
@@ -682,6 +792,7 @@
 
       line-height:1.9;
     }
+
 
 
     /* =========================
@@ -695,10 +806,12 @@
 
       text-align:center;
 
-      border-top:1px solid rgba(255,255,255,.06);
+      border-top:
+        1px solid rgba(255,255,255,.06);
 
       font-size:.92rem;
     }
+
 
 
     /* =========================
@@ -715,13 +828,16 @@
         gap:28px;
       }
 
+
       .hero-copy{
-        margin-left:30px;
+        margin-left:55px;
       }
+
 
       .hero-frame{
         min-height:520px;
       }
+
 
       h1{
         font-size:
@@ -731,7 +847,9 @@
             5rem
           );
       }
+
     }
+
 
 
     /* =========================
@@ -741,23 +859,29 @@
     @media (max-width:900px){
 
       .topbar-inner{
-        grid-template-columns:auto auto;
+        grid-template-columns:
+          auto
+          auto;
 
         gap:16px;
       }
+
 
       .desktop-nav,
       .desktop-cta{
         display:none;
       }
 
+
       .menu-toggle{
         display:flex;
       }
 
+
       .mobile-nav.open{
         display:block;
       }
+
 
       .menu-toggle.active span:nth-child(1){
         transform:
@@ -765,16 +889,20 @@
           rotate(45deg);
       }
 
+
       .menu-toggle.active span:nth-child(2){
         opacity:0;
       }
+
 
       .menu-toggle.active span:nth-child(3){
         transform:
           translateY(-7px)
           rotate(-45deg);
       }
+
     }
+
 
 
     /* =========================
@@ -791,40 +919,57 @@
         text-align:center;
       }
 
+
+      /*
+        Reset the desktop positioning
+        so the mobile hero stays centred.
+      */
+
       .hero-copy{
         max-width:600px;
 
         margin:0 auto;
       }
 
+
       .hero-logo{
         margin-left:auto;
+
         margin-right:auto;
       }
+
 
       .eyebrow{
         margin-left:auto;
+
         margin-right:auto;
       }
 
+
       .subline{
         margin-left:auto;
+
         margin-right:auto;
       }
+
 
       .hero-actions,
       .hero-meta{
         justify-content:center;
       }
 
+
       .hero-frame{
         min-height:480px;
       }
 
+
       .overview-grid{
         grid-template-columns:1fr;
       }
+
     }
+
 
 
     /* =========================
@@ -841,13 +986,16 @@
           );
       }
 
+
       header{
         padding:30px 0 70px;
       }
 
+
       h1{
         font-size:3.5rem;
       }
+
 
       .hero-frame{
         min-height:400px;
@@ -857,20 +1005,24 @@
         border-radius:24px;
       }
 
+
       .hero-frame::before{
         inset:12px;
 
         border-radius:18px;
       }
 
+
       .hero-img{
         max-height:380px;
       }
+
 
       .btn-primary,
       .btn-secondary{
         width:100%;
       }
+
 
       .hero-meta{
         flex-direction:column;
@@ -879,6 +1031,7 @@
 
         gap:10px;
       }
+
     }
 
   </style>
@@ -926,6 +1079,7 @@
         </a>
 
 
+
         <!-- MOBILE MENU BUTTON -->
 
         <button
@@ -941,6 +1095,7 @@
           <span></span>
 
         </button>
+
 
 
         <!-- DESKTOP NAVIGATION -->
@@ -976,6 +1131,7 @@
         </nav>
 
 
+
         <!-- DESKTOP CTA -->
 
         <a
@@ -985,8 +1141,8 @@
           Book Consultation
         </a>
 
-
       </div>
+
 
 
       <!-- MOBILE NAVIGATION -->
@@ -1042,7 +1198,7 @@
 
 
   <!-- =========================
-       HERO
+       HERO SECTION
   ========================= -->
 
   <header>
@@ -1052,28 +1208,36 @@
       <div class="hero">
 
 
-        <!-- HERO TEXT -->
+        <!-- HERO COPY -->
 
         <div class="hero-copy">
 
 
+          <!-- LOGO -->
+
           <img
-            src="logo.png"
+            src="https://reveredfitness.co.uk/logo.png"
             alt="Revered Fitness Logo"
             class="hero-logo"
           >
 
+
+          <!-- EYEBROW -->
 
           <div class="eyebrow">
             Online &amp; In-Person Coaching
           </div>
 
 
+          <!-- MAIN TITLE -->
+
           <h1>
             Revered<br>
             Fitness
           </h1>
 
+
+          <!-- DESCRIPTION -->
 
           <p class="subline">
             Build a stronger body, a sharper mindset,
@@ -1082,6 +1246,8 @@
             premium training experience.
           </p>
 
+
+          <!-- BUTTONS -->
 
           <div class="hero-actions">
 
@@ -1101,6 +1267,8 @@
 
           </div>
 
+
+          <!-- HERO META -->
 
           <div class="hero-meta">
 
@@ -1179,6 +1347,7 @@
         </div>
 
 
+
         <!-- CARD 2 -->
 
         <div class="card">
@@ -1200,6 +1369,7 @@
           </p>
 
         </div>
+
 
 
         <!-- CARD 3 -->
@@ -1238,9 +1408,7 @@
   ========================= -->
 
   <footer>
-
     © 2026 Revered Fitness
-
   </footer>
 
 
