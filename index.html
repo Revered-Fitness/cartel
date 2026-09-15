@@ -58,11 +58,6 @@
       --container:1240px;
     }
 
-
-    /* =========================
-       RESET
-    ========================= */
-
     *{
       box-sizing:border-box;
     }
@@ -73,9 +68,7 @@
 
     body{
       margin:0;
-
       font-family:'Manrope',sans-serif;
-
       color:var(--text);
 
       background:
@@ -103,11 +96,6 @@
       max-width:100%;
     }
 
-
-    /* =========================
-       STANDARD SITE CONTAINER
-    ========================= */
-
     .container{
       width:min(
         var(--container),
@@ -124,32 +112,20 @@
 
     .topbar{
       padding:20px 0;
-
-      border-bottom:
-        1px solid rgba(255,255,255,.05);
+      border-bottom:1px solid rgba(255,255,255,.05);
     }
 
     .topbar-inner{
       display:grid;
-
-      grid-template-columns:
-        auto 1fr auto;
-
+      grid-template-columns:auto 1fr auto;
       align-items:center;
-
       gap:30px;
     }
 
-
-    /* BRAND */
-
     .brand{
       display:flex;
-
       align-items:center;
-
       gap:12px;
-
       min-width:max-content;
     }
 
@@ -158,47 +134,35 @@
       height:38px;
 
       display:flex;
-
       align-items:center;
       justify-content:center;
 
       border:1px solid var(--accent);
-
       border-radius:50%;
 
       color:var(--accent);
 
-      font-family:
-        'Cormorant Garamond',
-        serif;
-
+      font-family:'Cormorant Garamond',serif;
       font-size:1.5rem;
       font-weight:700;
     }
 
     .brand-text{
       display:flex;
-
       flex-direction:column;
-
       gap:3px;
     }
 
     .brand-text strong{
       font-size:.82rem;
-
       letter-spacing:1.8px;
-
       font-weight:800;
     }
 
     .brand-text span{
       color:var(--soft);
-
       font-size:.62rem;
-
       letter-spacing:1.3px;
-
       text-transform:uppercase;
     }
 
@@ -207,10 +171,8 @@
 
     .nav-links{
       display:flex;
-
       justify-content:center;
       align-items:center;
-
       gap:30px;
     }
 
@@ -220,15 +182,12 @@
       color:#cfc7bc;
 
       font-size:.78rem;
-
       font-weight:700;
 
       letter-spacing:1px;
-
       text-transform:uppercase;
 
-      transition:
-        color .25s ease;
+      transition:color .25s ease;
     }
 
     .nav-links a::after{
@@ -237,17 +196,14 @@
       position:absolute;
 
       left:0;
-
       bottom:-8px;
 
       width:0;
-
       height:1px;
 
       background:var(--accent);
 
-      transition:
-        width .25s ease;
+      transition:width .25s ease;
     }
 
     .nav-links a:hover,
@@ -260,30 +216,22 @@
       width:100%;
     }
 
-
-    /* NAV CTA */
-
     .nav-cta{
       display:inline-flex;
-
       align-items:center;
       justify-content:center;
 
       padding:12px 18px;
 
-      border:
-        1px solid rgba(214,185,140,.35);
-
+      border:1px solid rgba(214,185,140,.35);
       border-radius:999px;
 
       color:var(--accent);
 
       font-size:.74rem;
-
       font-weight:800;
 
       letter-spacing:1px;
-
       text-transform:uppercase;
 
       transition:
@@ -293,7 +241,6 @@
 
     .nav-cta:hover{
       background:var(--accent);
-
       color:#0a0a0a;
     }
 
@@ -312,13 +259,11 @@
 
       align-items:center;
       justify-content:center;
-
       flex-direction:column;
 
       gap:5px;
 
       border:1px solid var(--line);
-
       border-radius:50%;
 
       background:transparent;
@@ -345,29 +290,24 @@
 
     .mobile-nav-links{
       display:flex;
-
       flex-direction:column;
 
       margin-top:18px;
 
-      border-top:
-        1px solid var(--line);
+      border-top:1px solid var(--line);
     }
 
     .mobile-nav-links a{
       padding:15px 5px;
 
-      border-bottom:
-        1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
 
       color:#d8d0c5;
 
       font-size:.8rem;
-
       font-weight:700;
 
       letter-spacing:1.2px;
-
       text-transform:uppercase;
     }
 
@@ -380,13 +320,10 @@
 
       text-align:center;
 
-      border:
-        1px solid rgba(214,185,140,.25) !important;
-
+      border:1px solid rgba(214,185,140,.25) !important;
       border-radius:999px;
 
-      color:
-        var(--accent) !important;
+      color:var(--accent) !important;
     }
 
 
@@ -395,24 +332,14 @@
     ========================= */
 
     header{
-      padding:50px 0 90px;
+      /*
+        Raised from 50px to 15px
+      */
+      padding:15px 0 90px;
     }
-
-
-    /*
-       IMPORTANT:
-
-       The hero gets its OWN container spacing.
-
-       This means the distance from the browser
-       edge to the text is exactly the same as
-       the distance from the picture frame to
-       the opposite browser edge.
-    */
 
     header > .container{
       width:100%;
-
       max-width:none;
 
       padding-left:60px;
@@ -421,14 +348,8 @@
       margin:0;
     }
 
-
     .hero{
       display:grid;
-
-      /*
-         Slightly more room given to
-         the photograph.
-      */
 
       grid-template-columns:
         minmax(0, .95fr)
@@ -445,32 +366,19 @@
 
 
     /* =========================
-       HERO LEFT SIDE
+       HERO LEFT
     ========================= */
 
     .hero-copy{
       width:100%;
-
       max-width:none;
 
       margin:0;
-
       padding:0;
     }
 
-
-    /* MAIN CROWN LOGO */
-
     .hero-logo{
       width:220px;
-
-      /*
-         No left margin.
-
-         The logo now starts on the same
-         vertical line as the rest of
-         the hero content.
-      */
 
       margin:
         0
@@ -488,9 +396,6 @@
         );
     }
 
-
-    /* EYEBROW */
-
     .eyebrow{
       display:inline-block;
 
@@ -498,58 +403,34 @@
 
       padding:8px 14px;
 
-      border:
-        1px solid var(--line-strong);
-
+      border:1px solid var(--line-strong);
       border-radius:999px;
 
       color:var(--accent);
 
       font-size:.74rem;
-
       font-weight:800;
 
       letter-spacing:1.8px;
-
       text-transform:uppercase;
 
-      background:
-        rgba(255,255,255,.02);
+      background:rgba(255,255,255,.02);
     }
 
-
-    /* MAIN HEADING */
-
     h1{
-      margin:
-        0
-        0
-        20px;
+      margin:0 0 20px;
 
-      font-family:
-        'Cormorant Garamond',
-        serif;
+      font-family:'Cormorant Garamond',serif;
 
-      font-size:
-        clamp(
-          4rem,
-          6vw,
-          6rem
-        );
+      font-size:clamp(4rem,6vw,6rem);
 
       line-height:.86;
 
       font-weight:700;
     }
 
-
-    /* DESCRIPTION */
-
     .subline{
-      margin:
-        0
-        0
-        30px;
+      margin:0 0 30px;
 
       max-width:560px;
 
@@ -559,9 +440,6 @@
 
       line-height:1.9;
     }
-
-
-    /* HERO BUTTONS */
 
     .hero-actions{
       display:flex;
@@ -601,18 +479,15 @@
 
       color:#fff;
 
-      transition:
-        transform .25s ease;
+      transition:transform .25s ease;
     }
 
     .btn-primary:hover{
-      transform:
-        translateY(-1px);
+      transform:translateY(-1px);
     }
 
     .btn-secondary{
-      border:
-        1px solid var(--line);
+      border:1px solid var(--line);
 
       background:transparent;
 
@@ -624,15 +499,9 @@
     }
 
     .btn-secondary:hover{
-      transform:
-        translateY(-1px);
-
-      background:
-        rgba(255,255,255,.03);
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.03);
     }
-
-
-    /* HERO META */
 
     .hero-meta{
       display:flex;
@@ -661,14 +530,11 @@
       position:relative;
 
       width:100%;
-
       min-width:0;
 
       margin:0;
-
       padding:0;
     }
-
 
     .hero-frame{
       position:relative;
@@ -681,8 +547,7 @@
 
       border-radius:32px;
 
-      border:
-        1px solid var(--line);
+      border:1px solid var(--line);
 
       background:
 
@@ -700,8 +565,7 @@
 
         #101010;
 
-      box-shadow:
-        var(--shadow);
+      box-shadow:var(--shadow);
 
       display:flex;
 
@@ -711,7 +575,6 @@
       overflow:hidden;
     }
 
-
     .hero-frame::before{
       content:"";
 
@@ -719,14 +582,12 @@
 
       inset:18px;
 
-      border:
-        1px solid rgba(214,185,140,.08);
+      border:1px solid rgba(214,185,140,.08);
 
       border-radius:24px;
 
       pointer-events:none;
     }
-
 
     .hero-img{
       position:relative;
@@ -739,7 +600,6 @@
       max-height:600px;
 
       object-fit:contain;
-
       object-position:center;
 
       filter:
@@ -754,12 +614,8 @@
     ========================= */
 
     .overview{
-      padding:
-        0
-        0
-        92px;
+      padding:0 0 92px;
     }
-
 
     .overview-grid{
       display:grid;
@@ -770,16 +626,12 @@
       gap:18px;
     }
 
-
     .card{
-      padding:
-        32px 28px;
+      padding:32px 28px;
 
-      border-radius:
-        var(--radius);
+      border-radius:var(--radius);
 
-      border:
-        1px solid var(--line);
+      border:1px solid var(--line);
 
       background:
         linear-gradient(
@@ -788,10 +640,8 @@
           rgba(255,255,255,.01)
         );
 
-      box-shadow:
-        var(--shadow);
+      box-shadow:var(--shadow);
     }
-
 
     .card-label{
       display:inline-block;
@@ -809,38 +659,24 @@
       text-transform:uppercase;
     }
 
-
     .card h2,
     .card h3{
-      margin:
-        0
-        0
-        12px;
+      margin:0 0 12px;
 
-      font-family:
-        'Cormorant Garamond',
-        serif;
+      font-family:'Cormorant Garamond',serif;
 
       font-weight:700;
 
       line-height:.95;
     }
 
-
     .card h2{
-      font-size:
-        clamp(
-          2.1rem,
-          3.5vw,
-          3.5rem
-        );
+      font-size:clamp(2.1rem,3.5vw,3.5rem);
     }
-
 
     .card h3{
       font-size:1.8rem;
     }
-
 
     .card p{
       margin:0;
@@ -858,15 +694,13 @@
     ========================= */
 
     footer{
-      padding:
-        24px 16px 36px;
+      padding:24px 16px 36px;
 
       color:#bfb5a7;
 
       text-align:center;
 
-      border-top:
-        1px solid rgba(255,255,255,.06);
+      border-top:1px solid rgba(255,255,255,.06);
 
       font-size:.92rem;
     }
@@ -900,27 +734,20 @@
       }
 
       h1{
-        font-size:
-          clamp(
-            3.5rem,
-            7vw,
-            5rem
-          );
+        font-size:clamp(3.5rem,7vw,5rem);
       }
 
     }
 
 
     /* =========================
-       MOBILE NAV BREAKPOINT
+       MOBILE NAV
     ========================= */
 
     @media (max-width:900px){
 
       .topbar-inner{
-        grid-template-columns:
-          auto auto;
-
+        grid-template-columns:auto auto;
         gap:16px;
       }
 
@@ -937,23 +764,16 @@
         display:block;
       }
 
-      .menu-toggle.active
-      span:nth-child(1){
-        transform:
-          translateY(7px)
-          rotate(45deg);
+      .menu-toggle.active span:nth-child(1){
+        transform:translateY(7px) rotate(45deg);
       }
 
-      .menu-toggle.active
-      span:nth-child(2){
+      .menu-toggle.active span:nth-child(2){
         opacity:0;
       }
 
-      .menu-toggle.active
-      span:nth-child(3){
-        transform:
-          translateY(-7px)
-          rotate(-45deg);
+      .menu-toggle.active span:nth-child(3){
+        transform:translateY(-7px) rotate(-45deg);
       }
 
     }
@@ -966,8 +786,7 @@
     @media (max-width:760px){
 
       header{
-        padding:
-          38px 0 75px;
+        padding:15px 0 75px;
       }
 
       header > .container{
@@ -998,8 +817,7 @@
       .hero-logo{
         width:190px;
 
-        margin:
-          0 auto 24px;
+        margin:0 auto 24px;
       }
 
       .eyebrow{
@@ -1035,16 +853,14 @@
     @media (max-width:480px){
 
       .container{
-        width:
-          min(
-            var(--container),
-            calc(100% - 20px)
-          );
+        width:min(
+          var(--container),
+          calc(100% - 20px)
+        );
       }
 
       header{
-        padding:
-          30px 0 70px;
+        padding:15px 0 70px;
       }
 
       header > .container{
@@ -1072,7 +888,6 @@
 
       .hero-frame::before{
         inset:12px;
-
         border-radius:18px;
       }
 
@@ -1087,9 +902,7 @@
 
       .hero-meta{
         flex-direction:column;
-
         align-items:center;
-
         gap:10px;
       }
 
@@ -1098,13 +911,12 @@
   </style>
 </head>
 
-
 <body>
 
 
   <!-- =========================
        NAVIGATION
-  ========================== -->
+  ========================= -->
 
   <div class="topbar">
 
@@ -1112,8 +924,6 @@
 
       <div class="topbar-inner">
 
-
-        <!-- BRAND -->
 
         <a
           href="index.html"
@@ -1140,8 +950,6 @@
         </a>
 
 
-        <!-- MOBILE MENU BUTTON -->
-
         <button
           class="menu-toggle"
           id="menuToggle"
@@ -1157,17 +965,12 @@
         </button>
 
 
-        <!-- DESKTOP NAVIGATION -->
-
         <nav
           class="nav-links desktop-nav"
           aria-label="Primary navigation"
         >
 
-          <a
-            href="index.html"
-            class="active"
-          >
+          <a href="index.html" class="active">
             Home
           </a>
 
@@ -1190,8 +993,6 @@
         </nav>
 
 
-        <!-- DESKTOP CTA -->
-
         <a
           href="about.html#contact"
           class="nav-cta desktop-cta"
@@ -1199,11 +1000,8 @@
           Book Consultation
         </a>
 
-
       </div>
 
-
-      <!-- MOBILE NAVIGATION -->
 
       <div
         class="mobile-nav"
@@ -1215,10 +1013,7 @@
           aria-label="Mobile navigation"
         >
 
-          <a
-            href="index.html"
-            class="active"
-          >
+          <a href="index.html" class="active">
             Home
           </a>
 
@@ -1256,7 +1051,7 @@
 
   <!-- =========================
        HERO
-  ========================== -->
+  ========================= -->
 
   <header>
 
@@ -1270,8 +1065,6 @@
         <div class="hero-copy">
 
 
-          <!-- MAIN LOGO -->
-
           <img
             src="https://reveredfitness.co.uk/logo.png"
             alt="Revered Fitness Logo"
@@ -1279,22 +1072,16 @@
           >
 
 
-          <!-- EYEBROW -->
-
           <div class="eyebrow">
             Online &amp; In-Person Coaching
           </div>
 
-
-          <!-- TITLE -->
 
           <h1>
             Revered<br>
             Fitness
           </h1>
 
-
-          <!-- DESCRIPTION -->
 
           <p class="subline">
             Build a stronger body, a sharper mindset,
@@ -1303,8 +1090,6 @@
             premium training experience.
           </p>
 
-
-          <!-- BUTTONS -->
 
           <div class="hero-actions">
 
@@ -1325,8 +1110,6 @@
           </div>
 
 
-          <!-- META -->
-
           <div class="hero-meta">
 
             <span>
@@ -1343,9 +1126,7 @@
         </div>
 
 
-        <!-- =========================
-             RIGHT SIDE
-        ========================== -->
+        <!-- RIGHT SIDE -->
 
         <div class="hero-visual">
 
@@ -1371,7 +1152,7 @@
 
   <!-- =========================
        OVERVIEW
-  ========================== -->
+  ========================= -->
 
   <section class="overview">
 
@@ -1379,8 +1160,6 @@
 
       <div class="overview-grid">
 
-
-        <!-- CARD 1 -->
 
         <div class="card">
 
@@ -1404,8 +1183,6 @@
         </div>
 
 
-        <!-- CARD 2 -->
-
         <div class="card">
 
           <span class="card-label">
@@ -1426,8 +1203,6 @@
 
         </div>
 
-
-        <!-- CARD 3 -->
 
         <div class="card">
 
@@ -1459,7 +1234,7 @@
 
   <!-- =========================
        FOOTER
-  ========================== -->
+  ========================= -->
 
   <footer>
     © 2026 Revered Fitness
@@ -1468,34 +1243,25 @@
 
   <!-- =========================
        MOBILE MENU SCRIPT
-  ========================== -->
+  ========================= -->
 
   <script>
 
     const menuToggle =
-      document.getElementById(
-        "menuToggle"
-      );
+      document.getElementById("menuToggle");
 
     const mobileNav =
-      document.getElementById(
-        "mobileNav"
-      );
+      document.getElementById("mobileNav");
 
 
-    if(
-      menuToggle &&
-      mobileNav
-    ){
+    if(menuToggle && mobileNav){
 
       menuToggle.addEventListener(
         "click",
         function(){
 
           const isOpen =
-            mobileNav.classList.toggle(
-              "open"
-            );
+            mobileNav.classList.toggle("open");
 
           menuToggle.classList.toggle(
             "active",
@@ -1504,9 +1270,7 @@
 
           menuToggle.setAttribute(
             "aria-expanded",
-            isOpen
-              ? "true"
-              : "false"
+            isOpen ? "true" : "false"
           );
 
         }
@@ -1514,9 +1278,7 @@
 
 
       const mobileLinks =
-        mobileNav.querySelectorAll(
-          "a"
-        );
+        mobileNav.querySelectorAll("a");
 
 
       mobileLinks.forEach(
@@ -1526,13 +1288,9 @@
             "click",
             function(){
 
-              mobileNav.classList.remove(
-                "open"
-              );
+              mobileNav.classList.remove("open");
 
-              menuToggle.classList.remove(
-                "active"
-              );
+              menuToggle.classList.remove("active");
 
               menuToggle.setAttribute(
                 "aria-expanded",
