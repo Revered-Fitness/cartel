@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Revered Fitness</title>
+  <title>Revered Fitness | Personal Training</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Revered Fitness offers online and in-person personal training, structured coaching and fitness support. Strength • Discipline • Respect.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VRX9C1CB33"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-VRX9C1CB33');
+  </script>
 
   <style>
 
@@ -14,26 +32,35 @@
       --bg:#0a0a0a;
       --bg-soft:#111111;
       --panel:rgba(255,255,255,0.03);
+
       --text:#f4efe8;
       --muted:#c9c1b5;
       --soft:#9f9689;
+
       --line:rgba(255,255,255,0.08);
       --line-strong:rgba(214,185,140,0.16);
+
       --accent:#d6b98c;
+
       --primary:#b11510;
       --primary-hover:#d32017;
+
       --shadow:0 20px 50px rgba(0,0,0,0.24);
+
       --radius:28px;
       --container:1240px;
     }
+
 
     *{
       box-sizing:border-box;
     }
 
+
     html{
       scroll-behavior:smooth;
     }
+
 
     body{
       margin:0;
@@ -55,21 +82,29 @@
       overflow-x:hidden;
     }
 
+
     a{
       color:inherit;
       text-decoration:none;
     }
+
 
     img{
       display:block;
       max-width:100%;
     }
 
+
+    /* =========================
+       CONTAINER
+    ========================= */
+
     .container{
       width:min(
         var(--container),
         calc(100% - 32px)
       );
+
       margin:0 auto;
     }
 
@@ -79,256 +114,237 @@
     ========================= */
 
     .topbar{
-      position:sticky;
-      top:0;
-      z-index:1000;
-
-      background:rgba(10,10,10,0.88);
-
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
-
-      border-bottom:
-        1px solid rgba(255,255,255,0.08);
+      padding:20px 0;
+      border-bottom:1px solid rgba(255,255,255,.05);
     }
+
 
     .topbar-inner{
-      min-height:64px;
-
       display:grid;
-
-      grid-template-columns:
-        auto
-        1fr
-        auto;
-
+      grid-template-columns:auto 1fr auto;
       align-items:center;
-
-      gap:24px;
-
-      padding:10px 0;
+      gap:30px;
     }
+
 
     .brand{
       display:flex;
       align-items:center;
-      gap:10px;
-      min-width:0;
+      gap:12px;
+      min-width:max-content;
     }
+
 
     .brand-mark{
-      width:34px;
-      height:34px;
+      width:38px;
+      height:38px;
 
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border:1px solid var(--accent);
       border-radius:50%;
 
-      display:grid;
-      place-items:center;
+      color:var(--accent);
 
-      border:
-        1px solid rgba(214,185,140,0.16);
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(177,21,16,0.22),
-          rgba(214,185,140,0.08)
-        );
-
-      color:#fff;
-
-      font-family:
-        'Cormorant Garamond',
-        serif;
-
-      font-size:1rem;
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.5rem;
       font-weight:700;
-
-      flex:0 0 auto;
     }
+
 
     .brand-text{
       display:flex;
       flex-direction:column;
-      line-height:1;
+      gap:3px;
     }
+
 
     .brand-text strong{
-      font-size:0.84rem;
+      font-size:.82rem;
+      letter-spacing:1.8px;
       font-weight:800;
-      letter-spacing:1.5px;
     }
+
 
     .brand-text span{
-      margin-top:4px;
-
-      font-size:0.62rem;
-      color:#c9c1b5;
-
-      letter-spacing:1px;
+      color:var(--soft);
+      font-size:.62rem;
+      letter-spacing:1.3px;
       text-transform:uppercase;
     }
+
 
     .nav-links{
       display:flex;
       justify-content:center;
       align-items:center;
-
-      gap:12px;
-      flex-wrap:wrap;
+      gap:30px;
     }
 
+
     .nav-links a{
-      padding:8px 12px;
+      position:relative;
 
-      border-radius:999px;
+      color:#cfc7bc;
 
-      font-size:0.82rem;
+      font-size:.78rem;
       font-weight:700;
 
-      color:#d7cec2;
-
-      border:
-        1px solid transparent;
+      letter-spacing:1px;
+      text-transform:uppercase;
 
       transition:
-        background .25s ease,
-        border-color .25s ease,
         color .25s ease;
     }
 
+
+    .nav-links a::after{
+      content:"";
+
+      position:absolute;
+
+      left:0;
+      bottom:-8px;
+
+      width:0;
+      height:1px;
+
+      background:var(--accent);
+
+      transition:
+        width .25s ease;
+    }
+
+
     .nav-links a:hover,
     .nav-links a.active{
-      background:
-        rgba(255,255,255,0.03);
-
-      border-color:
-        rgba(255,255,255,0.08);
-
       color:#fff;
     }
+
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after{
+      width:100%;
+    }
+
 
     .nav-cta{
       display:inline-flex;
       align-items:center;
       justify-content:center;
 
-      min-width:150px;
+      padding:12px 18px;
 
-      padding:11px 16px;
-
+      border:1px solid rgba(214,185,140,.35);
       border-radius:999px;
 
-      background:#f3ede5;
-      color:#111;
+      color:var(--accent);
 
-      font-size:0.82rem;
+      font-size:.74rem;
       font-weight:800;
+
+      letter-spacing:1px;
+      text-transform:uppercase;
+
+      transition:
+        background .25s ease,
+        color .25s ease;
+    }
+
+
+    .nav-cta:hover{
+      background:var(--accent);
+      color:#0a0a0a;
+    }
+
+
+    /* =========================
+       MOBILE MENU BUTTON
+    ========================= */
+
+    .menu-toggle{
+      display:none;
+
+      width:44px;
+      height:44px;
+
+      margin-left:auto;
+
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+
+      gap:5px;
+
+      border:1px solid var(--line);
+      border-radius:50%;
+
+      background:transparent;
+
+      cursor:pointer;
+    }
+
+
+    .menu-toggle span{
+      display:block;
+
+      width:18px;
+      height:2px;
+
+      background:#f4efe8;
 
       transition:
         transform .25s ease,
         opacity .25s ease;
     }
 
-    .nav-cta:hover{
-      transform:translateY(-1px);
-      opacity:.94;
-    }
-
-
-    /* =========================
-       MOBILE MENU
-    ========================= */
-
-    .menu-toggle{
-      display:none;
-
-      width:46px;
-      height:46px;
-
-      margin-left:auto;
-
-      border:none;
-      border-radius:50%;
-
-      background:
-        rgba(255,255,255,0.04);
-
-      border:
-        1px solid rgba(255,255,255,0.08);
-
-      align-items:center;
-      justify-content:center;
-
-      flex-direction:column;
-      gap:5px;
-
-      cursor:pointer;
-    }
-
-    .menu-toggle span{
-      width:18px;
-      height:2px;
-
-      border-radius:999px;
-
-      background:#fff;
-
-      transition:.25s ease;
-    }
 
     .mobile-nav{
       display:none;
-      padding:0 0 14px;
     }
+
 
     .mobile-nav-links{
-      display:grid;
-      gap:10px;
-      padding-top:8px;
+      display:flex;
+      flex-direction:column;
+
+      margin-top:18px;
+
+      border-top:1px solid var(--line);
     }
+
 
     .mobile-nav-links a{
-      display:flex;
+      padding:15px 5px;
 
-      align-items:center;
-      justify-content:center;
+      border-bottom:1px solid rgba(255,255,255,.06);
 
-      min-height:48px;
+      color:#d8d0c5;
 
-      border-radius:16px;
-
-      background:
-        rgba(255,255,255,0.03);
-
-      border:
-        1px solid rgba(255,255,255,0.08);
-
-      color:#f4efe8;
-
-      font-size:.92rem;
+      font-size:.8rem;
       font-weight:700;
+
+      letter-spacing:1.2px;
+      text-transform:uppercase;
     }
+
 
     .mobile-nav-links a.active{
-      border-color:
-        rgba(214,185,140,0.18);
-
-      color:#fff;
+      color:var(--accent);
     }
 
+
     .mobile-nav-cta{
-      background:
-        linear-gradient(
-          135deg,
-          #b11510,
-          #d32017
-        ) !important;
+      margin-top:12px;
 
-      border-color:
-        transparent !important;
+      text-align:center;
 
-      color:#fff !important;
+      border:1px solid rgba(214,185,140,.25) !important;
+      border-radius:999px;
+
+      color:var(--accent) !important;
     }
 
 
@@ -340,47 +356,47 @@
       padding:50px 0 90px;
     }
 
+
+    /*
+      IMPORTANT:
+
+      The .container controls the equal
+      left and right spacing.
+
+      The hero itself therefore does NOT
+      have a max-width or margin:auto.
+    */
+
     .hero{
       display:grid;
 
-      /*
-        Equal balanced columns.
-        The text and image now sit
-        evenly within the available
-        website width.
-      */
       grid-template-columns:
-        1fr
-        1fr;
+        minmax(0,1fr)
+        minmax(0,1fr);
 
       gap:50px;
 
       align-items:center;
 
       width:100%;
-
-      max-width:1240px;
-
-      margin:0 auto;
     }
 
-
-    /* HERO TEXT */
 
     .hero-copy{
       width:100%;
       max-width:540px;
 
       /*
-        Removes the previous fixed
-        left margin so spacing is
-        naturally balanced.
+        No auto-centering here.
+
+        This means the left edge of the
+        text begins exactly where the
+        container begins.
       */
-      margin:0 auto;
+
+      margin:0;
     }
 
-
-    /* HERO LOGO */
 
     .hero-logo{
       width:180px;
@@ -398,6 +414,7 @@
         );
     }
 
+
     .eyebrow{
       display:inline-block;
 
@@ -405,10 +422,10 @@
 
       padding:8px 14px;
 
-      border-radius:999px;
-
       border:
         1px solid var(--line-strong);
+
+      border-radius:999px;
 
       color:var(--accent);
 
@@ -416,12 +433,11 @@
       font-weight:800;
 
       letter-spacing:1.8px;
-
       text-transform:uppercase;
 
-      background:
-        rgba(255,255,255,.02);
+      background:rgba(255,255,255,.02);
     }
+
 
     h1{
       margin:0 0 20px;
@@ -431,16 +447,13 @@
         serif;
 
       font-size:
-        clamp(
-          4rem,
-          6vw,
-          6rem
-        );
+        clamp(4rem,6vw,6rem);
 
       line-height:.86;
 
       font-weight:700;
     }
+
 
     .subline{
       margin:0 0 30px;
@@ -454,6 +467,7 @@
       line-height:1.9;
     }
 
+
     .hero-actions{
       display:flex;
 
@@ -463,6 +477,7 @@
 
       margin-bottom:26px;
     }
+
 
     .btn-primary,
     .btn-secondary{
@@ -481,6 +496,7 @@
       font-weight:800;
     }
 
+
     .btn-primary{
       background:
         linear-gradient(
@@ -495,9 +511,11 @@
         transform .25s ease;
     }
 
+
     .btn-primary:hover{
       transform:translateY(-1px);
     }
+
 
     .btn-secondary{
       border:
@@ -512,12 +530,14 @@
         background .25s ease;
     }
 
+
     .btn-secondary:hover{
       transform:translateY(-1px);
 
       background:
         rgba(255,255,255,.03);
     }
+
 
     .hero-meta{
       display:flex;
@@ -529,7 +549,6 @@
       color:var(--soft);
 
       font-size:.75rem;
-
       font-weight:700;
 
       letter-spacing:1.4px;
@@ -544,10 +563,12 @@
 
     .hero-visual{
       position:relative;
+
       min-width:0;
 
       width:100%;
     }
+
 
     .hero-frame{
       position:relative;
@@ -584,6 +605,7 @@
       overflow:hidden;
     }
 
+
     .hero-frame::before{
       content:"";
 
@@ -599,6 +621,7 @@
       pointer-events:none;
     }
 
+
     .hero-img{
       position:relative;
 
@@ -610,7 +633,13 @@
       max-height:600px;
 
       object-fit:contain;
+
       object-position:center;
+
+      /*
+        No airbrushing or artificial
+        image enhancement.
+      */
 
       filter:
         drop-shadow(
@@ -620,12 +649,13 @@
 
 
     /* =========================
-       OVERVIEW
+       OVERVIEW CARDS
     ========================= */
 
     .overview{
       padding:0 0 92px;
     }
+
 
     .overview-grid{
       display:grid;
@@ -637,6 +667,7 @@
 
       gap:18px;
     }
+
 
     .card{
       padding:32px 28px;
@@ -656,6 +687,7 @@
       box-shadow:var(--shadow);
     }
 
+
     .card-label{
       display:inline-block;
 
@@ -664,13 +696,13 @@
       color:var(--accent);
 
       font-size:.74rem;
-
       font-weight:800;
 
       letter-spacing:2px;
 
       text-transform:uppercase;
     }
+
 
     .card h2,
     .card h3{
@@ -685,18 +717,17 @@
       line-height:.95;
     }
 
+
     .card h2{
       font-size:
-        clamp(
-          2.1rem,
-          3.5vw,
-          3.5rem
-        );
+        clamp(2.1rem,3.5vw,3.5rem);
     }
+
 
     .card h3{
       font-size:1.8rem;
     }
+
 
     .card p{
       margin:0;
@@ -714,7 +745,10 @@
     ========================= */
 
     footer{
-      padding:24px 16px 36px;
+      padding:
+        24px
+        16px
+        36px;
 
       color:#bfb5a7;
 
@@ -737,33 +771,33 @@
         gap:35px;
       }
 
+
       .hero-copy{
         max-width:500px;
       }
+
 
       .hero-logo{
         width:170px;
         margin-left:10px;
       }
 
+
       .hero-frame{
         min-height:520px;
       }
 
+
       h1{
         font-size:
-          clamp(
-            3.5rem,
-            7vw,
-            5rem
-          );
+          clamp(3.5rem,7vw,5rem);
       }
 
     }
 
 
     /* =========================
-       NAVIGATION BREAKPOINT
+       MOBILE NAV
     ========================= */
 
     @media (max-width:900px){
@@ -776,18 +810,22 @@
         gap:16px;
       }
 
+
       .desktop-nav,
       .desktop-cta{
         display:none;
       }
 
+
       .menu-toggle{
         display:flex;
       }
 
+
       .mobile-nav.open{
         display:block;
       }
+
 
       .menu-toggle.active span:nth-child(1){
         transform:
@@ -795,9 +833,11 @@
           rotate(45deg);
       }
 
+
       .menu-toggle.active span:nth-child(2){
         opacity:0;
       }
+
 
       .menu-toggle.active span:nth-child(3){
         transform:
@@ -822,11 +862,13 @@
         text-align:center;
       }
 
+
       .hero-copy{
         max-width:600px;
 
         margin:0 auto;
       }
+
 
       .hero-logo{
         width:180px;
@@ -835,24 +877,29 @@
           0 auto 24px;
       }
 
+
       .eyebrow{
         margin-left:auto;
         margin-right:auto;
       }
+
 
       .subline{
         margin-left:auto;
         margin-right:auto;
       }
 
+
       .hero-actions,
       .hero-meta{
         justify-content:center;
       }
 
+
       .hero-frame{
         min-height:480px;
       }
+
 
       .overview-grid{
         grid-template-columns:1fr;
@@ -875,17 +922,24 @@
           );
       }
 
+
       header{
-        padding:30px 0 70px;
+        padding:
+          30px
+          0
+          70px;
       }
+
 
       h1{
         font-size:3.5rem;
       }
 
+
       .hero-logo{
         width:165px;
       }
+
 
       .hero-frame{
         min-height:400px;
@@ -895,20 +949,24 @@
         border-radius:24px;
       }
 
+
       .hero-frame::before{
         inset:12px;
 
         border-radius:18px;
       }
 
+
       .hero-img{
         max-height:380px;
       }
+
 
       .btn-primary,
       .btn-secondary{
         width:100%;
       }
+
 
       .hero-meta{
         flex-direction:column;
@@ -928,7 +986,7 @@
 
 
   <!-- =========================
-       TOP NAVIGATION
+       NAVIGATION
   ========================= -->
 
   <div class="topbar">
@@ -963,6 +1021,8 @@
         </a>
 
 
+        <!-- Mobile menu button -->
+
         <button
           class="menu-toggle"
           id="menuToggle"
@@ -977,6 +1037,8 @@
 
         </button>
 
+
+        <!-- Desktop navigation -->
 
         <nav
           class="nav-links desktop-nav"
@@ -1018,6 +1080,8 @@
 
       </div>
 
+
+      <!-- Mobile navigation -->
 
       <div
         class="mobile-nav"
@@ -1080,7 +1144,10 @@
       <div class="hero">
 
 
+        <!-- LEFT SIDE -->
+
         <div class="hero-copy">
+
 
           <img
             src="https://reveredfitness.co.uk/logo.png"
@@ -1088,21 +1155,27 @@
             class="hero-logo"
           >
 
+
           <div class="eyebrow">
             Online &amp; In-Person Coaching
           </div>
+
 
           <h1>
             Revered<br>
             Fitness
           </h1>
 
+
           <p class="subline">
+
             Build a stronger body, a sharper mindset,
             and real confidence through disciplined
             coaching, structured progression, and a
             premium training experience.
+
           </p>
+
 
           <div class="hero-actions">
 
@@ -1113,6 +1186,7 @@
               Start Your Journey
             </a>
 
+
             <a
               href="about.html#contact"
               class="btn-secondary"
@@ -1121,6 +1195,7 @@
             </a>
 
           </div>
+
 
           <div class="hero-meta">
 
@@ -1134,9 +1209,11 @@
 
           </div>
 
+
         </div>
 
 
+        <!-- RIGHT SIDE -->
 
         <div class="hero-visual">
 
@@ -1184,11 +1261,13 @@
           </h2>
 
           <p>
+
             Revered Fitness is more than training
             sessions. It is a focused coaching
             experience designed to help people build
             strength, improve confidence, and develop
             the mindset needed for lasting progress.
+
           </p>
 
         </div>
@@ -1205,11 +1284,13 @@
           </h3>
 
           <p>
+
             At Revered Fitness, every client journey
-            is built around accountability, consistency,
-            and clear progression, with support that
-            feels personal, professional, and tailored
-            to the individual.
+            is built around accountability,
+            consistency, and clear progression, with
+            support that feels personal, professional,
+            and tailored to the individual.
+
           </p>
 
         </div>
@@ -1226,11 +1307,13 @@
           </h3>
 
           <p>
+
             Revered Fitness stands for high standards
             in training, discipline in mindset, and
             respect for the process, helping clients
             become stronger physically and mentally
             through genuine commitment.
+
           </p>
 
         </div>
@@ -1244,11 +1327,21 @@
 
 
 
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer>
+
     © 2026 Revered Fitness
+
   </footer>
 
 
+
+  <!-- =========================
+       MOBILE MENU SCRIPT
+  ========================= -->
 
   <script>
 
@@ -1268,12 +1361,10 @@
           const isOpen =
             mobileNav.classList.toggle("open");
 
-
           menuToggle.classList.toggle(
             "active",
             isOpen
           );
-
 
           menuToggle.setAttribute(
             "aria-expanded",
