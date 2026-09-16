@@ -70,7 +70,9 @@
 
     body{
       margin:0;
+
       font-family:'Manrope', sans-serif;
+
       color:var(--text);
 
       background:
@@ -124,20 +126,28 @@
 
     .topbar{
       padding:20px 0;
-      border-bottom:1px solid rgba(255,255,255,.05);
+
+      border-bottom:
+        1px solid rgba(255,255,255,.05);
     }
 
     .topbar-inner{
       display:grid;
-      grid-template-columns:auto 1fr auto;
+
+      grid-template-columns:
+        auto 1fr auto;
+
       align-items:center;
+
       gap:30px;
     }
 
     .brand{
       display:flex;
       align-items:center;
+
       gap:12px;
+
       min-width:max-content;
     }
 
@@ -162,6 +172,7 @@
     .brand-text{
       display:flex;
       flex-direction:column;
+
       gap:3px;
     }
 
@@ -173,8 +184,10 @@
 
     .brand-text span{
       color:var(--soft);
+
       font-size:.62rem;
       letter-spacing:1.3px;
+
       text-transform:uppercase;
     }
 
@@ -186,6 +199,7 @@
       display:flex;
       justify-content:center;
       align-items:center;
+
       gap:30px;
     }
 
@@ -197,6 +211,7 @@
       font-size:.78rem;
       font-weight:700;
       letter-spacing:1px;
+
       text-transform:uppercase;
 
       transition:color .25s ease;
@@ -206,6 +221,7 @@
       content:"";
 
       position:absolute;
+
       left:0;
       bottom:-8px;
 
@@ -229,6 +245,7 @@
 
     .nav-cta{
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
 
@@ -242,6 +259,7 @@
       font-size:.74rem;
       font-weight:800;
       letter-spacing:1px;
+
       text-transform:uppercase;
 
       transition:
@@ -268,6 +286,7 @@
 
       align-items:center;
       justify-content:center;
+
       flex-direction:column;
 
       gap:5px;
@@ -309,7 +328,8 @@
     .mobile-nav-links a{
       padding:15px 5px;
 
-      border-bottom:1px solid rgba(255,255,255,.06);
+      border-bottom:
+        1px solid rgba(255,255,255,.06);
 
       color:#d8d0c5;
 
@@ -329,7 +349,9 @@
 
       text-align:center;
 
-      border:1px solid rgba(214,185,140,.25) !important;
+      border:
+        1px solid rgba(214,185,140,.25) !important;
+
       border-radius:999px;
 
       color:var(--accent) !important;
@@ -369,6 +391,7 @@
 
     .page-copy{
       width:100%;
+      max-width:none;
 
       display:flex;
       flex-direction:column;
@@ -388,9 +411,10 @@
 
       mix-blend-mode:screen;
 
-      filter:drop-shadow(
-        0 0 16px rgba(0,0,0,.22)
-      );
+      filter:
+        drop-shadow(
+          0 0 16px rgba(0,0,0,.22)
+        );
     }
 
     .eyebrow{
@@ -419,7 +443,9 @@
       font-family:'Cormorant Garamond', serif;
 
       font-size:clamp(4rem,6vw,6rem);
+
       line-height:.86;
+
       font-weight:700;
 
       text-align:center;
@@ -439,7 +465,7 @@
     }
 
     /* =========================
-       HERO PANEL
+       HERO RIGHT PANEL
     ========================= */
 
     .hero-panel{
@@ -469,6 +495,7 @@
       box-shadow:var(--shadow);
 
       display:flex;
+
       align-items:center;
       justify-content:center;
 
@@ -479,9 +506,12 @@
       content:"";
 
       position:absolute;
+
       inset:18px;
 
-      border:1px solid rgba(214,185,140,.08);
+      border:
+        1px solid rgba(214,185,140,.08);
+
       border-radius:24px;
 
       pointer-events:none;
@@ -489,6 +519,7 @@
 
     .hero-panel-content{
       position:relative;
+
       z-index:1;
 
       max-width:480px;
@@ -515,7 +546,9 @@
 
       font-family:'Cormorant Garamond', serif;
 
-      font-size:clamp(2.5rem,4vw,3.8rem);
+      font-size:
+        clamp(2.5rem,4vw,3.8rem);
+
       line-height:.95;
 
       font-weight:700;
@@ -527,11 +560,12 @@
       color:#d7cec3;
 
       line-height:1.9;
+
       font-size:.98rem;
     }
 
     /* =========================
-       SERVICES
+       SERVICES SECTION
     ========================= */
 
     .services-section{
@@ -546,6 +580,10 @@
 
       gap:20px;
     }
+
+    /* =========================
+       SERVICE CARDS
+    ========================= */
 
     .service-card{
       display:flex;
@@ -616,7 +654,9 @@
       font-family:'Cormorant Garamond', serif;
 
       font-size:2rem;
+
       line-height:.96;
+
       font-weight:700;
     }
 
@@ -626,8 +666,13 @@
       color:#d0c6ba;
 
       line-height:1.85;
+
       font-size:.95rem;
     }
+
+    /* =========================
+       SERVICE FEATURES
+    ========================= */
 
     .service-list{
       margin:0 0 22px;
@@ -636,18 +681,19 @@
       list-style:none;
 
       display:grid;
+
       gap:10px;
     }
 
     .service-list li{
+      position:relative;
+
+      padding-left:18px;
+
       color:#ddd4c8;
 
       font-size:.93rem;
       line-height:1.7;
-
-      padding-left:18px;
-
-      position:relative;
     }
 
     .service-list li::before{
@@ -664,56 +710,6 @@
       border-radius:50%;
 
       background:var(--accent);
-    }
-
-    /* =========================
-       T-SHIRT BONUS
-    ========================= */
-
-    .service-list .tshirt-bonus{
-      margin-top:4px;
-
-      padding:
-        11px 14px 11px 36px;
-
-      border:
-        1px solid rgba(121,217,144,.30);
-
-      border-radius:14px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(121,217,144,.10),
-          rgba(121,217,144,.04)
-        );
-
-      color:var(--success);
-
-      font-weight:800;
-
-      box-shadow:
-        inset 0 0 20px
-        rgba(121,217,144,.025);
-    }
-
-    .service-list .tshirt-bonus::before{
-      content:"✓";
-
-      position:absolute;
-
-      left:13px;
-      top:10px;
-
-      width:auto;
-      height:auto;
-
-      background:none;
-
-      color:var(--success);
-
-      font-size:1rem;
-      font-weight:800;
     }
 
     /* =========================
@@ -782,6 +778,7 @@
 
     .btn:hover{
       transform:translateY(-1px);
+
       opacity:.96;
     }
 
@@ -810,6 +807,7 @@
       display:none;
 
       position:fixed;
+
       inset:0;
 
       background:
@@ -853,8 +851,7 @@
         );
 
       box-shadow:
-        0 30px 70px
-        rgba(0,0,0,.45);
+        0 30px 70px rgba(0,0,0,.45);
     }
 
     .modal-card h2{
@@ -864,6 +861,7 @@
 
       font-size:2.2rem;
       line-height:.95;
+
       font-weight:700;
     }
 
@@ -887,21 +885,22 @@
 
     .form-grid{
       display:grid;
+
       gap:14px;
     }
 
     .field{
       display:grid;
+
       gap:6px;
 
       text-align:left;
     }
 
     .field label{
-      font-size:.9rem;
-
       color:#e8e1d7;
 
+      font-size:.9rem;
       font-weight:700;
     }
 
@@ -926,6 +925,7 @@
 
     .field textarea{
       min-height:100px;
+
       resize:vertical;
     }
 
@@ -938,13 +938,12 @@
 
     /* =========================
        DROPDOWN FIX
-       Dark background + white text
     ========================= */
 
     .field select{
       background-color:#151515;
 
-      color:#ffffff;
+      color:#fff;
 
       color-scheme:dark;
 
@@ -952,15 +951,15 @@
     }
 
     .field select option{
-      background-color:#151515;
+      background:#151515;
 
-      color:#ffffff;
+      color:#fff;
     }
 
     .field select option:checked{
-      background-color:#292929;
+      background:#292929;
 
-      color:#ffffff;
+      color:#fff;
     }
 
     .submit-btn{
@@ -1009,6 +1008,7 @@
 
       .topbar-inner{
         grid-template-columns:auto auto;
+
         gap:16px;
       }
 
@@ -1085,6 +1085,7 @@
 
       .hero-panel{
         min-height:360px;
+
         padding:30px;
       }
 
@@ -1097,6 +1098,10 @@
       }
 
     }
+
+    /* =========================
+       SMALL MOBILE
+    ========================= */
 
     @media (max-width:480px){
 
@@ -1171,7 +1176,9 @@
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
 
   <div class="topbar">
 
@@ -1302,7 +1309,9 @@
 
   </div>
 
-  <!-- SERVICES HERO -->
+  <!-- =========================
+       SERVICES HERO
+  ========================= -->
 
   <section class="page-hero">
 
@@ -1366,7 +1375,9 @@
 
   </section>
 
-  <!-- SERVICES -->
+  <!-- =========================
+       SERVICES
+  ========================= -->
 
   <section class="services-section">
 
@@ -1648,10 +1659,6 @@
               Nutrition guidance and technical app support
             </li>
 
-            <li class="tshirt-bonus">
-              Revered Fitness T-shirt upon completion
-            </li>
-
           </ul>
 
           <div class="price">
@@ -1678,7 +1685,9 @@
 
   </section>
 
-  <!-- QUESTIONNAIRE -->
+  <!-- =========================
+       QUESTIONNAIRE
+  ========================= -->
 
   <div id="questionnaireModal">
 
@@ -1840,13 +1849,17 @@
 
   </div>
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
   <footer>
     © 2026 Revered Fitness
   </footer>
 
-  <!-- SCRIPT -->
+  <!-- =========================
+       SCRIPT
+  ========================= -->
 
   <script>
 
