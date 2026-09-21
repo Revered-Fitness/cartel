@@ -48,8 +48,12 @@
       --line:rgba(255,255,255,0.08);
       --line-strong:rgba(214,185,140,0.16);
       --accent:#d6b98c;
+
       --primary:#b11510;
+      --primary-dark:#720b08;
+      --primary-deep:#470604;
       --primary-hover:#d32017;
+
       --success:#79d990;
       --shadow:0 20px 50px rgba(0,0,0,0.24);
       --radius:28px;
@@ -70,7 +74,9 @@
 
     body{
       margin:0;
+
       font-family:'Manrope', sans-serif;
+
       color:var(--text);
 
       background:
@@ -100,6 +106,10 @@
       font:inherit;
     }
 
+    button{
+      color:inherit;
+    }
+
     img{
       display:block;
       max-width:100%;
@@ -124,20 +134,28 @@
 
     .topbar{
       padding:20px 0;
-      border-bottom:1px solid rgba(255,255,255,.05);
+
+      border-bottom:
+        1px solid rgba(255,255,255,.05);
     }
 
     .topbar-inner{
       display:grid;
-      grid-template-columns:auto 1fr auto;
+
+      grid-template-columns:
+        auto 1fr auto;
+
       align-items:center;
+
       gap:30px;
     }
 
     .brand{
       display:flex;
       align-items:center;
+
       gap:12px;
+
       min-width:max-content;
     }
 
@@ -162,6 +180,7 @@
     .brand-text{
       display:flex;
       flex-direction:column;
+
       gap:3px;
     }
 
@@ -173,8 +192,10 @@
 
     .brand-text span{
       color:var(--soft);
+
       font-size:.62rem;
       letter-spacing:1.3px;
+
       text-transform:uppercase;
     }
 
@@ -186,6 +207,7 @@
       display:flex;
       justify-content:center;
       align-items:center;
+
       gap:30px;
     }
 
@@ -207,6 +229,7 @@
       content:"";
 
       position:absolute;
+
       left:0;
       bottom:-8px;
 
@@ -230,6 +253,7 @@
 
     .nav-cta{
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
 
@@ -270,6 +294,7 @@
 
       align-items:center;
       justify-content:center;
+
       flex-direction:column;
 
       gap:5px;
@@ -311,7 +336,8 @@
     .mobile-nav-links a{
       padding:15px 5px;
 
-      border-bottom:1px solid rgba(255,255,255,.06);
+      border-bottom:
+        1px solid rgba(255,255,255,.06);
 
       color:#d8d0c5;
 
@@ -331,7 +357,9 @@
 
       text-align:center;
 
-      border:1px solid rgba(214,185,140,.25) !important;
+      border:
+        1px solid rgba(214,185,140,.25) !important;
+
       border-radius:999px;
 
       color:var(--accent) !important;
@@ -388,9 +416,13 @@
       margin:0 auto 28px;
 
       object-fit:contain;
+
       mix-blend-mode:screen;
 
-      filter:drop-shadow(0 0 16px rgba(0,0,0,.22));
+      filter:
+        drop-shadow(
+          0 0 16px rgba(0,0,0,.22)
+        );
     }
 
     .eyebrow{
@@ -419,6 +451,7 @@
       font-family:'Cormorant Garamond', serif;
 
       font-size:clamp(4rem,6vw,6rem);
+
       line-height:.86;
 
       font-weight:700;
@@ -484,7 +517,9 @@
 
       inset:18px;
 
-      border:1px solid rgba(214,185,140,.08);
+      border:
+        1px solid rgba(214,185,140,.08);
+
       border-radius:24px;
 
       pointer-events:none;
@@ -492,6 +527,7 @@
 
     .hero-panel-content{
       position:relative;
+
       z-index:1;
 
       max-width:480px;
@@ -518,7 +554,9 @@
 
       font-family:'Cormorant Garamond', serif;
 
-      font-size:clamp(2.5rem,4vw,3.8rem);
+      font-size:
+        clamp(2.5rem,4vw,3.8rem);
+
       line-height:.95;
 
       font-weight:700;
@@ -544,7 +582,10 @@
 
     .services-grid{
       display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
+
+      grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
       gap:20px;
     }
 
@@ -579,11 +620,14 @@
 
     .service-card:hover{
       transform:translateY(-3px);
-      border-color:rgba(214,185,140,.18);
+
+      border-color:
+        rgba(214,185,140,.18);
     }
 
     .service-card.featured{
-      border-color:rgba(214,185,140,.24);
+      border-color:
+        rgba(214,185,140,.24);
 
       background:
         radial-gradient(
@@ -618,6 +662,7 @@
       font-family:'Cormorant Garamond', serif;
 
       font-size:2rem;
+
       line-height:.96;
 
       font-weight:700;
@@ -737,6 +782,7 @@
 
     .btn:hover{
       transform:translateY(-1px);
+
       opacity:.96;
     }
 
@@ -751,7 +797,8 @@
 
       text-align:center;
 
-      border-top:1px solid rgba(255,255,255,.06);
+      border-top:
+        1px solid rgba(255,255,255,.06);
 
       font-size:.92rem;
     }
@@ -767,7 +814,8 @@
 
       inset:0;
 
-      background:rgba(0,0,0,.84);
+      background:
+        rgba(0,0,0,.84);
 
       justify-content:center;
       align-items:center;
@@ -778,7 +826,8 @@
 
       opacity:0;
 
-      transition:opacity .3s ease;
+      transition:
+        opacity .3s ease;
 
       backdrop-filter:blur(8px);
       -webkit-backdrop-filter:blur(8px);
@@ -805,7 +854,8 @@
           rgba(10,10,10,.98)
         );
 
-      box-shadow:0 30px 70px rgba(0,0,0,.45);
+      box-shadow:
+        0 30px 70px rgba(0,0,0,.45);
     }
 
     .modal-card h2{
@@ -814,6 +864,7 @@
       font-family:'Cormorant Garamond', serif;
 
       font-size:2.2rem;
+
       line-height:.95;
 
       font-weight:700;
@@ -839,12 +890,15 @@
 
     .form-grid{
       display:grid;
+
       gap:14px;
     }
 
     .field{
       display:grid;
+
       gap:6px;
+
       text-align:left;
     }
 
@@ -856,7 +910,6 @@
     }
 
     .field input,
-    .field select,
     .field textarea{
       width:100%;
 
@@ -864,7 +917,8 @@
 
       border-radius:16px;
 
-      border:1px solid rgba(255,255,255,.10);
+      border:
+        1px solid rgba(255,255,255,.10);
 
       background:#151515;
 
@@ -875,25 +929,28 @@
 
     .field textarea{
       min-height:100px;
+
       resize:vertical;
     }
 
     .field input:focus,
     .field textarea:focus{
-      border-color:rgba(214,185,140,.45);
+      border-color:
+        rgba(214,185,140,.45);
     }
 
     /* =========================
-       IMPROVED SELECT FIELDS
+       CUSTOM DROPDOWNS
     ========================= */
 
     .select-field{
-      margin-top:3px;
+      position:relative;
     }
 
-    .select-field label{
+    .select-field > label{
       display:flex;
       flex-direction:column;
+
       gap:4px;
     }
 
@@ -904,53 +961,51 @@
 
       font-size:.72rem;
       font-weight:600;
+
       letter-spacing:.2px;
     }
 
-    .select-wrap{
+    .custom-select{
       position:relative;
-    }
-
-    .select-wrap::after{
-      content:"▼";
-
-      position:absolute;
-
-      right:17px;
-      top:50%;
-
-      transform:translateY(-50%);
-
-      color:var(--accent);
-
-      font-size:.78rem;
-
-      pointer-events:none;
-    }
-
-    .select-wrap select{
-      appearance:none;
-      -webkit-appearance:none;
-      -moz-appearance:none;
 
       width:100%;
+    }
 
-      padding:14px 48px 14px 15px;
+    .custom-select-trigger{
+      width:100%;
 
-      border:1px solid rgba(214,185,140,.50);
+      min-height:50px;
+
+      display:flex;
+
+      align-items:center;
+      justify-content:space-between;
+
+      gap:14px;
+
+      padding:13px 16px;
+
+      border:
+        1px solid rgba(214,185,140,.50);
+
       border-radius:16px;
 
       background:
+        radial-gradient(
+          circle at right center,
+          rgba(177,21,16,.08),
+          transparent 38%
+        ),
         linear-gradient(
           180deg,
-          rgba(214,185,140,.055),
-          rgba(214,185,140,.015)
+          rgba(255,255,255,.025),
+          rgba(255,255,255,.01)
         ),
         #151515;
 
       color:#fff;
 
-      color-scheme:dark;
+      text-align:left;
 
       cursor:pointer;
 
@@ -962,33 +1017,244 @@
         background .2s ease;
     }
 
-    .select-wrap select:hover{
-      border-color:rgba(214,185,140,.80);
+    .custom-select-trigger:hover{
+      border-color:
+        rgba(214,185,140,.80);
 
       background:
-        linear-gradient(
-          180deg,
-          rgba(214,185,140,.08),
-          rgba(214,185,140,.025)
+        radial-gradient(
+          circle at right center,
+          rgba(177,21,16,.13),
+          transparent 42%
         ),
         #151515;
     }
 
-    .select-wrap select:focus{
+    .custom-select.open .custom-select-trigger{
       border-color:var(--accent);
 
       box-shadow:
-        0 0 0 3px rgba(214,185,140,.10);
+        0 0 0 3px rgba(214,185,140,.09);
+
+      border-radius:16px 16px 8px 8px;
     }
 
-    .select-wrap select option{
-      background:#151515;
-      color:#fff;
+    .custom-select-text{
+      color:#bfb5a7;
+
+      font-size:.93rem;
     }
 
-    .select-wrap select option:checked{
-      background:#292929;
+    .custom-select.has-value .custom-select-text{
       color:#fff;
+      font-weight:600;
+    }
+
+    .custom-select-arrow{
+      flex:0 0 auto;
+
+      width:28px;
+      height:28px;
+
+      display:flex;
+
+      align-items:center;
+      justify-content:center;
+
+      border-radius:50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(114,11,8,.75),
+          rgba(177,21,16,.85)
+        );
+
+      color:#fff;
+
+      font-size:.72rem;
+
+      transition:
+        transform .25s ease,
+        background .25s ease;
+    }
+
+    .custom-select.open .custom-select-arrow{
+      transform:rotate(180deg);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary-dark),
+          var(--primary-hover)
+        );
+    }
+
+    .custom-select-options{
+      position:absolute;
+
+      top:calc(100% + 6px);
+      left:0;
+      right:0;
+
+      z-index:100;
+
+      padding:7px;
+
+      border:
+        1px solid rgba(214,185,140,.35);
+
+      border-radius:14px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #181818,
+          #0e0e0e
+        );
+
+      box-shadow:
+        0 18px 45px rgba(0,0,0,.55);
+
+      opacity:0;
+
+      visibility:hidden;
+
+      transform:translateY(-7px);
+
+      transition:
+        opacity .18s ease,
+        visibility .18s ease,
+        transform .18s ease;
+    }
+
+    .custom-select.open .custom-select-options{
+      opacity:1;
+
+      visibility:visible;
+
+      transform:translateY(0);
+    }
+
+    .custom-option{
+      width:100%;
+
+      display:flex;
+
+      align-items:center;
+      justify-content:space-between;
+
+      gap:12px;
+
+      padding:12px 14px;
+
+      border:1px solid transparent;
+      border-radius:10px;
+
+      background:transparent;
+
+      color:#ddd4c8;
+
+      text-align:left;
+
+      font-size:.91rem;
+      font-weight:600;
+
+      cursor:pointer;
+
+      transition:
+        background .18s ease,
+        border-color .18s ease,
+        color .18s ease,
+        transform .18s ease;
+    }
+
+    .custom-option + .custom-option{
+      margin-top:4px;
+    }
+
+    /* RED FADE WHEN HOVERED */
+
+    .custom-option:hover,
+    .custom-option:focus{
+      color:#fff;
+
+      border-color:
+        rgba(211,32,23,.45);
+
+      background:
+        radial-gradient(
+          circle at right center,
+          rgba(211,32,23,.32),
+          transparent 55%
+        ),
+        linear-gradient(
+          90deg,
+          rgba(71,6,4,.80),
+          rgba(114,11,8,.90),
+          rgba(177,21,16,.82)
+        );
+
+      outline:none;
+
+      transform:translateX(2px);
+    }
+
+    /* RED FADE FOR SELECTED OPTION */
+
+    .custom-option.selected{
+      color:#fff;
+
+      border-color:
+        rgba(211,32,23,.55);
+
+      background:
+        radial-gradient(
+          circle at 85% 50%,
+          rgba(211,32,23,.38),
+          transparent 55%
+        ),
+        linear-gradient(
+          90deg,
+          rgba(71,6,4,.92),
+          rgba(114,11,8,.96),
+          rgba(177,21,16,.88)
+        );
+
+      box-shadow:
+        inset 0 0 20px rgba(177,21,16,.08);
+    }
+
+    .custom-option.selected::after{
+      content:"✓";
+
+      color:#fff;
+
+      font-size:.82rem;
+      font-weight:800;
+    }
+
+    .custom-select-error{
+      display:none;
+
+      margin-top:5px;
+
+      color:#ff756d;
+
+      font-size:.72rem;
+      font-weight:600;
+    }
+
+    .custom-select.invalid .custom-select-trigger{
+      border-color:
+        rgba(211,32,23,.85);
+
+      box-shadow:
+        0 0 0 3px rgba(177,21,16,.12);
+    }
+
+    .custom-select.invalid .custom-select-error{
+      display:block;
     }
 
     .submit-btn{
@@ -1023,7 +1289,8 @@
       }
 
       .services-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
+        grid-template-columns:
+          repeat(2,minmax(0,1fr));
       }
 
     }
@@ -1036,6 +1303,7 @@
 
       .topbar-inner{
         grid-template-columns:auto auto;
+
         gap:16px;
       }
 
@@ -1173,7 +1441,8 @@
       }
 
       .hero-panel-content h2{
-        font-size:clamp(2.2rem,10vw,3rem);
+        font-size:
+          clamp(2.2rem,10vw,3rem);
       }
 
       .service-card{
@@ -1192,6 +1461,14 @@
         padding:24px 18px;
 
         border-radius:24px;
+      }
+
+      .custom-select-trigger{
+        min-height:52px;
+      }
+
+      .custom-option{
+        padding:13px 13px;
       }
 
     }
@@ -1743,6 +2020,8 @@
 
       <div class="form-grid">
 
+        <!-- NAME -->
+
         <div class="field">
 
           <label for="name">
@@ -1757,6 +2036,8 @@
           >
 
         </div>
+
+        <!-- EMAIL -->
 
         <div class="field">
 
@@ -1773,6 +2054,8 @@
 
         </div>
 
+        <!-- HEALTH -->
+
         <div class="field">
 
           <label for="health_issues">
@@ -1786,50 +2069,97 @@
 
         </div>
 
-        <!-- MAIN FITNESS GOAL -->
+        <!-- =========================
+             FITNESS GOAL
+        ========================= -->
 
         <div class="field select-field">
 
-          <label for="goal">
+          <label>
             Main Fitness Goal
+
             <span class="select-hint">
-              Select one of the options below
+              Click below to choose an option
             </span>
           </label>
 
-          <div class="select-wrap">
+          <input
+            type="hidden"
+            name="goal"
+            id="goal"
+            required
+          >
 
-            <select
-              id="goal"
-              name="goal"
-              required
+          <div
+            class="custom-select"
+            data-input="goal"
+          >
+
+            <button
+              type="button"
+              class="custom-select-trigger"
+              aria-haspopup="listbox"
+              aria-expanded="false"
             >
 
-              <option value="" selected disabled>
+              <span class="custom-select-text">
                 Choose your fitness goal...
-              </option>
+              </span>
 
-              <option value="weight_loss">
+              <span class="custom-select-arrow">
+                ▼
+              </span>
+
+            </button>
+
+            <div
+              class="custom-select-options"
+              role="listbox"
+            >
+
+              <button
+                type="button"
+                class="custom-option"
+                data-value="weight_loss"
+              >
                 Weight Loss
-              </option>
+              </button>
 
-              <option value="muscle_gain">
+              <button
+                type="button"
+                class="custom-option"
+                data-value="muscle_gain"
+              >
                 Muscle Gain
-              </option>
+              </button>
 
-              <option value="endurance">
+              <button
+                type="button"
+                class="custom-option"
+                data-value="endurance"
+              >
                 Increase Endurance
-              </option>
+              </button>
 
-              <option value="general_health">
+              <button
+                type="button"
+                class="custom-option"
+                data-value="general_health"
+              >
                 General Health
-              </option>
+              </button>
 
-            </select>
+            </div>
+
+            <span class="custom-select-error">
+              Please choose your main fitness goal.
+            </span>
 
           </div>
 
         </div>
+
+        <!-- DAYS PER WEEK -->
 
         <div class="field">
 
@@ -1848,46 +2178,89 @@
 
         </div>
 
-        <!-- PREFERRED WORKOUT TIME -->
+        <!-- =========================
+             WORKOUT TIME
+        ========================= -->
 
         <div class="field select-field">
 
-          <label for="workout_time">
+          <label>
             Preferred Workout Time
+
             <span class="select-hint">
-              Select one of the options below
+              Click below to choose an option
             </span>
           </label>
 
-          <div class="select-wrap">
+          <input
+            type="hidden"
+            name="workout_time"
+            id="workout_time"
+            required
+          >
 
-            <select
-              id="workout_time"
-              name="workout_time"
-              required
+          <div
+            class="custom-select"
+            data-input="workout_time"
+          >
+
+            <button
+              type="button"
+              class="custom-select-trigger"
+              aria-haspopup="listbox"
+              aria-expanded="false"
             >
 
-              <option value="" selected disabled>
+              <span class="custom-select-text">
                 Choose your preferred time...
-              </option>
+              </span>
 
-              <option value="morning">
+              <span class="custom-select-arrow">
+                ▼
+              </span>
+
+            </button>
+
+            <div
+              class="custom-select-options"
+              role="listbox"
+            >
+
+              <button
+                type="button"
+                class="custom-option"
+                data-value="morning"
+              >
                 Morning
-              </option>
+              </button>
 
-              <option value="afternoon">
+              <button
+                type="button"
+                class="custom-option"
+                data-value="afternoon"
+              >
                 Afternoon
-              </option>
+              </button>
 
-              <option value="evening">
+              <button
+                type="button"
+                class="custom-option"
+                data-value="evening"
+              >
                 Evening
-              </option>
+              </button>
 
-            </select>
+            </div>
+
+            <span class="custom-select-error">
+              Please choose your preferred workout time.
+            </span>
 
           </div>
 
         </div>
+
+        <!-- SUBMIT -->
 
         <button
           type="submit"
@@ -1916,7 +2289,9 @@
 
   <script>
 
-    /* MOBILE NAV */
+    /* =========================
+       MOBILE NAV
+    ========================= */
 
     const menuToggle =
       document.getElementById("menuToggle");
@@ -2052,6 +2427,8 @@
       modal.style.opacity =
         "0";
 
+      closeAllCustomSelects();
+
       setTimeout(
         function(){
 
@@ -2085,14 +2462,233 @@
       function(e){
 
         if(
-          e.key === "Escape" &&
-          modal.style.display === "flex"
+          e.key === "Escape"
         ){
-          hideModal();
+
+          const openDropdown =
+            document.querySelector(
+              ".custom-select.open"
+            );
+
+          if(openDropdown){
+
+            closeAllCustomSelects();
+
+          } else if(
+            modal.style.display === "flex"
+          ){
+
+            hideModal();
+
+          }
+
         }
 
       }
     );
+
+    /* =========================
+       CUSTOM DROPDOWNS
+    ========================= */
+
+    const customSelects =
+      document.querySelectorAll(
+        ".custom-select"
+      );
+
+    function closeAllCustomSelects(
+      except = null
+    ){
+
+      customSelects.forEach(
+        function(select){
+
+          if(select !== except){
+
+            select.classList.remove(
+              "open"
+            );
+
+            const trigger =
+              select.querySelector(
+                ".custom-select-trigger"
+              );
+
+            trigger.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+
+        }
+      );
+
+    }
+
+    customSelects.forEach(
+      function(select){
+
+        const trigger =
+          select.querySelector(
+            ".custom-select-trigger"
+          );
+
+        const text =
+          select.querySelector(
+            ".custom-select-text"
+          );
+
+        const options =
+          select.querySelectorAll(
+            ".custom-option"
+          );
+
+        const inputId =
+          select.dataset.input;
+
+        const hiddenInput =
+          document.getElementById(
+            inputId
+          );
+
+        trigger.addEventListener(
+          "click",
+          function(){
+
+            const willOpen =
+              !select.classList.contains(
+                "open"
+              );
+
+            closeAllCustomSelects(
+              select
+            );
+
+            select.classList.toggle(
+              "open",
+              willOpen
+            );
+
+            trigger.setAttribute(
+              "aria-expanded",
+              willOpen ? "true" : "false"
+            );
+
+          }
+        );
+
+        options.forEach(
+          function(option){
+
+            option.addEventListener(
+              "click",
+              function(){
+
+                options.forEach(
+                  function(item){
+
+                    item.classList.remove(
+                      "selected"
+                    );
+
+                  }
+                );
+
+                option.classList.add(
+                  "selected"
+                );
+
+                hiddenInput.value =
+                  option.dataset.value;
+
+                text.textContent =
+                  option.textContent.trim();
+
+                select.classList.add(
+                  "has-value"
+                );
+
+                select.classList.remove(
+                  "invalid"
+                );
+
+                select.classList.remove(
+                  "open"
+                );
+
+                trigger.setAttribute(
+                  "aria-expanded",
+                  "false"
+                );
+
+              }
+            );
+
+          }
+        );
+
+      }
+    );
+
+    document.addEventListener(
+      "click",
+      function(e){
+
+        if(
+          !e.target.closest(
+            ".custom-select"
+          )
+        ){
+
+          closeAllCustomSelects();
+
+        }
+
+      }
+    );
+
+    /* =========================
+       CUSTOM SELECT VALIDATION
+    ========================= */
+
+    function validateCustomSelects(){
+
+      let valid = true;
+
+      customSelects.forEach(
+        function(select){
+
+          const inputId =
+            select.dataset.input;
+
+          const hiddenInput =
+            document.getElementById(
+              inputId
+            );
+
+          if(!hiddenInput.value){
+
+            select.classList.add(
+              "invalid"
+            );
+
+            valid = false;
+
+          } else {
+
+            select.classList.remove(
+              "invalid"
+            );
+
+          }
+
+        }
+      );
+
+      return valid;
+
+    }
 
     /* =========================
        FORM SUBMISSION
@@ -2104,6 +2700,35 @@
 
         e.preventDefault();
 
+        const customFieldsValid =
+          validateCustomSelects();
+
+        if(
+          !form.checkValidity() ||
+          !customFieldsValid
+        ){
+
+          form.reportValidity();
+
+          const firstInvalidCustom =
+            document.querySelector(
+              ".custom-select.invalid"
+            );
+
+          if(firstInvalidCustom){
+
+            firstInvalidCustom
+              .scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+              });
+
+          }
+
+          return;
+
+        }
+
         const formData =
           new FormData(form);
 
@@ -2111,6 +2736,7 @@
           form.action,
           {
             method:form.method,
+
             body:formData,
 
             headers:{
@@ -2123,9 +2749,11 @@
           function(response){
 
             if(!response.ok){
+
               throw new Error(
                 "Form submission failed."
               );
+
             }
 
             const service =
